@@ -1,0 +1,16 @@
+{
+    "idf.port": "/dev/ttyACM1",
+    "idf.adapterTargetName": "esp32s3",
+    "idf.openOcdConfigs": [
+        "board/esp32s3-builtin.cfg"
+    ],
+    "files.associations": {
+        ".fantomasignore": "ignore",
+        "*.fs": "fsharp",
+        "task.h": "c",
+        "keyswitches.h": "c",
+        "gpio.h": "c",
+        "freertos.h": "c",
+        "oled_screen.h": "c"
+    }
+}
