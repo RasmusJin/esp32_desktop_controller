@@ -19,5 +19,8 @@
 void oled_init(SSD1306_t *dev);
 void i2c_master_init_custom(SSD1306_t *dev, int16_t sda, int16_t scl, int16_t reset);
 void oled_display_text(SSD1306_t *dev, int page, const char *text, bool invert);
+void display_time_x3(SSD1306_t *dev, const char *time);
+void ssd1306_draw_icon_16x16(SSD1306_t *dev, int xpos, int ypos, const uint8_t *icon, bool invert);
+void display_wifi_icon(SSD1306_t *dev);
 
 #endif // OLED_SCREEN_H

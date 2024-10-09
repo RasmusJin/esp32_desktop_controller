@@ -829,6 +829,13 @@
 /home/jin/workspaces/esp32workspace/desktop_controller/build/esp-idf/ssd1306/CMakeFiles/install.dir
 /home/jin/workspaces/esp32workspace/desktop_controller/build/esp-idf/ssd1306/CMakeFiles/install/local.dir
 /home/jin/workspaces/esp32workspace/desktop_controller/build/esp-idf/ssd1306/CMakeFiles/install/strip.dir
+/home/jin/workspaces/esp32workspace/desktop_controller/build/esp-idf/iot_iconset/CMakeFiles/__idf_iot_iconset.dir
+/home/jin/workspaces/esp32workspace/desktop_controller/build/esp-idf/iot_iconset/CMakeFiles/edit_cache.dir
+/home/jin/workspaces/esp32workspace/desktop_controller/build/esp-idf/iot_iconset/CMakeFiles/rebuild_cache.dir
+/home/jin/workspaces/esp32workspace/desktop_controller/build/esp-idf/iot_iconset/CMakeFiles/list_install_components.dir
+/home/jin/workspaces/esp32workspace/desktop_controller/build/esp-idf/iot_iconset/CMakeFiles/install.dir
+/home/jin/workspaces/esp32workspace/desktop_controller/build/esp-idf/iot_iconset/CMakeFiles/install/local.dir
+/home/jin/workspaces/esp32workspace/desktop_controller/build/esp-idf/iot_iconset/CMakeFiles/install/strip.dir
 /home/jin/workspaces/esp32workspace/desktop_controller/build/esp-idf/main/CMakeFiles/__idf_main.dir
 /home/jin/workspaces/esp32workspace/desktop_controller/build/esp-idf/main/CMakeFiles/edit_cache.dir
 /home/jin/workspaces/esp32workspace/desktop_controller/build/esp-idf/main/CMakeFiles/rebuild_cache.dir
