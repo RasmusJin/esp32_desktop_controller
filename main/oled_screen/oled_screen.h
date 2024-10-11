@@ -22,5 +22,6 @@ void oled_display_text(SSD1306_t *dev, int page, const char *text, bool invert);
 void display_time_x3(SSD1306_t *dev, const char *time);
 void ssd1306_draw_icon_16x16(SSD1306_t *dev, int xpos, int ypos, const uint8_t *icon, bool invert);
 void display_wifi_icon(SSD1306_t *dev);
+void update_wifi_status(SSD1306_t *dev, bool connected);
 
 #endif // OLED_SCREEN_H

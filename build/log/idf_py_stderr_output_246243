@@ -1,0 +1,531 @@
+[0;33m--- esp-idf-monitor 1.4.0 on /dev/ttyACM1 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40056f59: memcpy in ROM
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200a648: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:92
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200a645: ssd1306_display_text at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:91
+0x4200a6f7: ssd1306_clear_line at /home/jin/workspaces/esp32workspace/desktop_controller/components/ssd1306/ssd1306.c:261
+0x4200a291: update_wifi_status at /home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c:108
+0x4200a2ad: wifi_event_handler at /home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c:22
+0x42085141: handler_execute at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:135
+0x42084c6a: esp_event_loop_run at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:584
+0x42084d45: esp_event_loop_run_task at /home/jin/esp/esp-idf/components/esp_event/esp_event.c:105
+0x4037e835: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375bc4: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.

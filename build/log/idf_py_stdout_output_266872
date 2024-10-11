@@ -1,0 +1,131 @@
+[0;32mI (125) esp_image: segment 1: paddr=00033a6c vaddr=3fc9aeESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x2e (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4004512e
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x178c
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xcb8
+load:0x403cb700,len:0x2db0
+entry 0x403c8914
+[0;32mI (26) boot: ESP-IDF v5.3 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Oct 10 2024 21:26:41[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.1[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (71) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (79) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (86) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=23a44h (145988) map[0m
+[0;32mI (125) esp_image: segment 1: paddr=00033a6c vaddr=3fc9ae00 size=04ddch ( 19932) load[0m
+[0;32mI (130) esp_image: segment 2: paddr=00038850 vaddr=40374000 size=077c8h ( 30664) load[0m
+[0;32mI (138) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=885dch (558556) map[0m
+[0;32mI (240) esp_image: segment 4: paddr=000c8604 vaddr=4037b7c8 size=0f544h ( 62788) load[0m
+[0;32mI (254) esp_image: segment 5: paddr=000d7b50 vaddr=600fe100 size=00004h (     4) load[0m
+[0;32mI (264) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (264) boot: Disabling RNG early entropy source...[0m
+[0;32mI (275) cpu_start: Multicore app[0m
+[0;32mI (285) cpu_start: Pro cpu start user code[0m
+[0;32mI (285) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (285) app_init: Application information:[0m
+[0;32mI (288) app_init: Project name:     desktop_controller[0m
+[0;32mI (294) app_init: App version:      a5eb912-dirty[0m
+[0;32mI (299) app_init: Compile time:     Oct 10 2024 21:26:37[0m
+[0;32mI (305) app_init: ELF file SHA256:  90868d0aa...[0m
+[0;32mI (310) app_init: ESP-IDF:          v5.3[0m
+[0;32mI (315) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (320) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (325) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (329) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (337) heap_init: At 3FCA3890 len 00045E80 (279 KiB): RAM[0m
+[0;32mI (343) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (349) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (355) heap_init: At 600FE104 len 00001EE4 (7 KiB): RTCRAM[0m
+[0;32mI (362) spi_flash: detected chip: gd[0m
+[0;32mI (366) spi_flash: flash io: dio[0m
+[0;33mW (369) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (383) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (394) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (400) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (408) main_task: Started on CPU0[0m
+[0;32mI (418) main_task: Calling app_main()[0m
+[0;32mI (418) SSD1306: Legacy i2c driver is used[0m
+[0;32mI (418) SSD1306: OLED configured successfully[0m
+[0;32mI (428) OLED: OLED initialized successfully[0m
+[0;32mI (1508) OLED: Text displayed: Hello, OLED![0m
+[0;32mI (1508) OLED: Displaying large text at page 2 with seg_offset 4[0m
+[0;32mI (1618) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (1618) pp: pp rom version: e7ae62f[0m
+[0;32mI (1618) net80211: net80211 rom version: e7ae62f[0m
+I (1628) wifi:wifi driver task: 3fcadcfc, prio:23, stack:6656, core=0
+I (1638) wifi:wifi firmware version: 0caa81945
+I (1638) wifi:wifi certification version: v7.0
+I (1638) wifi:config NVS flash: enabled
+I (1638) wifi:config nano formating: disabled
+I (1638) wifi:Init data frame dynamic rx buffer num: 32
+I (1648) wifi:Init static rx mgmt buffer num: 5
+I (1648) wifi:Init management short buffer num: 32
+I (1658) wifi:Init dynamic tx buffer num: 32
+I (1658) wifi:Init static tx FG buffer num: 2
+I (1668) wifi:Init static rx buffer size: 1600
+I (1668) wifi:Init static rx buffer num: 10
+I (1668) wifi:Init dynamic rx buffer num: 32
+[0;32mI (1678) wifi_init: rx ba win: 6[0m
+[0;32mI (1678) wifi_init: accept mbox: 6[0m
+[0;32mI (1688) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1688) wifi_init: udp mbox: 6[0m
+[0;32mI (1688) wifi_init: tcp mbox: 6[0m
+[0;32mI (1698) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1698) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1708) wifi_init: tcp mss: 1440[0m
+[0;32mI (1708) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1708) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1718) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+I (1758) wifi:mode : sta (34:85:18:75:f3:0c)
+I (1768) wifi:enable tsf
+[0;32mI (1768) WiFi: Wi-Fi initialization done.[0m
+I (1788) wifi:new:<9,0>, old:<1,0>, ap:<255,255>, sta:<9,0>, prof:1, snd_ch_cfg:0x0
+I (1788) wifi:state: init -> auth (0xb0)
+I (1788) wifi:state: auth -> assoc (0x0)
+I (1788) wifi:Association refused temporarily, comeback time 981 (TUs)
+I (2798) wifi:state: assoc -> assoc (0x0)
+I (2808) wifi:Association refused temporarily, comeback time 981 (TUs)
+I (3808) wifi:state: assoc -> assoc (0x0)
+I (3808) wifi:state: assoc -> init (0x6c0)
+I (3818) wifi:new:<9,0>, old:<9,0>, ap:<255,255>, sta:<9,0>, prof:1, snd_ch_cfg:0x0
+[0;32mI (3818) WiFi: Retrying to connect to the Wi-Fi[0m
+[0;32mI (3818) WiFi: Connect to the AP failed[0m
+[0;32mI (6228) WiFi: Retrying to connect to the Wi-Fi[0m
+[0;32mI (6228) WiFi: Connect to the AP failed[0m
+I (6228) wifi:new:<9,0>, old:<9,0>, ap:<255,255>, sta:<9,0>, prof:1, snd_ch_cfg:0x0
+I (6228) wifi:state: init -> auth (0xb0)
+I (6238) wifi:state: auth -> assoc (0x0)
+I (6238) wifi:state: assoc -> run (0x10)
+I (6278) wifi:connected with NeverNude, aid = 24, channel 9, BW20, bssid = 04:d9:f5:9b:25:20
+I (6278) wifi:security: WPA2-PSK, phy: bgn, rssi: -54
+I (6278) wifi:pm start, type: 1
+
+I (6278) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (6288) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000
+I (6518) wifi:AP's beacon interval = 102400 us, DTIM period = 3
+[0;32mI (7298) esp_netif_handlers: sta ip: 192.168.50.171, mask: 255.255.255.0, gw: 192.168.50.1[0m
+[0;32mI (7298) WiFi: Got IP: 192.168.50.171[0m
+[0;32mI (7298) WiFi: Connected to Wi-Fi[0m
+[0;32mI (7348) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7348) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7358) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7368) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7378) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7388) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7398) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7408) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7418) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7428) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7438) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Int

@@ -3,7 +3,13 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/home/jin/.platformio/packages/framework-espidf@3.40407.240606/components/freertos/include",
+                "/home/jin/.platformio/packages/framework-espidf@3.40407.240606/components/esp_wifi/include",
+                "/home/jin/.platformio/packages/framework-espidf@3.40407.240606/components/esp_common/include",
+                "${workspaceFolder}/**",
+                "/home/jin/esp/esp-idf/components",
+                "home/jin/esp/esp-idf/components/esp_wifi/"
             ],
             "defines": [],
             "cStandard": "c17",
