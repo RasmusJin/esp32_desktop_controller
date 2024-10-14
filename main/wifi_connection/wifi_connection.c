@@ -4,13 +4,14 @@
 #include "nvs_flash.h"
 #include "ssd1306.h"
 #include <string.h>
+#include "time.h"
+#include "esp_sntp.h"
 
 // Define a tag for logging
 static const char *TAG = "WiFi";
 
 // FreeRTOS event group to signal when Wi-Fi is connected
 static EventGroupHandle_t s_wifi_event_group;
-
 static int s_retry_num = 0;
 #define MAXIMUM_RETRY 5
 
@@ -115,5 +116,51 @@ bool wifi_poll_status(SSD1306_t *dev) {
         ssd1306_display_text(dev, 7, "No WiFi", 7, false);
         ssd1306_show_buffer(dev);  // Refresh the OLED display
         return false;
+    }
+}
+
+void initialize_sntp(void) {
+    sntp_setoperatingmode(SNTP_OPMODE_POLL);
+    sntp_setservername(0, "pool.ntp.org");  // Use a reliable NTP server
+    sntp_init();
+}
+
+void obtain_time(void) {
+    time_t now;
+    struct tm timeinfo;
+    int retry = 0;
+    const int retry_count = 10;
+
+    initialize_sntp();
+
+    // Set timezone for Copenhagen (CET/CEST)
+    setenv("TZ", "CET-1CEST,M3.5.0/2,M10.5.0/3", 1);
+    tzset();
+
+    while (timeinfo.tm_year < (2020 - 1900) && ++retry < retry_count) {
+        ESP_LOGI(TAG, "Waiting for system time to be set... (%d/%d)", retry, retry_count);
+        vTaskDelay(2000 / portTICK_PERIOD_MS);
+        time(&now);
+        localtime_r(&now, &timeinfo);
+    }
+
+    if (retry == retry_count) {
+        ESP_LOGE(TAG, "Failed to get NTP time");
+    } else {
+        ESP_LOGI(TAG, "Time synchronized");
+    }
+}
+void initialize_ntp_and_time(void) {
+    obtain_time();  // Sync time from NTP
+    time_t now;
+    struct tm timeinfo;
+
+    time(&now);
+    localtime_r(&now, &timeinfo);
+
+    if (timeinfo.tm_year < (2020 - 1900)) {
+        ESP_LOGE(TAG, "Time not set properly");
+    } else {
+        ESP_LOGI(TAG, "Time synchronized");
     }
 }

@@ -2,6 +2,7 @@
 #define KEYSWITCHES_H
 
 #include "driver/gpio.h"
+#include "ssd1306.h"
 // Single row switches
 #define KEY_GPIO1 GPIO_NUM_18  // Leftmost switch in single row
 #define KEY_GPIO2 GPIO_NUM_17
@@ -36,6 +37,6 @@ void poll_switch_matrix(void);
 void setup_switch_matrix(void);
 bool debounce(uint32_t current_time, int gpio_pin, uint32_t *last_press_time);
 void setup_rotary_encoders(void);
-void poll_rotary_encoders(void);
-
+void poll_rotary_encoders(SSD1306_t *dev);
+void poll_rotary_encoders_task(void *pvParameter);
 #endif // KEYSWITCHES_H

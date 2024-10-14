@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "desktop_controller",
-    "project_version":    "a5eb912-dirty",
+    "project_version":    "db05764-dirty",
     "project_path":       "/home/jin/workspaces/esp32workspace/desktop_controller",
     "idf_path":           "/home/jin/esp/esp-idf",
     "build_dir":          "/home/jin/workspaces/esp32workspace/desktop_controller/build",
@@ -1191,11 +1191,11 @@
             "type": "LIBRARY",
             "lib": "__idf_main",
             "reqs": [],
-            "priv_reqs": [ "driver", "ssd1306", "esp_adc", "iot_iconset", "esp_wifi", "esp_event", "freertos", "nvs_flash" ],
+            "priv_reqs": [ "driver", "ssd1306", "esp_adc", "iot_iconset", "esp_wifi", "esp_event", "freertos", "nvs_flash", "esp_http_client" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/home/jin/workspaces/esp32workspace/desktop_controller/build/esp-idf/main/libmain.a",
-            "sources": [ "/home/jin/workspaces/esp32workspace/desktop_controller/main/desktop_controller.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/fan_control/fan_control.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/keyswitches/keyswitches.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c" ],
+            "sources": [ "/home/jin/workspaces/esp32workspace/desktop_controller/main/desktop_controller.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/fan_control/fan_control.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/keyswitches/keyswitches.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/http/http_client_server.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {
@@ -2833,7 +2833,7 @@
             "dir": "/home/jin/workspaces/esp32workspace/desktop_controller/main",
             "lib": "__idf_main",
             "reqs": [],
-            "priv_reqs": [ "driver", "ssd1306", "esp_adc", "iot_iconset", "esp_wifi", "esp_event", "freertos", "nvs_flash" ],
+            "priv_reqs": [ "driver", "ssd1306", "esp_adc", "iot_iconset", "esp_wifi", "esp_event", "freertos", "nvs_flash", "esp_http_client" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "." ]

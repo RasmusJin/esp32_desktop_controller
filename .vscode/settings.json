@@ -11,6 +11,9 @@
         "keyswitches.h": "c",
         "gpio.h": "c",
         "freertos.h": "c",
-        "oled_screen.h": "c"
+        "oled_screen.h": "c",
+        "esp_netif.h": "c",
+        "wifi_connection.h": "c",
+        "http_client_server.h": "c"
     }
 }

@@ -17,4 +17,7 @@
 void wifi_init_sta(void);
 void wifi_connect(void);
 bool wifi_poll_status(SSD1306_t *dev);
+void obtain_time(void);
+void initialize_sntp(void);
+void initialize_ntp_and_time(void);
 #endif // WIFI_CONNECTION_H

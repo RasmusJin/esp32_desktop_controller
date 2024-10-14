@@ -7,11 +7,8 @@
 #include "esp_log.h"
 #include "driver/i2c.h"
 #include "ssd1306.h"
-
 void app_main(void)
 {
-    
-
     SSD1306_t dev;
     
     oled_init(&dev);
@@ -27,6 +24,10 @@ void app_main(void)
     //display_wifi_icon(&dev);           // Display the WiFi icon on page 1
     wifi_init_sta();
     bool connected = wifi_poll_status(&dev);
+    initialize_ntp_and_time();
+    xTaskCreate(time_update_task, "time_update_task", 4096, (void *)&dev, 5, NULL);
+    xTaskCreate(poll_rotary_encoders_task, "rotary_encoder_task", 4096, (void *)&dev, 5, NULL);
+
     potentiometer_init();
     fan_pwm_init();
     setup_switch_single_row();
@@ -34,7 +35,7 @@ void app_main(void)
         update_fan_speed();
         poll_single_row();
         poll_switch_matrix();
-        poll_rotary_encoders();
+        poll_rotary_encoders(&dev);
         vTaskDelay(10 / portTICK_PERIOD_MS);
     }
 }

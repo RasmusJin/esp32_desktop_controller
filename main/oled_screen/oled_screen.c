@@ -7,10 +7,78 @@
 #include <string.h>
 #include "bitmap_numbers/bitmap_numbers.h"
 #include "iot_iconset_16x16.h"
-
+#include "time.h"
+#include "wifi_connection/wifi_connection.h"
+#include "string.h"
 // Log tag
 static const char *TAG = "OLED";
 
+#define DISPLAY_QUEUE_LENGTH 10
+
+
+
+QueueHandle_t display_queue;
+
+// Function declarations
+static void display_task(void *pvParameter);
+void oled_init(SSD1306_t *dev);
+
+// Initialize OLED and create display task and queue
+void oled_init(SSD1306_t *dev) {
+    // Initialize the OLED screen
+    dev->_address = OLED_I2C_ADDRESS;
+    dev->_width = 128;
+    dev->_height = 64;
+    dev->_pages = dev->_height / 8;
+    dev->_i2c_num = I2C_NUM_0;
+
+    i2c_master_init_custom(dev, I2C_MASTER_SDA_IO, I2C_MASTER_SCL_IO, RESET_PIN);
+    ssd1306_init(dev, dev->_width, dev->_height);
+
+    ESP_LOGI("OLED", "OLED initialized successfully");
+
+    // Create the display queue
+    display_queue = xQueueCreate(DISPLAY_QUEUE_LENGTH, sizeof(display_event_t));
+
+    // Create the display task
+    xTaskCreate(display_task, "display_task", 4096, (void *)dev, 5, NULL);
+}
+
+// Send an event to the display queue
+bool oled_send_display_event(display_event_t *event) {
+    if (display_queue != NULL) {
+        return xQueueSend(display_queue, event, portMAX_DELAY) == pdTRUE;
+    }
+    return false;
+}
+
+// Task responsible for handling display updates
+static void display_task(void *pvParameter) {
+    SSD1306_t *dev = (SSD1306_t *)pvParameter;
+    display_event_t event;
+
+    while (1) {
+        // Wait for a message in the display queue
+        if (xQueueReceive(display_queue, &event, portMAX_DELAY) == pdTRUE) {
+            // Clear the screen before updating
+            ssd1306_clear_screen(dev, false);
+
+            // Handle the different types of display events
+            switch (event.event_type) {
+                case DISPLAY_UPDATE_CLOCK:
+                    // Display clock (event.display_text contains the time "HH:MM")
+                    display_time_x3(dev, event.display_text);
+                    break;
+
+                case DISPLAY_UPDATE_LIGHT_STATUS:
+                    // Display light status (event.display_text contains light info and brightness)
+                    ssd1306_display_text(dev, 0, event.display_text, strlen(event.display_text), false);
+                    break;
+            }
+            ssd1306_show_buffer(dev);  // Refresh the OLED display
+        }
+    }
+}
 // Initialize I2C
 void i2c_master_init_custom(SSD1306_t *dev, int16_t sda, int16_t scl, int16_t reset) {
     i2c_config_t i2c_config = {
@@ -34,20 +102,6 @@ void i2c_master_init_custom(SSD1306_t *dev, int16_t sda, int16_t scl, int16_t re
     ESP_LOGI(TAG, "I2C initialized successfully");
 }
 
-
-// Initialize OLED
-void oled_init(SSD1306_t *dev) {
-    dev->_address = OLED_I2C_ADDRESS;
-    dev->_width = 128;  // Width of the OLED display
-    dev->_height = 64;  // Height of the OLED display
-    dev->_pages = dev->_height / 8;  // 8 pixels per page
-    dev->_i2c_num = I2C_NUM_0;  // Use I2C port 0
-
-    // Initialize I2C with a reset pin if applicable
-    i2c_master_init(dev, I2C_MASTER_SDA_IO, I2C_MASTER_SCL_IO, RESET_PIN);  
-    ssd1306_init(dev, dev->_width, dev->_height);
-    ESP_LOGI(TAG, "OLED initialized successfully");
-}
 
 // Display text on OLED
 void oled_display_text(SSD1306_t *dev, int page, const char *text, bool invert) {
@@ -103,6 +157,35 @@ void display_wifi_icon(SSD1306_t *dev) {
     // Refresh the display to show the icon
     ssd1306_show_buffer(dev);
 }
+
+void time_update_task(void *pvParameter) {
+    display_event_t event;
+    event.event_type = DISPLAY_UPDATE_CLOCK;
+
+    while (1) {
+        time_t now;
+        struct tm timeinfo;
+        char time_str[6];  // Buffer for time string (HH:MM)
+
+        // Get the current time
+        time(&now);
+        localtime_r(&now, &timeinfo);
+
+        // Format time as "HH:MM"
+        strftime(time_str, sizeof(time_str), "%H:%M", &timeinfo);
+
+        // Send the event to update the clock display
+        snprintf(event.display_text, sizeof(event.display_text), "%s", time_str);
+        oled_send_display_event(&event);
+
+        // Wait for 1 minute before updating again
+        vTaskDelay(pdMS_TO_TICKS(60000));
+    }
+}
+
+
+
+
 
 
 
