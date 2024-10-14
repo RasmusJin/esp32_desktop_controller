@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "desktop_controller",
-    "project_version":    "db05764-dirty",
+    "project_version":    "c8a260a-dirty",
     "project_path":       "/home/jin/workspaces/esp32workspace/desktop_controller",
     "idf_path":           "/home/jin/esp/esp-idf",
     "build_dir":          "/home/jin/workspaces/esp32workspace/desktop_controller/build",
@@ -1195,7 +1195,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/home/jin/workspaces/esp32workspace/desktop_controller/build/esp-idf/main/libmain.a",
-            "sources": [ "/home/jin/workspaces/esp32workspace/desktop_controller/main/desktop_controller.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/fan_control/fan_control.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/keyswitches/keyswitches.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/http/http_client_server.c" ],
+            "sources": [ "/home/jin/workspaces/esp32workspace/desktop_controller/main/desktop_controller.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/fan_control/fan_control.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/keyswitches/keyswitches.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/oled_screen/oled_screen.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/wifi_connection/wifi_connection.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/http/http_client_server.c", "/home/jin/workspaces/esp32workspace/desktop_controller/main/relay_driver/relay_driver.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {

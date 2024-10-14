@@ -124,17 +124,9 @@ void poll_rotary_encoders(SSD1306_t *dev) {
             hue_send_command("http://192.168.50.170/api/AicZqASmH6YLHxDyBxD-pci3vEmn0jLU0XvQ9g9N/groups/1/action", "{\"on\": true}");
             lights_on = true;
         }
-        ssd1306_clear_screen(dev, false);  // Clear the OLED screen
         snprintf(event.display_text, sizeof(event.display_text), "Lights: %s", lights_on ? "ON" : "OFF");
-        ssd1306_display_text(dev, 2, event.display_text, strlen(event.display_text), false);  // Display on Page 0 (Top)
-
-        // Display brightness below light status (Page 1)
-        snprintf(event.display_text, sizeof(event.display_text), "Brightness: %d", brightness_value);
-        ssd1306_display_text(dev, 3, event.display_text, strlen(event.display_text), false);  // Display on Page 1 (Below status)
-        snprintf(event.display_text, sizeof(event.display_text), "Relax"); // Placeholder for scene name
-
-        ssd1306_show_buffer(dev);  // Refresh the OLED display to show both updates
-        last_press_time_rot1_sw = current_time;
+        event.event_type = DISPLAY_UPDATE_LIGHT_STATUS;
+        oled_send_display_event(&event); 
         last_press_time_rot1_sw = current_time;
     }
     previous_rot1_sw = rot1_sw;
@@ -158,18 +150,10 @@ void poll_rotary_encoders(SSD1306_t *dev) {
                 ESP_LOGI(KEYTAG, "Rotary Encoder 1 turned Counterclockwise, decreasing brightness to %d", brightness_value);
             }
             // Send brightness command to the Hue lights
-            hue_set_group_brightness(brightness_value);
-            ssd1306_clear_screen(dev, false);  // Clear the OLED screen
-            // Update the brightness display on Page 1 (keeping the light status on Page 0)
             snprintf(event.display_text, sizeof(event.display_text), "Brightness: %d", brightness_value);
-            ssd1306_display_text(dev, 2, event.display_text, strlen(event.display_text), false); 
-            snprintf(event.display_text, sizeof(event.display_text),  "%d", brightness_value);
-            ssd1306_display_text(dev, 3, event.display_text, strlen(event.display_text), false);
-            snprintf(event.display_text, sizeof(event.display_text), "Relax");
-            ssd1306_display_text(dev, 4, event.display_text, strlen(event.display_text), false); 
-
-            ssd1306_show_buffer(dev); 
-        }
+            event.event_type = DISPLAY_UPDATE_LIGHT_STATUS;  // Reuse event type for brightness
+            oled_send_display_event(&event);  
+            }
     }
     previous_rot1_clk = rot1_clk;
 

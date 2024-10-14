@@ -164,3 +164,18 @@ void initialize_ntp_and_time(void) {
         ESP_LOGI(TAG, "Time synchronized");
     }
 }
+
+char *get_current_time_str(void) {
+    static char time_str[6];  // Buffer for "HH:MM"
+    time_t now;
+    struct tm timeinfo;
+
+    // Get the current time from the system clock (already synchronized with NTP)
+    time(&now);
+    localtime_r(&now, &timeinfo);
+
+    // Format time as "HH:MM"
+    strftime(time_str, sizeof(time_str), "%H:%M", &timeinfo);
+
+    return time_str;
+}

@@ -20,4 +20,5 @@ bool wifi_poll_status(SSD1306_t *dev);
 void obtain_time(void);
 void initialize_sntp(void);
 void initialize_ntp_and_time(void);
+char *get_current_time_str(void);
 #endif // WIFI_CONNECTION_H
