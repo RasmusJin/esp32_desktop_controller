@@ -3,8 +3,15 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_log.h"
+#include "http/http_client_server.h"
+#include "ssd1306.h"
+#include "oled_screen/oled_screen.h"
+#include "wifi_connection/wifi_connection.h"
 
 static const char *KEYTAG = "KEYSWITCHES";
+bool lights_on = false;
+int brightness_value = 255;  // Start at max brightnessconst 
+int brightness_step = 25;
 
 #define DEBOUNCE_DELAY_MS 150  // Debounce delay of 150 ms
 
@@ -89,11 +96,18 @@ void setup_rotary_encoders(void) {
     gpio_config(&io_conf2);
 }
 
-
-void poll_rotary_encoders(void) {
+void poll_rotary_encoders_task(void *pvParameter) {
+    SSD1306_t *dev = (SSD1306_t *)pvParameter;
+    while (1) {
+        poll_rotary_encoders(dev);  // Call the rotary encoder polling function
+        vTaskDelay(10 / portTICK_PERIOD_MS);  // Small delay to prevent CPU overload
+    }
+}
+void poll_rotary_encoders(SSD1306_t *dev) {
     uint32_t current_time = xTaskGetTickCount() * portTICK_PERIOD_MS;
-
-    // Poll Rotary Encoder 1 (Volume Control)
+    display_event_t event;
+    event.event_type = DISPLAY_UPDATE_LIGHT_STATUS;
+    // Poll Rotary Encoder 1 (Brightness Control)
     int rot1_clk = gpio_get_level(ROT1_CLK);
     int rot1_dt = gpio_get_level(ROT1_DT);
     int rot1_sw = gpio_get_level(ROT1_SW);
@@ -101,27 +115,49 @@ void poll_rotary_encoders(void) {
     // Button Press Detection with Debouncing for Encoder 1
     if (rot1_sw == 0 && previous_rot1_sw == 1 && (current_time - last_press_time_rot1_sw) > DEBOUNCE_DELAY_MS) {
         ESP_LOGI(KEYTAG, "Rotary Encoder 1 Button Pressed!");
-        last_press_time_rot1_sw = current_time;  // Update last press time
+        if (lights_on) {
+            // Send a command to turn off the lights
+            hue_send_command("http://192.168.50.170/api/AicZqASmH6YLHxDyBxD-pci3vEmn0jLU0XvQ9g9N/groups/1/action", "{\"on\": false}");
+            lights_on = false;
+        } else {
+            // Send a command to turn on the lights
+            hue_send_command("http://192.168.50.170/api/AicZqASmH6YLHxDyBxD-pci3vEmn0jLU0XvQ9g9N/groups/1/action", "{\"on\": true}");
+            lights_on = true;
+        }
+        snprintf(event.display_text, sizeof(event.display_text), "Lights: %s", lights_on ? "ON" : "OFF");
+        event.event_type = DISPLAY_UPDATE_LIGHT_STATUS;
+        oled_send_display_event(&event); 
+        last_press_time_rot1_sw = current_time;
     }
     previous_rot1_sw = rot1_sw;
 
     // Rotary Encoder 1 Turning Logic (Edge Detection)
-    if (rot1_clk != previous_rot1_clk) {
-        ESP_LOGI(KEYTAG, "Rotary Encoder 1 - CLK changed: Current CLK: %d, DT: %d", rot1_clk, rot1_dt);
-        if (rot1_clk == 1) {
-            if (rot1_dt == 0) {
-                encoder1_value++;  // Clockwise
-                ESP_LOGI(KEYTAG, "Rotary Encoder 1 turned Clockwise");
+    if (rot1_clk != previous_rot1_clk) {  // Only act when CLK changes state
+        if (rot1_clk == 0) {  // Detect the falling edge of CLK
+            if (rot1_dt == 1) {
+                // Clockwise, increase brightness
+                brightness_value = brightness_value + 25;
+                if (brightness_value > 255) {
+                brightness_value = 255;
+                }
+                ESP_LOGI(KEYTAG, "Rotary Encoder 1 turned Clockwise, increasing brightness to %d", brightness_value);
             } else {
-                encoder1_value--;  // Counterclockwise
-                ESP_LOGI(KEYTAG, "Rotary Encoder 1 turned Counterclockwise");
+                // Counterclockwise, decrease brightness
+                brightness_value = brightness_value - 25;
+                if (brightness_value < 0) {
+                brightness_value = 0;
+                }
+                ESP_LOGI(KEYTAG, "Rotary Encoder 1 turned Counterclockwise, decreasing brightness to %d", brightness_value);
             }
-            ESP_LOGI(KEYTAG, "Rotary Encoder 1 Value: %ld", (long)encoder1_value);
-        }
+            // Send brightness command to the Hue lights
+            snprintf(event.display_text, sizeof(event.display_text), "Brightness: %d", brightness_value);
+            event.event_type = DISPLAY_UPDATE_LIGHT_STATUS;  // Reuse event type for brightness
+            oled_send_display_event(&event);  
+            }
     }
     previous_rot1_clk = rot1_clk;
 
-    // Poll Rotary Encoder 2 (Hue Light Control)
+    // Poll Rotary Encoder 2 (for hue lights or other actions)
     int rot2_clk = gpio_get_level(ROT2_CLK);
     int rot2_dt = gpio_get_level(ROT2_DT);
     int rot2_sw = gpio_get_level(ROT2_SW);
@@ -133,11 +169,10 @@ void poll_rotary_encoders(void) {
     }
     previous_rot2_sw = rot2_sw;
 
-    // Rotary Encoder 2 Turning Logic (Edge Detection)
+    // Rotary Encoder 2 Turning Logic (similar to Rotary 1)
     if (rot2_clk != previous_rot2_clk) {
-        ESP_LOGI(KEYTAG, "Rotary Encoder 2 - CLK changed: Current CLK: %d, DT: %d", rot2_clk, rot2_dt);
-        if (rot2_clk == 1) {
-            if (rot2_dt == 0) {
+        if (rot2_clk == 0) {  // Detect the falling edge of CLK
+            if (rot2_dt == 1) {
                 encoder2_value++;  // Clockwise
                 ESP_LOGI(KEYTAG, "Rotary Encoder 2 turned Clockwise");
             } else {
@@ -148,6 +183,7 @@ void poll_rotary_encoders(void) {
         }
     }
     previous_rot2_clk = rot2_clk;
+
     // Small delay to prevent excessive CPU usage
     vTaskDelay(10 / portTICK_PERIOD_MS);
 }
@@ -184,7 +220,8 @@ void poll_switch_matrix(void) {
         ESP_LOGI(KEYTAG, "Row 1, Column 1 pressed!");
     }
     if (debounce(current_time, COL2_PIN, &last_press_time_matrix[0][1])) {
-        ESP_LOGI(KEYTAG, "Row 1, Column 2 pressed!");
+        ESP_LOGI("BUTTON", "Up command triggered");
+        skylight_command_up();
     }
     if (debounce(current_time, COL3_PIN, &last_press_time_matrix[0][2])) {
         ESP_LOGI(KEYTAG, "Row 1, Column 3 pressed!");
@@ -200,6 +237,8 @@ void poll_switch_matrix(void) {
     }
     if (debounce(current_time, COL2_PIN, &last_press_time_matrix[1][1])) {
         ESP_LOGI(KEYTAG, "Row 2, Column 2 pressed!");
+        ESP_LOGI("BUTTON", "Down command triggered");
+        skylight_command_down();
     }
     if (debounce(current_time, COL3_PIN, &last_press_time_matrix[1][2])) {
         ESP_LOGI(KEYTAG, "Row 2, Column 3 pressed!");
