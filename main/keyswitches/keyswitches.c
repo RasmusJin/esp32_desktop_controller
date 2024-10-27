@@ -6,7 +6,8 @@
 #include "http/http_client_server.h"
 #include "ssd1306.h"
 #include "oled_screen/oled_screen.h"
-#include "wifi_connection/wifi_connection.h"
+#include "wifi_connection/wifi_connection.h" 
+#include "relay_driver/relay_driver.h"
 
 static const char *KEYTAG = "KEYSWITCHES";
 bool lights_on = false;
@@ -14,7 +15,18 @@ int brightness_value = 255;  // Start at max brightnessconst
 int brightness_step = 25;
 
 #define DEBOUNCE_DELAY_MS 150  // Debounce delay of 150 ms
+#define TAP_THRESHOLD_MS 500
+// Define desk movement states
+typedef enum {
+    DESK_IDLE,
+    DESK_MOVING_UP,
+    DESK_MOVING_DOWN
+} desk_state_t;
 
+desk_state_t desk_state = DESK_IDLE;
+bool button_up_pressed = false;
+bool button_down_pressed = false;
+uint32_t button_press_time = 0;
 // Rotary Encoder Variables
 // Rotary Encoder 1:
 int32_t encoder1_value = 0;
@@ -194,9 +206,12 @@ void poll_single_row(void) {
     // Poll each switch in the single row with debounce logic
     if (debounce(current_time, KEY_GPIO1, &last_press_time_single_row[0])) {
         ESP_LOGI(KEYTAG, "Switch 1 pressed!");
+        switch_pc();
+
     }
     if (debounce(current_time, KEY_GPIO2, &last_press_time_single_row[1])) {
         ESP_LOGI(KEYTAG, "Switch 2 pressed!");
+
     }
     if (debounce(current_time, KEY_GPIO3, &last_press_time_single_row[2])) {
         ESP_LOGI(KEYTAG, "Switch 3 pressed!");
@@ -211,14 +226,28 @@ void poll_single_row(void) {
 
 void poll_switch_matrix(void) {
     uint32_t current_time = xTaskGetTickCount() * portTICK_PERIOD_MS;
-
+    static uint32_t up_press_time = 0;
+    static uint32_t down_press_time = 0;
+    static bool up_button_pressed = false;
+    static bool down_button_pressed = false;
     // Poll Row 1
     gpio_set_level(ROW1_PIN, 1);
     vTaskDelay(1 / portTICK_PERIOD_MS);  // Allow signal stabilization
 
-    if (debounce(current_time, COL1_PIN, &last_press_time_matrix[0][0])) {
-        ESP_LOGI(KEYTAG, "Row 1, Column 1 pressed!");
+    
+    if (gpio_get_level(COL1_PIN) == 0) {  // Assuming active-low button
+        if (!up_button_pressed) {         // Button just pressed
+            up_button_pressed = true;
+            start_moving_desk(DESK_MOVE_UP);
+        }
+        uint32_t distance_cm = measure_distance();
+        ESP_LOGI("ULTRASONIC", "Moving up - Distance: %lu cm", distance_cm);
+
+    } else if (up_button_pressed) {       // Button released
+        stop_moving_desk();
+        up_button_pressed = false;
     }
+    
     if (debounce(current_time, COL2_PIN, &last_press_time_matrix[0][1])) {
         ESP_LOGI("BUTTON", "Up command triggered");
         skylight_command_up();
@@ -232,9 +261,19 @@ void poll_switch_matrix(void) {
     gpio_set_level(ROW2_PIN, 1);
     vTaskDelay(1 / portTICK_PERIOD_MS);  // Allow signal stabilization
 
-    if (debounce(current_time, COL1_PIN, &last_press_time_matrix[1][0])) {
-        ESP_LOGI(KEYTAG, "Row 2, Column 1 pressed!");
+    if (gpio_get_level(COL1_PIN) == 0) {  //  active-low button
+        if (!down_button_pressed) {       // Button just pressed
+            down_button_pressed = true;
+            start_moving_desk(DESK_MOVE_DOWN);
+        }
+        uint32_t distance_cm = measure_distance();
+        ESP_LOGI("ULTRASONIC", "Moving down - Distance: %lu cm", distance_cm);
+
+    } else if (down_button_pressed) {     // Button released
+        stop_moving_desk();
+        down_button_pressed = false;
     }
+    gpio_set_level(ROW2_PIN, 0);
     if (debounce(current_time, COL2_PIN, &last_press_time_matrix[1][1])) {
         ESP_LOGI(KEYTAG, "Row 2, Column 2 pressed!");
         ESP_LOGI("BUTTON", "Down command triggered");

@@ -1,0 +1,506 @@
+[0;32mI (130) esp_image: segment 1: paddr=000399a0 vaddr=3fc9b4ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x2e (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40056f6f
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x178c
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xcb8
+load:0x403cb700,len:0x2db0
+entry 0x403c8914
+[0;32mI (26) boot: ESP-IDF v5.3 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Oct 26 2024 23:45:11[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.1[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (71) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (79) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (86) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=29978h (170360) map[0m
+[0;32mI (130) esp_image: segment 1: paddr=000399a0 vaddr=3fc9b400 size=04e5ch ( 20060) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=0003e804 vaddr=40374000 size=01814h (  6164) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=a7674h (685684) map[0m
+[0;32mI (267) esp_image: segment 4: paddr=000e769c vaddr=40375814 size=15b04h ( 88836) load[0m
+[0;32mI (287) esp_image: segment 5: paddr=000fd1a8 vaddr=600fe100 size=00004h (     4) load[0m
+[0;32mI (297) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (297) boot: Disabling RNG early entropy source...[0m
+[0;32mI (308) cpu_start: Multicore app[0m
+[0;32mI (318) cpu_start: Pro cpu start user code[0m
+[0;32mI (318) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (318) app_init: Application information:[0m
+[0;32mI (321) app_init: Project name:     desktop_controller[0m
+[0;32mI (327) app_init: App version:      4b79b8a-dirty[0m
+[0;32mI (332) app_init: Compile time:     Oct 26 2024 23:45:08[0m
+[0;32mI (338) app_init: ELF file SHA256:  6d9cbeba7...[0m
+[0;32mI (343) app_init: ESP-IDF:          v5.3[0m
+[0;32mI (348) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (353) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (358) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (362) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (370) heap_init: At 3FCA4668 len 000450A8 (276 KiB): RAM[0m
+[0;32mI (376) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (382) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (388) heap_init: At 600FE104 len 00001EE4 (7 KiB): RTCRAM[0m
+[0;32mI (395) spi_flash: detected chip: gd[0m
+[0;32mI (399) spi_flash: flash io: dio[0m
+[0;33mW (402) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (416) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (427) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (433) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (441) main_task: Started on CPU0[0m
+[0;32mI (451) main_task: Calling app_main()[0m
+[0;32mI (451) OLED: I2C initialized successfully[0m
+[0;32mI (451) SSD1306: OLED configured successfully[0m
+[0;32mI (461) OLED: OLED initialized successfully[0m
+[0;32mI (1561) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (1561) pp: pp rom version: e7ae62f[0m
+[0;32mI (1561) net80211: net80211 rom version: e7ae62f[0m
+I (1571) wifi:wifi driver task: 3fcb07d0, prio:23, stack:6656, core=0
+I (1581) wifi:wifi firmware version: 0caa81945
+I (1581) wifi:wifi certification version: v7.0
+I (1581) wifi:config NVS flash: enabled
+I (1581) wifi:config nano formating: disabled
+I (1581) wifi:Init data frame dynamic rx buffer num: 32
+I (1591) wifi:Init static rx mgmt buffer num: 5
+I (1591) wifi:Init management short buffer num: 32
+I (1601) wifi:Init dynamic tx buffer num: 32
+I (1601) wifi:Init static tx FG buffer num: 2
+I (1611) wifi:Init static rx buffer size: 1600
+I (1611) wifi:Init static rx buffer num: 10
+I (1611) wifi:Init dynamic rx buffer num: 32
+[0;32mI (1621) wifi_init: rx ba win: 6[0m
+[0;32mI (1621) wifi_init: accept mbox: 6[0m
+[0;32mI (1621) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1631) wifi_init: udp mbox: 6[0m
+[0;32mI (1631) wifi_init: tcp mbox: 6[0m
+[0;32mI (1641) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1641) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1651) wifi_init: tcp mss: 1440[0m
+[0;32mI (1651) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1651) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1661) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+I (1701) wifi:mode : sta (34:85:18:75:f3:0c)
+I (1701) wifi:enable tsf
+[0;32mI (1701) WiFi: Wi-Fi initialization done.[0m
+I (1711) wifi:new:<9,0>, old:<1,0>, ap:<255,255>, sta:<9,0>, prof:1, snd_ch_cfg:0x0
+I (1711) wifi:state: init -> auth (0xb0)
+I (1721) wifi:state: auth -> assoc (0x0)
+I (1721) wifi:Association refused temporarily, comeback time 981 (TUs)
+I (2731) wifi:state: assoc -> assoc (0x0)
+I (2731) wifi:Association refused temporarily, comeback time 981 (TUs)
+I (3741) wifi:state: assoc -> assoc (0x0)
+I (3741) wifi:state: assoc -> init (0x6c0)
+I (3741) wifi:new:<9,0>, old:<9,0>, ap:<255,255>, sta:<9,0>, prof:1, snd_ch_cfg:0x0
+[0;32mI (3751) WiFi: Retrying to connect to the Wi-Fi[0m
+[0;32mI (3751) WiFi: Connect to the AP failed[0m
+[0;32mI (6161) WiFi: Retrying to connect to the Wi-Fi[0m
+[0;32mI (6161) WiFi: Connect to the AP failed[0m
+I (6161) wifi:new:<9,0>, old:<9,0>, ap:<255,255>, sta:<9,0>, prof:1, snd_ch_cfg:0x0
+I (6161) wifi:state: init -> auth (0xb0)
+I (6171) wifi:state: auth -> assoc (0x0)
+I (6171) wifi:state: assoc -> run (0x10)
+I (6191) wifi:connected with NeverNude, aid = 33, channel 9, BW20, bssid = 04:d9:f5:9b:25:20
+I (6191) wifi:security: WPA2-PSK, phy: bgn, rssi: -56
+I (6201) wifi:pm start, type: 1
+
+I (6201) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (6211) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000
+I (6221) wifi:AP's beacon interval = 102400 us, DTIM period = 3
+I (6251) wifi:<ba-add>idx:0 (ifx:0, 04:d9:f5:9b:25:20), tid:6, ssn:1, winSize:64
+[0;32mI (7221) esp_netif_handlers: sta ip: 192.168.50.171, mask: 255.255.255.0, gw: 192.168.50.1[0m
+[0;32mI (7221) WiFi: Got IP: 192.168.50.171[0m
+[0;32mI (7221) WiFi: Connected to Wi-Fi[0m
+[0;32mI (7251) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (7251) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7251) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7261) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (7271) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (7321) gpio: GPIO[35]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7321) gpio: GPIO[45]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7321) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7331) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7341) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7351) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7361) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7371) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7381) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7391) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7401) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7411) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7421) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7431) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7441) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7441) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7451) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7461) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (11331) DESK: Moving DOWN[0m
+[0;33mW (11381) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (11381) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (11451) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (11451) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (11521) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (11521) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (11591) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (11591) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (11661) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (11661) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (11731) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (11731) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (11801) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (11801) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (11871) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (11871) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (11941) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (11941) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (12011) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (12011) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (12081) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (12081) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (12151) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (12151) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;32mI (12171) DESK: Stopped moving[0m
+[0;32mI (14811) DESK: Moving UP[0m
+[0;33mW (14861) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (14861) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (14931) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (14931) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (15001) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (15001) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (15071) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (15071) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (15141) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (15141) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (15211) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (15211) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (15281) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (15281) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (15351) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (15351) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (15421) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (15421) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (15491) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (15491) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (15561) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (15561) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (15631) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (15631) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (15701) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (15701) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (15771) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (15771) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (15841) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (15841) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (15911) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (15911) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (15981) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (15981) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (16051) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (16051) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (16121) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (16121) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (16191) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (16191) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (16261) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (16261) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (16331) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (16331) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (16401) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (16401) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (16471) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (16471) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;32mI (16491) DESK: Stopped moving[0m
+[0;32mI (18651) DESK: Moving DOWN[0m
+[0;33mW (18701) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (18701) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (18771) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (18771) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (18841) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (18841) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (18911) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (18911) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (18981) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (18981) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (19051) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (19051) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (19121) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (19121) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (19191) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (19191) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (19261) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (19261) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (19331) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (19331) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (19401) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (19401) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (19471) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (19471) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (19541) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (19541) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (19611) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (19611) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (19681) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (19681) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (19751) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (19751) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (19821) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (19821) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (19891) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (19891) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (19961) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (19961) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (20031) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (20031) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (20101) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (20101) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (20171) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (20171) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (20241) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (20241) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;32mI (20261) DESK: Stopped moving[0m
+[0;32mI (39081) DESK: Moving DOWN[0m
+[0;33mW (39131) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (39131) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (39201) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (39201) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (39271) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (39271) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (39341) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (39341) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (39411) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (39411) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (39481) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (39481) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (39551) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (39551) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (39621) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (39621) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (39691) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (39691) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (39761) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (39761) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (39831) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (39831) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (39901) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (39901) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (39971) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (39971) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (40041) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (40041) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;32mI (40061) DESK: Stopped moving[0m
+[0;32mI (41941) DESK: Moving UP[0m
+[0;33mW (41991) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (41991) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (42061) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (42061) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (42131) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (42131) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (42201) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (42201) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (42271) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (42271) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (42341) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (42341) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (42411) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (42411) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (42481) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (42481) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (42551) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (42551) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (42621) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (42621) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (42691) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (42691) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (42761) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (42761) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (42831) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (42831) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (42901) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (42901) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (42971) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (42971) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (43041) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (43041) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (43111) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (43111) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (43181) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (43181) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (43251) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (43251) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (43321) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (43321) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (43391) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (43391) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (43461) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (43461) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (43531) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (43531) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (43601) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (43601) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (43671) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (43671) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (43741) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (43741) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (43811) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (43811) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (43881) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (43881) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (43951) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (43951) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (44021) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (44021) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (44091) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (44091) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (44161) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (44161) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (44231) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (44231) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (44301) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (44301) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (44371) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (44371) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (44441) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (44441) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (44511) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (44511) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (44581) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (44581) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (44651) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (44651) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (44721) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (44721) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (44791) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (44791) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (44861) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (44861) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (44931) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (44931) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (45001) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (45001) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (45071) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (45071) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (45141) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (45141) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (45211) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (45211) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (45281) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (45281) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (45351) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (45351) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (45421) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (45421) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (45491) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (45491) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;32mI (45511) DESK: Stopped moving[0m
+[0;32mI (46611) DESK: Moving DOWN[0m
+[0;33mW (46661) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (46661) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (46731) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (46731) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (46801) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (46801) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (46871) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (46871) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (46941) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (46941) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (47011) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (47011) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (47081) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (47081) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (47151) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (47151) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (47221) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (47221) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (47291) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (47291) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (47361) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (47361) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (47431) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (47431) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (47501) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (47501) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (47571) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (47571) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (47641) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (47641) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (47711) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (47711) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (47781) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (47781) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (47851) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (47851) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (47921) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (47921) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (47991) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (47991) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (48061) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (48061) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (48131) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (48131) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (48201) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (48201) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (48271) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (48271) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (48341) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (48341) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (48411) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (48411) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (48481) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (48481) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (48551) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (48551) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (48621) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (48621) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (48691) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (48691) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (48761) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (48761) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (48831) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (48831) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (48901) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (48901) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (48971) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (48971) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (49041) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (49041) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (49111) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (49111) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (49181) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (49181) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (49251) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (49251) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (49321) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (49321) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (49391) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (49391) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (49461) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (49461) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (49531) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (49531) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;32mI (49551) DESK: Stopped moving[0m
+[0;32mI (300191) DESK: Moving DOWN[0m
+[0;33mW (300241) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (300241) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (300311) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (300311) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (300381) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (300381) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (300451) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (300451) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (300521) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (300521) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (300591) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (300591) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;32mI (300611) DESK: Stopped moving[0m
+[0;32mI (301431) DESK: Moving UP[0m
+[0;33mW (301481) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (301481) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (301551) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (301551) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (30162
