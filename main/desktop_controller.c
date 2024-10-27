@@ -7,6 +7,7 @@
 #include "esp_log.h"
 #include "driver/i2c.h"
 #include "ssd1306.h"
+#include "relay_driver/relay_driver.h"
 void app_main(void)
 {
     SSD1306_t dev;
@@ -22,6 +23,8 @@ void app_main(void)
     //oled_display_text(&dev, 0, "Hello, OLED!", false);
     //display_time_x3(&dev, "11:11");    // Display "Hello, OLED!" on page 0
     //display_wifi_icon(&dev);           // Display the WiFi icon on page 1
+    relay_driver_init();
+    init_ultrasonic_sensor();
     wifi_init_sta();
     bool connected = wifi_poll_status(&dev);
     //initialize_ntp_and_time();

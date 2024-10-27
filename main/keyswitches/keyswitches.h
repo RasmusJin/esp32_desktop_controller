@@ -29,7 +29,8 @@
 #define ROT2_SW GPIO_NUM_9
 // relay gpios
 
-
+#define RELAY_UP_PIN GPIO_NUM_40   // GPIO for "Up" relay
+#define RELAY_DOWN_PIN GPIO_NUM_37  // GPIO for "Down" relay
 
 void setup_switch_single_row(void);
 void poll_single_row(void);
