@@ -29,8 +29,10 @@ void app_main(void)
     // Test ultrasonic pins for debugging
     ESP_LOGI("MAIN", "Running ultrasonic pin test...");
     test_ultrasonic_pins();
-    // DISABLED FOR DEBUGGING - wifi_init_sta();
-    // DISABLED FOR DEBUGGING - bool connected = wifi_poll_status(&dev);
+
+    // Initialize WiFi with static IP
+    ESP_LOGI("MAIN", "Initializing WiFi...");
+    wifi_init_sta();
     //initialize_ntp_and_time();
     //xTaskCreate(time_update_task, "time_update_task", 4096, (void *)&dev, 5, NULL);
     //xTaskCreate(poll_rotary_encoders_task, "rotary_encoder_task", 4096, (void *)&dev, 5, NULL);
@@ -48,11 +50,22 @@ void app_main(void)
     // Uncomment next line to run sensor test (comment out after testing)
     // test_sensor_readings();
 
+    // WiFi monitoring counter
+    static uint32_t wifi_check_counter = 0;
+
     while(1){
         update_fan_speed();
         poll_single_row();        // PC switch and other single buttons
         poll_switch_matrix();     // Desk UP/DOWN buttons + skylight controls
         check_desk_safety_timeout();  // CRITICAL: Check for desk movement timeout
+
+        // Check WiFi connection every 10 seconds (200 * 50ms = 10s)
+        wifi_check_counter++;
+        if (wifi_check_counter >= 200) {
+            wifi_check_and_reconnect();
+            wifi_check_counter = 0;
+        }
+
         // DISABLED FOR DEBUGGING - poll_rotary_encoders(&dev);  // Keep disabled (needs display)
         vTaskDelay(50 / portTICK_PERIOD_MS);  // 50ms = 20Hz polling rate
     }

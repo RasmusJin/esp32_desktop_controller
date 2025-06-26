@@ -72,31 +72,41 @@ void update_fan_speed(void) {
 
     uint32_t raw_adc = potentiometer_read();  // Read the potentiometer value
 
-    // Aggressive filtering for max speed position
+    // Simple filtering - just use the raw value with light smoothing
     uint32_t adc_value;
 
-    // If we're at max speed position (ADC near 0), be very conservative about changes
-    if (last_adc <= 20 && raw_adc > 100) {
-        // Ignore sudden jumps from max speed position - likely noise
-        adc_value = last_adc;
-        // ESP_LOGW(TAG, "NOISE DETECTED: Ignoring jump from %d to %d", last_adc, raw_adc);
-    } else if (abs((int)raw_adc - (int)last_adc) > 50) {
-        // Big change - use new value immediately (responsive)
+    if (last_adc == 0) {
+        // First reading - use raw value directly
         adc_value = raw_adc;
     } else {
-        // Small change - light smoothing: 50% old, 50% new
-        adc_value = (last_adc + raw_adc) / 2;
+        // Light smoothing: 70% new, 30% old for responsiveness
+        adc_value = (raw_adc * 7 + last_adc * 3) / 10;
     }
     last_adc = adc_value;
 
     // Your actual potentiometer range (based on RAW ADC readings)
     const uint32_t max_adc_value = 760;  // Pot turned counterclockwise (use max observed)
 
-    // Fan control parameters - "best effort" approach with buffer zones
-    const uint32_t off_threshold = 735;   // Simple threshold
-    const uint32_t max_speed_zone = 10;   // Buffer zone at max speed (ADC 0-10 = max speed)
-    const uint32_t min_duty_cycle = 25;   // ~10% minimum when running (25/255 = 9.8%)
-    const uint32_t max_duty_cycle = 255;  // 100% maximum
+    // Stepped fan control - discrete speed levels for smooth operation
+    const uint32_t off_threshold = 720;   // OFF when ADC >= 720
+
+    // Define speed steps (ADC ranges and corresponding PWM duty cycles)
+    typedef struct {
+        uint32_t adc_min;
+        uint32_t adc_max;
+        uint32_t duty_cycle;
+        uint8_t speed_percent;
+    } fan_step_t;
+
+    const fan_step_t fan_steps[] = {
+        {0,   50,  255, 100},  // Step 1: Max speed
+        {51,  150, 200, 78},   // Step 2: High speed
+        {151, 300, 150, 59},   // Step 3: Medium-high speed
+        {301, 450, 100, 39},   // Step 4: Medium speed
+        {451, 600, 70,  27},   // Step 5: Low-medium speed
+        {601, 719, 40,  16},   // Step 6: Low speed
+    };
+    const uint32_t num_steps = sizeof(fan_steps) / sizeof(fan_step_t);
 
     uint32_t duty_cycle = 0;  // Initialize duty cycle
     uint8_t fan_speed_percentage = 0;  // Initialize fan speed percentage
@@ -105,52 +115,38 @@ void update_fan_speed(void) {
     log_counter++;
     bool should_log = (log_counter % 20 == 0);  // Log every 1 second (20Hz / 20 = 1Hz)
 
-    // if (should_log) {
-    //     ESP_LOGI(TAG, "ADC: %d (Raw: %d), off_count: %d, on_count: %d, threshold: %d", adc_value, raw_adc, off_count, on_count, off_threshold);
-    // }
+    if (should_log) {
+        ESP_LOGI(TAG, "ADC: %d (Raw: %d), Duty: %d, Threshold: %d", adc_value, raw_adc, duty_cycle, off_threshold);
+    }
 
     // Clamp ADC value to expected range
     if (adc_value > max_adc_value) adc_value = max_adc_value;
 
-    // Simple logic - always calculate and update PWM
+    // Stepped fan control logic
     if (adc_value >= off_threshold) {
-        off_count++;
-        on_count = 0;
-        if (off_count >= 3) {  // Need 3 consecutive readings to turn OFF
-            duty_cycle = 0;
-            fan_speed_percentage = 0;
-            // ESP_LOGW(TAG, "FANS TURNED OFF after %d readings!", off_count);
-        } else {
-            // Still in OFF zone but not confirmed - keep fans OFF during confirmation
-            duty_cycle = 0;
-            fan_speed_percentage = 0;
-            // ESP_LOGW(TAG, "OFF pending (%d/3), fans OFF", off_count);
-        }
+        // OFF zone
+        duty_cycle = 0;
+        fan_speed_percentage = 0;
+        // ESP_LOGW(TAG, "FANS OFF - ADC %d >= threshold %d", adc_value, off_threshold);
     } else {
-        // Normal operation - reset OFF counter
-        off_count = 0;
-        on_count++;
+        // Find the appropriate speed step
+        bool step_found = false;
+        for (uint32_t i = 0; i < num_steps; i++) {
+            if (adc_value >= fan_steps[i].adc_min && adc_value <= fan_steps[i].adc_max) {
+                duty_cycle = fan_steps[i].duty_cycle;
+                fan_speed_percentage = fan_steps[i].speed_percent;
+                step_found = true;
+                // if (should_log) {
+                //     ESP_LOGI(TAG, "Step %d: ADC %d -> %d%% (duty %d)", i+1, adc_value, fan_speed_percentage, duty_cycle);
+                // }
+                break;
+            }
+        }
 
-        // Check if we're in the max speed zone
-        if (adc_value <= max_speed_zone) {
-            // Max speed zone - always 100%
-            duty_cycle = max_duty_cycle;
-            fan_speed_percentage = 100;
-            // Max speed zone logging - uncomment for debugging fan issues
-            // if (should_log) {
-            //     ESP_LOGI(TAG, "MAX SPEED ZONE: ADC %d <= %d, Duty Cycle: %d",
-            //              adc_value, max_speed_zone, duty_cycle);
-            // }
-        } else {
-            // Normal speed control range
-            duty_cycle = min_duty_cycle + (((off_threshold - adc_value) * (max_duty_cycle - min_duty_cycle)) / off_threshold);
-            fan_speed_percentage = (duty_cycle * 100) / 255;
-
-            // Debug calculation logging - uncomment for debugging fan issues
-            // if (should_log) {
-            //     ESP_LOGI(TAG, "Calculation: (%d - %d) * (%d - %d) / %d = %d",
-            //              off_threshold, adc_value, max_duty_cycle, min_duty_cycle, off_threshold, duty_cycle);
-            // }
+        // Fallback if no step found (shouldn't happen)
+        if (!step_found) {
+            duty_cycle = 40;  // Default low speed
+            fan_speed_percentage = 16;
         }
     }
 
@@ -165,9 +161,9 @@ void update_fan_speed(void) {
     ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL);
 
     // PWM logging - uncomment for debugging fan issues
-    if (should_log) {
-        ESP_LOGI(TAG, "PWM SET: %d (%d%%)", duty_cycle, fan_speed_percentage);
-    }
+    // if (should_log) {
+    //     ESP_LOGI(TAG, "PWM SET: %d (%d%%)", duty_cycle, fan_speed_percentage);
+    // }
 
     // Later, you can display fan_speed_percentage on a display
 }

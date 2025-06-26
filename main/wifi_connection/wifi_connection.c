@@ -13,31 +13,61 @@ static const char *TAG = "WiFi";
 // FreeRTOS event group to signal when Wi-Fi is connected
 static EventGroupHandle_t s_wifi_event_group;
 static int s_retry_num = 0;
-#define MAXIMUM_RETRY 5
+#define MAXIMUM_RETRY 10  // Increased retry attempts
+static esp_netif_t *sta_netif = NULL;
 
 // Event handler for Wi-Fi events
 static void wifi_event_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data) {
     if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
+        ESP_LOGI(TAG, "WiFi started, connecting...");
         esp_wifi_connect();
     } else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
-        if (s_retry_num < MAXIMUM_RETRY) {
-            esp_wifi_connect();
-            s_retry_num++;
-            ESP_LOGI(TAG, "Retrying to connect to the Wi-Fi");
-        } else {
+        wifi_event_sta_disconnected_t* disconnected = (wifi_event_sta_disconnected_t*) event_data;
+        ESP_LOGW(TAG, "WiFi disconnected (reason: %d), retry %d/%d", disconnected->reason, s_retry_num + 1, MAXIMUM_RETRY);
+
+        // Always try to reconnect (no retry limit for continuous operation)
+        esp_wifi_connect();
+        s_retry_num++;
+
+        // Only set fail bit during initial connection attempts
+        if (s_retry_num >= MAXIMUM_RETRY && !(xEventGroupGetBits(s_wifi_event_group) & WIFI_CONNECTED_BIT)) {
+            ESP_LOGE(TAG, "Initial WiFi connection failed after %d attempts", MAXIMUM_RETRY);
             xEventGroupSetBits(s_wifi_event_group, WIFI_FAIL_BIT);
         }
-        ESP_LOGI(TAG, "Connect to the AP failed");
     } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
         ip_event_got_ip_t* event = (ip_event_got_ip_t*) event_data;
 
         char ip_str[16]; // Buffer to hold the IP address string
         esp_ip4addr_ntoa(&event->ip_info.ip, ip_str, sizeof(ip_str));
 
-        ESP_LOGI(TAG, "Got IP: %s", ip_str);
+        ESP_LOGI(TAG, "Connected! IP: %s", ip_str);
 
-        s_retry_num = 0;
+        s_retry_num = 0;  // Reset retry counter on successful connection
         xEventGroupSetBits(s_wifi_event_group, WIFI_CONNECTED_BIT);
+        xEventGroupClearBits(s_wifi_event_group, WIFI_FAIL_BIT);  // Clear fail bit
+    }
+}
+
+// Configure static IP
+static void configure_static_ip(void) {
+    ESP_LOGI(TAG, "Configuring static IP: %s", STATIC_IP_ADDR);
+
+    // Stop DHCP client
+    esp_netif_dhcpc_stop(sta_netif);
+
+    // Configure static IP
+    esp_netif_ip_info_t ip_info;
+    memset(&ip_info, 0, sizeof(esp_netif_ip_info_t));
+
+    ip_info.ip.addr = esp_ip4addr_aton(STATIC_IP_ADDR);
+    ip_info.gw.addr = esp_ip4addr_aton(GATEWAY_ADDR);
+    ip_info.netmask.addr = esp_ip4addr_aton(NETMASK_ADDR);
+
+    esp_err_t ret = esp_netif_set_ip_info(sta_netif, &ip_info);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to set static IP: %s", esp_err_to_name(ret));
+    } else {
+        ESP_LOGI(TAG, "Static IP configured successfully");
     }
 }
 
@@ -56,7 +86,7 @@ void wifi_init_sta(void) {
 
     esp_netif_init();
     esp_event_loop_create_default();
-    esp_netif_create_default_wifi_sta();
+    sta_netif = esp_netif_create_default_wifi_sta();
 
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
     esp_wifi_init(&cfg);
@@ -71,11 +101,23 @@ void wifi_init_sta(void) {
         .sta = {
             .ssid = WIFI_SSID,
             .password = WIFI_PASS,
+            .threshold.authmode = WIFI_AUTH_WPA2_PSK,  // Minimum security
+            .pmf_cfg = {
+                .capable = true,
+                .required = false
+            },
         },
     };
 
+    // Configure static IP before starting WiFi
+    configure_static_ip();
+
     esp_wifi_set_mode(WIFI_MODE_STA);
     esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_config);
+
+    // Disable power saving for better stability
+    esp_wifi_set_ps(WIFI_PS_NONE);
+
     esp_wifi_start();
 
     ESP_LOGI(TAG, "Wi-Fi initialization done.");
@@ -178,4 +220,16 @@ char *get_current_time_str(void) {
     strftime(time_str, sizeof(time_str), "%H:%M", &timeinfo);
 
     return time_str;
+}
+
+// Function to check WiFi connection and reconnect if needed
+void wifi_check_and_reconnect(void) {
+    wifi_ap_record_t ap_info;
+    esp_err_t status = esp_wifi_sta_get_ap_info(&ap_info);
+
+    if (status != ESP_OK) {
+        // Not connected, try to reconnect
+        ESP_LOGW(TAG, "WiFi not connected, attempting reconnection...");
+        esp_wifi_connect();
+    }
 }
