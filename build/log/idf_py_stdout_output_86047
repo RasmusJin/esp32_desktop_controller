@@ -1,0 +1,121 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Jun  2 2025 22:14:28[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: v1.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=2a368h (172904) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0003a390 vaddr=3fc9be00 size=04fe4h ( 20452) load[0m
+[0;32mI (123) esp_image: segment 2: paddr=0003f37c vaddr=40374000 size=00c9ch (  3228) load[0m
+[0;32mI (125) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=a7a80h (686720) map[0m
+[0;32mI (251) esp_image: segment 4: paddr=000e7aa8 vaddr=40374c9c size=170f8h ( 94456) load[0m
+[0;32mI (272) esp_image: segment 5: paddr=000feba8 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (282) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (282) boot: Disabling RNG early entropy source...[0m
+[0;32mI (292) cpu_start: Multicore app[0m
+[0;32mI (301) cpu_start: Pro cpu start user code[0m
+[0;32mI (301) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (301) app_init: Application information:[0m
+[0;32mI (304) app_init: Project name:     desktop_controller[0m
+[0;32mI (310) app_init: App version:      cf3ba94-dirty[0m
+[0;32mI (315) app_init: Compile time:     Jun 26 2025 10:22:47[0m
+[0;32mI (321) app_init: ELF file SHA256:  dceebcdf2...[0m
+[0;32mI (327) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (334) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (338) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (343) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (348) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (355) heap_init: At 3FCA5280 len 00044490 (273 KiB): RAM[0m
+[0;32mI (361) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (368) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (374) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (381) spi_flash: detected chip: gd[0m
+[0;32mI (384) spi_flash: flash io: dio[0m
+[0;33mW (388) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (402) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (412) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (419) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (427) main_task: Started on CPU0[0m
+[0;32mI (437) main_task: Calling app_main()[0m
+[0;32mI (437) OLED: I2C initialized successfully[0m
+[0;31mE (1437) SSD1306: OLED configuration failed. code: 0x107[0m
+[0;32mI (1437) OLED: OLED initialized successfully[0m
+[0;31mE (2437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (3437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (4437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (5437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (6437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (7437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (8437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (9437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (10437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (11437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (12437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (13437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (14437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (15437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (16437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (17437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (18437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (19437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (20437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (21437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (22437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (23437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (24437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (25437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (26437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (27437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (28437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (29437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (30437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (31437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (32437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (33437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (34437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (35437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (36437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (37437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (38437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (39437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (40437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (41437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (42437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (43437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (44437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (45437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (46437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (47437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (48437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (49437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (50437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (51437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (52437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (53437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (54437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (55437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (56437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (57437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (58437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (59437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (60437) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (61437) SSD1306: Image command failed. code: 0x107[

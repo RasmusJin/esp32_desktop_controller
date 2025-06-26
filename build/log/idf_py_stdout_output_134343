@@ -1,0 +1,1531 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Jun  2 2025 22:14:28[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: v1.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0c748h ( 51016) map[0m
+[0;32mI (97) esp_image: segment 1: paddr=0001c770 vaddr=3fc93000 size=02bc8h ( 11208) load[0m
+[0;32mI (100) esp_image: segment 2: paddr=0001f340 vaddr=40374000 size=00cd8h (  3288) load[0m
+[0;32mI (104) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1c39ch (115612) map[0m
+[0;32mI (131) esp_image: segment 4: paddr=0003c3c4 vaddr=40374cd8 size=0e264h ( 57956) load[0m
+[0;32mI (144) esp_image: segment 5: paddr=0004a630 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (151) boot: Disabling RNG early entropy source...[0m
+[0;32mI (162) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (171) app_init: Application information:[0m
+[0;32mI (174) app_init: Project name:     desktop_controller[0m
+[0;32mI (180) app_init: App version:      cf3ba94-dirty[0m
+[0;32mI (185) app_init: Compile time:     Jun 26 2025 10:22:47[0m
+[0;32mI (191) app_init: ELF file SHA256:  359fcc46a...[0m
+[0;32mI (196) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (203) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (208) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (213) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (218) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (225) heap_init: At 3FC96658 len 000530B8 (332 KiB): RAM[0m
+[0;32mI (231) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (237) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (244) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (251) spi_flash: detected chip: gd[0m
+[0;32mI (254) spi_flash: flash io: dio[0m
+[0;33mW (258) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (271) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (282) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (289) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (297) main_task: Started on CPU0[0m
+[0;32mI (307) main_task: Calling app_main()[0m
+[0;32mI (1307) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1307) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1307) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1317) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1327) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1327) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1387) gpio: GPIO[35]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1387) gpio: GPIO[45]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1387) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1397) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1407) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1417) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1427) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1437) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1447) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1457) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1467) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1477) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1487) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1497) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1497) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1507) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1517) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1527) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1537) POTENTIOMETER: ADC Raw: 739, Calibrated (mV): 171[0m
+[0;32mI (1547) POTENTIOMETER: Raw ADC Value: 739[0m
+[0;32mI (1547) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (1557) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (1557) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (2567) POTENTIOMETER: ADC Raw: 767, Calibrated (mV): 177[0m
+[0;32mI (2567) POTENTIOMETER: Raw ADC Value: 767[0m
+[0;32mI (2567) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (2567) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (2577) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (3577) POTENTIOMETER: ADC Raw: 747, Calibrated (mV): 173[0m
+[0;32mI (3577) POTENTIOMETER: Raw ADC Value: 747[0m
+[0;32mI (3577) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (3577) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (3587) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (4587) POTENTIOMETER: ADC Raw: 747, Calibrated (mV): 173[0m
+[0;32mI (4587) POTENTIOMETER: Raw ADC Value: 747[0m
+[0;32mI (4587) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (4587) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (4597) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (5597) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (5597) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (5597) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (5597) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (5607) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (6607) POTENTIOMETER: ADC Raw: 767, Calibrated (mV): 177[0m
+[0;32mI (6607) POTENTIOMETER: Raw ADC Value: 767[0m
+[0;32mI (6607) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (6607) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (6617) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (7617) POTENTIOMETER: ADC Raw: 748, Calibrated (mV): 173[0m
+[0;32mI (7617) POTENTIOMETER: Raw ADC Value: 748[0m
+[0;32mI (7617) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (7617) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (7627) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (8627) POTENTIOMETER: ADC Raw: 762, Calibrated (mV): 176[0m
+[0;32mI (8627) POTENTIOMETER: Raw ADC Value: 762[0m
+[0;32mI (8627) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (8627) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (8637) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (9637) POTENTIOMETER: ADC Raw: 746, Calibrated (mV): 172[0m
+[0;32mI (9637) POTENTIOMETER: Raw ADC Value: 746[0m
+[0;32mI (9637) POTENTIOMETER: Calculated Duty Cycle: 2[0m
+[0;32mI (9637) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (9647) POTENTIOMETER: Final Duty Cycle Set: 2[0m
+[0;32mI (10647) POTENTIOMETER: ADC Raw: 743, Calibrated (mV): 172[0m
+[0;32mI (10647) POTENTIOMETER: Raw ADC Value: 743[0m
+[0;32mI (10647) POTENTIOMETER: Calculated Duty Cycle: 3[0m
+[0;32mI (10647) POTENTIOMETER: Fan Speed Percentage: 1%[0m
+[0;32mI (10657) POTENTIOMETER: Final Duty Cycle Set: 3[0m
+[0;32mI (11657) POTENTIOMETER: ADC Raw: 741, Calibrated (mV): 171[0m
+[0;32mI (11657) POTENTIOMETER: Raw ADC Value: 741[0m
+[0;32mI (11657) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (11657) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (11667) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (12667) POTENTIOMETER: ADC Raw: 735, Calibrated (mV): 170[0m
+[0;32mI (12667) POTENTIOMETER: Raw ADC Value: 735[0m
+[0;32mI (12667) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (12667) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (12677) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (13677) POTENTIOMETER: ADC Raw: 739, Calibrated (mV): 171[0m
+[0;32mI (13677) POTENTIOMETER: Raw ADC Value: 739[0m
+[0;32mI (13677) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (13677) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (13687) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (14687) POTENTIOMETER: ADC Raw: 745, Calibrated (mV): 172[0m
+[0;32mI (14687) POTENTIOMETER: Raw ADC Value: 745[0m
+[0;32mI (14687) POTENTIOMETER: Calculated Duty Cycle: 2[0m
+[0;32mI (14687) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (14697) POTENTIOMETER: Final Duty Cycle Set: 2[0m
+[0;32mI (15697) POTENTIOMETER: ADC Raw: 741, Calibrated (mV): 171[0m
+[0;32mI (15697) POTENTIOMETER: Raw ADC Value: 741[0m
+[0;32mI (15697) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (15697) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (15707) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (16707) POTENTIOMETER: ADC Raw: 745, Calibrated (mV): 172[0m
+[0;32mI (16707) POTENTIOMETER: Raw ADC Value: 745[0m
+[0;32mI (16707) POTENTIOMETER: Calculated Duty Cycle: 2[0m
+[0;32mI (16707) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (16717) POTENTIOMETER: Final Duty Cycle Set: 2[0m
+[0;32mI (17717) POTENTIOMETER: ADC Raw: 745, Calibrated (mV): 172[0m
+[0;32mI (17717) POTENTIOMETER: Raw ADC Value: 745[0m
+[0;32mI (17717) POTENTIOMETER: Calculated Duty Cycle: 2[0m
+[0;32mI (17717) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (17727) POTENTIOMETER: Final Duty Cycle Set: 2[0m
+[0;32mI (18727) POTENTIOMETER: ADC Raw: 755, Calibrated (mV): 174[0m
+[0;32mI (18727) POTENTIOMETER: Raw ADC Value: 755[0m
+[0;32mI (18727) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (18727) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (18737) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (19737) POTENTIOMETER: ADC Raw: 743, Calibrated (mV): 172[0m
+[0;32mI (19737) POTENTIOMETER: Raw ADC Value: 743[0m
+[0;32mI (19737) POTENTIOMETER: Calculated Duty Cycle: 3[0m
+[0;32mI (19737) POTENTIOMETER: Fan Speed Percentage: 1%[0m
+[0;32mI (19747) POTENTIOMETER: Final Duty Cycle Set: 3[0m
+[0;32mI (20747) POTENTIOMETER: ADC Raw: 749, Calibrated (mV): 173[0m
+[0;32mI (20747) POTENTIOMETER: Raw ADC Value: 749[0m
+[0;32mI (20747) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (20747) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (20757) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (21757) POTENTIOMETER: ADC Raw: 687, Calibrated (mV): 159[0m
+[0;32mI (21757) POTENTIOMETER: Raw ADC Value: 687[0m
+[0;32mI (21757) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (21757) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (21767) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (22767) POTENTIOMETER: ADC Raw: 645, Calibrated (mV): 149[0m
+[0;32mI (22767) POTENTIOMETER: Raw ADC Value: 645[0m
+[0;32mI (22767) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (22767) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (22777) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (23777) POTENTIOMETER: ADC Raw: 632, Calibrated (mV): 146[0m
+[0;32mI (23777) POTENTIOMETER: Raw ADC Value: 632[0m
+[0;32mI (23777) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (23777) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (23787) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (24787) POTENTIOMETER: ADC Raw: 540, Calibrated (mV): 125[0m
+[0;32mI (24787) POTENTIOMETER: Raw ADC Value: 540[0m
+[0;32mI (24787) POTENTIOMETER: Calculated Duty Cycle: 71[0m
+[0;32mI (24787) POTENTIOMETER: Fan Speed Percentage: 27%[0m
+[0;32mI (24797) POTENTIOMETER: Final Duty Cycle Set: 71[0m
+[0;32mI (25797) POTENTIOMETER: ADC Raw: 541, Calibrated (mV): 125[0m
+[0;32mI (25797) POTENTIOMETER: Raw ADC Value: 541[0m
+[0;32mI (25797) POTENTIOMETER: Calculated Duty Cycle: 71[0m
+[0;32mI (25797) POTENTIOMETER: Fan Speed Percentage: 27%[0m
+[0;32mI (25807) POTENTIOMETER: Final Duty Cycle Set: 71[0m
+[0;32mI (26807) POTENTIOMETER: ADC Raw: 475, Calibrated (mV): 110[0m
+[0;32mI (26807) POTENTIOMETER: Raw ADC Value: 475[0m
+[0;32mI (26807) POTENTIOMETER: Calculated Duty Cycle: 93[0m
+[0;32mI (26807) POTENTIOMETER: Fan Speed Percentage: 36%[0m
+[0;32mI (26817) POTENTIOMETER: Final Duty Cycle Set: 93[0m
+[0;32mI (27817) POTENTIOMETER: ADC Raw: 459, Calibrated (mV): 107[0m
+[0;32mI (27817) POTENTIOMETER: Raw ADC Value: 459[0m
+[0;32mI (27817) POTENTIOMETER: Calculated Duty Cycle: 99[0m
+[0;32mI (27817) POTENTIOMETER: Fan Speed Percentage: 38%[0m
+[0;32mI (27827) POTENTIOMETER: Final Duty Cycle Set: 99[0m
+[0;32mI (28827) POTENTIOMETER: ADC Raw: 424, Calibrated (mV): 99[0m
+[0;32mI (28827) POTENTIOMETER: Raw ADC Value: 424[0m
+[0;32mI (28827) POTENTIOMETER: Calculated Duty Cycle: 111[0m
+[0;32mI (28827) POTENTIOMETER: Fan Speed Percentage: 43%[0m
+[0;32mI (28837) POTENTIOMETER: Final Duty Cycle Set: 111[0m
+[0;32mI (29837) POTENTIOMETER: ADC Raw: 403, Calibrated (mV): 94[0m
+[0;32mI (29837) POTENTIOMETER: Raw ADC Value: 403[0m
+[0;32mI (29837) POTENTIOMETER: Calculated Duty Cycle: 118[0m
+[0;32mI (29837) POTENTIOMETER: Fan Speed Percentage: 46%[0m
+[0;32mI (29847) POTENTIOMETER: Final Duty Cycle Set: 118[0m
+[0;32mI (30847) POTENTIOMETER: ADC Raw: 317, Calibrated (mV): 74[0m
+[0;32mI (30847) POTENTIOMETER: Raw ADC Value: 317[0m
+[0;32mI (30847) POTENTIOMETER: Calculated Duty Cycle: 147[0m
+[0;32mI (30847) POTENTIOMETER: Fan Speed Percentage: 57%[0m
+[0;32mI (30857) POTENTIOMETER: Final Duty Cycle Set: 147[0m
+[0;32mI (31857) POTENTIOMETER: ADC Raw: 327, Calibrated (mV): 76[0m
+[0;32mI (31857) POTENTIOMETER: Raw ADC Value: 327[0m
+[0;32mI (31857) POTENTIOMETER: Calculated Duty Cycle: 144[0m
+[0;32mI (31857) POTENTIOMETER: Fan Speed Percentage: 56%[0m
+[0;32mI (31867) POTENTIOMETER: Final Duty Cycle Set: 144[0m
+[0;32mI (32867) POTENTIOMETER: ADC Raw: 204, Calibrated (mV): 48[0m
+[0;32mI (32867) POTENTIOMETER: Raw ADC Value: 204[0m
+[0;32mI (32867) POTENTIOMETER: Calculated Duty Cycle: 185[0m
+[0;32mI (32867) POTENTIOMETER: Fan Speed Percentage: 72%[0m
+[0;32mI (32877) POTENTIOMETER: Final Duty Cycle Set: 185[0m
+[0;32mI (33877) POTENTIOMETER: ADC Raw: 216, Calibrated (mV): 51[0m
+[0;32mI (33877) POTENTIOMETER: Raw ADC Value: 216[0m
+[0;32mI (33877) POTENTIOMETER: Calculated Duty Cycle: 181[0m
+[0;32mI (33877) POTENTIOMETER: Fan Speed Percentage: 70%[0m
+[0;32mI (33887) POTENTIOMETER: Final Duty Cycle Set: 181[0m
+[0;32mI (34887) POTENTIOMETER: ADC Raw: 79, Calibrated (mV): 20[0m
+[0;32mI (34887) POTENTIOMETER: Raw ADC Value: 79[0m
+[0;32mI (34887) POTENTIOMETER: Calculated Duty Cycle: 228[0m
+[0;32mI (34887) POTENTIOMETER: Fan Speed Percentage: 89%[0m
+[0;32mI (34897) POTENTIOMETER: Final Duty Cycle Set: 228[0m
+[0;32mI (35897) POTENTIOMETER: ADC Raw: 73, Calibrated (mV): 18[0m
+[0;32mI (35897) POTENTIOMETER: Raw ADC Value: 73[0m
+[0;32mI (35897) POTENTIOMETER: Calculated Duty Cycle: 230[0m
+[0;32mI (35897) POTENTIOMETER: Fan Speed Percentage: 90%[0m
+[0;32mI (35907) POTENTIOMETER: Final Duty Cycle Set: 230[0m
+[0;32mI (36907) POTENTIOMETER: ADC Raw: 5, Calibrated (mV): 3[0m
+[0;32mI (36907) POTENTIOMETER: Raw ADC Value: 5[0m
+[0;32mI (36907) POTENTIOMETER: Calculated Duty Cycle: 253[0m
+[0;32mI (36907) POTENTIOMETER: Fan Speed Percentage: 99%[0m
+[0;32mI (36917) POTENTIOMETER: Final Duty Cycle Set: 253[0m
+[0;32mI (37917) POTENTIOMETER: ADC Raw: 0, Calibrated (mV): 0[0m
+[0;32mI (37917) POTENTIOMETER: Raw ADC Value: 0[0m
+[0;32mI (37917) POTENTIOMETER: Calculated Duty Cycle: 255[0m
+[0;32mI (37917) POTENTIOMETER: Fan Speed Percentage: 100%[0m
+[0;32mI (37927) POTENTIOMETER: Final Duty Cycle Set: 255[0m
+[0;32mI (38927) POTENTIOMETER: ADC Raw: 0, Calibrated (mV): 0[0m
+[0;32mI (38927) POTENTIOMETER: Raw ADC Value: 0[0m
+[0;32mI (38927) POTENTIOMETER: Calculated Duty Cycle: 255[0m
+[0;32mI (38927) POTENTIOMETER: Fan Speed Percentage: 100%[0m
+[0;32mI (38937) POTENTIOMETER: Final Duty Cycle Set: 255[0m
+[0;32mI (39937) POTENTIOMETER: ADC Raw: 5, Calibrated (mV): 3[0m
+[0;32mI (39937) POTENTIOMETER: Raw ADC Value: 5[0m
+[0;32mI (39937) POTENTIOMETER: Calculated Duty Cycle: 253[0m
+[0;32mI (39937) POTENTIOMETER: Fan Speed Percentage: 99%[0m
+[0;32mI (39947) POTENTIOMETER: Final Duty Cycle Set: 253[0m
+[0;32mI (40947) POTENTIOMETER: ADC Raw: 215, Calibrated (mV): 51[0m
+[0;32mI (40947) POTENTIOMETER: Raw ADC Value: 215[0m
+[0;32mI (40947) POTENTIOMETER: Calculated Duty Cycle: 182[0m
+[0;32mI (40947) POTENTIOMETER: Fan Speed Percentage: 71%[0m
+[0;32mI (40957) POTENTIOMETER: Final Duty Cycle Set: 182[0m
+[0;32mI (41957) POTENTIOMETER: ADC Raw: 334, Calibrated (mV): 78[0m
+[0;32mI (41957) POTENTIOMETER: Raw ADC Value: 334[0m
+[0;32mI (41957) POTENTIOMETER: Calculated Duty Cycle: 141[0m
+[0;32mI (41957) POTENTIOMETER: Fan Speed Percentage: 55%[0m
+[0;32mI (41967) POTENTIOMETER: Final Duty Cycle Set: 141[0m
+[0;32mI (42967) POTENTIOMETER: ADC Raw: 375, Calibrated (mV): 87[0m
+[0;32mI (42967) POTENTIOMETER: Raw ADC Value: 375[0m
+[0;32mI (42967) POTENTIOMETER: Calculated Duty Cycle: 127[0m
+[0;32mI (42967) POTENTIOMETER: Fan Speed Percentage: 49%[0m
+[0;32mI (42977) POTENTIOMETER: Final Duty Cycle Set: 127[0m
+[0;32mI (43977) POTENTIOMETER: ADC Raw: 485, Calibrated (mV): 113[0m
+[0;32mI (43977) POTENTIOMETER: Raw ADC Value: 485[0m
+[0;32mI (43977) POTENTIOMETER: Calculated Duty Cycle: 90[0m
+[0;32mI (43977) POTENTIOMETER: Fan Speed Percentage: 35%[0m
+[0;32mI (43987) POTENTIOMETER: Final Duty Cycle Set: 90[0m
+[0;32mI (44987) POTENTIOMETER: ADC Raw: 565, Calibrated (mV): 131[0m
+[0;32mI (44987) POTENTIOMETER: Raw ADC Value: 565[0m
+[0;32mI (44987) POTENTIOMETER: Calculated Duty Cycle: 63[0m
+[0;32mI (44987) POTENTIOMETER: Fan Speed Percentage: 24%[0m
+[0;32mI (44997) POTENTIOMETER: Final Duty Cycle Set: 63[0m
+[0;32mI (45997) POTENTIOMETER: ADC Raw: 548, Calibrated (mV): 127[0m
+[0;32mI (45997) POTENTIOMETER: Raw ADC Value: 548[0m
+[0;32mI (45997) POTENTIOMETER: Calculated Duty Cycle: 69[0m
+[0;32mI (45997) POTENTIOMETER: Fan Speed Percentage: 27%[0m
+[0;32mI (46007) POTENTIOMETER: Final Duty Cycle Set: 69[0m
+[0;32mI (47007) POTENTIOMETER: ADC Raw: 560, Calibrated (mV): 130[0m
+[0;32mI (47007) POTENTIOMETER: Raw ADC Value: 560[0m
+[0;32mI (47007) POTENTIOMETER: Calculated Duty Cycle: 65[0m
+[0;32mI (47007) POTENTIOMETER: Fan Speed Percentage: 25%[0m
+[0;32mI (47017) POTENTIOMETER: Final Duty Cycle Set: 65[0m
+[0;32mI (48017) POTENTIOMETER: ADC Raw: 580, Calibrated (mV): 134[0m
+[0;32mI (48017) POTENTIOMETER: Raw ADC Value: 580[0m
+[0;32mI (48017) POTENTIOMETER: Calculated Duty Cycle: 58[0m
+[0;32mI (48017) POTENTIOMETER: Fan Speed Percentage: 22%[0m
+[0;32mI (48027) POTENTIOMETER: Final Duty Cycle Set: 58[0m
+[0;32mI (49027) POTENTIOMETER: ADC Raw: 616, Calibrated (mV): 143[0m
+[0;32mI (49027) POTENTIOMETER: Raw ADC Value: 616[0m
+[0;32mI (49027) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (49027) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (49037) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (50037) POTENTIOMETER: ADC Raw: 683, Calibrated (mV): 158[0m
+[0;32mI (50037) POTENTIOMETER: Raw ADC Value: 683[0m
+[0;32mI (50037) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (50037) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (50047) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (51047) POTENTIOMETER: ADC Raw: 740, Calibrated (mV): 171[0m
+[0;32mI (51047) POTENTIOMETER: Raw ADC Value: 740[0m
+[0;32mI (51047) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (51047) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (51057) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (52057) POTENTIOMETER: ADC Raw: 756, Calibrated (mV): 175[0m
+[0;32mI (52057) POTENTIOMETER: Raw ADC Value: 756[0m
+[0;32mI (52057) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (52057) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (52067) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (53067) POTENTIOMETER: ADC Raw: 755, Calibrated (mV): 174[0m
+[0;32mI (53067) POTENTIOMETER: Raw ADC Value: 755[0m
+[0;32mI (53067) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (53067) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (53077) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (54077) POTENTIOMETER: ADC Raw: 766, Calibrated (mV): 177[0m
+[0;32mI (54077) POTENTIOMETER: Raw ADC Value: 766[0m
+[0;32mI (54077) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (54077) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (54087) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (55087) POTENTIOMETER: ADC Raw: 695, Calibrated (mV): 161[0m
+[0;32mI (55087) POTENTIOMETER: Raw ADC Value: 695[0m
+[0;32mI (55087) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (55087) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (55097) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (56097) POTENTIOMETER: ADC Raw: 679, Calibrated (mV): 157[0m
+[0;32mI (56097) POTENTIOMETER: Raw ADC Value: 679[0m
+[0;32mI (56097) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (56097) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (56107) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (57107) POTENTIOMETER: ADC Raw: 679, Calibrated (mV): 157[0m
+[0;32mI (57107) POTENTIOMETER: Raw ADC Value: 679[0m
+[0;32mI (57107) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (57107) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (57117) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (58117) POTENTIOMETER: ADC Raw: 714, Calibrated (mV): 165[0m
+[0;32mI (58117) POTENTIOMETER: Raw ADC Value: 714[0m
+[0;32mI (58117) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (58117) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (58127) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (59127) POTENTIOMETER: ADC Raw: 715, Calibrated (mV): 165[0m
+[0;32mI (59127) POTENTIOMETER: Raw ADC Value: 715[0m
+[0;32mI (59127) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (59127) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (59137) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (60137) POTENTIOMETER: ADC Raw: 739, Calibrated (mV): 171[0m
+[0;32mI (60137) POTENTIOMETER: Raw ADC Value: 739[0m
+[0;32mI (60137) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (60137) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (60147) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (61147) POTENTIOMETER: ADC Raw: 741, Calibrated (mV): 171[0m
+[0;32mI (61147) POTENTIOMETER: Raw ADC Value: 741[0m
+[0;32mI (61147) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (61147) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (61157) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (62157) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (62157) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (62157) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (62157) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (62167) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (63167) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (63167) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (63167) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (63167) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (63177) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (64177) POTENTIOMETER: ADC Raw: 743, Calibrated (mV): 172[0m
+[0;32mI (64177) POTENTIOMETER: Raw ADC Value: 743[0m
+[0;32mI (64177) POTENTIOMETER: Calculated Duty Cycle: 3[0m
+[0;32mI (64177) POTENTIOMETER: Fan Speed Percentage: 1%[0m
+[0;32mI (64187) POTENTIOMETER: Final Duty Cycle Set: 3[0m
+[0;32mI (65187) POTENTIOMETER: ADC Raw: 749, Calibrated (mV): 173[0m
+[0;32mI (65187) POTENTIOMETER: Raw ADC Value: 749[0m
+[0;32mI (65187) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (65187) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (65197) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (66197) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (66197) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (66197) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (66197) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (66207) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (67207) POTENTIOMETER: ADC Raw: 767, Calibrated (mV): 177[0m
+[0;32mI (67207) POTENTIOMETER: Raw ADC Value: 767[0m
+[0;32mI (67207) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (67207) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (67217) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (68217) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (68217) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (68217) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (68217) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (68227) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (69227) POTENTIOMETER: ADC Raw: 760, Calibrated (mV): 176[0m
+[0;32mI (69227) POTENTIOMETER: Raw ADC Value: 760[0m
+[0;32mI (69227) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (69227) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (69237) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (70237) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (70237) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (70237) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (70237) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (70247) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (71247) POTENTIOMETER: ADC Raw: 764, Calibrated (mV): 177[0m
+[0;32mI (71247) POTENTIOMETER: Raw ADC Value: 764[0m
+[0;32mI (71247) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (71247) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (71257) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (72257) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (72257) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (72257) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (72257) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (72267) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (73267) POTENTIOMETER: ADC Raw: 772, Calibrated (mV): 178[0m
+[0;32mI (73267) POTENTIOMETER: Raw ADC Value: 772[0m
+[0;32mI (73267) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (73267) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (73277) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (74277) POTENTIOMETER: ADC Raw: 765, Calibrated (mV): 177[0m
+[0;32mI (74277) POTENTIOMETER: Raw ADC Value: 765[0m
+[0;32mI (74277) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (74277) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (74287) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (75287) POTENTIOMETER: ADC Raw: 757, Calibrated (mV): 175[0m
+[0;32mI (75287) POTENTIOMETER: Raw ADC Value: 757[0m
+[0;32mI (75287) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (75287) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (75297) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (76297) POTENTIOMETER: ADC Raw: 763, Calibrated (mV): 176[0m
+[0;32mI (76297) POTENTIOMETER: Raw ADC Value: 763[0m
+[0;32mI (76297) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (76297) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (76307) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (77307) POTENTIOMETER: ADC Raw: 749, Calibrated (mV): 173[0m
+[0;32mI (77307) POTENTIOMETER: Raw ADC Value: 749[0m
+[0;32mI (77307) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (77307) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (77317) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (78317) POTENTIOMETER: ADC Raw: 765, Calibrated (mV): 177[0m
+[0;32mI (78317) POTENTIOMETER: Raw ADC Value: 765[0m
+[0;32mI (78317) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (78317) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (78327) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (79327) POTENTIOMETER: ADC Raw: 763, Calibrated (mV): 176[0m
+[0;32mI (79327) POTENTIOMETER: Raw ADC Value: 763[0m
+[0;32mI (79327) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (79327) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (79337) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (80337) POTENTIOMETER: ADC Raw: 755, Calibrated (mV): 174[0m
+[0;32mI (80337) POTENTIOMETER: Raw ADC Value: 755[0m
+[0;32mI (80337) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (80337) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (80347) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (81347) POTENTIOMETER: ADC Raw: 762, Calibrated (mV): 176[0m
+[0;32mI (81347) POTENTIOMETER: Raw ADC Value: 762[0m
+[0;32mI (81347) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (81347) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (81357) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (82357) POTENTIOMETER: ADC Raw: 745, Calibrated (mV): 172[0m
+[0;32mI (82357) POTENTIOMETER: Raw ADC Value: 745[0m
+[0;32mI (82357) POTENTIOMETER: Calculated Duty Cycle: 2[0m
+[0;32mI (82357) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (82367) POTENTIOMETER: Final Duty Cycle Set: 2[0m
+[0;32mI (83367) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (83367) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (83367) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (83367) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (83377) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (84377) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (84377) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (84377) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (84377) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (84387) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (85387) POTENTIOMETER: ADC Raw: 750, Calibrated (mV): 173[0m
+[0;32mI (85387) POTENTIOMETER: Raw ADC Value: 750[0m
+[0;32mI (85387) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (85387) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (85397) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (86397) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (86397) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (86397) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (86397) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (86407) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (87407) POTENTIOMETER: ADC Raw: 741, Calibrated (mV): 171[0m
+[0;32mI (87407) POTENTIOMETER: Raw ADC Value: 741[0m
+[0;32mI (87407) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (87407) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (87417) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (88417) POTENTIOMETER: ADC Raw: 757, Calibrated (mV): 175[0m
+[0;32mI (88417) POTENTIOMETER: Raw ADC Value: 757[0m
+[0;32mI (88417) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (88417) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (88427) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (89427) POTENTIOMETER: ADC Raw: 763, Calibrated (mV): 176[0m
+[0;32mI (89427) POTENTIOMETER: Raw ADC Value: 763[0m
+[0;32mI (89427) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (89427) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (89437) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (90437) POTENTIOMETER: ADC Raw: 762, Calibrated (mV): 176[0m
+[0;32mI (90437) POTENTIOMETER: Raw ADC Value: 762[0m
+[0;32mI (90437) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (90437) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (90447) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (91447) POTENTIOMETER: ADC Raw: 763, Calibrated (mV): 176[0m
+[0;32mI (91447) POTENTIOMETER: Raw ADC Value: 763[0m
+[0;32mI (91447) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (91447) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (91457) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (92457) POTENTIOMETER: ADC Raw: 763, Calibrated (mV): 176[0m
+[0;32mI (92457) POTENTIOMETER: Raw ADC Value: 763[0m
+[0;32mI (92457) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (92457) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (92467) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (93467) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (93467) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (93467) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (93467) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (93477) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (94477) POTENTIOMETER: ADC Raw: 762, Calibrated (mV): 176[0m
+[0;32mI (94477) POTENTIOMETER: Raw ADC Value: 762[0m
+[0;32mI (94477) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (94477) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (94487) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (95487) POTENTIOMETER: ADC Raw: 748, Calibrated (mV): 173[0m
+[0;32mI (95487) POTENTIOMETER: Raw ADC Value: 748[0m
+[0;32mI (95487) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (95487) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (95497) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (96497) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (96497) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (96497) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (96497) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (96507) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (97507) POTENTIOMETER: ADC Raw: 765, Calibrated (mV): 177[0m
+[0;32mI (97507) POTENTIOMETER: Raw ADC Value: 765[0m
+[0;32mI (97507) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (97507) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (97517) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (98517) POTENTIOMETER: ADC Raw: 749, Calibrated (mV): 173[0m
+[0;32mI (98517) POTENTIOMETER: Raw ADC Value: 749[0m
+[0;32mI (98517) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (98517) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (98527) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (99527) POTENTIOMETER: ADC Raw: 776, Calibrated (mV): 179[0m
+[0;32mI (99527) POTENTIOMETER: Raw ADC Value: 776[0m
+[0;32mI (99527) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (99527) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (99537) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (100537) POTENTIOMETER: ADC Raw: 758, Calibrated (mV): 175[0m
+[0;32mI (100537) POTENTIOMETER: Raw ADC Value: 758[0m
+[0;32mI (100537) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (100537) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (100547) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (101547) POTENTIOMETER: ADC Raw: 748, Calibrated (mV): 173[0m
+[0;32mI (101547) POTENTIOMETER: Raw ADC Value: 748[0m
+[0;32mI (101547) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (101547) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (101557) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (102557) POTENTIOMETER: ADC Raw: 749, Calibrated (mV): 173[0m
+[0;32mI (102557) POTENTIOMETER: Raw ADC Value: 749[0m
+[0;32mI (102557) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (102557) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (102567) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (103567) POTENTIOMETER: ADC Raw: 773, Calibrated (mV): 179[0m
+[0;32mI (103567) POTENTIOMETER: Raw ADC Value: 773[0m
+[0;32mI (103567) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (103567) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (103577) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (104577) POTENTIOMETER: ADC Raw: 763, Calibrated (mV): 176[0m
+[0;32mI (104577) POTENTIOMETER: Raw ADC Value: 763[0m
+[0;32mI (104577) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (104577) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (104587) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (105587) POTENTIOMETER: ADC Raw: 749, Calibrated (mV): 173[0m
+[0;32mI (105587) POTENTIOMETER: Raw ADC Value: 749[0m
+[0;32mI (105587) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (105587) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (105597) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (106597) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (106597) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (106597) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (106597) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (106607) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (107607) POTENTIOMETER: ADC Raw: 757, Calibrated (mV): 175[0m
+[0;32mI (107607) POTENTIOMETER: Raw ADC Value: 757[0m
+[0;32mI (107607) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (107607) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (107617) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (108617) POTENTIOMETER: ADC Raw: 747, Calibrated (mV): 173[0m
+[0;32mI (108617) POTENTIOMETER: Raw ADC Value: 747[0m
+[0;32mI (108617) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (108617) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (108627) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (109627) POTENTIOMETER: ADC Raw: 748, Calibrated (mV): 173[0m
+[0;32mI (109627) POTENTIOMETER: Raw ADC Value: 748[0m
+[0;32mI (109627) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (109627) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (109637) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (110637) POTENTIOMETER: ADC Raw: 750, Calibrated (mV): 173[0m
+[0;32mI (110637) POTENTIOMETER: Raw ADC Value: 750[0m
+[0;32mI (110637) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (110637) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (110647) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (111647) POTENTIOMETER: ADC Raw: 743, Calibrated (mV): 172[0m
+[0;32mI (111647) POTENTIOMETER: Raw ADC Value: 743[0m
+[0;32mI (111647) POTENTIOMETER: Calculated Duty Cycle: 3[0m
+[0;32mI (111647) POTENTIOMETER: Fan Speed Percentage: 1%[0m
+[0;32mI (111657) POTENTIOMETER: Final Duty Cycle Set: 3[0m
+[0;32mI (112657) POTENTIOMETER: ADC Raw: 747, Calibrated (mV): 173[0m
+[0;32mI (112657) POTENTIOMETER: Raw ADC Value: 747[0m
+[0;32mI (112657) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (112657) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (112667) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (113667) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (113667) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (113667) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (113667) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (113677) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (114677) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (114677) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (114677) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (114677) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (114687) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (115687) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (115687) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (115687) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (115687) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (115697) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (116697) POTENTIOMETER: ADC Raw: 749, Calibrated (mV): 173[0m
+[0;32mI (116697) POTENTIOMETER: Raw ADC Value: 749[0m
+[0;32mI (116697) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (116697) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (116707) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (117707) POTENTIOMETER: ADC Raw: 757, Calibrated (mV): 175[0m
+[0;32mI (117707) POTENTIOMETER: Raw ADC Value: 757[0m
+[0;32mI (117707) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (117707) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (117717) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (118717) POTENTIOMETER: ADC Raw: 743, Calibrated (mV): 172[0m
+[0;32mI (118717) POTENTIOMETER: Raw ADC Value: 743[0m
+[0;32mI (118717) POTENTIOMETER: Calculated Duty Cycle: 3[0m
+[0;32mI (118717) POTENTIOMETER: Fan Speed Percentage: 1%[0m
+[0;32mI (118727) POTENTIOMETER: Final Duty Cycle Set: 3[0m
+[0;32mI (119727) POTENTIOMETER: ADC Raw: 754, Calibrated (mV): 174[0m
+[0;32mI (119727) POTENTIOMETER: Raw ADC Value: 754[0m
+[0;32mI (119727) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (119727) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (119737) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (120737) POTENTIOMETER: ADC Raw: 739, Calibrated (mV): 171[0m
+[0;32mI (120737) POTENTIOMETER: Raw ADC Value: 739[0m
+[0;32mI (120737) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (120737) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (120747) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (121747) POTENTIOMETER: ADC Raw: 762, Calibrated (mV): 176[0m
+[0;32mI (121747) POTENTIOMETER: Raw ADC Value: 762[0m
+[0;32mI (121747) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (121747) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (121757) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (122757) POTENTIOMETER: ADC Raw: 741, Calibrated (mV): 171[0m
+[0;32mI (122757) POTENTIOMETER: Raw ADC Value: 741[0m
+[0;32mI (122757) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (122757) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (122767) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (123767) POTENTIOMETER: ADC Raw: 775, Calibrated (mV): 179[0m
+[0;32mI (123767) POTENTIOMETER: Raw ADC Value: 775[0m
+[0;32mI (123767) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (123767) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (123777) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (124777) POTENTIOMETER: ADC Raw: 763, Calibrated (mV): 176[0m
+[0;32mI (124777) POTENTIOMETER: Raw ADC Value: 763[0m
+[0;32mI (124777) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (124777) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (124787) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (125787) POTENTIOMETER: ADC Raw: 775, Calibrated (mV): 179[0m
+[0;32mI (125787) POTENTIOMETER: Raw ADC Value: 775[0m
+[0;32mI (125787) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (125787) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (125797) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (126797) POTENTIOMETER: ADC Raw: 747, Calibrated (mV): 173[0m
+[0;32mI (126797) POTENTIOMETER: Raw ADC Value: 747[0m
+[0;32mI (126797) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (126797) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (126807) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (127807) POTENTIOMETER: ADC Raw: 762, Calibrated (mV): 176[0m
+[0;32mI (127807) POTENTIOMETER: Raw ADC Value: 762[0m
+[0;32mI (127807) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (127807) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (127817) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (128817) POTENTIOMETER: ADC Raw: 757, Calibrated (mV): 175[0m
+[0;32mI (128817) POTENTIOMETER: Raw ADC Value: 757[0m
+[0;32mI (128817) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (128817) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (128827) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (129827) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (129827) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (129827) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (129827) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (129837) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (130837) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (130837) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (130837) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (130837) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (130847) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (131847) POTENTIOMETER: ADC Raw: 745, Calibrated (mV): 172[0m
+[0;32mI (131847) POTENTIOMETER: Raw ADC Value: 745[0m
+[0;32mI (131847) POTENTIOMETER: Calculated Duty Cycle: 2[0m
+[0;32mI (131847) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (131857) POTENTIOMETER: Final Duty Cycle Set: 2[0m
+[0;32mI (132857) POTENTIOMETER: ADC Raw: 758, Calibrated (mV): 175[0m
+[0;32mI (132857) POTENTIOMETER: Raw ADC Value: 758[0m
+[0;32mI (132857) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (132857) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (132867) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (133867) POTENTIOMETER: ADC Raw: 750, Calibrated (mV): 173[0m
+[0;32mI (133867) POTENTIOMETER: Raw ADC Value: 750[0m
+[0;32mI (133867) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (133867) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (133877) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (134877) POTENTIOMETER: ADC Raw: 762, Calibrated (mV): 176[0m
+[0;32mI (134877) POTENTIOMETER: Raw ADC Value: 762[0m
+[0;32mI (134877) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (134877) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (134887) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (135887) POTENTIOMETER: ADC Raw: 749, Calibrated (mV): 173[0m
+[0;32mI (135887) POTENTIOMETER: Raw ADC Value: 749[0m
+[0;32mI (135887) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (135887) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (135897) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (136897) POTENTIOMETER: ADC Raw: 757, Calibrated (mV): 175[0m
+[0;32mI (136897) POTENTIOMETER: Raw ADC Value: 757[0m
+[0;32mI (136897) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (136897) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (136907) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (137907) POTENTIOMETER: ADC Raw: 757, Calibrated (mV): 175[0m
+[0;32mI (137907) POTENTIOMETER: Raw ADC Value: 757[0m
+[0;32mI (137907) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (137907) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (137917) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (138917) POTENTIOMETER: ADC Raw: 754, Calibrated (mV): 174[0m
+[0;32mI (138917) POTENTIOMETER: Raw ADC Value: 754[0m
+[0;32mI (138917) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (138917) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (138927) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (139927) POTENTIOMETER: ADC Raw: 747, Calibrated (mV): 173[0m
+[0;32mI (139927) POTENTIOMETER: Raw ADC Value: 747[0m
+[0;32mI (139927) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (139927) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (139937) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (140937) POTENTIOMETER: ADC Raw: 763, Calibrated (mV): 176[0m
+[0;32mI (140937) POTENTIOMETER: Raw ADC Value: 763[0m
+[0;32mI (140937) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (140937) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (140947) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (141947) POTENTIOMETER: ADC Raw: 736, Calibrated (mV): 170[0m
+[0;32mI (141947) POTENTIOMETER: Raw ADC Value: 736[0m
+[0;32mI (141947) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (141947) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (141957) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (142957) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (142957) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (142957) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (142957) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (142967) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (143967) POTENTIOMETER: ADC Raw: 763, Calibrated (mV): 176[0m
+[0;32mI (143967) POTENTIOMETER: Raw ADC Value: 763[0m
+[0;32mI (143967) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (143967) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (143977) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (144977) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (144977) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (144977) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (144977) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (144987) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (145987) POTENTIOMETER: ADC Raw: 743, Calibrated (mV): 172[0m
+[0;32mI (145987) POTENTIOMETER: Raw ADC Value: 743[0m
+[0;32mI (145987) POTENTIOMETER: Calculated Duty Cycle: 3[0m
+[0;32mI (145987) POTENTIOMETER: Fan Speed Percentage: 1%[0m
+[0;32mI (145997) POTENTIOMETER: Final Duty Cycle Set: 3[0m
+[0;32mI (146997) POTENTIOMETER: ADC Raw: 760, Calibrated (mV): 176[0m
+[0;32mI (146997) POTENTIOMETER: Raw ADC Value: 760[0m
+[0;32mI (146997) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (146997) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (147007) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (148007) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (148007) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (148007) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (148007) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (148017) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (149017) POTENTIOMETER: ADC Raw: 746, Calibrated (mV): 172[0m
+[0;32mI (149017) POTENTIOMETER: Raw ADC Value: 746[0m
+[0;32mI (149017) POTENTIOMETER: Calculated Duty Cycle: 2[0m
+[0;32mI (149017) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (149027) POTENTIOMETER: Final Duty Cycle Set: 2[0m
+[0;32mI (150027) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (150027) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (150027) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (150027) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (150037) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (151037) POTENTIOMETER: ADC Raw: 775, Calibrated (mV): 179[0m
+[0;32mI (151037) POTENTIOMETER: Raw ADC Value: 775[0m
+[0;32mI (151037) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (151037) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (151047) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (152047) POTENTIOMETER: ADC Raw: 763, Calibrated (mV): 176[0m
+[0;32mI (152047) POTENTIOMETER: Raw ADC Value: 763[0m
+[0;32mI (152047) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (152047) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (152057) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (153057) POTENTIOMETER: ADC Raw: 773, Calibrated (mV): 179[0m
+[0;32mI (153057) POTENTIOMETER: Raw ADC Value: 773[0m
+[0;32mI (153057) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (153057) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (153067) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (154067) POTENTIOMETER: ADC Raw: 749, Calibrated (mV): 173[0m
+[0;32mI (154067) POTENTIOMETER: Raw ADC Value: 749[0m
+[0;32mI (154067) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (154067) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (154077) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (155077) POTENTIOMETER: ADC Raw: 763, Calibrated (mV): 176[0m
+[0;32mI (155077) POTENTIOMETER: Raw ADC Value: 763[0m
+[0;32mI (155077) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (155077) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (155087) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (156087) POTENTIOMETER: ADC Raw: 749, Calibrated (mV): 173[0m
+[0;32mI (156087) POTENTIOMETER: Raw ADC Value: 749[0m
+[0;32mI (156087) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (156087) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (156097) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (157097) POTENTIOMETER: ADC Raw: 747, Calibrated (mV): 173[0m
+[0;32mI (157097) POTENTIOMETER: Raw ADC Value: 747[0m
+[0;32mI (157097) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (157097) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (157107) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (158107) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (158107) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (158107) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (158107) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (158117) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (159117) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (159117) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (159117) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (159117) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (159127) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (160127) POTENTIOMETER: ADC Raw: 765, Calibrated (mV): 177[0m
+[0;32mI (160127) POTENTIOMETER: Raw ADC Value: 765[0m
+[0;32mI (160127) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (160127) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (160137) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (161137) POTENTIOMETER: ADC Raw: 745, Calibrated (mV): 172[0m
+[0;32mI (161137) POTENTIOMETER: Raw ADC Value: 745[0m
+[0;32mI (161137) POTENTIOMETER: Calculated Duty Cycle: 2[0m
+[0;32mI (161137) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (161147) POTENTIOMETER: Final Duty Cycle Set: 2[0m
+[0;32mI (162147) POTENTIOMETER: ADC Raw: 767, Calibrated (mV): 177[0m
+[0;32mI (162147) POTENTIOMETER: Raw ADC Value: 767[0m
+[0;32mI (162147) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (162147) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (162157) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (163157) POTENTIOMETER: ADC Raw: 767, Calibrated (mV): 177[0m
+[0;32mI (163157) POTENTIOMETER: Raw ADC Value: 767[0m
+[0;32mI (163157) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (163157) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (163167) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (164167) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (164167) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (164167) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (164167) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (164177) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (165177) POTENTIOMETER: ADC Raw: 755, Calibrated (mV): 174[0m
+[0;32mI (165177) POTENTIOMETER: Raw ADC Value: 755[0m
+[0;32mI (165177) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (165177) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (165187) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (166187) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (166187) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (166187) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (166187) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (166197) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (167197) POTENTIOMETER: ADC Raw: 758, Calibrated (mV): 175[0m
+[0;32mI (167197) POTENTIOMETER: Raw ADC Value: 758[0m
+[0;32mI (167197) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (167197) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (167207) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (168207) POTENTIOMETER: ADC Raw: 743, Calibrated (mV): 172[0m
+[0;32mI (168207) POTENTIOMETER: Raw ADC Value: 743[0m
+[0;32mI (168207) POTENTIOMETER: Calculated Duty Cycle: 3[0m
+[0;32mI (168207) POTENTIOMETER: Fan Speed Percentage: 1%[0m
+[0;32mI (168217) POTENTIOMETER: Final Duty Cycle Set: 3[0m
+[0;32mI (169217) POTENTIOMETER: ADC Raw: 762, Calibrated (mV): 176[0m
+[0;32mI (169217) POTENTIOMETER: Raw ADC Value: 762[0m
+[0;32mI (169217) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (169217) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (169227) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (170227) POTENTIOMETER: ADC Raw: 757, Calibrated (mV): 175[0m
+[0;32mI (170227) POTENTIOMETER: Raw ADC Value: 757[0m
+[0;32mI (170227) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (170227) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (170237) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (171237) POTENTIOMETER: ADC Raw: 745, Calibrated (mV): 172[0m
+[0;32mI (171237) POTENTIOMETER: Raw ADC Value: 745[0m
+[0;32mI (171237) POTENTIOMETER: Calculated Duty Cycle: 2[0m
+[0;32mI (171237) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (171247) POTENTIOMETER: Final Duty Cycle Set: 2[0m
+[0;32mI (172247) POTENTIOMETER: ADC Raw: 747, Calibrated (mV): 173[0m
+[0;32mI (172247) POTENTIOMETER: Raw ADC Value: 747[0m
+[0;32mI (172247) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (172247) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (172257) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (173257) POTENTIOMETER: ADC Raw: 757, Calibrated (mV): 175[0m
+[0;32mI (173257) POTENTIOMETER: Raw ADC Value: 757[0m
+[0;32mI (173257) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (173257) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (173267) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (174267) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (174267) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (174267) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (174267) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (174277) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (175277) POTENTIOMETER: ADC Raw: 743, Calibrated (mV): 172[0m
+[0;32mI (175277) POTENTIOMETER: Raw ADC Value: 743[0m
+[0;32mI (175277) POTENTIOMETER: Calculated Duty Cycle: 3[0m
+[0;32mI (175277) POTENTIOMETER: Fan Speed Percentage: 1%[0m
+[0;32mI (175287) POTENTIOMETER: Final Duty Cycle Set: 3[0m
+[0;32mI (176287) POTENTIOMETER: ADC Raw: 745, Calibrated (mV): 172[0m
+[0;32mI (176287) POTENTIOMETER: Raw ADC Value: 745[0m
+[0;32mI (176287) POTENTIOMETER: Calculated Duty Cycle: 2[0m
+[0;32mI (176287) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (176297) POTENTIOMETER: Final Duty Cycle Set: 2[0m
+[0;32mI (177297) POTENTIOMETER: ADC Raw: 749, Calibrated (mV): 173[0m
+[0;32mI (177297) POTENTIOMETER: Raw ADC Value: 749[0m
+[0;32mI (177297) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (177297) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (177307) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (178307) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (178307) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (178307) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (178307) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (178317) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (179317) POTENTIOMETER: ADC Raw: 760, Calibrated (mV): 176[0m
+[0;32mI (179317) POTENTIOMETER: Raw ADC Value: 760[0m
+[0;32mI (179317) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (179317) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (179327) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (180327) POTENTIOMETER: ADC Raw: 756, Calibrated (mV): 175[0m
+[0;32mI (180327) POTENTIOMETER: Raw ADC Value: 756[0m
+[0;32mI (180327) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (180327) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (180337) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (181337) POTENTIOMETER: ADC Raw: 764, Calibrated (mV): 177[0m
+[0;32mI (181337) POTENTIOMETER: Raw ADC Value: 764[0m
+[0;32mI (181337) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (181337) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (181347) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (182347) POTENTIOMETER: ADC Raw: 766, Calibrated (mV): 177[0m
+[0;32mI (182347) POTENTIOMETER: Raw ADC Value: 766[0m
+[0;32mI (182347) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (182347) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (182357) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (183357) POTENTIOMETER: ADC Raw: 763, Calibrated (mV): 176[0m
+[0;32mI (183357) POTENTIOMETER: Raw ADC Value: 763[0m
+[0;32mI (183357) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (183357) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (183367) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (184367) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (184367) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (184367) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (184367) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (184377) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (185377) POTENTIOMETER: ADC Raw: 757, Calibrated (mV): 175[0m
+[0;32mI (185377) POTENTIOMETER: Raw ADC Value: 757[0m
+[0;32mI (185377) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (185377) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (185387) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (186387) POTENTIOMETER: ADC Raw: 758, Calibrated (mV): 175[0m
+[0;32mI (186387) POTENTIOMETER: Raw ADC Value: 758[0m
+[0;32mI (186387) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (186387) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (186397) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (187397) POTENTIOMETER: ADC Raw: 773, Calibrated (mV): 179[0m
+[0;32mI (187397) POTENTIOMETER: Raw ADC Value: 773[0m
+[0;32mI (187397) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (187397) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (187407) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (188407) POTENTIOMETER: ADC Raw: 757, Calibrated (mV): 175[0m
+[0;32mI (188407) POTENTIOMETER: Raw ADC Value: 757[0m
+[0;32mI (188407) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (188407) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (188417) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (189417) POTENTIOMETER: ADC Raw: 772, Calibrated (mV): 178[0m
+[0;32mI (189417) POTENTIOMETER: Raw ADC Value: 772[0m
+[0;32mI (189417) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (189417) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (189427) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (190427) POTENTIOMETER: ADC Raw: 750, Calibrated (mV): 173[0m
+[0;32mI (190427) POTENTIOMETER: Raw ADC Value: 750[0m
+[0;32mI (190427) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (190427) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (190437) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (191437) POTENTIOMETER: ADC Raw: 732, Calibrated (mV): 169[0m
+[0;32mI (191437) POTENTIOMETER: Raw ADC Value: 732[0m
+[0;32mI (191437) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (191437) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (191447) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (192447) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (192447) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (192447) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (192447) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (192457) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (193457) POTENTIOMETER: ADC Raw: 756, Calibrated (mV): 175[0m
+[0;32mI (193457) POTENTIOMETER: Raw ADC Value: 756[0m
+[0;32mI (193457) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (193457) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (193467) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (194467) POTENTIOMETER: ADC Raw: 756, Calibrated (mV): 175[0m
+[0;32mI (194467) POTENTIOMETER: Raw ADC Value: 756[0m
+[0;32mI (194467) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (194467) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (194477) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (195477) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (195477) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (195477) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (195477) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (195487) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (196487) POTENTIOMETER: ADC Raw: 763, Calibrated (mV): 176[0m
+[0;32mI (196487) POTENTIOMETER: Raw ADC Value: 763[0m
+[0;32mI (196487) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (196487) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (196497) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (197497) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (197497) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (197497) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (197497) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (197507) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (198507) POTENTIOMETER: ADC Raw: 765, Calibrated (mV): 177[0m
+[0;32mI (198507) POTENTIOMETER: Raw ADC Value: 765[0m
+[0;32mI (198507) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (198507) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (198517) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (199517) POTENTIOMETER: ADC Raw: 727, Calibrated (mV): 168[0m
+[0;32mI (199517) POTENTIOMETER: Raw ADC Value: 727[0m
+[0;32mI (199517) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (199517) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (199527) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (200527) POTENTIOMETER: ADC Raw: 758, Calibrated (mV): 175[0m
+[0;32mI (200527) POTENTIOMETER: Raw ADC Value: 758[0m
+[0;32mI (200527) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (200527) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (200537) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (201537) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (201537) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (201537) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (201537) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (201547) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (202547) POTENTIOMETER: ADC Raw: 763, Calibrated (mV): 176[0m
+[0;32mI (202547) POTENTIOMETER: Raw ADC Value: 763[0m
+[0;32mI (202547) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (202547) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (202557) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (203557) POTENTIOMETER: ADC Raw: 749, Calibrated (mV): 173[0m
+[0;32mI (203557) POTENTIOMETER: Raw ADC Value: 749[0m
+[0;32mI (203557) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (203557) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (203567) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (204567) POTENTIOMETER: ADC Raw: 741, Calibrated (mV): 171[0m
+[0;32mI (204567) POTENTIOMETER: Raw ADC Value: 741[0m
+[0;32mI (204567) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (204567) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (204577) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (205577) POTENTIOMETER: ADC Raw: 757, Calibrated (mV): 175[0m
+[0;32mI (205577) POTENTIOMETER: Raw ADC Value: 757[0m
+[0;32mI (205577) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (205577) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (205587) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (206587) POTENTIOMETER: ADC Raw: 749, Calibrated (mV): 173[0m
+[0;32mI (206587) POTENTIOMETER: Raw ADC Value: 749[0m
+[0;32mI (206587) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (206587) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (206597) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (207597) POTENTIOMETER: ADC Raw: 745, Calibrated (mV): 172[0m
+[0;32mI (207597) POTENTIOMETER: Raw ADC Value: 745[0m
+[0;32mI (207597) POTENTIOMETER: Calculated Duty Cycle: 2[0m
+[0;32mI (207597) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (207607) POTENTIOMETER: Final Duty Cycle Set: 2[0m
+[0;32mI (208607) POTENTIOMETER: ADC Raw: 746, Calibrated (mV): 172[0m
+[0;32mI (208607) POTENTIOMETER: Raw ADC Value: 746[0m
+[0;32mI (208607) POTENTIOMETER: Calculated Duty Cycle: 2[0m
+[0;32mI (208607) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (208617) POTENTIOMETER: Final Duty Cycle Set: 2[0m
+[0;32mI (209617) POTENTIOMETER: ADC Raw: 748, Calibrated (mV): 173[0m
+[0;32mI (209617) POTENTIOMETER: Raw ADC Value: 748[0m
+[0;32mI (209617) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (209617) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (209627) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (210627) POTENTIOMETER: ADC Raw: 749, Calibrated (mV): 173[0m
+[0;32mI (210627) POTENTIOMETER: Raw ADC Value: 749[0m
+[0;32mI (210627) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (210627) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (210637) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (211637) POTENTIOMETER: ADC Raw: 755, Calibrated (mV): 174[0m
+[0;32mI (211637) POTENTIOMETER: Raw ADC Value: 755[0m
+[0;32mI (211637) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (211637) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (211647) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (212647) POTENTIOMETER: ADC Raw: 750, Calibrated (mV): 173[0m
+[0;32mI (212647) POTENTIOMETER: Raw ADC Value: 750[0m
+[0;32mI (212647) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (212647) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (212657) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (213657) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (213657) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (213657) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (213657) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (213667) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (214667) POTENTIOMETER: ADC Raw: 779, Calibrated (mV): 180[0m
+[0;32mI (214667) POTENTIOMETER: Raw ADC Value: 779[0m
+[0;32mI (214667) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (214667) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (214677) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (215677) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (215677) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (215677) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (215677) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (215687) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (216687) POTENTIOMETER: ADC Raw: 752, Calibrated (mV): 174[0m
+[0;32mI (216687) POTENTIOMETER: Raw ADC Value: 752[0m
+[0;32mI (216687) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (216687) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (216697) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (217697) POTENTIOMETER: ADC Raw: 757, Calibrated (mV): 175[0m
+[0;32mI (217697) POTENTIOMETER: Raw ADC Value: 757[0m
+[0;32mI (217697) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (217697) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (217707) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (218707) POTENTIOMETER: ADC Raw: 763, Calibrated (mV): 176[0m
+[0;32mI (218707) POTENTIOMETER: Raw ADC Value: 763[0m
+[0;32mI (218707) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (218707) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (218717) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (219717) POTENTIOMETER: ADC Raw: 747, Calibrated (mV): 173[0m
+[0;32mI (219717) POTENTIOMETER: Raw ADC Value: 747[0m
+[0;32mI (219717) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (219717) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (219727) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (220727) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (220727) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (220727) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (220727) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (220737) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (221737) POTENTIOMETER: ADC Raw: 757, Calibrated (mV): 175[0m
+[0;32mI (221737) POTENTIOMETER: Raw ADC Value: 757[0m
+[0;32mI (221737) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (221737) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (221747) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (222747) POTENTIOMETER: ADC Raw: 755, Calibrated (mV): 174[0m
+[0;32mI (222747) POTENTIOMETER: Raw ADC Value: 755[0m
+[0;32mI (222747) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (222747) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (222757) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (223757) POTENTIOMETER: ADC Raw: 760, Calibrated (mV): 176[0m
+[0;32mI (223757) POTENTIOMETER: Raw ADC Value: 760[0m
+[0;32mI (223757) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (223757) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (223767) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (224767) POTENTIOMETER: ADC Raw: 745, Calibrated (mV): 172[0m
+[0;32mI (224767) POTENTIOMETER: Raw ADC Value: 745[0m
+[0;32mI (224767) POTENTIOMETER: Calculated Duty Cycle: 2[0m
+[0;32mI (224767) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (224777) POTENTIOMETER: Final Duty Cycle Set: 2[0m
+[0;32mI (225777) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (225777) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (225777) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (225777) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (225787) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (226787) POTENTIOMETER: ADC Raw: 745, Calibrated (mV): 172[0m
+[0;32mI (226787) POTENTIOMETER: Raw ADC Value: 745[0m
+[0;32mI (226787) POTENTIOMETER: Calculated Duty Cycle: 2[0m
+[0;32mI (226787) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (226797) POTENTIOMETER: Final Duty Cycle Set: 2[0m
+[0;32mI (227797) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (227797) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (227797) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (227797) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (227807) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (228807) POTENTIOMETER: ADC Raw: 740, Calibrated (mV): 171[0m
+[0;32mI (228807) POTENTIOMETER: Raw ADC Value: 740[0m
+[0;32mI (228807) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (228807) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (228817) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (229817) POTENTIOMETER: ADC Raw: 760, Calibrated (mV): 176[0m
+[0;32mI (229817) POTENTIOMETER: Raw ADC Value: 760[0m
+[0;32mI (229817) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (229817) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (229827) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (230827) POTENTIOMETER: ADC Raw: 755, Calibrated (mV): 174[0m
+[0;32mI (230827) POTENTIOMETER: Raw ADC Value: 755[0m
+[0;32mI (230827) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (230827) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (230837) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (231837) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (231837) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (231837) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (231837) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (231847) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (232847) POTENTIOMETER: ADC Raw: 749, Calibrated (mV): 173[0m
+[0;32mI (232847) POTENTIOMETER: Raw ADC Value: 749[0m
+[0;32mI (232847) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (232847) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (232857) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (233857) POTENTIOMETER: ADC Raw: 747, Calibrated (mV): 173[0m
+[0;32mI (233857) POTENTIOMETER: Raw ADC Value: 747[0m
+[0;32mI (233857) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (233857) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (233867) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (234867) POTENTIOMETER: ADC Raw: 757, Calibrated (mV): 175[0m
+[0;32mI (234867) POTENTIOMETER: Raw ADC Value: 757[0m
+[0;32mI (234867) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (234867) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (234877) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (235877) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (235877) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (235877) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (235877) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (235887) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (236887) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (236887) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (236887) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (236887) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (236897) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (237897) POTENTIOMETER: ADC Raw: 760, Calibrated (mV): 176[0m
+[0;32mI (237897) POTENTIOMETER: Raw ADC Value: 760[0m
+[0;32mI (237897) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (237897) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (237907) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (238907) POTENTIOMETER: ADC Raw: 747, Calibrated (mV): 173[0m
+[0;32mI (238907) POTENTIOMETER: Raw ADC Value: 747[0m
+[0;32mI (238907) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (238907) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (238917) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (239917) POTENTIOMETER: ADC Raw: 747, Calibrated (mV): 173[0m
+[0;32mI (239917) POTENTIOMETER: Raw ADC Value: 747[0m
+[0;32mI (239917) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (239917) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (239927) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (240927) POTENTIOMETER: ADC Raw: 749, Calibrated (mV): 173[0m
+[0;32mI (240927) POTENTIOMETER: Raw ADC Value: 749[0m
+[0;32mI (240927) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (240927) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (240937) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (241937) POTENTIOMETER: ADC Raw: 745, Calibrated (mV): 172[0m
+[0;32mI (241937) POTENTIOMETER: Raw ADC Value: 745[0m
+[0;32mI (241937) POTENTIOMETER: Calculated Duty Cycle: 2[0m
+[0;32mI (241937) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (241947) POTENTIOMETER: Final Duty Cycle Set: 2[0m
+[0;32mI (242947) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (242947) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (242947) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (242947) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (242957) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (243957) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (243957) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (243957) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (243957) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (243967) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (244967) POTENTIOMETER: ADC Raw: 746, Calibrated (mV): 172[0m
+[0;32mI (244967) POTENTIOMETER: Raw ADC Value: 746[0m
+[0;32mI (244967) POTENTIOMETER: Calculated Duty Cycle: 2[0m
+[0;32mI (244967) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (244977) POTENTIOMETER: Final Duty Cycle Set: 2[0m
+[0;32mI (245977) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (245977) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (245977) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (245977) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (245987) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (246987) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (246987) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (246987) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (246987) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (246997) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (247997) POTENTIOMETER: ADC Raw: 756, Calibrated (mV): 175[0m
+[0;32mI (247997) POTENTIOMETER: Raw ADC Value: 756[0m
+[0;32mI (247997) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (247997) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (248007) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (249007) POTENTIOMETER: ADC Raw: 747, Calibrated (mV): 173[0m
+[0;32mI (249007) POTENTIOMETER: Raw ADC Value: 747[0m
+[0;32mI (249007) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (249007) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (249017) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (250017) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (250017) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (250017) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (250017) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (250027) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (251027) POTENTIOMETER: ADC Raw: 742, Calibrated (mV): 171[0m
+[0;32mI (251027) POTENTIOMETER: Raw ADC Value: 742[0m
+[0;32mI (251027) POTENTIOMETER: Calculated Duty Cycle: 3[0m
+[0;32mI (251027) POTENTIOMETER: Fan Speed Percentage: 1%[0m
+[0;32mI (251037) POTENTIOMETER: Final Duty Cycle Set: 3[0m
+[0;32mI (252037) POTENTIOMETER: ADC Raw: 764, Calibrated (mV): 177[0m
+[0;32mI (252037) POTENTIOMETER: Raw ADC Value: 764[0m
+[0;32mI (252037) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (252037) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (252047) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (253047) POTENTIOMETER: ADC Raw: 749, Calibrated (mV): 173[0m
+[0;32mI (253047) POTENTIOMETER: Raw ADC Value: 749[0m
+[0;32mI (253047) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (253047) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (253057) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (254057) POTENTIOMETER: ADC Raw: 755, Calibrated (mV): 174[0m
+[0;32mI (254057) POTENTIOMETER: Raw ADC Value: 755[0m
+[0;32mI (254057) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (254057) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (254067) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (255067) POTENTIOMETER: ADC Raw: 763, Calibrated (mV): 176[0m
+[0;32mI (255067) POTENTIOMETER: Raw ADC Value: 763[0m
+[0;32mI (255067) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (255067) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (255077) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (256077) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (256077) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (256077) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (256077) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (256087) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (257087) POTENTIOMETER: ADC Raw: 758, Calibrated (mV): 175[0m
+[0;32mI (257087) POTENTIOMETER: Raw ADC Value: 758[0m
+[0;32mI (257087) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (257087) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (257097) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (258097) POTENTIOMETER: ADC Raw: 746, Calibrated (mV): 172[0m
+[0;32mI (258097) POTENTIOMETER: Raw ADC Value: 746[0m
+[0;32mI (258097) POTENTIOMETER: Calculated Duty Cycle: 2[0m
+[0;32mI (258097) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (258107) POTENTIOMETER: Final Duty Cycle Set: 2[0m
+[0;32mI (259107) POTENTIOMETER: ADC Raw: 743, Calibrated (mV): 172[0m
+[0;32mI (259107) POTENTIOMETER: Raw ADC Value: 743[0m
+[0;32mI (259107) POTENTIOMETER: Calculated Duty Cycle: 3[0m
+[0;32mI (259107) POTENTIOMETER: Fan Speed Percentage: 1%[0m
+[0;32mI (259117) POTENTIOMETER: Final Duty Cycle Set: 3[0m
+[0;32mI (260117) POTENTIOMETER: ADC Raw: 747, Calibrated (mV): 173[0m
+[0;32mI (260117) POTENTIOMETER: Raw ADC Value: 747[0m
+[0;32mI (260117) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (260117) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (260127) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (261127) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (261127) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (261127) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (261127) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (261137) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (262137) POTENTIOMETER: ADC Raw: 756, Calibrated (mV): 175[0m
+[0;32mI (262137) POTENTIOMETER: Raw ADC Value: 756[0m
+[0;32mI (262137) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (262137) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (262147) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (263147) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (263147) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (263147) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (263147) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (263157) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (264157) POTENTIOMETER: ADC Raw: 757, Calibrated (mV): 175[0m
+[0;32mI (264157) POTENTIOMETER: Raw ADC Value: 757[0m
+[0;32mI (264157) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (264157) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (264167) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (265167) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (265167) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (265167) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (265167) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (265177) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (266177) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (266177) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (266177) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (266177) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (266187) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (267187) POTENTIOMETER: ADC Raw: 757, Calibrated (mV): 175[0m
+[0;32mI (267187) POTENTIOMETER: Raw ADC Value: 757[0m
+[0;32mI (267187) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (267187) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (267197) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (268197) POTENTIOMETER: ADC Raw: 757, Calibrated (mV): 175[0m
+[0;32mI (268197) POTENTIOMETER: Raw ADC Value: 757[0m
+[0;32mI (268197) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (268197) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (268207) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (269207) POTENTIOMETER: ADC Raw: 761, Calibrated (mV): 176[0m
+[0;32mI (269207) POTENTIOMETER: Raw ADC Value: 761[0m
+[0;32mI (269207) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (269207) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (269217) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (270217) POTENTIOMETER: ADC Raw: 760, Calibrated (mV): 176[0m
+[0;32mI (270217) POTENTIOMETER: Raw ADC Value: 760[0m
+[0;32mI (270217) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (270217) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (270227) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (271227) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (271227) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (271227) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (271227) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (271237) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (272237) POTENTIOMETER: ADC Raw: 756, Calibrated (mV): 175[0m
+[0;32mI (272237) POTENTIOMETER: Raw ADC Value: 756[0m
+[0;32mI (272237) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (272237) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (272247) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (273247) POTENTIOMETER: ADC Raw: 755, Calibrated (mV): 174[0m
+[0;32mI (273247) POTENTIOMETER: Raw ADC Value: 755[0m
+[0;32mI (273247) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (273247) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (273257) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (274257) POTENTIOMETER: ADC Raw: 762, Calibrated (mV): 176[0m
+[0;32mI (274257) POTENTIOMETER: Raw ADC Value: 762[0m
+[0;32mI (274257) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (274257) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (274267) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (275267) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (275267) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (275267) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (275267) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (275277) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (276277) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (276277) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (276277) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (276277) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (276287) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (277287) POTENTIOMETER: ADC Raw: 756, Calibrated (mV): 175[0m
+[0;32mI (277287) POTENTIOMETER: Raw ADC Value: 756[0m
+[0;32mI (277287) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (277287) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (277297) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (278297) POTENTIOMETER: ADC Raw: 749, Calibrated (mV): 173[0m
+[0;32mI (278297) POTENTIOMETER: Raw ADC Value: 749[0m
+[0;32mI (278297) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (278297) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (278307) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (279307) POTENTIOMETER: ADC Raw: 748, Calibrated (mV): 173[0m
+[0;32mI (279307) POTENTIOMETER: Raw ADC Value: 748[0m
+[0;32mI (279307) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (279307) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (279317) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (280317) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (280317) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (280317) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (280317) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (280327) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (281327) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (281327) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (281327) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (281327) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (281337) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (282337) POTENTIOMETER: ADC Raw: 751, Calibrated (mV): 174[0m
+[0;32mI (282337) POTENTIOMETER: Raw ADC Value: 751[0m
+[0;32mI (282337) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (282337) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (282347) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (283347) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (283347) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (283347) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (283347) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (283357) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (284357) POTENTIOMETER: ADC Raw: 763, Calibrated (mV): 176[0m
+[0;32mI (284357) POTENTIOMETER: Raw ADC Value: 763[0m
+[0;32mI (284357) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (284357) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (284367) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (285367) POTENTIOMETER: ADC Raw: 747, Calibrated (mV): 173[0m
+[0;32mI (285367) POTENTIOMETER: Raw ADC Value: 747[0m
+[0;32mI (285367) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (285367) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (285377) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (286377) POTENTIOMETER: ADC Raw: 764, Calibrated (mV): 177[0m
+[0;32mI (286377) POTENTIOMETER: Raw ADC Value: 764[0m
+[0;32mI (286377) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (286377) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (286387) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (287387) POTENTIOMETER: ADC Raw: 731, Calibrated (mV): 169[0m
+[0;32mI (287387) POTENTIOMETER: Raw ADC Value: 731[0m
+[0;32mI (287387) POTENTIOMETER: Calculated Duty Cycle: 51[0m
+[0;32mI (287387) POTENTIOMETER: Fan Speed Percentage: 20%[0m
+[0;32mI (287397) POTENTIOMETER: Final Duty Cycle Set: 51[0m
+[0;32mI (288397) POTENTIOMETER: ADC Raw: 765, Calibrated (mV): 177[0m
+[0;32mI (288397) POTENTIOMETER: Raw ADC Value: 765[0m
+[0;32mI (288397) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (288397) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (288407) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (289407) POTENTIOMETER: ADC Raw: 747, Calibrated (mV): 173[0m
+[0;32mI (289407) POTENTIOMETER: Raw ADC Value: 747[0m
+[0;32mI (289407) POTENTIOMETER: Calculated Duty Cycle: 1[0m
+[0;32mI (289407) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (289417) POTENTIOMETER: Final Duty Cycle Set: 1[0m
+[0;32mI (290417) POTENTIOMETER: ADC Raw: 745, Calibrated (mV): 172[0m
+[0;32mI (290417) POTENTIOMETER: Raw ADC Value: 745[0m
+[0;32mI (290417) POTENTIOMETER: Calculated Duty Cycle: 2[0m
+[0;32mI (290417) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (290427) POTENTIOMETER: Final Duty Cycle Set: 2[0m
+[0;32mI (291427) POTENTIOMETER: ADC Raw: 759, Calibrated (mV): 175[0m
+[0;32mI (291427) POTENTIOMETER: Raw ADC Value: 759[0m
+[0;32mI (291427) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (291427) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (291437) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (292437) POTENTIOMETER: ADC Raw: 780, Calibrated (mV): 180[0m
+[0;32mI (292437) POTENTIOMETER: Raw ADC Value: 780[0m
+[0;32mI (292437) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (292437) POTENTIOMETER: Fan Speed Percentage: 0%[0m
+[0;32mI (292447) POTENTIOMETER: Final Duty Cycle Set: 0[0m
+[0;32mI (293447) POTENTIOMETER: ADC Raw: 764, Calibrated (mV): 177[0m
+[0;32mI (293447) POTENTIOMETER: Raw ADC Value: 764[0m
+[0;32mI (293447) POTENTIOMETER: Calculated Duty Cycle: 0[0m
+[0;32mI (293447) POTENTIOMETER

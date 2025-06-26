@@ -65,32 +65,109 @@ void fan_pwm_init(void) {
 }
 // Function to update fan speed based on potentiometer value
 void update_fan_speed(void) {
+    static uint32_t last_adc = 0;
+    static uint8_t off_count = 0;
+    static uint8_t on_count = 0;
+    static uint32_t log_counter = 0;
 
-    uint32_t adc_value = potentiometer_read();  // Read the potentiometer value
+    uint32_t raw_adc = potentiometer_read();  // Read the potentiometer value
 
-    const uint32_t min_adc_value = 0;    // Min ADC value for the potentiometer
-    const uint32_t max_adc_value = 942;  // Max ADC value from your potentiometer (adjust if needed)
+    // Aggressive filtering for max speed position
+    uint32_t adc_value;
+
+    // If we're at max speed position (ADC near 0), be very conservative about changes
+    if (last_adc <= 20 && raw_adc > 100) {
+        // Ignore sudden jumps from max speed position - likely noise
+        adc_value = last_adc;
+        ESP_LOGW(TAG, "NOISE DETECTED: Ignoring jump from %d to %d", last_adc, raw_adc);
+    } else if (abs((int)raw_adc - (int)last_adc) > 50) {
+        // Big change - use new value immediately (responsive)
+        adc_value = raw_adc;
+    } else {
+        // Small change - light smoothing: 50% old, 50% new
+        adc_value = (last_adc + raw_adc) / 2;
+    }
+    last_adc = adc_value;
+
+    // Your actual potentiometer range (based on RAW ADC readings)
+    const uint32_t max_adc_value = 760;  // Pot turned counterclockwise (use max observed)
+
+    // Fan control parameters - "best effort" approach with buffer zones
+    const uint32_t off_threshold = 735;   // Simple threshold
+    const uint32_t max_speed_zone = 10;   // Buffer zone at max speed (ADC 0-10 = max speed)
+    const uint32_t min_duty_cycle = 25;   // ~10% minimum when running (25/255 = 9.8%)
+    const uint32_t max_duty_cycle = 255;  // 100% maximum
 
     uint32_t duty_cycle = 0;  // Initialize duty cycle
     uint8_t fan_speed_percentage = 0;  // Initialize fan speed percentage
 
-    //ESP_LOGI(TAG, "Raw ADC Value: %" PRIu32, adc_value);
+    // Log every call temporarily to debug the switching issue
+    log_counter++;
+    bool should_log = true;  // Log everything for debugging
 
-    // Calculate the duty cycle based on the adjusted range
-    duty_cycle = ((max_adc_value - adc_value) * 255) / (max_adc_value - min_adc_value);
+    ESP_LOGI(TAG, "ADC: %d (Raw: %d), off_count: %d, on_count: %d", adc_value, raw_adc, off_count, on_count);
 
-    // Calculate the fan speed percentage
-    fan_speed_percentage = (duty_cycle * 100) / 255;
+    // Clamp ADC value to expected range
+    if (adc_value > max_adc_value) adc_value = max_adc_value;
 
-    //ESP_LOGI(TAG, "Calculated Duty Cycle: %" PRIu32, duty_cycle);
-    //ESP_LOGI(TAG, "Fan Speed Percentage: %" PRIu8 "%%", fan_speed_percentage);
+    // Simple logic - always calculate and update PWM
+    if (adc_value >= off_threshold) {
+        off_count++;
+        on_count = 0;
+        if (off_count >= 3) {  // Need 3 consecutive readings to turn OFF
+            duty_cycle = 0;
+            fan_speed_percentage = 0;
+            ESP_LOGW(TAG, "FANS TURNED OFF after %d readings!", off_count);
+        } else {
+            // Still in OFF zone but not confirmed - calculate normal speed anyway
+            // This prevents PWM gaps during brief noise spikes
+            if (adc_value <= max_speed_zone) {
+                duty_cycle = max_duty_cycle;
+                fan_speed_percentage = 100;
+            } else {
+                duty_cycle = min_duty_cycle + (((off_threshold - adc_value) * (max_duty_cycle - min_duty_cycle)) / off_threshold);
+                fan_speed_percentage = (duty_cycle * 100) / 255;
+            }
+            ESP_LOGW(TAG, "OFF pending (%d/3), but keeping speed at %d%%", off_count, fan_speed_percentage);
+        }
+    } else {
+        // Normal operation - reset OFF counter
+        off_count = 0;
+        on_count++;
+
+        // Check if we're in the max speed zone
+        if (adc_value <= max_speed_zone) {
+            // Max speed zone - always 100%
+            duty_cycle = max_duty_cycle;
+            fan_speed_percentage = 100;
+            if (should_log) {
+                ESP_LOGI(TAG, "MAX SPEED ZONE: ADC %d <= %d, Duty Cycle: %d",
+                         adc_value, max_speed_zone, duty_cycle);
+            }
+        } else {
+            // Normal speed control range
+            duty_cycle = min_duty_cycle + (((off_threshold - adc_value) * (max_duty_cycle - min_duty_cycle)) / off_threshold);
+            fan_speed_percentage = (duty_cycle * 100) / 255;
+
+            // Debug the calculation (only when logging)
+            if (should_log) {
+                ESP_LOGI(TAG, "Calculation: (%d - %d) * (%d - %d) / %d = %d",
+                         off_threshold, adc_value, max_duty_cycle, min_duty_cycle, off_threshold, duty_cycle);
+            }
+        }
+    }
+
+    if (should_log) {
+        ESP_LOGI(TAG, "Calculated Duty Cycle: %" PRIu32, duty_cycle);
+        ESP_LOGI(TAG, "Fan Speed Percentage: %" PRIu8 "%%", fan_speed_percentage);
+    }
 
     // Update the PWM duty cycle
     ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL, duty_cycle);
     ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL);
 
-    // Log the final duty cycle for debugging
-    //ESP_LOGI(TAG, "Final Duty Cycle Set: %" PRIu32, duty_cycle);
+    // Log every PWM update for debugging
+    ESP_LOGI(TAG, "PWM SET: %d (%d%%)", duty_cycle, fan_speed_percentage);
 
     // Later, you can display fan_speed_percentage on a display
 }
@@ -104,7 +181,11 @@ uint32_t potentiometer_read(void) {
     int calibrated_value;
     adc_cali_raw_to_voltage(cali_handle, raw_value, &calibrated_value);
 
-    return calibrated_value;
+    // Debug: Log both raw and calibrated values
+    ESP_LOGI(TAG, "ADC Raw: %d, Calibrated (mV): %d", raw_value, calibrated_value);
+
+    // Return RAW value instead of calibrated voltage
+    return raw_value;
 }
 
 // Function to print the potentiometer value (for testing)
