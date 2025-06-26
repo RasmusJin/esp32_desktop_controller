@@ -1,0 +1,2 @@
+source /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/gdbinit/symbols
+source /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/gdbinit/connect

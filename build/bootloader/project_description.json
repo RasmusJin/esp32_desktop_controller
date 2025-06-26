@@ -1,17 +1,17 @@
 {
-    "version":            "1.1",
+    "version":            "1.2",
     "project_name":       "bootloader",
-    "project_version":    "v5.3",
+    "project_version":    "v5.5-dev-1655-gc5865270b5-dirty",
     "project_path":       "/home/jin/esp/esp-idf/components/bootloader/subproject",
     "idf_path":           "/home/jin/esp/esp-idf",
-    "build_dir":          "/home/jin/workspaces/esp32workspace/desktop_controller/build/bootloader",
-    "config_file":        "/home/jin/workspaces/esp32workspace/desktop_controller/sdkconfig",
+    "build_dir":          "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader",
+    "config_file":        "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/sdkconfig",
     "config_defaults":    "",
     "bootloader_elf":     "",
     "app_elf":            "bootloader.elf",
     "app_bin":            "bootloader.bin",
     "build_type":         "flash_app",
-    "git_revision":       "v5.3",
+    "git_revision":       "v5.5-dev-1655-gc5865270b5-dirty",
     "target":             "esp32s3",
     "rev":                "",
     "min_rev":            "0",
@@ -19,14 +19,14 @@
     "phy_data_partition": "",
     "monitor_baud" :      "115200",
     "monitor_toolprefix": "xtensa-esp32s3-elf-",
-    "c_compiler":         "/home/jin/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc",
+    "c_compiler":         "/home/jin/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc",
     "config_environment" : {
-        "COMPONENT_KCONFIGS" : "/home/jin/esp/esp-idf/components/efuse/Kconfig;/home/jin/esp/esp-idf/components/esp_common/Kconfig;/home/jin/esp/esp-idf/components/esp_hw_support/Kconfig;/home/jin/esp/esp-idf/components/esp_system/Kconfig;/home/jin/esp/esp-idf/components/freertos/Kconfig;/home/jin/esp/esp-idf/components/hal/Kconfig;/home/jin/esp/esp-idf/components/log/Kconfig;/home/jin/esp/esp-idf/components/newlib/Kconfig;/home/jin/esp/esp-idf/components/soc/Kconfig;/home/jin/esp/esp-idf/components/spi_flash/Kconfig",
+        "COMPONENT_KCONFIGS" : "/home/jin/esp/esp-idf/components/efuse/Kconfig;/home/jin/esp/esp-idf/components/esp_common/Kconfig;/home/jin/esp/esp-idf/components/esp_hw_support/Kconfig;/home/jin/esp/esp-idf/components/esp_security/Kconfig;/home/jin/esp/esp-idf/components/esp_system/Kconfig;/home/jin/esp/esp-idf/components/freertos/Kconfig;/home/jin/esp/esp-idf/components/hal/Kconfig;/home/jin/esp/esp-idf/components/log/Kconfig;/home/jin/esp/esp-idf/components/newlib/Kconfig;/home/jin/esp/esp-idf/components/soc/Kconfig;/home/jin/esp/esp-idf/components/spi_flash/Kconfig",
         "COMPONENT_KCONFIGS_PROJBUILD" : "/home/jin/esp/esp-idf/components/bootloader/Kconfig.projbuild;/home/jin/esp/esp-idf/components/esp_app_format/Kconfig.projbuild;/home/jin/esp/esp-idf/components/esp_rom/Kconfig.projbuild;/home/jin/esp/esp-idf/components/esptool_py/Kconfig.projbuild;/home/jin/esp/esp-idf/components/partition_table/Kconfig.projbuild"
     },
     "common_component_reqs": [ "log", "esp_rom", "esp_common", "esp_hw_support", "newlib", "xtensa" ],
-    "build_components" : [ "bootloader", "bootloader_support", "efuse", "esp_app_format", "esp_bootloader_format", "esp_common", "esp_hw_support", "esp_rom", "esp_system", "esptool_py", "freertos", "hal", "log", "main", "micro-ecc", "newlib", "partition_table", "soc", "spi_flash", "xtensa", "" ],
-    "build_component_paths" : [ "/home/jin/esp/esp-idf/components/bootloader", "/home/jin/esp/esp-idf/components/bootloader_support", "/home/jin/esp/esp-idf/components/efuse", "/home/jin/esp/esp-idf/components/esp_app_format", "/home/jin/esp/esp-idf/components/esp_bootloader_format", "/home/jin/esp/esp-idf/components/esp_common", "/home/jin/esp/esp-idf/components/esp_hw_support", "/home/jin/esp/esp-idf/components/esp_rom", "/home/jin/esp/esp-idf/components/esp_system", "/home/jin/esp/esp-idf/components/esptool_py", "/home/jin/esp/esp-idf/components/freertos", "/home/jin/esp/esp-idf/components/hal", "/home/jin/esp/esp-idf/components/log", "/home/jin/esp/esp-idf/components/bootloader/subproject/main", "/home/jin/esp/esp-idf/components/bootloader/subproject/components/micro-ecc", "/home/jin/esp/esp-idf/components/newlib", "/home/jin/esp/esp-idf/components/partition_table", "/home/jin/esp/esp-idf/components/soc", "/home/jin/esp/esp-idf/components/spi_flash", "/home/jin/esp/esp-idf/components/xtensa", "" ],
+    "build_components" : [ "bootloader", "bootloader_support", "efuse", "esp_app_format", "esp_bootloader_format", "esp_common", "esp_hw_support", "esp_rom", "esp_security", "esp_system", "esptool_py", "freertos", "hal", "log", "main", "micro-ecc", "newlib", "partition_table", "soc", "spi_flash", "xtensa", "" ],
+    "build_component_paths" : [ "/home/jin/esp/esp-idf/components/bootloader", "/home/jin/esp/esp-idf/components/bootloader_support", "/home/jin/esp/esp-idf/components/efuse", "/home/jin/esp/esp-idf/components/esp_app_format", "/home/jin/esp/esp-idf/components/esp_bootloader_format", "/home/jin/esp/esp-idf/components/esp_common", "/home/jin/esp/esp-idf/components/esp_hw_support", "/home/jin/esp/esp-idf/components/esp_rom", "/home/jin/esp/esp-idf/components/esp_security", "/home/jin/esp/esp-idf/components/esp_system", "/home/jin/esp/esp-idf/components/esptool_py", "/home/jin/esp/esp-idf/components/freertos", "/home/jin/esp/esp-idf/components/hal", "/home/jin/esp/esp-idf/components/log", "/home/jin/esp/esp-idf/components/bootloader/subproject/main", "/home/jin/esp/esp-idf/components/bootloader/subproject/components/micro-ecc", "/home/jin/esp/esp-idf/components/newlib", "/home/jin/esp/esp-idf/components/partition_table", "/home/jin/esp/esp-idf/components/soc", "/home/jin/esp/esp-idf/components/spi_flash", "/home/jin/esp/esp-idf/components/xtensa", "" ],
     "build_component_info" : {
         "bootloader": {
             "alias": "idf::bootloader",
@@ -54,7 +54,7 @@
             "priv_reqs": [ "micro-ecc", "spi_flash", "efuse", "esp_bootloader_format", "esp_app_format", "hal" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/jin/workspaces/esp32workspace/desktop_controller/build/bootloader/esp-idf/bootloader_support/libbootloader_support.a",
+            "file": "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/esp-idf/bootloader_support/libbootloader_support.a",
             "sources": [ "/home/jin/esp/esp-idf/components/bootloader_support/src/bootloader_common.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/bootloader_common_loader.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/bootloader_clock_init.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/bootloader_mem.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/bootloader_random.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/bootloader_efuse.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/flash_encrypt.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/secure_boot.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/bootloader_random_esp32s3.c", "/home/jin/esp/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash.c", "/home/jin/esp/esp-idf/components/bootloader_support/bootloader_flash/src/flash_qio_mode.c", "/home/jin/esp/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32s3.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/flash_partitions.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/esp_image_format.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/bootloader_init.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/bootloader_clock_loader.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/bootloader_console.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/bootloader_console_loader.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/esp32s3/bootloader_sha.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/esp32s3/bootloader_soc.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/esp32s3/bootloader_esp32s3.c", "/home/jin/esp/esp-idf/components/bootloader_support/src/bootloader_panic.c" ],
             "include_dirs": [ "include", "bootloader_flash/include", "private_include" ]
         },
@@ -69,7 +69,7 @@
             "priv_reqs": [ "bootloader_support", "soc", "spi_flash" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/jin/workspaces/esp32workspace/desktop_controller/build/bootloader/esp-idf/efuse/libefuse.a",
+            "file": "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/esp-idf/efuse/libefuse.a",
             "sources": [ "/home/jin/esp/esp-idf/components/efuse/esp32s3/esp_efuse_table.c", "/home/jin/esp/esp-idf/components/efuse/esp32s3/esp_efuse_fields.c", "/home/jin/esp/esp-idf/components/efuse/esp32s3/esp_efuse_rtc_calib.c", "/home/jin/esp/esp-idf/components/efuse/esp32s3/esp_efuse_utility.c", "/home/jin/esp/esp-idf/components/efuse/src/esp_efuse_api.c", "/home/jin/esp/esp-idf/components/efuse/src/esp_efuse_fields.c", "/home/jin/esp/esp-idf/components/efuse/src/esp_efuse_utility.c", "/home/jin/esp/esp-idf/components/efuse/src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c" ],
             "include_dirs": [ "include", "esp32s3/include" ]
         },
@@ -99,7 +99,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/jin/workspaces/esp32workspace/desktop_controller/build/bootloader/esp-idf/esp_bootloader_format/libesp_bootloader_format.a",
+            "file": "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/esp-idf/esp_bootloader_format/libesp_bootloader_format.a",
             "sources": [ "/home/jin/esp/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c" ],
             "include_dirs": [ "include" ]
         },
@@ -114,7 +114,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/jin/workspaces/esp32workspace/desktop_controller/build/bootloader/esp-idf/esp_common/libesp_common.a",
+            "file": "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/esp-idf/esp_common/libesp_common.a",
             "sources": [ "/home/jin/esp/esp-idf/components/esp_common/src/esp_err_to_name.c" ],
             "include_dirs": [ "include" ]
         },
@@ -126,12 +126,12 @@
             "type": "LIBRARY",
             "lib": "__idf_esp_hw_support",
             "reqs": [ "soc" ],
-            "priv_reqs": [ "efuse", "spi_flash", "bootloader_support", "esp_system" ],
+            "priv_reqs": [ "efuse", "spi_flash", "bootloader_support", "esp_security", "esp_system" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/jin/workspaces/esp32workspace/desktop_controller/build/bootloader/esp-idf/esp_hw_support/libesp_hw_support.a",
-            "sources": [ "/home/jin/esp/esp-idf/components/esp_hw_support/cpu.c", "/home/jin/esp/esp-idf/components/esp_hw_support/port/esp32s3/esp_cpu_intr.c", "/home/jin/esp/esp-idf/components/esp_hw_support/esp_memory_utils.c", "/home/jin/esp/esp-idf/components/esp_hw_support/port/esp32s3/cpu_region_protect.c", "/home/jin/esp/esp-idf/components/esp_hw_support/port/esp32s3/rtc_clk.c", "/home/jin/esp/esp-idf/components/esp_hw_support/port/esp32s3/rtc_clk_init.c", "/home/jin/esp/esp-idf/components/esp_hw_support/port/esp32s3/rtc_init.c", "/home/jin/esp/esp-idf/components/esp_hw_support/port/esp32s3/rtc_sleep.c", "/home/jin/esp/esp-idf/components/esp_hw_support/port/esp32s3/rtc_time.c", "/home/jin/esp/esp-idf/components/esp_hw_support/port/esp32s3/chip_info.c" ],
-            "include_dirs": [ "include", "include/soc", "include/soc/esp32s3", "dma/include", "ldo/include" ]
+            "file": "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/esp-idf/esp_hw_support/libesp_hw_support.a",
+            "sources": [ "/home/jin/esp/esp-idf/components/esp_hw_support/cpu.c", "/home/jin/esp/esp-idf/components/esp_hw_support/port/esp32s3/esp_cpu_intr.c", "/home/jin/esp/esp-idf/components/esp_hw_support/esp_memory_utils.c", "/home/jin/esp/esp-idf/components/esp_hw_support/port/esp32s3/cpu_region_protect.c", "/home/jin/esp/esp-idf/components/esp_hw_support/port/esp32s3/rtc_clk.c", "/home/jin/esp/esp-idf/components/esp_hw_support/port/esp32s3/rtc_clk_init.c", "/home/jin/esp/esp-idf/components/esp_hw_support/port/esp32s3/rtc_init.c", "/home/jin/esp/esp-idf/components/esp_hw_support/port/esp32s3/rtc_sleep.c", "/home/jin/esp/esp-idf/components/esp_hw_support/port/esp32s3/rtc_time.c", "/home/jin/esp/esp-idf/components/esp_hw_support/port/esp32s3/chip_info.c", "/home/jin/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/port/esp32s3" ],
+            "include_dirs": [ "include", "include/soc", "include/soc/esp32s3", "dma/include", "ldo/include", "debug_probe/include", "mspi_timing_tuning/include", "power_supply/include" ]
         },
         "esp_rom": {
             "alias": "idf::esp_rom",
@@ -144,9 +144,24 @@
             "priv_reqs": [ "soc", "hal" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/jin/workspaces/esp32workspace/desktop_controller/build/bootloader/esp-idf/esp_rom/libesp_rom.a",
-            "sources": [ "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_crc.c", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_sys.c", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_uart.c", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_spiflash.c", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_efuse.c", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_longjmp.S", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_systimer.c", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_wdt.c", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_cache_esp32s2_esp32s3.c", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_cache_writeback_esp32s3.S" ],
-            "include_dirs": [ "include", "include/esp32s3", "esp32s3" ]
+            "file": "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/esp-idf/esp_rom/libesp_rom.a",
+            "sources": [ "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_sys.c", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_print.c", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_crc.c", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_uart.c", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_spiflash.c", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_efuse.c", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_gpio.c", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_longjmp.S", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_systimer.c", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_wdt.c", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_cache_esp32s2_esp32s3.c", "/home/jin/esp/esp-idf/components/esp_rom/patches/esp_rom_cache_writeback_esp32s3.S" ],
+            "include_dirs": [ "include", "esp32s3/include", "esp32s3/include/esp32s3", "esp32s3" ]
+        },
+        "esp_security": {
+            "alias": "idf::esp_security",
+            "target": "___idf_esp_security",
+            "prefix": "idf",
+            "dir": "/home/jin/esp/esp-idf/components/esp_security",
+            "type": "CONFIG_ONLY",
+            "lib": "__idf_esp_security",
+            "reqs": [],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "",
+            "sources": [],
+            "include_dirs": [ "include" ]
         },
         "esp_system": {
             "alias": "idf::esp_system",
@@ -159,7 +174,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/jin/workspaces/esp32workspace/desktop_controller/build/bootloader/esp-idf/esp_system/libesp_system.a",
+            "file": "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/esp-idf/esp_system/libesp_system.a",
             "sources": [ "/home/jin/esp/esp-idf/components/esp_system/esp_err.c" ],
             "include_dirs": []
         },
@@ -204,7 +219,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/jin/workspaces/esp32workspace/desktop_controller/build/bootloader/esp-idf/hal/libhal.a",
+            "file": "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/esp-idf/hal/libhal.a",
             "sources": [ "/home/jin/esp/esp-idf/components/hal/hal_utils.c", "/home/jin/esp/esp-idf/components/hal/mpu_hal.c", "/home/jin/esp/esp-idf/components/hal/efuse_hal.c", "/home/jin/esp/esp-idf/components/hal/esp32s3/efuse_hal.c", "/home/jin/esp/esp-idf/components/hal/mmu_hal.c", "/home/jin/esp/esp-idf/components/hal/cache_hal.c" ],
             "include_dirs": [ "platform_port/include", "esp32s3/include", "include" ]
         },
@@ -216,11 +231,11 @@
             "type": "LIBRARY",
             "lib": "__idf_log",
             "reqs": [],
-            "priv_reqs": [ "soc", "hal", "esp_hw_support" ],
+            "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/jin/workspaces/esp32workspace/desktop_controller/build/bootloader/esp-idf/log/liblog.a",
-            "sources": [ "/home/jin/esp/esp-idf/components/log/log.c", "/home/jin/esp/esp-idf/components/log/log_buffers.c", "/home/jin/esp/esp-idf/components/log/log_noos.c" ],
+            "file": "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/esp-idf/log/liblog.a",
+            "sources": [ "/home/jin/esp/esp-idf/components/log/src/noos/log_timestamp.c", "/home/jin/esp/esp-idf/components/log/src/log_timestamp_common.c", "/home/jin/esp/esp-idf/components/log/src/noos/log_lock.c", "/home/jin/esp/esp-idf/components/log/src/buffer/log_buffers.c", "/home/jin/esp/esp-idf/components/log/src/noos/util.c", "/home/jin/esp/esp-idf/components/log/src/util.c", "/home/jin/esp/esp-idf/components/log/src/log_print.c", "/home/jin/esp/esp-idf/components/log/src/log.c" ],
             "include_dirs": [ "include" ]
         },
         "main": {
@@ -234,7 +249,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/jin/workspaces/esp32workspace/desktop_controller/build/bootloader/esp-idf/main/libmain.a",
+            "file": "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/esp-idf/main/libmain.a",
             "sources": [ "/home/jin/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c" ],
             "include_dirs": []
         },
@@ -249,7 +264,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/jin/workspaces/esp32workspace/desktop_controller/build/bootloader/esp-idf/micro-ecc/libmicro-ecc.a",
+            "file": "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/esp-idf/micro-ecc/libmicro-ecc.a",
             "sources": [ "/home/jin/esp/esp-idf/components/bootloader/subproject/components/micro-ecc/uECC_verify_antifault.c" ],
             "include_dirs": [ ".", "micro-ecc" ]
         },
@@ -294,9 +309,9 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/jin/workspaces/esp32workspace/desktop_controller/build/bootloader/esp-idf/soc/libsoc.a",
-            "sources": [ "/home/jin/esp/esp-idf/components/soc/lldesc.c", "/home/jin/esp/esp-idf/components/soc/dport_access_common.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/interrupts.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/gpio_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/uart_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/adc_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/dedic_gpio_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/gdma_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/spi_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/ledc_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/pcnt_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/rmt_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/sdm_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/i2s_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/i2c_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/temperature_sensor_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/timer_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/lcd_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/mcpwm_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/mpi_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/sdmmc_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/touch_sensor_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/twai_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/usb_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/usb_dwc_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/rtc_io_periph.c" ],
-            "include_dirs": [ "include", "esp32s3", "esp32s3/include" ]
+            "file": "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/esp-idf/soc/libsoc.a",
+            "sources": [ "/home/jin/esp/esp-idf/components/soc/lldesc.c", "/home/jin/esp/esp-idf/components/soc/dport_access_common.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/interrupts.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/gpio_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/uart_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/adc_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/dedic_gpio_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/gdma_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/spi_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/ledc_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/pcnt_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/rmt_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/sdm_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/i2s_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/i2c_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/temperature_sensor_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/timer_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/lcd_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/mcpwm_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/mpi_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/sdmmc_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/touch_sensor_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/twai_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/wdt_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/usb_dwc_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/rtc_io_periph.c", "/home/jin/esp/esp-idf/components/soc/esp32s3/power_supply_periph.c" ],
+            "include_dirs": [ "include", "esp32s3", "esp32s3/include", "esp32s3/register" ]
         },
         "spi_flash": {
             "alias": "idf::spi_flash",
@@ -309,7 +324,7 @@
             "priv_reqs": [ "bootloader_support", "soc" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/jin/workspaces/esp32workspace/desktop_controller/build/bootloader/esp-idf/spi_flash/libspi_flash.a",
+            "file": "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/esp-idf/spi_flash/libspi_flash.a",
             "sources": [ "/home/jin/esp/esp-idf/components/spi_flash/spi_flash_wrap.c" ],
             "include_dirs": [ "include" ]
         },
@@ -324,7 +339,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/jin/workspaces/esp32workspace/desktop_controller/build/bootloader/esp-idf/xtensa/libxtensa.a",
+            "file": "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/esp-idf/xtensa/libxtensa.a",
             "sources": [ "/home/jin/esp/esp-idf/components/xtensa/eri.c", "/home/jin/esp/esp-idf/components/xtensa/xt_trax.c" ],
             "include_dirs": [ "esp32s3/include", "include", "deprecated_include" ]
         }
@@ -412,7 +427,7 @@
             "priv_reqs": [ "esp_driver_uart", "esp_driver_usb_serial_jtag" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "/home/jin/workspaces/esp32workspace/desktop_controller/build/bootloader" ]
+            "include_dirs": [ "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader" ]
         },
         "cxx": {
             "alias": "idf::cxx",
@@ -460,7 +475,7 @@
             "priv_reqs": [ "http_parser", "esp_timer", "lwip" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "/home/jin/workspaces/esp32workspace/desktop_controller/build/bootloader", "esp-tls-crypto" ]
+            "include_dirs": [ "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader", "esp-tls-crypto" ]
         },
         "esp_adc": {
             "alias": "idf::esp_adc",
@@ -469,7 +484,7 @@
             "dir": "/home/jin/esp/esp-idf/components/esp_adc",
             "lib": "__idf_esp_adc",
             "reqs": [],
-            "priv_reqs": [ "driver", "esp_driver_gpio", "efuse", "esp_pm", "esp_ringbuf", "esp_mm" ],
+            "priv_reqs": [ "esp_driver_gpio", "efuse", "esp_pm", "esp_ringbuf", "esp_mm", "driver" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include", "interface", "esp32s3/include", "deprecated/include" ]
@@ -505,7 +520,7 @@
             "dir": "/home/jin/esp/esp-idf/components/esp_coex",
             "lib": "__idf_esp_coex",
             "reqs": [],
-            "priv_reqs": [ "esp_timer", "driver", "esp_event" ],
+            "priv_reqs": [ "esp_timer", "esp_driver_gpio" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include" ]
@@ -530,6 +545,18 @@
             "lib": "__idf_esp_driver_ana_cmpr",
             "reqs": [],
             "priv_reqs": [ "esp_pm", "esp_driver_gpio" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "include_dirs": [ "include" ]
+        },
+        "esp_driver_bitscrambler": {
+            "alias": "idf::esp_driver_bitscrambler",
+            "target": "___idf_esp_driver_bitscrambler",
+            "prefix": "idf",
+            "dir": "/home/jin/esp/esp-idf/components/esp_driver_bitscrambler",
+            "lib": "__idf_esp_driver_bitscrambler",
+            "reqs": [],
+            "priv_reqs": [ "esp_mm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include" ]
@@ -636,8 +663,8 @@
             "prefix": "idf",
             "dir": "/home/jin/esp/esp-idf/components/esp_driver_ledc",
             "lib": "__idf_esp_driver_ledc",
-            "reqs": [],
-            "priv_reqs": [ "esp_pm", "esp_driver_gpio" ],
+            "reqs": [ "esp_driver_gpio" ],
+            "priv_reqs": [ "esp_pm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include" ]
@@ -745,7 +772,7 @@
             "dir": "/home/jin/esp/esp-idf/components/esp_driver_sdspi",
             "lib": "__idf_esp_driver_sdspi",
             "reqs": [ "sdmmc", "esp_driver_spi", "esp_driver_gpio" ],
-            "priv_reqs": [ "esp_timer" ],
+            "priv_reqs": [ "esp_timer", "esp_mm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include" ]
@@ -761,6 +788,18 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include" ]
+        },
+        "esp_driver_touch_sens": {
+            "alias": "idf::esp_driver_touch_sens",
+            "target": "___idf_esp_driver_touch_sens",
+            "prefix": "idf",
+            "dir": "/home/jin/esp/esp-idf/components/esp_driver_touch_sens",
+            "lib": "__idf_esp_driver_touch_sens",
+            "reqs": [],
+            "priv_reqs": [ "esp_driver_gpio" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "include_dirs": []
         },
         "esp_driver_tsens": {
             "alias": "idf::esp_driver_tsens",
@@ -901,10 +940,10 @@
             "dir": "/home/jin/esp/esp-idf/components/esp_hw_support",
             "lib": "__idf_esp_hw_support",
             "reqs": [ "soc" ],
-            "priv_reqs": [ "efuse", "spi_flash", "bootloader_support", "esp_system" ],
+            "priv_reqs": [ "efuse", "spi_flash", "bootloader_support", "esp_security", "esp_system" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "include", "include/soc", "include/soc/esp32s3", "dma/include", "ldo/include" ]
+            "include_dirs": [ "include", "include/soc", "include/soc/esp32s3", "dma/include", "ldo/include", "debug_probe/include", "mspi_timing_tuning/include", "power_supply/include" ]
         },
         "esp_lcd": {
             "alias": "idf::esp_lcd",
@@ -972,8 +1011,8 @@
             "prefix": "idf",
             "dir": "/home/jin/esp/esp-idf/components/esp_partition",
             "lib": "__idf_esp_partition",
-            "reqs": [],
-            "priv_reqs": [ "esp_system", "bootloader_support", "spi_flash", "app_update", "partition_table" ],
+            "reqs": [ "spi_flash" ],
+            "priv_reqs": [ "bootloader_support" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include" ]
@@ -985,7 +1024,7 @@
             "dir": "/home/jin/esp/esp-idf/components/esp_phy",
             "lib": "__idf_esp_phy",
             "reqs": [],
-            "priv_reqs": [ "nvs_flash", "driver", "efuse", "esp_timer", "esp_wifi" ],
+            "priv_reqs": [ "nvs_flash", "esp_driver_gpio", "efuse", "esp_timer", "esp_wifi" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include", "esp32s3/include" ]
@@ -1036,7 +1075,19 @@
             "priv_reqs": [ "soc", "hal" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "include", "include/esp32s3", "esp32s3" ]
+            "include_dirs": [ "include", "esp32s3/include", "esp32s3/include/esp32s3", "esp32s3" ]
+        },
+        "esp_security": {
+            "alias": "idf::esp_security",
+            "target": "___idf_esp_security",
+            "prefix": "idf",
+            "dir": "/home/jin/esp/esp-idf/components/esp_security",
+            "lib": "__idf_esp_security",
+            "reqs": [],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "include_dirs": [ "include" ]
         },
         "esp_system": {
             "alias": "idf::esp_system",
@@ -1045,6 +1096,18 @@
             "dir": "/home/jin/esp/esp-idf/components/esp_system",
             "lib": "__idf_esp_system",
             "reqs": [ "spi_flash" ],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "include_dirs": []
+        },
+        "esp_tee": {
+            "alias": "idf::esp_tee",
+            "target": "___idf_esp_tee",
+            "prefix": "idf",
+            "dir": "/home/jin/esp/esp-idf/components/esp_tee",
+            "lib": "__idf_esp_tee",
+            "reqs": [],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
@@ -1081,10 +1144,10 @@
             "dir": "/home/jin/esp/esp-idf/components/esp_wifi",
             "lib": "__idf_esp_wifi",
             "reqs": [ "esp_event", "esp_phy", "esp_netif" ],
-            "priv_reqs": [ "driver", "esptool_py", "esp_pm", "esp_timer", "nvs_flash", "wpa_supplicant", "hal", "lwip", "esp_coex" ],
+            "priv_reqs": [ "esptool_py", "esp_pm", "esp_timer", "nvs_flash", "wpa_supplicant", "hal", "lwip", "esp_coex" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "include", "wifi_apps/include", "wifi_apps/nan_app/include" ]
+            "include_dirs": [ "include", "include/local", "wifi_apps/include", "wifi_apps/nan_app/include" ]
         },
         "espcoredump": {
             "alias": "idf::espcoredump",
@@ -1093,7 +1156,7 @@
             "dir": "/home/jin/esp/esp-idf/components/espcoredump",
             "lib": "__idf_espcoredump",
             "reqs": [],
-            "priv_reqs": [ "esp_partition", "spi_flash", "bootloader_support", "mbedtls", "esp_rom", "soc", "esp_system", "esp_driver_gpio", "driver" ],
+            "priv_reqs": [ "esp_partition", "spi_flash", "bootloader_support", "mbedtls", "esp_rom", "soc", "esp_system", "esp_driver_gpio" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include" ]
@@ -1134,18 +1197,6 @@
             "managed_priv_reqs": [],
             "include_dirs": []
         },
-        "gc9a01-esp-idf": {
-            "alias": "idf::gc9a01-esp-idf",
-            "target": "___idf_gc9a01-esp-idf",
-            "prefix": "idf",
-            "dir": "/home/jin/esp/esp-idf/components/gc9a01-esp-idf",
-            "lib": "__idf_gc9a01-esp-idf",
-            "reqs": [ "driver" ],
-            "priv_reqs": [],
-            "managed_reqs": [],
-            "managed_priv_reqs": [],
-            "include_dirs": [ "." ]
-        },
         "hal": {
             "alias": "idf::hal",
             "target": "___idf_hal",
@@ -1168,7 +1219,7 @@
             "priv_reqs": [ "soc" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "include" ]
+            "include_dirs": [ "include", "tlsf" ]
         },
         "http_parser": {
             "alias": "idf::http_parser",
@@ -1200,8 +1251,8 @@
             "prefix": "idf",
             "dir": "/home/jin/esp/esp-idf/components/ieee802154",
             "lib": "__idf_ieee802154",
-            "reqs": [],
-            "priv_reqs": [ "esp_phy", "driver", "esp_timer", "esp_coex", "soc", "hal" ],
+            "reqs": [ "esp_coex" ],
+            "priv_reqs": [ "esp_phy", "esp_timer", "soc", "hal", "esp_pm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include" ]
@@ -1237,7 +1288,7 @@
             "dir": "/home/jin/esp/esp-idf/components/log",
             "lib": "__idf_log",
             "reqs": [],
-            "priv_reqs": [ "soc", "hal", "esp_hw_support" ],
+            "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include" ]
@@ -1297,10 +1348,10 @@
             "dir": "/home/jin/esp/esp-idf/components/nvs_flash",
             "lib": "__idf_nvs_flash",
             "reqs": [ "esp_partition" ],
-            "priv_reqs": [ "spi_flash", "newlib" ],
+            "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "include", "../spi_flash/include" ]
+            "include_dirs": [ "include" ]
         },
         "nvs_sec_provider": {
             "alias": "idf::nvs_sec_provider",
@@ -1321,7 +1372,7 @@
             "dir": "/home/jin/esp/esp-idf/components/openthread",
             "lib": "__idf_openthread",
             "reqs": [ "esp_netif", "lwip", "esp_driver_uart", "driver" ],
-            "priv_reqs": [ "console", "esp_event", "esp_partition", "esp_timer", "ieee802154", "mbedtls", "nvs_flash" ],
+            "priv_reqs": [ "console", "esp_coex", "esp_event", "esp_partition", "esp_timer", "ieee802154", "mbedtls", "nvs_flash" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": []
@@ -1369,7 +1420,7 @@
             "dir": "/home/jin/esp/esp-idf/components/protocomm",
             "lib": "__idf_protocomm",
             "reqs": [ "bt" ],
-            "priv_reqs": [ "protobuf-c", "mbedtls", "console", "esp_http_server", "driver" ],
+            "priv_reqs": [ "protobuf-c", "mbedtls", "console", "esp_http_server", "esp_driver_uart" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include/common", "include/security", "include/transports", "include/crypto/srp6a", "proto-c" ]
@@ -1398,6 +1449,18 @@
             "managed_priv_reqs": [],
             "include_dirs": [ "include" ]
         },
+        "rt": {
+            "alias": "idf::rt",
+            "target": "___idf_rt",
+            "prefix": "idf",
+            "dir": "/home/jin/esp/esp-idf/components/rt",
+            "lib": "__idf_rt",
+            "reqs": [],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "include_dirs": [ "include" ]
+        },
         "sdmmc": {
             "alias": "idf::sdmmc",
             "target": "___idf_sdmmc",
@@ -1420,7 +1483,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "include", "esp32s3", "esp32s3/include" ]
+            "include_dirs": [ "include", "esp32s3", "esp32s3/include", "esp32s3/register" ]
         },
         "spi_flash": {
             "alias": "idf::spi_flash",
@@ -1441,7 +1504,7 @@
             "dir": "/home/jin/esp/esp-idf/components/spiffs",
             "lib": "__idf_spiffs",
             "reqs": [ "esp_partition" ],
-            "priv_reqs": [ "bootloader_support", "esptool_py", "vfs", "spi_flash" ],
+            "priv_reqs": [ "bootloader_support", "esptool_py", "vfs" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include" ]
@@ -1591,5 +1654,12 @@
             "include_dirs": [ ".", "micro-ecc" ]
         }
     },
-    "debug_prefix_map_gdbinit": ""
+    "debug_prefix_map_gdbinit": "",
+    "gdbinit_files": {
+        "01_symbols": "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/gdbinit/symbols",
+        "02_prefix_map": "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/gdbinit/prefix_map",
+        "03_py_extensions": "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/gdbinit/py_extensions",
+        "04_connect": "/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/gdbinit/connect"
+    },
+    "debug_arguments_openocd": "-f board/esp32s3-builtin.cfg"
 }
