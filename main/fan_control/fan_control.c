@@ -85,10 +85,10 @@ void update_fan_speed(void) {
     last_adc = adc_value;
 
     // Your actual potentiometer range (based on RAW ADC readings)
-    const uint32_t max_adc_value = 760;  // Pot turned counterclockwise (use max observed)
+    const uint32_t max_adc_value = 520;  // Pot turned counterclockwise (actual max observed)
 
     // Stepped fan control - discrete speed levels for smooth operation
-    const uint32_t off_threshold = 720;   // OFF when ADC >= 720
+    const uint32_t off_threshold = 450;   // OFF when ADC >= 450 (counterclockwise position)
 
     // Define speed steps (ADC ranges and corresponding PWM duty cycles)
     typedef struct {
@@ -99,12 +99,11 @@ void update_fan_speed(void) {
     } fan_step_t;
 
     const fan_step_t fan_steps[] = {
-        {0,   50,  255, 100},  // Step 1: Max speed
-        {51,  150, 200, 78},   // Step 2: High speed
-        {151, 300, 150, 59},   // Step 3: Medium-high speed
-        {301, 450, 100, 39},   // Step 4: Medium speed
-        {451, 600, 70,  27},   // Step 5: Low-medium speed
-        {601, 719, 40,  16},   // Step 6: Low speed
+        {0,   80,  255, 100},  // Step 1: Max speed (full clockwise)
+        {81,  160, 200, 78},   // Step 2: High speed
+        {161, 240, 150, 59},   // Step 3: Medium-high speed
+        {241, 320, 100, 39},   // Step 4: Medium speed
+        {321, 449, 70,  27},   // Step 5: Low speed
     };
     const uint32_t num_steps = sizeof(fan_steps) / sizeof(fan_step_t);
 
@@ -160,10 +159,10 @@ void update_fan_speed(void) {
     ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL, duty_cycle);
     ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL);
 
-    // PWM logging - uncomment for debugging fan issues
-    // if (should_log) {
-    //     ESP_LOGI(TAG, "PWM SET: %d (%d%%)", duty_cycle, fan_speed_percentage);
-    // }
+    // PWM logging - ENABLED for debugging fan issues
+    if (should_log) {
+        ESP_LOGI(TAG, "PWM SET: %d (%d%%)", duty_cycle, fan_speed_percentage);
+    }
 
     // Later, you can display fan_speed_percentage on a display
 }

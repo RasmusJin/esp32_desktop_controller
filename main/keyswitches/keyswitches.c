@@ -66,7 +66,7 @@ void setup_switch_single_row(void) {
     gpio_config(&single_row_io_conf);
 
     setup_switch_matrix();
-    setup_rotary_encoders();
+    // DISABLED: setup_rotary_encoders();  // Causing fan interference
 }
 
 void setup_switch_matrix(void) {
