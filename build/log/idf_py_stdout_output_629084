@@ -1,0 +1,1720 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Jun  2 2025 22:14:28[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: v1.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c060020 size=1fae0h (129760) map[0m
+[0;32mI (111) esp_image: segment 1: paddr=0002fb08 vaddr=3fc93500 size=00510h (  1296) load[0m
+[0;32mI (112) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=571a0h (356768) map[0m
+[0;32mI (178) esp_image: segment 3: paddr=000871c8 vaddr=3fc93a10 size=02768h ( 10088) load[0m
+[0;32mI (181) esp_image: segment 4: paddr=00089938 vaddr=40374000 size=0f4bch ( 62652) load[0m
+[0;32mI (196) esp_image: segment 5: paddr=00098dfc vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (202) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (202) boot: Disabling RNG early entropy source...[0m
+[0;32mI (213) cpu_start: Multicore app[0m
+[0;32mI (222) cpu_start: Pro cpu start user code[0m
+[0;32mI (222) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (223) app_init: Application information:[0m
+[0;32mI (225) app_init: Project name:     desktop_controller[0m
+[0;32mI (231) app_init: App version:      0496bcb-dirty[0m
+[0;32mI (237) app_init: Compile time:     Jun 26 2025 12:45:03[0m
+[0;32mI (243) app_init: ELF file SHA256:  e11ffb12f...[0m
+[0;32mI (248) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (255) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (260) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (265) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (269) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (277) heap_init: At 3FC97AB8 len 00051C58 (327 KiB): RAM[0m
+[0;32mI (283) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (289) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (295) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (302) spi_flash: detected chip: gd[0m
+[0;32mI (305) spi_flash: flash io: dio[0m
+[0;33mW (309) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (323) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (334) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (341) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (349) main_task: Started on CPU0[0m
+[0;32mI (359) main_task: Calling app_main()[0m
+[0;32mI (1359) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1359) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1359) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pu[0;32mI (35269) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (35269) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (35269) ULTRASONIC: Raw: 3669 µs → 62 cm (new) vs 63 cm (old)[0m
+[0;32mI (35269) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (35329) ULTRASONIC: Raw: 3669 µs → 62 cm (new) vs 63 cm (old)[0m
+[0;32mI (35329) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (35379) ULTRASONIC: Raw: 3670 µs → 62 cm (new) vs 63 cm (old)[0m
+[0;32mI (35379) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (35429) ULTRASONIC: Raw: 3669 µs → 62 cm (new) vs 63 cm (old)[0m
+[0;32mI (35429) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (35479) ULTRASONIC: Raw: 3671 µs → 62 cm (new) vs 63 cm (old)[0m
+[0;32mI (35479) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (35529) ULTRASONIC: Raw: 3669 µs → 62 cm (new) vs 63 cm (old)[0m
+[0;32mI (35529) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (35579) ULTRASONIC: Raw: 3671 µs → 62 cm (new) vs 63 cm (old)[0m
+[0;32mI (35579) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (35629) DESK: Stopped moving[0m
+[0;32mI (35629) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (37279) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (37279) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (37279) ULTRASONIC: Raw: 3694 µs → 63 cm (new) vs 63 cm (old)[0m
+[0;32mI (37279) ULTRASONIC: Moving up - Distance: 63 cm[0m
+[0;32mI (37339) ULTRASONIC: Raw: 3694 µs → 63 cm (new) vs 63 cm (old)[0m
+[0;32mI (37339) ULTRASONIC: Moving up - Distance: 63 cm[0m
+[0;32mI (37389) ULTRASONIC: Raw: 3694 µs → 63 cm (new) vs 63 cm (old)[0m
+[0;32mI (37389) ULTRASONIC: Moving up - Distance: 63 cm[0m
+[0;32mI (37439) ULTRASONIC: Raw: 3745 µs → 64 cm (new) vs 64 cm (old)[0m
+[0;32mI (37439) ULTRASONIC: Moving up - Distance: 64 cm[0m
+[0;32mI (37489) ULTRASONIC: Raw: 3769 µs → 64 cm (new) vs 64 cm (old)[0m
+[0;32mI (37489) ULTRASONIC: Moving up - Distance: 64 cm[0m
+[0;32mI (37539) ULTRASONIC: Raw: 3397 µs → 58 cm (new) vs 58 cm (old)[0m
+[0;32mI (37539) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (37589) ULTRASONIC: Raw: 2194 µs → 37 cm (new) vs 37 cm (old)[0m
+[0;32mI (37589) ULTRASONIC: Moving up - Distance: 37 cm[0m
+[0;32mI (37639) ULTRASONIC: Raw: 2250 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (37639) ULTRASONIC: Moving up - Distance: 38 cm[0m
+[0;32mI (37689) ULTRASONIC: Raw: 2128 µs → 36 cm (new) vs 36 cm (old)[0m
+[0;32mI (37689) ULTRASONIC: Moving up - Distance: 36 cm[0m
+[0;32mI (37739) ULTRASONIC: Raw: 2209 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (37739) ULTRASONIC: Moving up - Distance: 37 cm[0m
+[0;32mI (37789) ULTRASONIC: Raw: 2141 µs → 36 cm (new) vs 36 cm (old)[0m
+[0;32mI (37789) ULTRASONIC: Moving up - Distance: 36 cm[0m
+[0;32mI (37839) ULTRASONIC: Raw: 2222 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (37839) ULTRASONIC: Moving up - Distance: 38 cm[0m
+[0;32mI (37889) ULTRASONIC: Raw: 2183 µs → 37 cm (new) vs 37 cm (old)[0m
+[0;32mI (37889) ULTRASONIC: Moving up - Distance: 37 cm[0m
+[0;32mI (37939) ULTRASONIC: Raw: 2262 µs → 38 cm (new) vs 39 cm (old)[0m
+[0;32mI (37939) ULTRASONIC: Moving up - Distance: 38 cm[0m
+[0;32mI (37989) ULTRASONIC: Raw: 3480 µs → 59 cm (new) vs 60 cm (old)[0m
+[0;32mI (37989) ULTRASONIC: Moving up - Distance: 59 cm[0m
+[0;32mI (38039) ULTRASONIC: Raw: 3465 µs → 59 cm (new) vs 59 cm (old)[0m
+[0;32mI (38039) ULTRASONIC: Moving up - Distance: 59 cm[0m
+[0;32mI (38089) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (38089) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (38139) ULTRASONIC: Raw: 3248 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (38139) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (38189) ULTRASONIC: Raw: 3569 µs → 61 cm (new) vs 61 cm (old)[0m
+[0;32mI (38189) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (38239) ULTRASONIC: Raw: 3612 µs → 61 cm (new) vs 62 cm (old)[0m
+[0;32mI (38239) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (38289) ULTRASONIC: Raw: 2357 µs → 40 cm (new) vs 40 cm (old)[0m
+[0;32mI (38289) ULTRASONIC: Moving up - Distance: 40 cm[0m
+[0;32mI (38339) ULTRASONIC: Raw: 2289 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (38339) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (38389) ULTRASONIC: Raw: 2250 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (38389) ULTRASONIC: Moving up - Distance: 38 cm[0m
+[0;32mI (38439) ULTRASONIC: Raw: 2302 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (38439) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (38489) ULTRASONIC: Raw: 2236 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (38489) ULTRASONIC: Moving up - Distance: 38 cm[0m
+[0;32mI (38539) ULTRASONIC: Raw: 2317 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (38539) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (38589) ULTRASONIC: Raw: 2276 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (38589) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (38639) ULTRASONIC: Raw: 2356 µs → 40 cm (new) vs 40 cm (old)[0m
+[0;32mI (38639) ULTRASONIC: Moving up - Distance: 40 cm[0m
+[0;32mI (38689) ULTRASONIC: Raw: 2289 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (38689) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (38739) ULTRASONIC: Raw: 2397 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (38739) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (38789) ULTRASONIC: Raw: 2330 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (38789) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (38839) ULTRASONIC: Raw: 2384 µs → 40 cm (new) vs 41 cm (old)[0m
+[0;32mI (38839) ULTRASONIC: Moving up - Distance: 40 cm[0m
+[0;32mI (38889) ULTRASONIC: Raw: 2344 µs → 40 cm (new) vs 40 cm (old)[0m
+[0;32mI (38889) ULTRASONIC: Moving up - Distance: 40 cm[0m
+[0;32mI (38939) ULTRASONIC: Raw: 2399 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (38939) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (38989) ULTRASONIC: Raw: 2358 µs → 40 cm (new) vs 40 cm (old)[0m
+[0;32mI (38989) ULTRASONIC: Moving up - Distance: 40 cm[0m
+[0;32mI (39039) ULTRASONIC: Raw: 2436 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (39039) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (39089) ULTRASONIC: Raw: 2399 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (39089) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (39139) ULTRASONIC: Raw: 2483 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (39139) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (39189) ULTRASONIC: Raw: 2384 µs → 40 cm (new) vs 41 cm (old)[0m
+[0;32mI (39189) ULTRASONIC: Moving up - Distance: 40 cm[0m
+[0;32mI (39239) ULTRASONIC: Raw: 2473 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (39239) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (39289) ULTRASONIC: Raw: 2425 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (39289) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (39339) ULTRASONIC: Raw: 2357 µs → 40 cm (new) vs 40 cm (old)[0m
+[0;32mI (39339) ULTRASONIC: Moving up - Distance: 40 cm[0m
+[0;32mI (39389) ULTRASONIC: Raw: 2412 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (39389) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (39439) ULTRASONIC: Raw: 2399 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (39439) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (39489) ULTRASONIC: Raw: 2506 µs → 42 cm (new) vs 43 cm (old)[0m
+[0;32mI (39489) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (39539) ULTRASONIC: Raw: 2384 µs → 40 cm (new) vs 41 cm (old)[0m
+[0;32mI (39539) ULTRASONIC: Moving up - Distance: 40 cm[0m
+[0;32mI (39589) ULTRASONIC: Raw: 2471 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (39589) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (39639) ULTRASONIC: Raw: 2397 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (39639) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (39689) ULTRASONIC: Raw: 2460 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (39689) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (39739) ULTRASONIC: Raw: 2436 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (39739) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (39789) ULTRASONIC: Raw: 2448 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (39789) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (39839) ULTRASONIC: Raw: 2530 µs → 43 cm (new) vs 43 cm (old)[0m
+[0;32mI (39839) ULTRASONIC: Moving up - Distance: 43 cm[0m
+[0;32mI (39889) ULTRASONIC: Raw: 2438 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (39889) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (39939) ULTRASONIC: Raw: 2495 µs → 42 cm (new) vs 43 cm (old)[0m
+[0;32mI (39939) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (39989) ULTRASONIC: Raw: 2425 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (39989) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (40039) ULTRASONIC: Raw: 2484 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (40039) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (40089) ULTRASONIC: Raw: 2436 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (40089) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (40139) ULTRASONIC: Raw: 2447 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (40139) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (40189) ULTRASONIC: Raw: 2533 µs → 43 cm (new) vs 43 cm (old)[0m
+[0;32mI (40189) ULTRASONIC: Moving up - Distance: 43 cm[0m
+[0;32mI (40239) ULTRASONIC: Raw: 2636 µs → 45 cm (new) vs 45 cm (old)[0m
+[0;32mI (40239) ULTRASONIC: Moving up - Distance: 45 cm[0m
+[0;32mI (40289) ULTRASONIC: Raw: 2566 µs → 44 cm (new) vs 44 cm (old)[0m
+[0;32mI (40289) ULTRASONIC: Moving up - Distance: 44 cm[0m
+[0;32mI (40339) ULTRASONIC: Raw: 2648 µs → 45 cm (new) vs 45 cm (old)[0m
+[0;32mI (40339) ULTRASONIC: Moving up - Distance: 45 cm[0m
+[0;32mI (40389) ULTRASONIC: Raw: 2834 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (40389) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (40439) ULTRASONIC: Raw: 2542 µs → 43 cm (new) vs 43 cm (old)[0m
+[0;32mI (40439) ULTRASONIC: Moving up - Distance: 43 cm[0m
+[0;32mI (40489) ULTRASONIC: Raw: 3274 µs → 56 cm (new) vs 56 cm (old)[0m
+[0;32mI (40489) ULTRASONIC: Moving up - Distance: 56 cm[0m
+[0;32mI (40539) ULTRASONIC: Raw: 2531 µs → 43 cm (new) vs 43 cm (old)[0m
+[0;32mI (40539) ULTRASONIC: Moving up - Distance: 43 cm[0m
+[0;32mI (40589) ULTRASONIC: Raw: 2613 µs → 44 cm (new) vs 45 cm (old)[0m
+[0;32mI (40589) ULTRASONIC: Moving up - Distance: 44 cm[0m
+[0;32mI (40639) ULTRASONIC: Raw: 3233 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (40639) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (40689) ULTRASONIC: Raw: 3242 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (40689) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (40739) ULTRASONIC: Raw: 3282 µs → 56 cm (new) vs 56 cm (old)[0m
+[0;32mI (40739) ULTRASONIC: Moving up - Distance: 56 cm[0m
+[0;32mI (40789) ULTRASONIC: Raw: 3290 µs → 56 cm (new) vs 56 cm (old)[0m
+[0;32mI (40789) ULTRASONIC: Moving up - Distance: 56 cm[0m
+[0;32mI (40839) ULTRASONIC: Raw: 3249 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (40839) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (40889) ULTRASONIC: Raw: 2707 µs → 46 cm (new) vs 46 cm (old)[0m
+[0;32mI (40889) ULTRASONIC: Moving up - Distance: 46 cm[0m
+[0;32mI (40939) ULTRASONIC: Raw: 3231 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (40939) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (40989) ULTRASONIC: Raw: 3663 µs → 62 cm (new) vs 63 cm (old)[0m
+[0;32mI (40989) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (41039) ULTRASONIC: Raw: 2835 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (41039) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (41089) ULTRASONIC: Raw: 2741 µs → 47 cm (new) vs 47 cm (old)[0m
+[0;32mI (41089) ULTRASONIC: Moving up - Distance: 47 cm[0m
+[0;32mI (41139) ULTRASONIC: Raw: 2648 µs → 45 cm (new) vs 45 cm (old)[0m
+[0;32mI (41139) ULTRASONIC: Moving up - Distance: 45 cm[0m
+[0;32mI (41189) ULTRASONIC: Raw: 2754 µs → 47 cm (new) vs 47 cm (old)[0m
+[0;32mI (41189) ULTRASONIC: Moving up - Distance: 47 cm[0m
+[0;32mI (41239) ULTRASONIC: Raw: 3240 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (41239) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (41289) ULTRASONIC: Raw: 2844 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (41289) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (41339) ULTRASONIC: Raw: 2753 µs → 47 cm (new) vs 47 cm (old)[0m
+[0;32mI (41339) ULTRASONIC: Moving up - Distance: 47 cm[0m
+[0;32mI (41389) ULTRASONIC: Raw: 2685 µs → 46 cm (new) vs 46 cm (old)[0m
+[0;32mI (41389) ULTRASONIC: Moving up - Distance: 46 cm[0m
+[0;32mI (41439) ULTRASONIC: Raw: 2613 µs → 44 cm (new) vs 45 cm (old)[0m
+[0;32mI (41439) ULTRASONIC: Moving up - Distance: 44 cm[0m
+[0;32mI (41489) ULTRASONIC: Raw: 2672 µs → 45 cm (new) vs 46 cm (old)[0m
+[0;32mI (41489) ULTRASONIC: Moving up - Distance: 45 cm[0m
+[0;32mI (41539) ULTRASONIC: Raw: 2754 µs → 47 cm (new) vs 47 cm (old)[0m
+[0;32mI (41539) ULTRASONIC: Moving up - Distance: 47 cm[0m
+[0;32mI (41589) ULTRASONIC: Raw: 2789 µs → 47 cm (new) vs 48 cm (old)[0m
+[0;32mI (41589) ULTRASONIC: Moving up - Distance: 47 cm[0m
+[0;32mI (41639) ULTRASONIC: Raw: 2719 µs → 46 cm (new) vs 46 cm (old)[0m
+[0;32mI (41639) ULTRASONIC: Moving up - Distance: 46 cm[0m
+[0;32mI (41689) ULTRASONIC: Raw: 2754 µs → 47 cm (new) vs 47 cm (old)[0m
+[0;32mI (41689) ULTRASONIC: Moving up - Distance: 47 cm[0m
+[0;32mI (41739) ULTRASONIC: Raw: 2706 µs → 46 cm (new) vs 46 cm (old)[0m
+[0;32mI (41739) ULTRASONIC: Moving up - Distance: 46 cm[0m
+[0;32mI (41789) ULTRASONIC: Raw: 2741 µs → 47 cm (new) vs 47 cm (old)[0m
+[0;32mI (41789) ULTRASONIC: Moving up - Distance: 47 cm[0m
+[0;32mI (41839) ULTRASONIC: Raw: 2719 µs → 46 cm (new) vs 46 cm (old)[0m
+[0;32mI (41839) ULTRASONIC: Moving up - Distance: 46 cm[0m
+[0;32mI (41889) ULTRASONIC: Raw: 2731 µs → 46 cm (new) vs 47 cm (old)[0m
+[0;32mI (41889) ULTRASONIC: Moving up - Distance: 46 cm[0m
+[0;32mI (41939) ULTRASONIC: Raw: 2766 µs → 47 cm (new) vs 47 cm (old)[0m
+[0;32mI (41939) ULTRASONIC: Moving up - Distance: 47 cm[0m
+[0;32mI (41989) ULTRASONIC: Raw: 2719 µs → 46 cm (new) vs 46 cm (old)[0m
+[0;32mI (41989) ULTRASONIC: Moving up - Distance: 46 cm[0m
+[0;32mI (42039) ULTRASONIC: Raw: 2671 µs → 45 cm (new) vs 46 cm (old)[0m
+[0;32mI (42039) ULTRASONIC: Moving up - Distance: 45 cm[0m
+[0;32mI (42089) ULTRASONIC: Raw: 2706 µs → 46 cm (new) vs 46 cm (old)[0m
+[0;32mI (42089) ULTRASONIC: Moving up - Distance: 46 cm[0m
+[0;32mI (42139) ULTRASONIC: Raw: 2844 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (42139) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (42189) ULTRASONIC: Raw: 2801 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (42189) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (42239) ULTRASONIC: Raw: 2731 µs → 46 cm (new) vs 47 cm (old)[0m
+[0;32mI (42239) ULTRASONIC: Moving up - Distance: 46 cm[0m
+[0;32mI (42289) ULTRASONIC: Raw: 2788 µs → 47 cm (new) vs 48 cm (old)[0m
+[0;32mI (42289) ULTRASONIC: Moving up - Distance: 47 cm[0m
+[0;32mI (42339) ULTRASONIC: Raw: 2845 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (42339) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (42389) ULTRASONIC: Raw: 2824 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (42389) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (42439) ULTRASONIC: Raw: 2835 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (42439) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (42489) ULTRASONIC: Raw: 2766 µs → 47 cm (new) vs 47 cm (old)[0m
+[0;32mI (42489) ULTRASONIC: Moving up - Distance: 47 cm[0m
+[0;32mI (42539) ULTRASONIC: Raw: 2844 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (42539) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (42589) ULTRASONIC: Raw: 2854 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (42589) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (42639) ULTRASONIC: Raw: 2865 µs → 49 cm (new) vs 49 cm (old)[0m
+[0;32mI (42639) ULTRASONIC: Moving up - Distance: 49 cm[0m
+[0;32mI (42689) ULTRASONIC: Raw: 2845 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (42689) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (42739) ULTRASONIC: Raw: 1712 µs → 29 cm (new) vs 29 cm (old)[0m
+[0;32mI (42739) ULTRASONIC: Moving up - Distance: 29 cm[0m
+[0;32mI (42789) ULTRASONIC: Raw: 1745 µs → 29 cm (new) vs 30 cm (old)[0m
+[0;32mI (42789) ULTRASONIC: Moving up - Distance: 29 cm[0m
+[0;32mI (42839) ULTRASONIC: Raw: 2894 µs → 49 cm (new) vs 49 cm (old)[0m
+[0;32mI (42839) ULTRASONIC: Moving up - Distance: 49 cm[0m
+[0;32mI (42889) ULTRASONIC: Raw: 1684 µs → 28 cm (new) vs 29 cm (old)[0m
+[0;32mI (42889) ULTRASONIC: Moving up - Distance: 28 cm[0m
+[0;32mI (42939) ULTRASONIC: Raw: 1713 µs → 29 cm (new) vs 29 cm (old)[0m
+[0;32mI (42939) ULTRASONIC: Moving up - Distance: 29 cm[0m
+[0;32mI (42989) ULTRASONIC: Raw: 2833 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (42989) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (43039) ULTRASONIC: Raw: 1652 µs → 28 cm (new) vs 28 cm (old)[0m
+[0;32mI (43039) ULTRASONIC: Moving up - Distance: 28 cm[0m
+[0;32mI (43089) ULTRASONIC: Raw: 1684 µs → 28 cm (new) vs 29 cm (old)[0m
+[0;32mI (43089) ULTRASONIC: Moving up - Distance: 28 cm[0m
+[0;32mI (43139) ULTRASONIC: Raw: 2088 µs → 35 cm (new) vs 36 cm (old)[0m
+[0;32mI (43139) ULTRASONIC: Moving up - Distance: 35 cm[0m
+[0;32mI (43189) DESK: Stopped moving[0m
+[0;32mI (43189) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (152289) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (152289) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (152289) ULTRASONIC: Raw: 2843 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (152289) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (152349) ULTRASONIC: Raw: 2843 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (152349) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (152399) ULTRASONIC: Raw: 2844 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (152399) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (152449) ULTRASONIC: Raw: 2845 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (152449) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (152499) ULTRASONIC: Raw: 2845 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (152499) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (152549) ULTRASONIC: Raw: 2844 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (152549) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (152599) ULTRASONIC: Raw: 1651 µs → 28 cm (new) vs 28 cm (old)[0m
+[0;32mI (152599) ULTRASONIC: Moving down - Distance: 28 cm[0m
+[0;32mI (152649) ULTRASONIC: Raw: 2844 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (152649) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (152699) ULTRASONIC: Raw: 2845 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (152699) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (152749) ULTRASONIC: Raw: 2864 µs → 49 cm (new) vs 49 cm (old)[0m
+[0;32mI (152749) ULTRASONIC: Moving down - Distance: 49 cm[0m
+[0;32mI (152799) ULTRASONIC: Raw: 1712 µs → 29 cm (new) vs 29 cm (old)[0m
+[0;32mI (152799) ULTRASONIC: Moving down - Distance: 29 cm[0m
+[0;32mI (152849) ULTRASONIC: Raw: 1682 µs → 28 cm (new) vs 29 cm (old)[0m
+[0;32mI (152849) ULTRASONIC: Moving down - Distance: 28 cm[0m
+[0;32mI (152899) ULTRASONIC: Raw: 1652 µs → 28 cm (new) vs 28 cm (old)[0m
+[0;32mI (152899) ULTRASONIC: Moving down - Distance: 28 cm[0m
+[0;32mI (152949) ULTRASONIC: Raw: 1743 µs → 29 cm (new) vs 30 cm (old)[0m
+[0;32mI (152949) ULTRASONIC: Moving down - Distance: 29 cm[0m
+[0;32mI (152999) ULTRASONIC: Raw: 1636 µs → 28 cm (new) vs 28 cm (old)[0m
+[0;32mI (152999) ULTRASONIC: Moving down - Distance: 28 cm[0m
+[0;32mI (153049) ULTRASONIC: Raw: 1728 µs → 29 cm (new) vs 29 cm (old)[0m
+[0;32mI (153049) ULTRASONIC: Moving down - Distance: 29 cm[0m
+[0;32mI (153099) ULTRASONIC: Raw: 2865 µs → 49 cm (new) vs 49 cm (old)[0m
+[0;32mI (153099) ULTRASONIC: Moving down - Distance: 49 cm[0m
+[0;32mI (153149) ULTRASONIC: Raw: 2800 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (153149) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (153199) ULTRASONIC: Raw: 2894 µs → 49 cm (new) vs 49 cm (old)[0m
+[0;32mI (153199) ULTRASONIC: Moving down - Distance: 49 cm[0m
+[0;32mI (153249) ULTRASONIC: Raw: 2834 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (153249) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (153299) ULTRASONIC: Raw: 2824 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (153299) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (153349) ULTRASONIC: Raw: 2833 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (153349) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (153399) ULTRASONIC: Raw: 2777 µs → 47 cm (new) vs 47 cm (old)[0m
+[0;32mI (153399) ULTRASONIC: Moving down - Distance: 47 cm[0m
+[0;32mI (153449) ULTRASONIC: Raw: 2843 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (153449) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (153499) ULTRASONIC: Raw: 2812 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (153499) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (153549) ULTRASONIC: Raw: 2824 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (153549) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (153599) ULTRASONIC: Raw: 2765 µs → 47 cm (new) vs 47 cm (old)[0m
+[0;32mI (153599) ULTRASONIC: Moving down - Distance: 47 cm[0m
+[0;32mI (153649) ULTRASONIC: Raw: 2730 µs → 46 cm (new) vs 47 cm (old)[0m
+[0;32mI (153649) ULTRASONIC: Moving down - Distance: 46 cm[0m
+[0;32mI (153699) ULTRASONIC: Raw: 2843 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (153699) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (153749) ULTRASONIC: Raw: 2790 µs → 47 cm (new) vs 48 cm (old)[0m
+[0;32mI (153749) ULTRASONIC: Moving down - Distance: 47 cm[0m
+[0;32mI (153799) ULTRASONIC: Raw: 2754 µs → 47 cm (new) vs 47 cm (old)[0m
+[0;32mI (153799) ULTRASONIC: Moving down - Distance: 47 cm[0m
+[0;32mI (153849) ULTRASONIC: Raw: 2845 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (153849) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (153899) ULTRASONIC: Raw: 2834 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (153899) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (153949) ULTRASONIC: Raw: 2695 µs → 46 cm (new) vs 46 cm (old)[0m
+[0;32mI (153949) ULTRASONIC: Moving down - Distance: 46 cm[0m
+[0;32mI (153999) ULTRASONIC: Raw: 2660 µs → 45 cm (new) vs 45 cm (old)[0m
+[0;32mI (153999) ULTRASONIC: Moving down - Distance: 45 cm[0m
+[0;32mI (154049) ULTRASONIC: Raw: 2706 µs → 46 cm (new) vs 46 cm (old)[0m
+[0;32mI (154049) ULTRASONIC: Moving down - Distance: 46 cm[0m
+[0;32mI (154099) ULTRASONIC: Raw: 2844 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (154099) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (154149) ULTRASONIC: Raw: 2834 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (154149) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (154199) ULTRASONIC: Raw: 2824 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (154199) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (154249) ULTRASONIC: Raw: 2660 µs → 45 cm (new) vs 45 cm (old)[0m
+[0;32mI (154249) ULTRASONIC: Moving down - Distance: 45 cm[0m
+[0;32mI (154299) ULTRASONIC: Raw: 2754 µs → 47 cm (new) vs 47 cm (old)[0m
+[0;32mI (154299) ULTRASONIC: Moving down - Distance: 47 cm[0m
+[0;32mI (154349) ULTRASONIC: Raw: 2717 µs → 46 cm (new) vs 46 cm (old)[0m
+[0;32mI (154349) ULTRASONIC: Moving down - Distance: 46 cm[0m
+[0;32mI (154399) ULTRASONIC: Raw: 2683 µs → 46 cm (new) vs 46 cm (old)[0m
+[0;32mI (154399) ULTRASONIC: Moving down - Distance: 46 cm[0m
+[0;32mI (154449) ULTRASONIC: Raw: 2625 µs → 45 cm (new) vs 45 cm (old)[0m
+[0;32mI (154449) ULTRASONIC: Moving down - Distance: 45 cm[0m
+[0;32mI (154499) ULTRASONIC: Raw: 2613 µs → 44 cm (new) vs 45 cm (old)[0m
+[0;32mI (154499) ULTRASONIC: Moving down - Distance: 44 cm[0m
+[0;32mI (154549) ULTRASONIC: Raw: 2730 µs → 46 cm (new) vs 47 cm (old)[0m
+[0;32mI (154549) ULTRASONIC: Moving down - Distance: 46 cm[0m
+[0;32mI (154599) ULTRASONIC: Raw: 2695 µs → 46 cm (new) vs 46 cm (old)[0m
+[0;32mI (154599) ULTRASONIC: Moving down - Distance: 46 cm[0m
+[0;32mI (154649) ULTRASONIC: Raw: 3636 µs → 62 cm (new) vs 62 cm (old)[0m
+[0;32mI (154649) ULTRASONIC: Moving down - Distance: 62 cm[0m
+[0;32mI (154699) ULTRASONIC: Raw: 3663 µs → 62 cm (new) vs 63 cm (old)[0m
+[0;32mI (154699) ULTRASONIC: Moving down - Distance: 62 cm[0m
+[0;32mI (154749) ULTRASONIC: Raw: 3283 µs → 56 cm (new) vs 56 cm (old)[0m
+[0;32mI (154749) ULTRASONIC: Moving down - Distance: 56 cm[0m
+[0;32mI (154799) ULTRASONIC: Raw: 3250 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (154799) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (154849) ULTRASONIC: Raw: 3604 µs → 61 cm (new) vs 62 cm (old)[0m
+[0;32mI (154849) ULTRASONIC: Moving down - Distance: 61 cm[0m
+[0;32mI (154899) ULTRASONIC: Raw: 3621 µs → 62 cm (new) vs 62 cm (old)[0m
+[0;32mI (154899) ULTRASONIC: Moving down - Distance: 62 cm[0m
+[0;32mI (154949) ULTRASONIC: Raw: 3925 µs → 67 cm (new) vs 67 cm (old)[0m
+[0;32mI (154949) ULTRASONIC: Moving down - Distance: 67 cm[0m
+[0;32mI (154999) ULTRASONIC: Raw: 3654 µs → 62 cm (new) vs 63 cm (old)[0m
+[0;32mI (154999) ULTRASONIC: Moving down - Distance: 62 cm[0m
+[0;32mI (155049) ULTRASONIC: Raw: 3232 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (155049) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (155099) ULTRASONIC: Raw: 3349 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (155099) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (155149) ULTRASONIC: Raw: 2854 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (155149) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (155199) ULTRASONIC: Raw: 2496 µs → 42 cm (new) vs 43 cm (old)[0m
+[0;32mI (155199) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (155249) ULTRASONIC: Raw: 2483 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (155249) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (155299) ULTRASONIC: Raw: 2578 µs → 44 cm (new) vs 44 cm (old)[0m
+[0;32mI (155299) ULTRASONIC: Moving down - Distance: 44 cm[0m
+[0;32mI (155349) ULTRASONIC: Raw: 2542 µs → 43 cm (new) vs 43 cm (old)[0m
+[0;32mI (155349) ULTRASONIC: Moving down - Distance: 43 cm[0m
+[0;32mI (155399) ULTRASONIC: Raw: 2483 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (155399) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (155449) ULTRASONIC: Raw: 2448 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (155449) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (155499) ULTRASONIC: Raw: 2436 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (155499) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (155549) ULTRASONIC: Raw: 3240 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (155549) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (155599) ULTRASONIC: Raw: 2541 µs → 43 cm (new) vs 43 cm (old)[0m
+[0;32mI (155599) ULTRASONIC: Moving down - Distance: 43 cm[0m
+[0;32mI (155649) ULTRASONIC: Raw: 2508 µs → 43 cm (new) vs 43 cm (old)[0m
+[0;32mI (155649) ULTRASONIC: Moving down - Distance: 43 cm[0m
+[0;32mI (155699) ULTRASONIC: Raw: 2448 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (155699) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (155749) ULTRASONIC: Raw: 2436 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (155749) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (155799) ULTRASONIC: Raw: 2576 µs → 44 cm (new) vs 44 cm (old)[0m
+[0;32mI (155799) ULTRASONIC: Moving down - Distance: 44 cm[0m
+[0;32mI (155849) ULTRASONIC: Raw: 2519 µs → 43 cm (new) vs 43 cm (old)[0m
+[0;32mI (155849) ULTRASONIC: Moving down - Distance: 43 cm[0m
+[0;32mI (155899) ULTRASONIC: Raw: 2459 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (155899) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (155949) ULTRASONIC: Raw: 2446 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (155949) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (155999) ULTRASONIC: Raw: 2384 µs → 40 cm (new) vs 41 cm (old)[0m
+[0;32mI (155999) ULTRASONIC: Moving down - Distance: 40 cm[0m
+[0;32mI (156049) ULTRASONIC: Raw: 2424 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (156049) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (156099) ULTRASONIC: Raw: 2541 µs → 43 cm (new) vs 43 cm (old)[0m
+[0;32mI (156099) ULTRASONIC: Moving down - Distance: 43 cm[0m
+[0;32mI (156149) ULTRASONIC: Raw: 2483 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (156149) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (156199) ULTRASONIC: Raw: 3456 µs → 59 cm (new) vs 59 cm (old)[0m
+[0;32mI (156199) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (156249) ULTRASONIC: Raw: 3389 µs → 58 cm (new) vs 58 cm (old)[0m
+[0;32mI (156249) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (156299) ULTRASONIC: Raw: 3554 µs → 60 cm (new) vs 61 cm (old)[0m
+[0;32mI (156299) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (156349) ULTRASONIC: Raw: 2471 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (156349) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (156399) ULTRASONIC: Raw: 2436 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (156399) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (156449) ULTRASONIC: Raw: 3479 µs → 59 cm (new) vs 59 cm (old)[0m
+[0;32mI (156449) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (156499) ULTRASONIC: Raw: 2236 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (156499) ULTRASONIC: Moving down - Distance: 38 cm[0m
+[0;32mI (156549) ULTRASONIC: Raw: 2276 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (156549) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (156599) ULTRASONIC: Raw: 2289 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (156599) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (156649) ULTRASONIC: Raw: 2183 µs → 37 cm (new) vs 37 cm (old)[0m
+[0;32mI (156649) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (156699) ULTRASONIC: Raw: 3496 µs → 59 cm (new) vs 60 cm (old)[0m
+[0;32mI (156699) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (156749) ULTRASONIC: Raw: 3323 µs → 56 cm (new) vs 57 cm (old)[0m
+[0;32mI (156749) ULTRASONIC: Moving down - Distance: 56 cm[0m
+[0;32mI (156799) ULTRASONIC: Raw: 2483 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (156799) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (156849) ULTRASONIC: Raw: 2169 µs → 37 cm (new) vs 37 cm (old)[0m
+[0;32mI (156849) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (156899) ULTRASONIC: Raw: 2236 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (156899) ULTRASONIC: Moving down - Distance: 38 cm[0m
+[0;32mI (156949) ULTRASONIC: Raw: 2209 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (156949) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (156999) ULTRASONIC: Raw: 2209 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (156999) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (157049) ULTRASONIC: Raw: 2236 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (157049) ULTRASONIC: Moving down - Distance: 38 cm[0m
+[0;32mI (157099) ULTRASONIC: Raw: 2209 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (157099) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (157149) ULTRASONIC: Raw: 2209 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (157149) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (157199) ULTRASONIC: Raw: 2208 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (157199) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (157249) ULTRASONIC: Raw: 2208 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (157249) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (157299) ULTRASONIC: Raw: 2210 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (157299) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (157349) DESK: Stopped moving[0m
+[0;32mI (157349) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (323799) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (323799) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (323799) ULTRASONIC: Raw: 2209 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (323799) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (323859) ULTRASONIC: Raw: 2208 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (323859) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (323909) ULTRASONIC: Raw: 2209 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (323909) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (323959) ULTRASONIC: Raw: 2210 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (323959) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (324009) ULTRASONIC: Raw: 2209 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (324009) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (324059) ULTRASONIC: Raw: 2209 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (324059) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (324109) ULTRASONIC: Raw: 2208 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (324109) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (324159) ULTRASONIC: Raw: 2209 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (324159) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (324209) ULTRASONIC: Raw: 2210 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (324209) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (324259) ULTRASONIC: Raw: 2209 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (324259) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (324309) DESK: Stopped moving[0m
+[0;32mI (324309) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (459209) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (459209) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (459209) ULTRASONIC: Raw: 2209 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (459209) ULTRASONIC: Moving up - Distance: 37 cm[0m
+[0;32mI (459269) ULTRASONIC: Raw: 2208 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (459269) ULTRASONIC: Moving up - Distance: 37 cm[0m
+[0;32mI (459319) ULTRASONIC: Raw: 2209 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (459319) ULTRASONIC: Moving up - Distance: 37 cm[0m
+[0;32mI (459369) DESK: Stopped moving[0m
+[0;32mI (459369) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (578769) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (578769) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (578769) ULTRASONIC: Raw: 3399 µs → 58 cm (new) vs 58 cm (old)[0m
+[0;32mI (578769) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (578829) ULTRASONIC: Raw: 4329 µs → 74 cm (new) vs 74 cm (old)[0m
+[0;32mI (578829) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (578879) ULTRASONIC: Raw: 590 µs → 10 cm (new) vs 10 cm (old)[0m
+[0;32mI (578879) ULTRASONIC: Moving up - Distance: 10 cm[0m
+[0;32mI (578929) ULTRASONIC: Raw: 4787 µs → 82 cm (new) vs 82 cm (old)[0m
+[0;32mI (578929) ULTRASONIC: Moving up - Distance: 82 cm[0m
+[0;32mI (578979) ULTRASONIC: Raw: 4885 µs → 83 cm (new) vs 84 cm (old)[0m
+[0;32mI (578979) ULTRASONIC: Moving up - Distance: 83 cm[0m
+[0;32mI (579029) ULTRASONIC: Raw: 590 µs → 10 cm (new) vs 10 cm (old)[0m
+[0;32mI (579029) ULTRASONIC: Moving up - Distance: 10 cm[0m
+[0;32mI (579079) ULTRASONIC: Raw: 591 µs → 10 cm (new) vs 10 cm (old)[0m
+[0;32mI (579079) ULTRASONIC: Moving up - Distance: 10 cm[0m
+[0;32mI (579129) ULTRASONIC: Raw: 4226 µs → 72 cm (new) vs 72 cm (old)[0m
+[0;32mI (579129) ULTRASONIC: Moving up - Distance: 72 cm[0m
+[0;32mI (579179) ULTRASONIC: Raw: 591 µs → 10 cm (new) vs 10 cm (old)[0m
+[0;32mI (579179) ULTRASONIC: Moving up - Distance: 10 cm[0m
+[0;32mI (579229) ULTRASONIC: Raw: 590 µs → 10 cm (new) vs 10 cm (old)[0m
+[0;32mI (579229) ULTRASONIC: Moving up - Distance: 10 cm[0m
+[0;32mI (579279) ULTRASONIC: Raw: 592 µs → 10 cm (new) vs 10 cm (old)[0m
+[0;32mI (579279) ULTRASONIC: Moving up - Distance: 10 cm[0m
+[0;32mI (579329) ULTRASONIC: Raw: 592 µs → 10 cm (new) vs 10 cm (old)[0m
+[0;32mI (579329) ULTRASONIC: Moving up - Distance: 10 cm[0m
+[0;32mI (579379) ULTRASONIC: Raw: 4193 µs → 71 cm (new) vs 72 cm (old)[0m
+[0;32mI (579379) ULTRASONIC: Moving up - Distance: 71 cm[0m
+[0;32mI (579429) ULTRASONIC: Raw: 3819 µs → 65 cm (new) vs 65 cm (old)[0m
+[0;32mI (579429) ULTRASONIC: Moving up - Distance: 65 cm[0m
+[0;32mI (579479) ULTRASONIC: Raw: 4230 µs → 72 cm (new) vs 72 cm (old)[0m
+[0;32mI (579479) ULTRASONIC: Moving up - Distance: 72 cm[0m
+[0;32mI (579529) ULTRASONIC: Raw: 591 µs → 10 cm (new) vs 10 cm (old)[0m
+[0;32mI (579529) ULTRASONIC: Moving up - Distance: 10 cm[0m
+[0;32mI (579579) DESK: Stopped moving[0m
+[0;32mI (579579) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (579629) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (579629) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (579629) ULTRASONIC: Raw: 591 µs → 10 cm (new) vs 10 cm (old)[0m
+[0;32mI (579629) ULTRASONIC: Moving up - Distance: 10 cm[0m
+[0;32mI (579689) ULTRASONIC: Raw: 4245 µs → 72 cm (new) vs 73 cm (old)[0m
+[0;32mI (579689) ULTRASONIC: Moving up - Distance: 72 cm[0m
+[0;32mI (579739) ULTRASONIC: Raw: 316 µs → 5 cm (new) vs 5 cm (old)[0m
+[0;32mI (579739) ULTRASONIC: Moving up - Distance: 5 cm[0m
+[0;32mI (579789) DESK: Stopped moving[0m
+[0;32mI (579789) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (589439) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (589439) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (589439) ULTRASONIC: Raw: 3266 µs → 56 cm (new) vs 56 cm (old)[0m
+[0;32mI (589439) ULTRASONIC: Moving down - Distance: 56 cm[0m
+[0;32mI (589499) ULTRASONIC: Raw: 3265 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (589499) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (589549) ULTRASONIC: Raw: 3233 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (589549) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (589599) ULTRASONIC: Raw: 3686 µs → 63 cm (new) vs 63 cm (old)[0m
+[0;32mI (589599) ULTRASONIC: Moving down - Distance: 63 cm[0m
+[0;32mI (589649) ULTRASONIC: Raw: 3703 µs → 63 cm (new) vs 63 cm (old)[0m
+[0;32mI (589649) ULTRASONIC: Moving down - Distance: 63 cm[0m
+[0;32mI (589699) ULTRASONIC: Raw: 3406 µs → 58 cm (new) vs 58 cm (old)[0m
+[0;32mI (589699) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (589749) ULTRASONIC: Raw: 3324 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (589749) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (589799) ULTRASONIC: Raw: 2438 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (589799) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (589849) ULTRASONIC: Raw: 2278 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (589849) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (589899) ULTRASONIC: Raw: 3249 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (589899) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (589949) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (589949) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (589999) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (589999) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (590049) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (590049) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (590099) ULTRASONIC: Raw: 3242 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (590099) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (590149) DESK: Stopped moving[0m
+[0;32mI (590149) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (596699) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (596699) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (596699) ULTRASONIC: Raw: 3240 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (596699) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (596759) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (596759) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (596809) ULTRASONIC: Raw: 3243 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (596809) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (596859) ULTRASONIC: Raw: 3242 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (596859) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (596909) ULTRASONIC: Raw: 3546 µs → 60 cm (new) vs 61 cm (old)[0m
+[0;32mI (596909) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (596959) ULTRASONIC: Raw: 3251 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (596959) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (597009) ULTRASONIC: Raw: 2424 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (597009) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (597059) ULTRASONIC: Raw: 2484 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (597059) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (597109) ULTRASONIC: Raw: 2438 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (597109) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (597159) DESK: Stopped moving[0m
+[0;32mI (597159) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (602859) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (602859) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (602859) ULTRASONIC: Raw: 3331 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (602859) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (602919) ULTRASONIC: Raw: 3307 µs → 56 cm (new) vs 57 cm (old)[0m
+[0;32mI (602919) ULTRASONIC: Moving down - Distance: 56 cm[0m
+[0;32mI (602969) ULTRASONIC: Raw: 3251 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (602969) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (603019) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (603019) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (603069) ULTRASONIC: Raw: 3266 µs → 56 cm (new) vs 56 cm (old)[0m
+[0;32mI (603069) ULTRASONIC: Moving down - Distance: 56 cm[0m
+[0;32mI (603119) ULTRASONIC: Raw: 2508 µs → 43 cm (new) vs 43 cm (old)[0m
+[0;32mI (603119) ULTRASONIC: Moving down - Distance: 43 cm[0m
+[0;32mI (603169) ULTRASONIC: Raw: 2448 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (603169) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (603219) ULTRASONIC: Raw: 3439 µs → 58 cm (new) vs 59 cm (old)[0m
+[0;32mI (603219) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (603269) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (603269) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (603319) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (603319) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (603369) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (603369) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (603419) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (603419) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (603469) DESK: Stopped moving[0m
+[0;32mI (603469) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (605569) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (605569) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (605569) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (605569) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (605629) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (605629) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (605679) ULTRASONIC: Raw: 3242 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (605679) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (605729) ULTRASONIC: Raw: 3439 µs → 58 cm (new) vs 59 cm (old)[0m
+[0;32mI (605729) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (605779) ULTRASONIC: Raw: 3249 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (605779) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (605829) ULTRASONIC: Raw: 3250 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (605829) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (605879) ULTRASONIC: Raw: 3226 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (605879) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (605929) ULTRASONIC: Raw: 2460 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (605929) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (605979) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (605979) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (606029) ULTRASONIC: Raw: 3249 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (606029) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (606079) ULTRASONIC: Raw: 3414 µs → 58 cm (new) vs 58 cm (old)[0m
+[0;32mI (606079) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (606129) ULTRASONIC: Raw: 3232 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (606129) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (606179) ULTRASONIC: Raw: 3242 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (606179) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (606229) ULTRASONIC: Raw: 3250 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (606229) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (606279) ULTRASONIC: Raw: 3381 µs → 57 cm (new) vs 58 cm (old)[0m
+[0;32mI (606279) ULTRASONIC: Moving up - Distance: 57 cm[0m
+[0;32mI (606329) ULTRASONIC: Raw: 3234 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (606329) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (606379) ULTRASONIC: Raw: 2237 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (606379) ULTRASONIC: Moving up - Distance: 38 cm[0m
+[0;32mI (606429) ULTRASONIC: Raw: 3249 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (606429) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (606479) ULTRASONIC: Raw: 3407 µs → 58 cm (new) vs 58 cm (old)[0m
+[0;32mI (606479) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (606529) ULTRASONIC: Raw: 3283 µs → 56 cm (new) vs 56 cm (old)[0m
+[0;32mI (606529) ULTRASONIC: Moving up - Distance: 56 cm[0m
+[0;32mI (606579) ULTRASONIC: Raw: 3398 µs → 58 cm (new) vs 58 cm (old)[0m
+[0;32mI (606579) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (606629) ULTRASONIC: Raw: 3382 µs → 58 cm (new) vs 58 cm (old)[0m
+[0;32mI (606629) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (606679) ULTRASONIC: Raw: 3761 µs → 64 cm (new) vs 64 cm (old)[0m
+[0;32mI (606679) ULTRASONIC: Moving up - Distance: 64 cm[0m
+[0;32mI (606729) ULTRASONIC: Raw: 3291 µs → 56 cm (new) vs 56 cm (old)[0m
+[0;32mI (606729) ULTRASONIC: Moving up - Distance: 56 cm[0m
+[0;32mI (606779) ULTRASONIC: Raw: 3249 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (606779) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (606829) ULTRASONIC: Raw: 2372 µs → 40 cm (new) vs 40 cm (old)[0m
+[0;32mI (606829) ULTRASONIC: Moving up - Distance: 40 cm[0m
+[0;32mI (606879) ULTRASONIC: Raw: 2304 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (606879) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (606929) ULTRASONIC: Raw: 2357 µs → 40 cm (new) vs 40 cm (old)[0m
+[0;32mI (606929) ULTRASONIC: Moving up - Distance: 40 cm[0m
+[0;32mI (606979) ULTRASONIC: Raw: 2317 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (606979) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (607029) ULTRASONIC: Raw: 2399 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (607029) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (607079) ULTRASONIC: Raw: 2331 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (607079) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (607129) ULTRASONIC: Raw: 2413 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (607129) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (607179) DESK: Stopped moving[0m
+[0;32mI (607179) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (610629) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (610629) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (610629) ULTRASONIC: Raw: 2399 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (610629) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (610689) ULTRASONIC: Raw: 2399 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (610689) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (610739) ULTRASONIC: Raw: 2400 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (610739) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (610789) ULTRASONIC: Raw: 2344 µs → 40 cm (new) vs 40 cm (old)[0m
+[0;32mI (610789) ULTRASONIC: Moving down - Distance: 40 cm[0m
+[0;32mI (610839) ULTRASONIC: Raw: 2318 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (610839) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (610889) ULTRASONIC: Raw: 2385 µs → 40 cm (new) vs 41 cm (old)[0m
+[0;32mI (610889) ULTRASONIC: Moving down - Distance: 40 cm[0m
+[0;32mI (610939) ULTRASONIC: Raw: 2331 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (610939) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (610989) ULTRASONIC: Raw: 2398 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (610989) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (611039) ULTRASONIC: Raw: 2290 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (611039) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (611089) ULTRASONIC: Raw: 2331 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (611089) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (611139) ULTRASONIC: Raw: 2371 µs → 40 cm (new) vs 40 cm (old)[0m
+[0;32mI (611139) ULTRASONIC: Moving down - Distance: 40 cm[0m
+[0;32mI (611189) ULTRASONIC: Raw: 3250 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (611189) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (611239) ULTRASONIC: Raw: 3390 µs → 58 cm (new) vs 58 cm (old)[0m
+[0;32mI (611239) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (611289) ULTRASONIC: Raw: 3712 µs → 63 cm (new) vs 64 cm (old)[0m
+[0;32mI (611289) ULTRASONIC: Moving down - Distance: 63 cm[0m
+[0;32mI (611339) ULTRASONIC: Raw: 3325 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (611339) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (611389) ULTRASONIC: Raw: 3439 µs → 58 cm (new) vs 59 cm (old)[0m
+[0;32mI (611389) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (611439) ULTRASONIC: Raw: 2884 µs → 49 cm (new) vs 49 cm (old)[0m
+[0;32mI (611439) ULTRASONIC: Moving down - Distance: 49 cm[0m
+[0;32mI (611489) ULTRASONIC: Raw: 2209 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (611489) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (611539) ULTRASONIC: Raw: 2196 µs → 37 cm (new) vs 37 cm (old)[0m
+[0;32mI (611539) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (611589) ULTRASONIC: Raw: 2236 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (611589) ULTRASONIC: Moving down - Distance: 38 cm[0m
+[0;32mI (611639) ULTRASONIC: Raw: 2278 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (611639) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (611689) ULTRASONIC: Raw: 3522 µs → 60 cm (new) vs 60 cm (old)[0m
+[0;32mI (611689) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (611739) ULTRASONIC: Raw: 3274 µs → 56 cm (new) vs 56 cm (old)[0m
+[0;32mI (611739) ULTRASONIC: Moving down - Distance: 56 cm[0m
+[0;32mI (611789) ULTRASONIC: Raw: 3232 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (611789) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (611839) ULTRASONIC: Raw: 3249 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (611839) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (611889) ULTRASONIC: Raw: 2554 µs → 43 cm (new) vs 44 cm (old)[0m
+[0;32mI (611889) ULTRASONIC: Moving down - Distance: 43 cm[0m
+[0;32mI (611939) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (611939) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (611989) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (611989) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (612039) ULTRASONIC: Raw: 2578 µs → 44 cm (new) vs 44 cm (old)[0m
+[0;32mI (612039) ULTRASONIC: Moving down - Distance: 44 cm[0m
+[0;32mI (612089) ULTRASONIC: Raw: 2553 µs → 43 cm (new) vs 44 cm (old)[0m
+[0;32mI (612089) ULTRASONIC: Moving down - Distance: 43 cm[0m
+[0;32mI (612139) DESK: Stopped moving[0m
+[0;32mI (612139) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (613539) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (613539) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (613539) ULTRASONIC: Raw: 3514 µs → 60 cm (new) vs 60 cm (old)[0m
+[0;32mI (613539) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (613599) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (613599) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (613649) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (613649) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (613699) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (613699) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (613749) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (613749) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (613799) ULTRASONIC: Raw: 3240 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (613799) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (613849) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (613849) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (613899) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (613899) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (613949) ULTRASONIC: Raw: 2579 µs → 44 cm (new) vs 44 cm (old)[0m
+[0;32mI (613949) ULTRASONIC: Moving down - Distance: 44 cm[0m
+[0;32mI (613999) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (613999) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (614049) ULTRASONIC: Raw: 3240 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (614049) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (614099) ULTRASONIC: Raw: 3240 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (614099) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (614149) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (614149) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (614199) ULTRASONIC: Raw: 2578 µs → 44 cm (new) vs 44 cm (old)[0m
+[0;32mI (614199) ULTRASONIC: Moving down - Distance: 44 cm[0m
+[0;32mI (614249) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (614249) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (614299) ULTRASONIC: Raw: 3240 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (614299) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (614349) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (614349) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (614399) ULTRASONIC: Raw: 3242 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (614399) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (614449) ULTRASONIC: Raw: 2576 µs → 44 cm (new) vs 44 cm (old)[0m
+[0;32mI (614449) ULTRASONIC: Moving down - Distance: 44 cm[0m
+[0;32mI (614499) ULTRASONIC: Raw: 3242 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (614499) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (614549) ULTRASONIC: Raw: 3240 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (614549) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (614599) ULTRASONIC: Raw: 3240 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (614599) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (614649) DESK: Stopped moving[0m
+[0;32mI (614649) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (615299) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (615299) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (615299) ULTRASONIC: Raw: 3390 µs → 58 cm (new) vs 58 cm (old)[0m
+[0;32mI (615299) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (615359) ULTRASONIC: Raw: 2578 µs → 44 cm (new) vs 44 cm (old)[0m
+[0;32mI (615359) ULTRASONIC: Moving down - Distance: 44 cm[0m
+[0;32mI (615409) ULTRASONIC: Raw: 2554 µs → 43 cm (new) vs 44 cm (old)[0m
+[0;32mI (615409) ULTRASONIC: Moving down - Distance: 43 cm[0m
+[0;32mI (615459) ULTRASONIC: Raw: 3242 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (615459) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (615509) ULTRASONIC: Raw: 3315 µs → 56 cm (new) vs 57 cm (old)[0m
+[0;32mI (615509) ULTRASONIC: Moving down - Distance: 56 cm[0m
+[0;32mI (615559) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (615559) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (615609) ULTRASONIC: Raw: 3539 µs → 60 cm (new) vs 61 cm (old)[0m
+[0;32mI (615609) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (615659) DESK: Stopped moving[0m
+[0;32mI (615659) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (616659) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (616659) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (616659) ULTRASONIC: Raw: 3242 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (616659) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (616719) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (616719) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (616769) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (616769) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (616819) ULTRASONIC: Raw: 3240 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (616819) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (616869) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (616869) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (616919) ULTRASONIC: Raw: 3463 µs → 59 cm (new) vs 59 cm (old)[0m
+[0;32mI (616919) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (616969) ULTRASONIC: Raw: 2578 µs → 44 cm (new) vs 44 cm (old)[0m
+[0;32mI (616969) ULTRASONIC: Moving down - Distance: 44 cm[0m
+[0;32mI (617019) ULTRASONIC: Raw: 3242 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (617019) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (617069) DESK: Stopped moving[0m
+[0;32mI (617069) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (617719) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (617719) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (617719) ULTRASONIC: Raw: 3242 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (617719) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (617779) ULTRASONIC: Raw: 3240 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (617779) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (617829) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (617829) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (617879) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (617879) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (617929) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (617929) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (617979) ULTRASONIC: Raw: 3242 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (617979) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (618029) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (618029) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (618079) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (618079) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (618129) ULTRASONIC: Raw: 3266 µs → 56 cm (new) vs 56 cm (old)[0m
+[0;32mI (618129) ULTRASONIC: Moving down - Distance: 56 cm[0m
+[0;32mI (618179) DESK: Stopped moving[0m
+[0;32mI (618179) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (844379) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (844379) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (844379) ULTRASONIC: Raw: 3242 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (844379) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (844439) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (844439) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (844489) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (844489) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (844539) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (844539) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (844589) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (844589) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (844639) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (844639) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (844689) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (844689) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (844739) ULTRASONIC: Raw: 3242 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (844739) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (844789) ULTRASONIC: Raw: 3389 µs → 58 cm (new) vs 58 cm (old)[0m
+[0;32mI (844789) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (844839) ULTRASONIC: Raw: 3513 µs → 60 cm (new) vs 60 cm (old)[0m
+[0;32mI (844839) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (844889) ULTRASONIC: Raw: 3250 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (844889) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (844939) ULTRASONIC: Raw: 3250 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (844939) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (844989) ULTRASONIC: Raw: 3234 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (844989) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (845039) ULTRASONIC: Raw: 3242 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (845039) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (845089) ULTRASONIC: Raw: 3251 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (845089) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (845139) ULTRASONIC: Raw: 3539 µs → 60 cm (new) vs 61 cm (old)[0m
+[0;32mI (845139) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (845189) ULTRASONIC: Raw: 3234 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (845189) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (845239) ULTRASONIC: Raw: 2330 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (845239) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (845289) ULTRASONIC: Raw: 2235 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (845289) ULTRASONIC: Moving up - Distance: 38 cm[0m
+[0;32mI (845339) ULTRASONIC: Raw: 2169 µs → 37 cm (new) vs 37 cm (old)[0m
+[0;32mI (845339) ULTRASONIC: Moving up - Distance: 37 cm[0m
+[0;32mI (845389) ULTRASONIC: Raw: 2250 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (845389) ULTRASONIC: Moving up - Distance: 38 cm[0m
+[0;32mI (845439) ULTRASONIC: Raw: 2182 µs → 37 cm (new) vs 37 cm (old)[0m
+[0;32mI (845439) ULTRASONIC: Moving up - Distance: 37 cm[0m
+[0;32mI (845489) ULTRASONIC: Raw: 3249 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (845489) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (845539) ULTRASONIC: Raw: 3234 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (845539) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (845589) ULTRASONIC: Raw: 3358 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (845589) ULTRASONIC: Moving up - Distance: 57 cm[0m
+[0;32mI (845639) ULTRASONIC: Raw: 3243 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (845639) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (845689) ULTRASONIC: Raw: 3300 µs → 56 cm (new) vs 56 cm (old)[0m
+[0;32mI (845689) ULTRASONIC: Moving up - Distance: 56 cm[0m
+[0;32mI (845739) ULTRASONIC: Raw: 3737 µs → 64 cm (new) vs 64 cm (old)[0m
+[0;32mI (845739) ULTRASONIC: Moving up - Distance: 64 cm[0m
+[0;32mI (845789) ULTRASONIC: Raw: 3556 µs → 60 cm (new) vs 61 cm (old)[0m
+[0;32mI (845789) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (845839) ULTRASONIC: Raw: 2438 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (845839) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (845889) ULTRASONIC: Raw: 2344 µs → 40 cm (new) vs 40 cm (old)[0m
+[0;32mI (845889) ULTRASONIC: Moving up - Distance: 40 cm[0m
+[0;32mI (845939) ULTRASONIC: Raw: 2277 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (845939) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (845989) ULTRASONIC: Raw: 2330 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (845989) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (846039) ULTRASONIC: Raw: 2264 µs → 38 cm (new) vs 39 cm (old)[0m
+[0;32mI (846039) ULTRASONIC: Moving up - Distance: 38 cm[0m
+[0;32mI (846089) ULTRASONIC: Raw: 2345 µs → 40 cm (new) vs 40 cm (old)[0m
+[0;32mI (846089) ULTRASONIC: Moving up - Distance: 40 cm[0m
+[0;32mI (846139) ULTRASONIC: Raw: 2305 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (846139) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (846189) ULTRASONIC: Raw: 2386 µs → 40 cm (new) vs 41 cm (old)[0m
+[0;32mI (846189) ULTRASONIC: Moving up - Distance: 40 cm[0m
+[0;32mI (846239) ULTRASONIC: Raw: 2318 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (846239) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (846289) ULTRASONIC: Raw: 2398 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (846289) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (846339) ULTRASONIC: Raw: 2331 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (846339) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (846389) ULTRASONIC: Raw: 2436 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (846389) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (846439) ULTRASONIC: Raw: 2372 µs → 40 cm (new) vs 40 cm (old)[0m
+[0;32mI (846439) ULTRASONIC: Moving up - Distance: 40 cm[0m
+[0;32mI (846489) ULTRASONIC: Raw: 2425 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (846489) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (846539) ULTRASONIC: Raw: 2386 µs → 40 cm (new) vs 41 cm (old)[0m
+[0;32mI (846539) ULTRASONIC: Moving up - Distance: 40 cm[0m
+[0;32mI (846589) ULTRASONIC: Raw: 2495 µs → 42 cm (new) vs 43 cm (old)[0m
+[0;32mI (846589) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (846639) ULTRASONIC: Raw: 2399 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (846639) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (846689) ULTRASONIC: Raw: 2358 µs → 40 cm (new) vs 40 cm (old)[0m
+[0;32mI (846689) ULTRASONIC: Moving up - Distance: 40 cm[0m
+[0;32mI (846739) ULTRASONIC: Raw: 2412 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (846739) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (846789) ULTRASONIC: Raw: 2371 µs → 40 cm (new) vs 40 cm (old)[0m
+[0;32mI (846789) ULTRASONIC: Moving up - Distance: 40 cm[0m
+[0;32mI (846839) ULTRASONIC: Raw: 2425 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (846839) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (846889) ULTRASONIC: Raw: 2436 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (846889) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (846939) ULTRASONIC: Raw: 2496 µs → 42 cm (new) vs 43 cm (old)[0m
+[0;32mI (846939) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (846989) ULTRASONIC: Raw: 2398 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (846989) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (847039) ULTRASONIC: Raw: 2485 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (847039) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (847089) ULTRASONIC: Raw: 2412 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (847089) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (847139) ULTRASONIC: Raw: 2473 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (847139) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (847189) ULTRASONIC: Raw: 2424 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (847189) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (847239) ULTRASONIC: Raw: 2437 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (847239) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (847289) ULTRASONIC: Raw: 2519 µs → 43 cm (new) vs 43 cm (old)[0m
+[0;32mI (847289) ULTRASONIC: Moving up - Distance: 43 cm[0m
+[0;32mI (847339) ULTRASONIC: Raw: 2447 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (847339) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (847389) ULTRASONIC: Raw: 2484 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (847389) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (847439) ULTRASONIC: Raw: 2438 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (847439) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (847489) ULTRASONIC: Raw: 2472 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (847489) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (847539) ULTRASONIC: Raw: 2555 µs → 43 cm (new) vs 44 cm (old)[0m
+[0;32mI (847539) ULTRASONIC: Moving up - Distance: 43 cm[0m
+[0;32mI (847589) ULTRASONIC: Raw: 2484 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (847589) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (847639) ULTRASONIC: Raw: 2543 µs → 43 cm (new) vs 43 cm (old)[0m
+[0;32mI (847639) ULTRASONIC: Moving up - Distance: 43 cm[0m
+[0;32mI (847689) ULTRASONIC: Raw: 2625 µs → 45 cm (new) vs 45 cm (old)[0m
+[0;32mI (847689) ULTRASONIC: Moving up - Distance: 45 cm[0m
+[0;32mI (847739) ULTRASONIC: Raw: 2533 µs → 43 cm (new) vs 43 cm (old)[0m
+[0;32mI (847739) ULTRASONIC: Moving up - Distance: 43 cm[0m
+[0;32mI (847789) ULTRASONIC: Raw: 2834 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (847789) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (847839) ULTRASONIC: Raw: 3242 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (847839) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (847889) ULTRASONIC: Raw: 3204 µs → 54 cm (new) vs 55 cm (old)[0m
+[0;32mI (847889) ULTRASONIC: Moving up - Distance: 54 cm[0m
+[0;32mI (847939) ULTRASONIC: Raw: 2613 µs → 44 cm (new) vs 45 cm (old)[0m
+[0;32mI (847939) ULTRASONIC: Moving up - Distance: 44 cm[0m
+[0;32mI (847989) ULTRASONIC: Raw: 2542 µs → 43 cm (new) vs 43 cm (old)[0m
+[0;32mI (847989) ULTRASONIC: Moving up - Distance: 43 cm[0m
+[0;32mI (848039) DESK: Stopped moving[0m
+[0;32mI (848039) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (870589) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (870589) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (870589) ULTRASONIC: Raw: 3959 µs → 67 cm (new) vs 68 cm (old)[0m
+[0;32mI (870589) ULTRASONIC: Moving down - Distance: 67 cm[0m
+[0;32mI (870649) ULTRASONIC: Raw: 3819 µs → 65 cm (new) vs 65 cm (old)[0m
+[0;32mI (870649) ULTRASONIC: Moving down - Distance: 65 cm[0m
+[0;32mI (870699) ULTRASONIC: Raw: 3613 µs → 61 cm (new) vs 62 cm (old)[0m
+[0;32mI (870699) ULTRASONIC: Moving down - Distance: 61 cm[0m
+[0;32mI (870749) ULTRASONIC: Raw: 3248 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (870749) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (870799) ULTRASONIC: Raw: 2845 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (870799) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (870849) ULTRASONIC: Raw: 3291 µs → 56 cm (new) vs 56 cm (old)[0m
+[0;32mI (870849) ULTRASONIC: Moving down - Distance: 56 cm[0m
+[0;32mI (870899) ULTRASONIC: Raw: 2834 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (870899) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (870949) ULTRASONIC: Raw: 2579 µs → 44 cm (new) vs 44 cm (old)[0m
+[0;32mI (870949) ULTRASONIC: Moving down - Distance: 44 cm[0m
+[0;32mI (870999) ULTRASONIC: Raw: 2719 µs → 46 cm (new) vs 46 cm (old)[0m
+[0;32mI (870999) ULTRASONIC: Moving down - Distance: 46 cm[0m
+[0;32mI (871049) ULTRASONIC: Raw: 2613 µs → 44 cm (new) vs 45 cm (old)[0m
+[0;32mI (871049) ULTRASONIC: Moving down - Distance: 44 cm[0m
+[0;32mI (871099) ULTRASONIC: Raw: 2555 µs → 43 cm (new) vs 44 cm (old)[0m
+[0;32mI (871099) ULTRASONIC: Moving down - Distance: 43 cm[0m
+[0;32mI (871149) ULTRASONIC: Raw: 2518 µs → 43 cm (new) vs 43 cm (old)[0m
+[0;32mI (871149) ULTRASONIC: Moving down - Distance: 43 cm[0m
+[0;32mI (871199) ULTRASONIC: Raw: 2484 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (871199) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (871249) ULTRASONIC: Raw: 2449 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (871249) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (871299) ULTRASONIC: Raw: 2519 µs → 43 cm (new) vs 43 cm (old)[0m
+[0;32mI (871299) ULTRASONIC: Moving down - Distance: 43 cm[0m
+[0;32mI (871349) ULTRASONIC: Raw: 2484 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (871349) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (871399) ULTRASONIC: Raw: 2450 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (871399) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (871449) ULTRASONIC: Raw: 2436 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (871449) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (871499) ULTRASONIC: Raw: 2426 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (871499) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (871549) ULTRASONIC: Raw: 2496 µs → 42 cm (new) vs 43 cm (old)[0m
+[0;32mI (871549) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (871599) ULTRASONIC: Raw: 2437 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (871599) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (871649) ULTRASONIC: Raw: 2426 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (871649) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (871699) ULTRASONIC: Raw: 2566 µs → 44 cm (new) vs 44 cm (old)[0m
+[0;32mI (871699) ULTRASONIC: Moving down - Distance: 44 cm[0m
+[0;32mI (871749) ULTRASONIC: Raw: 2531 µs → 43 cm (new) vs 43 cm (old)[0m
+[0;32mI (871749) ULTRASONIC: Moving down - Distance: 43 cm[0m
+[0;32mI (871799) ULTRASONIC: Raw: 2496 µs → 42 cm (new) vs 43 cm (old)[0m
+[0;32mI (871799) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (871849) ULTRASONIC: Raw: 2438 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (871849) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (871899) ULTRASONIC: Raw: 2426 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (871899) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (871949) ULTRASONIC: Raw: 2437 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (871949) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (871999) ULTRASONIC: Raw: 2483 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (871999) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (872049) ULTRASONIC: Raw: 2448 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (872049) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (872099) ULTRASONIC: Raw: 2385 µs → 40 cm (new) vs 41 cm (old)[0m
+[0;32mI (872099) ULTRASONIC: Moving down - Distance: 40 cm[0m
+[0;32mI (872149) ULTRASONIC: Raw: 2398 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (872149) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (872199) ULTRASONIC: Raw: 2291 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (872199) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (872249) ULTRASONIC: Raw: 2305 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (872249) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (872299) ULTRASONIC: Raw: 2345 µs → 40 cm (new) vs 40 cm (old)[0m
+[0;32mI (872299) ULTRASONIC: Moving down - Distance: 40 cm[0m
+[0;32mI (872349) ULTRASONIC: Raw: 2358 µs → 40 cm (new) vs 40 cm (old)[0m
+[0;32mI (872349) ULTRASONIC: Moving down - Distance: 40 cm[0m
+[0;32mI (872399) ULTRASONIC: Raw: 2426 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (872399) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (872449) ULTRASONIC: Raw: 3249 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (872449) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (872499) ULTRASONIC: Raw: 3489 µs → 59 cm (new) vs 60 cm (old)[0m
+[0;32mI (872499) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (872549) ULTRASONIC: Raw: 3538 µs → 60 cm (new) vs 61 cm (old)[0m
+[0;32mI (872549) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (872599) ULTRASONIC: Raw: 2386 µs → 40 cm (new) vs 41 cm (old)[0m
+[0;32mI (872599) ULTRASONIC: Moving down - Distance: 40 cm[0m
+[0;32mI (872649) ULTRASONIC: Raw: 2250 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (872649) ULTRASONIC: Moving down - Distance: 38 cm[0m
+[0;32mI (872699) ULTRASONIC: Raw: 2291 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (872699) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (872749) ULTRASONIC: Raw: 2156 µs → 36 cm (new) vs 37 cm (old)[0m
+[0;32mI (872749) ULTRASONIC: Moving down - Distance: 36 cm[0m
+[0;32mI (872799) ULTRASONIC: Raw: 2169 µs → 37 cm (new) vs 37 cm (old)[0m
+[0;32mI (872799) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (872849) ULTRASONIC: Raw: 2209 µs → 37 cm (new) vs 38 cm (old)[0m
+[0;32mI (872849) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (872899) ULTRASONIC: Raw: 3258 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (872899) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (872949) ULTRASONIC: Raw: 2436 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (872949) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (872999) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (872999) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (873049) ULTRASONIC: Raw: 3233 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (873049) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (873099) ULTRASONIC: Raw: 2385 µs → 40 cm (new) vs 41 cm (old)[0m
+[0;32mI (873099) ULTRASONIC: Moving down - Distance: 40 cm[0m
+[0;32mI (873149) ULTRASONIC: Raw: 2156 µs → 36 cm (new) vs 37 cm (old)[0m
+[0;32mI (873149) ULTRASONIC: Moving down - Distance: 36 cm[0m
+[0;32mI (873199) ULTRASONIC: Raw: 2183 µs → 37 cm (new) vs 37 cm (old)[0m
+[0;32mI (873199) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (873249) ULTRASONIC: Raw: 2154 µs → 36 cm (new) vs 37 cm (old)[0m
+[0;32mI (873249) ULTRASONIC: Moving down - Distance: 36 cm[0m
+[0;32mI (873299) ULTRASONIC: Raw: 2157 µs → 36 cm (new) vs 37 cm (old)[0m
+[0;32mI (873299) ULTRASONIC: Moving down - Distance: 36 cm[0m
+[0;32mI (873349) ULTRASONIC: Raw: 2156 µs → 36 cm (new) vs 37 cm (old)[0m
+[0;32mI (873349) ULTRASONIC: Moving down - Distance: 36 cm[0m
+[0;32mI (873399) ULTRASONIC: Raw: 2156 µs → 36 cm (new) vs 37 cm (old)[0m
+[0;32mI (873399) ULTRASONIC: Moving down - Distance: 36 cm[0m
+[0;32mI (873449) ULTRASONIC: Raw: 2156 µs → 36 cm (new) vs 37 cm (old)[0m
+[0;32mI (873449) ULTRASONIC: Moving down - Distance: 36 cm[0m
+[0;32mI (873499) DESK: Stopped moving[0m
+[0;32mI (873499) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1248049) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1248049) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (1248049) ULTRASONIC: Raw: 142 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1248049) ULTRASONIC: Moving up - Distance: 2 cm[0m
+[0;32mI (1248059) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1248069) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1248069) ULTRASONIC: Raw: 142 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1248079) ULTRASONIC: Moving down - Distance: 2 cm[0m
+[0;32mI (1248129) ULTRASONIC: Raw: 3630 µs → 62 cm (new) vs 62 cm (old)[0m
+[0;32mI (1248129) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (1248139) ULTRASONIC: Raw: 3464 µs → 59 cm (new) vs 59 cm (old)[0m
+[0;32mI (1248139) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (1248199) ULTRASONIC: Raw: 143 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1248199) ULTRASONIC: Moving up - Distance: 2 cm[0m
+[0;32mI (1248199) ULTRASONIC: Raw: 143 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1248209) ULTRASONIC: Moving down - Distance: 2 cm[0m
+[0;32mI (1248259) ULTRASONIC: Raw: 142 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1248259) ULTRASONIC: Moving up - Distance: 2 cm[0m
+[0;32mI (1248259) ULTRASONIC: Raw: 141 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1248269) ULTRASONIC: Moving down - Distance: 2 cm[0m
+[0;32mI (1248319) ULTRASONIC: Raw: 142 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1248319) ULTRASONIC: Moving up - Distance: 2 cm[0m
+[0;32mI (1248319) ULTRASONIC: Raw: 195 µs → 3 cm (new) vs 3 cm (old)[0m
+[0;32mI (1248329) ULTRASONIC: Moving down - Distance: 3 cm[0m
+[0;32mI (1248379) ULTRASONIC: Raw: 142 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1248379) ULTRASONIC: Moving up - Distance: 2 cm[0m
+[0;32mI (1248379) ULTRASONIC: Raw: 142 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1248389) ULTRASONIC: Moving down - Distance: 2 cm[0m
+[0;32mI (1248439) ULTRASONIC: Raw: 143 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1248439) ULTRASONIC: Moving up - Distance: 2 cm[0m
+[0;32mI (1248439) ULTRASONIC: Raw: 143 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1248449) ULTRASONIC: Moving down - Distance: 2 cm[0m
+[0;32mI (1248499) DESK: Stopped moving[0m
+[0;32mI (1248499) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (1248499) DESK: Stopped moving[0m
+[0;32mI (1248499) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1249699) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1249699) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1249699) ULTRASONIC: Raw: 141 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1249699) ULTRASONIC: Moving down - Distance: 2 cm[0m
+[0;32mI (1249759) ULTRASONIC: Raw: 142 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1249759) ULTRASONIC: Moving down - Distance: 2 cm[0m
+[0;32mI (1249809) ULTRASONIC: Raw: 143 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1249809) ULTRASONIC: Moving down - Distance: 2 cm[0m
+[0;32mI (1249859) ULTRASONIC: Raw: 142 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1249859) ULTRASONIC: Moving down - Distance: 2 cm[0m
+[0;32mI (1249909) ULTRASONIC: Raw: 143 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1249909) ULTRASONIC: Moving down - Distance: 2 cm[0m
+[0;32mI (1249959) ULTRASONIC: Raw: 142 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1249959) ULTRASONIC: Moving down - Distance: 2 cm[0m
+[0;32mI (1250009) ULTRASONIC: Raw: 142 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1250009) ULTRASONIC: Moving down - Distance: 2 cm[0m
+[0;32mI (1250059) ULTRASONIC: Raw: 142 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1250059) ULTRASONIC: Moving down - Distance: 2 cm[0m
+[0;32mI (1250109) ULTRASONIC: Raw: 143 µs → 2 cm (new) vs 2 cm (old)[0m
+[0;32mI (1250109) ULTRASONIC: Moving down - Distance: 2 cm[0m
+[0;32mI (1250159) DESK: Stopped moving[0m
+[0;32mI (1250159) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1251659) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1251659) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;33mW (1251709) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;33mW (1251809) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (1251859) DESK: Stopped moving[0m
+[0;32mI (1251859) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (1254409) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1254409) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1254409) ULTRASONIC: Raw: 331 µs → 5 cm (new) vs 5 cm (old)[0m
+[0;32mI (1254409) ULTRASONIC: Moving down - Distance: 5 cm[0m
+[0;32mI (1254469) ULTRASONIC: Raw: 332 µs → 5 cm (new) vs 5 cm (old)[0m
+[0;32mI (1254469) ULTRASONIC: Moving down - Distance: 5 cm[0m
+[0;32mI (1254519) ULTRASONIC: Raw: 332 µs → 5 cm (new) vs 5 cm (old)[0m
+[0;32mI (1254519) ULTRASONIC: Moving down - Distance: 5 cm[0m
+[0;32mI (1254569) ULTRASONIC: Raw: 333 µs → 5 cm (new) vs 5 cm (old)[0m
+[0;32mI (1254569) ULTRASONIC: Moving down - Distance: 5 cm[0m
+[0;32mI (1254619) ULTRASONIC: Raw: 333 µs → 5 cm (new) vs 5 cm (old)[0m
+[0;32mI (1254619) ULTRASONIC: Moving down - Distance: 5 cm[0m
+[0;32mI (1254669) ULTRASONIC: Raw: 333 µs → 5 cm (new) vs 5 cm (old)[0m
+[0;32mI (1254669) ULTRASONIC: Moving down - Distance: 5 cm[0m
+[0;32mI (1254719) ULTRASONIC: Raw: 332 µs → 5 cm (new) vs 5 cm (old)[0m
+[0;32mI (1254719) ULTRASONIC: Moving down - Distance: 5 cm[0m
+[0;32mI (1254769) DESK: Stopped moving[0m
+[0;32mI (1254769) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1255319) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1255319) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1255319) ULTRASONIC: Raw: 332 µs → 5 cm (new) vs 5 cm (old)[0m
+[0;32mI (1255319) ULTRASONIC: Moving down - Distance: 5 cm[0m
+[0;32mI (1255379) ULTRASONIC: Raw: 333 µs → 5 cm (new) vs 5 cm (old)[0m
+[0;32mI (1255379) ULTRASONIC: Moving down - Distance: 5 cm[0m
+[0;32mI (1255429) ULTRASONIC: Raw: 332 µs → 5 cm (new) vs 5 cm (old)[0m
+[0;32mI (1255429) ULTRASONIC: Moving down - Distance: 5 cm[0m
+[0;32mI (1255479) ULTRASONIC: Raw: 331 µs → 5 cm (new) vs 5 cm (old)[0m
+[0;32mI (1255479) ULTRASONIC: Moving down - Distance: 5 cm[0m
+[0;32mI (1255529) DESK: Stopped moving[0m
+[0;32mI (1255529) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1260329) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1260329) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (1260329) ULTRASONIC: Raw: 2425 µs → 41 cm (new) vs 41 cm (old)[0m
+[0;32mI (1260329) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (1260389) ULTRASONIC: Raw: 2554 µs → 43 cm (new) vs 44 cm (old)[0m
+[0;32mI (1260389) ULTRASONIC: Moving up - Distance: 43 cm[0m
+[0;32mI (1260439) ULTRASONIC: Raw: 2554 µs → 43 cm (new) vs 44 cm (old)[0m
+[0;32mI (1260439) ULTRASONIC: Moving up - Distance: 43 cm[0m
+[0;32mI (1260489) DESK: Stopped moving[0m
+[0;32mI (1260489) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (1261739) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1261739) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1261739) ULTRASONIC: Raw: 2483 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (1261739) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (1261799) ULTRASONIC: Raw: 2485 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (1261799) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (1261849) ULTRASONIC: Raw: 2484 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (1261849) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (1261899) ULTRASONIC: Raw: 2556 µs → 43 cm (new) vs 44 cm (old)[0m
+[0;32mI (1261899) ULTRASONIC: Moving down - Distance: 43 cm[0m
+[0;32mI (1261949) DESK: Stopped moving[0m
+[0;32mI (1261949) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1306899) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1306899) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1306899) ULTRASONIC: Raw: 2331 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1306899) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1306959) ULTRASONIC: Raw: 2331 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1306959) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1307009) ULTRASONIC: Raw: 2331 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1307009) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1307059) ULTRASONIC: Raw: 2331 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1307059) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1307109) ULTRASONIC: Raw: 2332 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1307109) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1307159) ULTRASONIC: Raw: 2331 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1307159) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1307209) ULTRASONIC: Raw: 2331 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1307209) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1307259) ULTRASONIC: Raw: 2331 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1307259) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1307309) ULTRASONIC: Raw: 2332 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1307309) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1307359) ULTRASONIC: Raw: 2331 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1307359) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1307409) ULTRASONIC: Raw: 2331 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1307409) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1307459) ULTRASONIC: Raw: 2331 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1307459) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1307509) DESK: Stopped moving[0m
+[0;32mI (1307509) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1523709) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1523709) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (1523709) ULTRASONIC: Raw: 2332 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1523709) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (1523769) ULTRASONIC: Raw: 2330 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1523769) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (1523819) ULTRASONIC: Raw: 2330 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1523819) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (1523869) ULTRASONIC: Raw: 2331 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1523869) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (1523919) ULTRASONIC: Raw: 2330 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1523919) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (1523969) ULTRASONIC: Raw: 2330 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1523969) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (1524019) ULTRASONIC: Raw: 2331 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1524019) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (1524069) DESK: Stopped moving[0m
+[0;32mI (1524069) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (1525919) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1525919) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (1525919) ULTRASONIC: Raw: 2330 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1525919) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (1525979) ULTRASONIC: Raw: 2331 µs → 39 cm (new) vs 40 cm (old)[0m
+[0;32mI (1525979) ULTRASONIC: Moving up - Distance: 39 cm[0m
+[0;32mI (1526029) ULTRASONIC: Raw: 2358 µs → 40 cm (new) vs 40 cm (old)[0m
+[0;32mI (1526029) ULTRASONIC: Moving up - Distance: 40 cm[0m
+[0;32mI (1526079) ULTRASONIC: Raw: 2236 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (1526079) ULTRASONIC: Moving up - Distance: 38 cm[0m
+[0;32mI (1526129) ULTRASONIC: Raw: 2263 µs → 38 cm (new) vs 39 cm (old)[0m
+[0;32mI (1526129) ULTRASONIC: Moving up - Distance: 38 cm[0m
+[0;32mI (1526179) ULTRASONIC: Raw: 2589 µs → 44 cm (new) vs 44 cm (old)[0m
+[0;32mI (1526179) ULTRASONIC: Moving up - Distance: 44 cm[0m
+[0;32mI (1526229) ULTRASONIC: Raw: 3281 µs → 56 cm (new) vs 56 cm (old)[0m
+[0;32mI (1526229) ULTRASONIC: Moving up - Distance: 56 cm[0m
+[0;32mI (1526279) ULTRASONIC: Raw: 3233 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (1526279) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (1526329) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (1526329) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (1526379) ULTRASONIC: Raw: 3248 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (1526379) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (1526429) ULTRASONIC: Raw: 3439 µs → 58 cm (new) vs 59 cm (old)[0m
+[0;32mI (1526429) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (1526479) ULTRASONIC: Raw: 3232 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (1526479) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (1526529) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (1526529) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (1526579) ULTRASONIC: Raw: 2236 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (1526579) ULTRASONIC: Moving up - Distance: 38 cm[0m
+[0;32mI (1526629) ULTRASONIC: Raw: 2170 µs → 37 cm (new) vs 37 cm (old)[0m
+[0;32mI (1526629) ULTRASONIC: Moving up - Distance: 37 cm[0m
+[0;32mI (1526679) ULTRASONIC: Raw: 2223 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (1526679) ULTRASONIC: Moving up - Distance: 38 cm[0m
+[0;32mI (1526729) ULTRASONIC: Raw: 2156 µs → 36 cm (new) vs 37 cm (old)[0m
+[0;32mI (1526729) ULTRASONIC: Moving up - Distance: 36 cm[0m
+[0;32mI (1526779) ULTRASONIC: Raw: 2236 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (1526779) ULTRASONIC: Moving up - Distance: 38 cm[0m
+[0;32mI (1526829) DESK: Stopped moving[0m
+[0;32mI (1526829) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (1529179) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1529179) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1529179) ULTRASONIC: Raw: 2449 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (1529179) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (1529239) ULTRASONIC: Raw: 2449 µs → 42 cm (new) vs 42 cm (old)[0m
+[0;32mI (1529239) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (1529289) ULTRASONIC: Raw: 2865 µs → 49 cm (new) vs 49 cm (old)[0m
+[0;32mI (1529289) ULTRASONIC: Moving down - Distance: 49 cm[0m
+[0;32mI (1529339) ULTRASONIC: Raw: 2835 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (1529339) ULTRASONIC: Moving down - Distance: 48 cm[0m
+[0;32mI (1529389) ULTRASONIC: Raw: 2290 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1529389) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1529439) ULTRASONIC: Raw: 2236 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (1529439) ULTRASONIC: Moving down - Distance: 38 cm[0m
+[0;32mI (1529489) ULTRASONIC: Raw: 2183 µs → 37 cm (new) vs 37 cm (old)[0m
+[0;32mI (1529489) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (1529539) ULTRASONIC: Raw: 2223 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (1529539) ULTRASONIC: Moving down - Distance: 38 cm[0m
+[0;32mI (1529589) ULTRASONIC: Raw: 2142 µs → 36 cm (new) vs 36 cm (old)[0m
+[0;32mI (1529589) ULTRASONIC: Moving down - Distance: 36 cm[0m
+[0;32mI (1529639) ULTRASONIC: Raw: 2183 µs → 37 cm (new) vs 37 cm (old)[0m
+[0;32mI (1529639) ULTRASONIC: Moving down - Distance: 37 cm[0m
+[0;32mI (1529689) ULTRASONIC: Raw: 2223 µs → 38 cm (new) vs 38 cm (old)[0m
+[0;32mI (1529689) ULTRASONIC: Moving down - Distance: 38 cm[0m
+[0;32mI (1529739) ULTRASONIC: Raw: 2436 µs → 41 cm (new) vs 42 cm (old)[0m
+[0;32mI (1529739) ULTRASONIC: Moving down - Distance: 41 cm[0m
+[0;32mI (1529789) ULTRASONIC: Raw: 3241 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (1529789) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (1529839) ULTRASONIC: Raw: 3233 µs → 55 cm (new) vs 55 cm (old)[0m
+[0;32mI (1529839) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (1529889) ULTRASONIC: Raw: 2384 µs → 40 cm (new) vs 41 cm (old)[0m
+[0;32mI (1529889) ULTRASONIC: Moving down - Distance: 40 cm[0m
+[0;32mI (1529939) ULTRASONIC: Raw: 2303 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1529939) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1529989) ULTRASONIC: Raw: 2303 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1529989) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1530039) ULTRASONIC: Raw: 2304 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1530039) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1530089) ULTRASONIC: Raw: 2303 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1530089) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1530139) ULTRASONIC: Raw: 2304 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1530139) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1530189) DESK: Stopped moving[0m
+[0;32mI (1530189) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1531139) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1531139) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1531139) ULTRASONIC: Raw: 2304 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1531139) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1531199) ULTRASONIC: Raw: 2303 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1531199) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1531249) ULTRASONIC: Raw: 2303 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1531249) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1531299) ULTRASONIC: Raw: 2303 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1531299) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1531349) ULTRASONIC: Raw: 2303 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1531349) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1531399) ULTRASONIC: Raw: 2305 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1531399) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1531449) DESK: Stopped moving[0m
+[0;32mI (1531449) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1532349) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1532349) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1532349) ULTRASONIC: Raw: 2304 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1532349) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1532409) ULTRASONIC: Raw: 2303 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1532409) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1532459) ULTRASONIC: Raw: 2304 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1532459) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1532509) ULTRASONIC: Raw: 2305 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1532509) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1532559) ULTRASONIC: Raw: 2305 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1532559) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1532609) ULTRASONIC: Raw: 2304 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1532609) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1532659) ULTRASONIC: Raw: 2303 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1532659) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1532709) ULTRASONIC: Raw: 2305 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1532709) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1532759) ULTRASONIC: Raw: 2303 µs → 39 cm (new) vs 39 cm (old)[0m
+[0;32mI (1532759) ULTRASONIC: Moving down - Distance: 39 cm[0m
+[0;32mI (1532809) DESK: Stopped moving[0m
+[0;32mI (1532809) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1543259) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1543259) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1543259) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1543259) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1543319) ULTRASONIC: Raw: 3307 µs → 56 cm (new) vs 57 cm (old)[0m
+[0;32mI (1543319) ULTRASONIC: Moving down - Distance: 56 cm[0m
+[0;32mI (1543369) ULTRASONIC: Raw: 3307 µs → 56 cm (new) vs 57 cm (old)[0m
+[0;32mI (1543369) ULTRASONIC: Moving down - Distance: 56 cm[0m
+[0;32mI (1543419) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1543419) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1543469) ULTRASONIC: Raw: 3307 µs → 56 cm (new) vs 57 cm (old)[0m
+[0;32mI (1543469) ULTRASONIC: Moving down - Distance: 56 cm[0m
+[0;32mI (1543519) ULTRASONIC: Raw: 3308 µs → 56 cm (new) vs 57 cm (old)[0m
+[0;32mI (1543519) ULTRASONIC: Moving down - Distance: 56 cm[0m
+[0;32mI (1543569) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1543569) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1543619) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1543619) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1543669) DESK: Stopped moving[0m
+[0;32mI (1543669) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1544419) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1544419) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1544419) ULTRASONIC: Raw: 3333 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1544419) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1544479) ULTRASONIC: Raw: 3331 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1544479) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1544529) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1544529) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1544579) ULTRASONIC: Raw: 3334 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1544579) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1544629) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1544629) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1544679) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1544679) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1544729) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1544729) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1544779) ULTRASONIC: Raw: 3307 µs → 56 cm (new) vs 57 cm (old)[0m
+[0;32mI (1544779) ULTRASONIC: Moving down - Distance: 56 cm[0m
+[0;32mI (1544829) DESK: Stopped moving[0m
+[0;32mI (1544829) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1545679) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1545679) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1545679) ULTRASONIC: Raw: 3331 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1545679) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1545739) ULTRASONIC: Raw: 3307 µs → 56 cm (new) vs 57 cm (old)[0m
+[0;32mI (1545739) ULTRASONIC: Moving down - Distance: 56 cm[0m
+[0;32mI (1545789) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1545789) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1545839) ULTRASONIC: Raw: 3331 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1545839) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1545889) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1545889) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1545939) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1545939) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1545989) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1545989) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1546039) ULTRASONIC: Raw: 3307 µs → 56 cm (new) vs 57 cm (old)[0m
+[0;32mI (1546039) ULTRASONIC: Moving down - Distance: 56 cm[0m
+[0;32mI (1546089) DESK: Stopped moving[0m
+[0;32mI (1546089) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1546739) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1546739) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1546739) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1546739) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1546799) ULTRASONIC: Raw: 3333 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1546799) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1546849) ULTRASONIC: Raw: 3333 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1546849) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1546899) ULTRASONIC: Raw: 3333 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1546899) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1546949) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1546949) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1546999) ULTRASONIC: Raw: 3331 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1546999) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1547049) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1547049) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1547099) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1547099) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1547149) DESK: Stopped moving[0m
+[0;32mI (1547149) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1547799) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1547799) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1547799) ULTRASONIC: Raw: 3331 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1547799) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1547859) ULTRASONIC: Raw: 3333 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1547859) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1547909) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1547909) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1547959) ULTRASONIC: Raw: 3333 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1547959) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1548009) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1548009) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1548059) ULTRASONIC: Raw: 3333 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1548059) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1548109) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1548109) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1548159) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1548159) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1548209) DESK: Stopped moving[0m
+[0;32mI (1548209) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1548959) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1548959) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1548959) ULTRASONIC: Raw: 3334 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1548959) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1549019) ULTRASONIC: Raw: 3331 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1549019) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1549069) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1549069) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1549119) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1549119) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1549169) ULTRASONIC: Raw: 3333 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1549169) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1549219) ULTRASONIC: Raw: 3333 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1549219) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1549269) ULTRASONIC: Raw: 3332 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1549269) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (1549319) ULTRASONIC: Raw: 3308 µs → 56 cm (new) vs 57 cm (old)[0m
+[0;32mI (1549319) ULTRASONIC: Moving down - Distance: 56 cm[0m
+[0;32mI (1549369) DESK: Stopped moving[0m
+[0;32mI (1549369) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1550119) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1550119) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (1550119) ULTRASONIC: Raw: 3306 µs → 56 cm (new) vs 57 cm (old)[0m
+[0;32mI (1550119) ULTRASONIC: Moving up - Distance: 56 cm[0m
+[0;32mI (1550179) ULTRASONIC: Raw: 3307 µs → 56 cm (new) vs 57 cm (old)[0m
+[0;32mI (1550179) ULTRASONIC: Moving up - Distance: 56 cm[0m
+[0;32mI (1550229) ULTRASONIC: Raw: 3307 µs → 56 cm (new) vs 57 cm (old)[0m
+[0;32mI (1550229) ULTRASONIC: Moving up - Distance: 56 cm[0m
+[0;32mI (1550279) ULTRASONIC: Raw: 3308 µs → 56 cm (new) vs 57 cm (old)[0m
+[0;32mI (1550279) ULTRASONIC: Moving up - Distance: 56 cm[0m
+[0;32mI (1550329) ULTRASONIC: Raw: 3290 µs → 56 cm (new) vs 56 cm (old)[0m
+[0;32mI (1550329) ULTRASONIC: Moving up - Distance: 56 cm[0m
+[0;32mI (1550379) ULTRASONIC: Raw: 3398 µs → 58 cm (new) vs 58 cm (old)[0m
+[0;32mI (1550379) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (1550429) ULTRASONIC: Raw: 3349 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1550429) ULTRASONIC: Moving up - Distance: 57 cm[0m
+[0;32mI (1550479) ULTRASONIC: Raw: 3482 µs → 59 cm (new) vs 60 cm (old)[0m
+[0;32mI (1550479) ULTRASONIC: Moving up - Distance: 59 cm[0m
+[0;32mI (1550529) ULTRASONIC: Raw: 3588 µs → 61 cm (new) vs 61 cm (old)[0m
+[0;32mI (1550529) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (1550579) ULTRASONIC: Raw: 3356 µs → 57 cm (new) vs 57 cm (old)[0m
+[0;32mI (1550579) ULTRASONIC: Moving up - Distance: 57 cm[0m
+[0;32mI (1550629) ULTRASONIC: Raw: 3391 µs → 58 cm (new) vs 58 cm (old)[0m
+[0;32mI (1550629) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (1550679) ULTRASONIC: Raw: 3448 µs → 59 cm (new) vs 59 cm (old)[0m
+[0;32mI (1550679) ULTRASONIC: Moving up - Distance: 59 cm[0m
+[0;32mI (1550729) ULTRASONIC: Raw: 3564 µs → 61 cm (new) vs 61 cm (old)[0m
+[0;32mI (1550729) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (1550779) ULTRASONIC: Raw: 3373 µs → 57 cm (new) vs 58 cm (old)[0m
+[0;32mI (1550779) ULTRASONIC: Moving up - Distance: 57 cm[0m
+[0;32mI (1550829) ULTRASONIC: Raw: 3430 µs → 58 cm (new) vs 59 cm (old)[0m
+[0;32mI (1550829) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (1550879) ULTRASONIC: Raw: 3513 µs → 60 cm (new) vs 60 cm (old)[0m
+[0;32mI (1550879) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (1550929) ULTRASONIC: Raw: 2612 µs → 44 cm (new) vs 45 cm (old)[0m
+[0;32mI (1550929) ULTRASONIC: Moving up - Distance: 44 cm[0m
+[0;32mI (1550979) ULTRASONIC: Raw: 3365 µs → 57 cm (new) vs 58 cm (old)[0m
+[0;32mI (1550979) ULTRASONIC: Moving up - Distance: 57 cm[0m
+[0;32mI (1551029) ULTRASONIC: Raw: 2624 µs → 45 cm (new) vs 45 cm (old)[0m
+[0;32mI (1551029) ULTRASONIC: Moving up - Distance: 45 cm[0m
+[0;32mI (1551079) ULTRASONIC: Raw: 2533 µs → 43 cm (new) vs 43 cm (old)[0m
+[0;32mI (1551079) ULTRASONIC: Moving up - Distance: 43 cm[0m
+[0;32mI (1551129) ULTRASONIC: Raw: 3646 µs → 62 cm (new) vs 62 cm (old)[0m
+[0;32mI (1551129) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (1551179) ULTRASONIC: Raw: 3488 µs → 59 cm (new) vs 60 cm (old)[0m
+[0;32mI (1551179) ULTRASONIC: Moving up - Distance: 59 cm[0m
+[0;32mI (1551229) ULTRASONIC: Raw: 3471 µs → 59 cm (new) vs 59 cm (old)[0m
+[0;32mI (1551229) ULTRASONIC: Moving up - Distance: 59 cm[0m
+[0;32mI (1551279) ULTRASONIC: Raw: 3505 µs → 60 cm (new) vs 60 cm (old)[0m
+[0;32mI (1551279) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (1551329) ULTRASONIC: Raw: 3594 µs → 61 cm (new) vs 61 cm (old)[0m
+[0;32mI (1551329) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (1551379) ULTRASONIC: Raw: 3529 µs → 60 cm (new) vs 60 cm (old)[0m
+[0;32mI (1551379) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (1551429) ULTRASONIC: Raw: 3538 µs → 60 cm (new) vs 61 cm (old)[0m
+[0;32mI (1551429) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (1551479) ULTRASONIC: Raw: 3555 µs → 60 cm (new) vs 61 cm (old)[0m
+[0;32mI (1551479) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (1551529) ULTRASONIC: Raw: 3611 µs → 61 cm (new) vs 62 cm (old)[0m
+[0;32mI (1551529) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (1551579) ULTRASONIC: Raw: 3628 µs → 62 cm (new) vs 62 cm (old)[0m
+[0;32mI (1551579) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (1551629) ULTRASONIC: Raw: 3612 µs → 61 cm (new) vs 62 cm (old)[0m
+[0;32mI (1551629) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (1551679) ULTRASONIC: Raw: 2865 µs → 49 cm (new) vs 49 cm (old)[0m
+[0;32mI (1551679) ULTRASONIC: Moving up - Distance: 49 cm[0m
+[0;32mI (1551729) ULTRASONIC: Raw: 2844 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (1551729) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (1551779) ULTRASONIC: Raw: 2825 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (1551779) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (1551829) ULTRASONIC: Raw: 2855 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (1551829) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (1551879) ULTRASONIC: Raw: 2835 µs → 48 cm (new) vs 48 cm (old)[0m
+[0;32mI (1551879) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (1551929) ULTRASONIC: Raw: 3679 µs → 63 cm (new) vs 63 cm (old)[0m
+[0;32mI (1551929) ULTRASONIC: Moving up - Distance: 63 cm[0m
+[0;32mI (1551979) ULTRASONIC: Raw: 3646 µs → 62 cm (new) vs 62 cm (old)[0m
+[0;32mI (1551979) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (1552029) ULTRASONIC: Raw: 3655 µs → 62 cm (new) vs 63 cm (old)[0m
+[0;32mI (1552029) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (1552079) ULTRASONIC: Raw: 3647 µs → 62 cm (new) vs 62 cm (old)[0m
+[0;32mI (1552079) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (1552129) ULTRASONIC: Raw: 3629 µs → 62 cm (new) vs 62 cm (old)[0m
+[0;32mI (1552129) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (1552179) ULTRASONIC: Raw: 3720 µs → 63 cm (new) vs 64 cm (old)[0m
+[0;32mI (1552179) ULTRASONIC: Moving up - Distance: 63 cm[0m
+[0;32mI (1552229) ULTRASONIC: Raw: 3258 µs → 55 cm (new) vs 56 cm (old)[0m
+[0;32mI (1552229) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (1552279) ULTRASONIC: Raw: 3563 µs → 61 cm (new) vs 61 cm (old)[0m
+[0;32mI (1552279) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (1552329) ULTRASONIC: Raw: 3860 µs → 66 cm (new) vs 66 cm (old)[0m
+[0;32mI (1552329) ULTRASONIC: Moving up - Distance: 66 cm[0m
+[0;32mI (1552379) ULTRASONIC: Raw: 3745 µs → 64 cm (new) vs 64 cm (old)[0m
+[0;32mI (1552379) ULTRASONIC: Moving up - Distance: 64 cm[0m
+[0;32mI (1552429) ULTRASONIC: Raw: 3702 µs → 63 cm (new) vs 63 cm (old)[0m
+[0;32mI (1552429) ULTRASONIC: Moving up - Distance: 63 cm[0m
+[0;32mI (1552479) ULTRASONIC: Raw: 2845 µs → 48 cm (new) vs 49 cm (old)[0m
+[0;32mI (1552479) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (1552529) ULTRASONIC: Raw: 3886 µs → 66 cm (new) vs 67 cm (old)[0m
+[0;32mI (1552529) ULTRASONIC: Moving up - Distance: 66 cm[0m
+[0;32mI (1552579) ULTRASONIC: Raw: 3819 µs → 65 cm (new) vs 65 cm (old)[0m
+[0;32mI (1552579) ULTRASONIC: Moving up - Distance: 65 cm[0m
+[0;32mI (1552629) ULTRASONIC: Raw: 3802 µs → 65 cm (new) vs 65 cm (old)[0m
+[0;32mI (1552629) ULTRASONIC: Moving up - Distance: 65 cm[0m
+[0;32mI (1552679) ULTRASONIC: Raw: 3836 µs → 65 cm (new) vs 66 cm (old)[0m
+[0;32mI (1552679) ULTRASONIC: Moving up - Distance: 65 cm[0m
+[0;32mI (1552729) ULTRASONIC: Raw: 3828 µs → 65 cm (new) vs 66 cm (old)[0m
+[0;32mI (1552729) ULTRASONIC: Moving up - Distance: 65 cm[0m
+[0;32mI (1552779) ULTRASONIC: Raw: 3737 µs → 64 cm (new) vs 64 cm (old)[0m
+[0;32mI (1552779) ULTRASONIC: Moving up - Distance: 64 cm[0m
+[0;32mI (1552829) ULTRASONIC: Raw: 3878 µs → 66 cm (new) vs 66 cm (old)[0m
+[0;32mI (1552829) ULTRASONIC: Moving up - Distance: 66 cm[0m
+[0;32mI (1552879) ULTRASONIC: Raw: 3645 µs → 62 cm (new) vs 62 cm (old)[0m
+[0;32mI (1552879) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (1552929) ULTRASONIC: Raw: 3704 µs → 63 cm (new) vs 63 cm (old)[0m
+[0;32mI (1552929) ULTRASONIC: Moving up - Distance: 63 cm[0m
+[0;32mI (1552979) ULTRASONIC: Raw: 3785 µs → 64 cm (new) vs 65 cm (old)[0m
+[0;32mI (1552979) ULTRASONIC: Moving up - Distance: 64 cm[0m
+[0;32mI (1553029) ULTRASONIC: Raw: 3984 µs → 68 cm (new) vs 68 cm (old)[0m
+[0;32mI (1553029) ULTRASONIC: Moving up - Distance: 68 cm[0m

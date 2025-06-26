@@ -235,17 +235,25 @@ void poll_switch_matrix(void) {
     vTaskDelay(1 / portTICK_PERIOD_MS);  // Allow signal stabilization
 
     
-    if (gpio_get_level(COL1_PIN) == 0) {  // Assuming active-low button
+    // UP button handling - SAFETY CRITICAL: immediate response, no debounce
+    int up_button_state = gpio_get_level(COL1_PIN);
+    if (up_button_state == 0) {  // Button pressed (active-low)
         if (!up_button_pressed) {         // Button just pressed
             up_button_pressed = true;
             start_moving_desk(DESK_MOVE_UP);
+            ESP_LOGI("DESK_CONTROL", "UP button pressed - starting movement");
         }
+        // Monitor distance while moving
         uint32_t distance_cm = measure_distance();
-        ESP_LOGI("ULTRASONIC", "Moving up - Distance: %lu cm", distance_cm);
-
-    } else if (up_button_pressed) {       // Button released
-        stop_moving_desk();
-        up_button_pressed = false;
+        if (distance_cm > 0) {  // Valid reading
+            ESP_LOGI("ULTRASONIC", "Moving up - Distance: %lu cm", distance_cm);
+        }
+    } else {  // Button released
+        if (up_button_pressed) {       // Button was pressed, now released
+            stop_moving_desk();
+            up_button_pressed = false;
+            ESP_LOGI("DESK_CONTROL", "UP button released - STOPPED");
+        }
     }
     
     if (debounce(current_time, COL2_PIN, &last_press_time_matrix[0][1])) {
@@ -261,17 +269,25 @@ void poll_switch_matrix(void) {
     gpio_set_level(ROW2_PIN, 1);
     vTaskDelay(1 / portTICK_PERIOD_MS);  // Allow signal stabilization
 
-    if (gpio_get_level(COL1_PIN) == 0) {  //  active-low button
+    // DOWN button handling - SAFETY CRITICAL: immediate response, no debounce
+    int down_button_state = gpio_get_level(COL1_PIN);
+    if (down_button_state == 0) {  // Button pressed (active-low)
         if (!down_button_pressed) {       // Button just pressed
             down_button_pressed = true;
             start_moving_desk(DESK_MOVE_DOWN);
+            ESP_LOGI("DESK_CONTROL", "DOWN button pressed - starting movement");
         }
+        // Monitor distance while moving
         uint32_t distance_cm = measure_distance();
-        ESP_LOGI("ULTRASONIC", "Moving down - Distance: %lu cm", distance_cm);
-
-    } else if (down_button_pressed) {     // Button released
-        stop_moving_desk();
-        down_button_pressed = false;
+        if (distance_cm > 0) {  // Valid reading
+            ESP_LOGI("ULTRASONIC", "Moving down - Distance: %lu cm", distance_cm);
+        }
+    } else {  // Button released
+        if (down_button_pressed) {     // Button was pressed, now released
+            stop_moving_desk();
+            down_button_pressed = false;
+            ESP_LOGI("DESK_CONTROL", "DOWN button released - STOPPED");
+        }
     }
     gpio_set_level(ROW2_PIN, 0);
     if (debounce(current_time, COL2_PIN, &last_press_time_matrix[1][1])) {

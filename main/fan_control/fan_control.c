@@ -79,7 +79,7 @@ void update_fan_speed(void) {
     if (last_adc <= 20 && raw_adc > 100) {
         // Ignore sudden jumps from max speed position - likely noise
         adc_value = last_adc;
-        ESP_LOGW(TAG, "NOISE DETECTED: Ignoring jump from %d to %d", last_adc, raw_adc);
+        // ESP_LOGW(TAG, "NOISE DETECTED: Ignoring jump from %d to %d", last_adc, raw_adc);
     } else if (abs((int)raw_adc - (int)last_adc) > 50) {
         // Big change - use new value immediately (responsive)
         adc_value = raw_adc;
@@ -101,11 +101,13 @@ void update_fan_speed(void) {
     uint32_t duty_cycle = 0;  // Initialize duty cycle
     uint8_t fan_speed_percentage = 0;  // Initialize fan speed percentage
 
-    // Log every call temporarily to debug the switching issue
+    // Fan control logging - uncomment for debugging fan issues
     log_counter++;
-    bool should_log = true;  // Log everything for debugging
+    bool should_log = (log_counter % 20 == 0);  // Log every 1 second (20Hz / 20 = 1Hz)
 
-    ESP_LOGI(TAG, "ADC: %d (Raw: %d), off_count: %d, on_count: %d", adc_value, raw_adc, off_count, on_count);
+    // if (should_log) {
+    //     ESP_LOGI(TAG, "ADC: %d (Raw: %d), off_count: %d, on_count: %d, threshold: %d", adc_value, raw_adc, off_count, on_count, off_threshold);
+    // }
 
     // Clamp ADC value to expected range
     if (adc_value > max_adc_value) adc_value = max_adc_value;
@@ -117,18 +119,12 @@ void update_fan_speed(void) {
         if (off_count >= 3) {  // Need 3 consecutive readings to turn OFF
             duty_cycle = 0;
             fan_speed_percentage = 0;
-            ESP_LOGW(TAG, "FANS TURNED OFF after %d readings!", off_count);
+            // ESP_LOGW(TAG, "FANS TURNED OFF after %d readings!", off_count);
         } else {
-            // Still in OFF zone but not confirmed - calculate normal speed anyway
-            // This prevents PWM gaps during brief noise spikes
-            if (adc_value <= max_speed_zone) {
-                duty_cycle = max_duty_cycle;
-                fan_speed_percentage = 100;
-            } else {
-                duty_cycle = min_duty_cycle + (((off_threshold - adc_value) * (max_duty_cycle - min_duty_cycle)) / off_threshold);
-                fan_speed_percentage = (duty_cycle * 100) / 255;
-            }
-            ESP_LOGW(TAG, "OFF pending (%d/3), but keeping speed at %d%%", off_count, fan_speed_percentage);
+            // Still in OFF zone but not confirmed - keep fans OFF during confirmation
+            duty_cycle = 0;
+            fan_speed_percentage = 0;
+            // ESP_LOGW(TAG, "OFF pending (%d/3), fans OFF", off_count);
         }
     } else {
         // Normal operation - reset OFF counter
@@ -140,34 +136,38 @@ void update_fan_speed(void) {
             // Max speed zone - always 100%
             duty_cycle = max_duty_cycle;
             fan_speed_percentage = 100;
-            if (should_log) {
-                ESP_LOGI(TAG, "MAX SPEED ZONE: ADC %d <= %d, Duty Cycle: %d",
-                         adc_value, max_speed_zone, duty_cycle);
-            }
+            // Max speed zone logging - uncomment for debugging fan issues
+            // if (should_log) {
+            //     ESP_LOGI(TAG, "MAX SPEED ZONE: ADC %d <= %d, Duty Cycle: %d",
+            //              adc_value, max_speed_zone, duty_cycle);
+            // }
         } else {
             // Normal speed control range
             duty_cycle = min_duty_cycle + (((off_threshold - adc_value) * (max_duty_cycle - min_duty_cycle)) / off_threshold);
             fan_speed_percentage = (duty_cycle * 100) / 255;
 
-            // Debug the calculation (only when logging)
-            if (should_log) {
-                ESP_LOGI(TAG, "Calculation: (%d - %d) * (%d - %d) / %d = %d",
-                         off_threshold, adc_value, max_duty_cycle, min_duty_cycle, off_threshold, duty_cycle);
-            }
+            // Debug calculation logging - uncomment for debugging fan issues
+            // if (should_log) {
+            //     ESP_LOGI(TAG, "Calculation: (%d - %d) * (%d - %d) / %d = %d",
+            //              off_threshold, adc_value, max_duty_cycle, min_duty_cycle, off_threshold, duty_cycle);
+            // }
         }
     }
 
-    if (should_log) {
-        ESP_LOGI(TAG, "Calculated Duty Cycle: %" PRIu32, duty_cycle);
-        ESP_LOGI(TAG, "Fan Speed Percentage: %" PRIu8 "%%", fan_speed_percentage);
-    }
+    // Fan calculation logging - uncomment for debugging fan issues
+    // if (should_log) {
+    //     ESP_LOGI(TAG, "Calculated Duty Cycle: %" PRIu32, duty_cycle);
+    //     ESP_LOGI(TAG, "Fan Speed Percentage: %" PRIu8 "%%", fan_speed_percentage);
+    // }
 
     // Update the PWM duty cycle
     ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL, duty_cycle);
     ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL);
 
-    // Log every PWM update for debugging
-    ESP_LOGI(TAG, "PWM SET: %d (%d%%)", duty_cycle, fan_speed_percentage);
+    // PWM logging - uncomment for debugging fan issues
+    if (should_log) {
+        ESP_LOGI(TAG, "PWM SET: %d (%d%%)", duty_cycle, fan_speed_percentage);
+    }
 
     // Later, you can display fan_speed_percentage on a display
 }
@@ -181,8 +181,8 @@ uint32_t potentiometer_read(void) {
     int calibrated_value;
     adc_cali_raw_to_voltage(cali_handle, raw_value, &calibrated_value);
 
-    // Debug: Log both raw and calibrated values
-    ESP_LOGI(TAG, "ADC Raw: %d, Calibrated (mV): %d", raw_value, calibrated_value);
+    // Debug: Log both raw and calibrated values - uncomment for debugging
+    // ESP_LOGI(TAG, "ADC Raw: %d, Calibrated (mV): %d", raw_value, calibrated_value);
 
     // Return RAW value instead of calibrated voltage
     return raw_value;

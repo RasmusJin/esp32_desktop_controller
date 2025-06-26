@@ -1,0 +1,734 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Jun  2 2025 22:14:28[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: v1.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c060020 size=1f650h (128592) map[0m
+[0;32mI (111) esp_image: segment 1: paddr=0002f678 vaddr=3fc93500 size=009a0h (  2464) load[0m
+[0;32mI (112) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=56e98h (355992) map[0m
+[0;32mI (178) esp_image: segment 3: paddr=00086ec0 vaddr=3fc93ea0 size=022d8h (  8920) load[0m
+[0;32mI (180) esp_image: segment 4: paddr=000891a0 vaddr=40374000 size=0f4bch ( 62652) load[0m
+[0;32mI (195) esp_image: segment 5: paddr=00098664 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (202) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (202) boot: Disabling RNG early entropy source...[0m
+[0;32mI (213) cpu_start: Multicore app[0m
+[0;32mI (222) cpu_start: Pro cpu start user code[0m
+[0;32mI (222) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (222) app_init: Application information:[0m
+[0;32mI (225) app_init: Project name:     desktop_controller[0m
+[0;32mI (231) app_init: App version:      0496bcb-dirty[0m
+[0;32mI (236) app_init: Compile time:     Jun 26 2025 12:45:03[0m
+[0;32mI (242) app_init: ELF file SHA256:  74df2e30d...[0m
+[0;32mI (248) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (254) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (259) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (264) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (269) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (276) heap_init: At 3FC97AB0 len 00051C60 (327 KiB): RAM[0m
+[0;32mI (282) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (288) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (295) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (302) spi_flash: detected chip: gd[0m
+[0;32mI (305) spi_flash: flash io: dio[0m
+[0;33mW (309) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (323) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (333) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (340) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (348) main_task: Started on CPU0[0m
+[0;32mI (358) main_task: Calling app_main()[0m
+[0;32mI (1358) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1358) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1358) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1368) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1378) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1378) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1438) gpio: GPIO[35]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1438) gpio: GPIO[45]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1438) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1448) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1458) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1468) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1478) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1488) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1498) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1508) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1518) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1528) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1538) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1548) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1548) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1558) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1568) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1578) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1588) MAIN: All systems initialized - starting main loop[0m
+[0;32mI (1598) MAIN: Fan control: ACTIVE[0m
+[0;32mI (1598) MAIN: Single row switches: ACTIVE[0m
+[0;32mI (1608) MAIN: Switch matrix (desk control): ACTIVE[0m
+[0;32mI (1608) MAIN: Relay system: ACTIVE[0m
+[0;32mI (7718) KEYSWITCHES: Switch 1 pressed![0m
+[0;32mI (7718) DESK: Switching PC[0m
+[0;32mI (10068) KEYSWITCHES: Switch 1 pressed![0m
+[0;32mI (10068) DESK: Switching PC[0m
+[0;32mI (12868) KEYSWITCHES: Switch 1 pressed![0m
+[0;32mI (12868) DESK: Switching PC[0m
+[0;32mI (15018) KEYSWITCHES: Switch 1 pressed![0m
+[0;32mI (15018) DESK: Switching PC[0m
+[0;32mI (17118) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (18668) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (19268) KEYSWITCHES: Switch 4 pressed![0m
+[0;32mI (20468) KEYSWITCHES: Switch 5 pressed![0m
+[0;32mI (22518) KEYSWITCHES: Row 2, Column 3 pressed![0m
+[0;32mI (23368) KEYSWITCHES: Row 1, Column 3 pressed![0m
+[0;32mI (23368) KEYSWITCHES: Row 2, Column 3 pressed![0m
+[0;32mI (26218) DESK: Moving DOWN[0m
+[0;33mW (26268) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (26268) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (26368) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (26368) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;32mI (26418) DESK: Stopped moving[0m
+[0;32mI (27618) DESK: Moving UP[0m
+[0;33mW (27668) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (27668) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;32mI (27718) DESK: Stopped moving[0m
+[0;32mI (177718) DESK: Moving UP[0m
+[0;33mW (177768) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (177768) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;32mI (177818) DESK: Stopped moving[0m
+[0;32mI (179518) DESK: Moving DOWN[0m
+[0;33mW (179568) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (179568) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (179668) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (179668) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;32mI (179718) DESK: Stopped moving[0m
+[0;32mI (648068) DESK: Moving UP[0m
+[0;33mW (648118) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (648118) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (648218) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (648218) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;32mI (648268) DESK: Stopped moving[0m
+[0;32mI (653018) DESK: Moving UP[0m
+[0;33mW (653068) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (653068) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (653168) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (653168) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (653268) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (653268) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;32mI (653318) DESK: Stopped moving[0m
+[0;32mI (654768) DESK: Moving DOWN[0m
+[0;33mW (654818) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (654818) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (654918) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (654918) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (655018) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (655018) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;32mI (655068) DESK: Stopped moving[0m
+[0;32mI (655968) DESK: Moving UP[0m
+[0;33mW (656018) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (656018) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (656118) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (656118) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (656218) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (656218) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;32mI (656268) DESK: Stopped moving[0m
+[0;32mI (670368) DESK: Moving UP[0m
+[0;33mW (670418) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (670418) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (670518) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (670518) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;32mI (670568) DESK: Stopped moving[0m
+[0;32mI (1431018) DESK: Moving DOWN[0m
+[0;33mW (1431068) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (1431068) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (1431168) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (1431168) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;32mI (1431218) DESK: Stopped moving[0m
+[0;32mI (1432318) DESK: Moving DOWN[0m
+[0;33mW (1432368) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (1432368) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (1432468) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (1432468) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (1432568) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (1432568) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;32mI (1432618) DESK: Stopped moving[0m
+[0;32mI (1520718) DESK: Moving DOWN[0m
+[0;33mW (1520768) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (1520768) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (1520868) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (1520868) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;32mI (1520918) DESK: Stopped moving[0m
+[0;32mI (1524568) DESK: Moving DOWN[0m
+[0;33mW (1524618) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (1524618) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (1524718) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (1524718) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;32mI (1524768) DESK: Stopped moving[0m
+[0;32mI (1536668) DESK: Moving DOWN[0m
+[0;33mW (1536718) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (1536718) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;32mI (1536768) DESK: Stopped moving[0m
+[0;32mI (1612668) DESK: Moving DOWN[0m
+[0;33mW (1612718) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (1612718) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;32mI (1612768) DESK: Stopped moving[0m
+[0;32mI (1799068) KEYSWITCHES: Row 2, Column 2 pressed![0m
+[0;32mI (1799068) BUTTON: Down command triggered[0m
+
+assert failed: tcpip_send_msg_wait_sem /IDF/components/lwip/lwip/src/api/tcpip.c:454 (Invalid mbox)
+
+
+Backtrace: 0x40375a69:0x3fc9b0f0 0x4037a245:0x3fc9b110 0x40381401:0x3fc9b130 0x4200f98f:0x3fc9b250 0x4201f2ae:0x3fc9b280 0x42044825:0x3fc9b2c0 0x42036d25:0x3fc9b350 0x42037073:0x3fc9b3b0 0x420375cf:0x3fc9b420 0x42038bd3:0x3fc9b440 0x420536b1:0x3fc9b460 0x42022cba:0x3fc9b480 0x4202389c:0x3fc9b4b0 0x4200be3f:0x3fc9b4e0 0x4200beba:0x3fc9b5b0 0x4200bca2:0x3fc9b5d0 0x4200b7d7:0x3fc9b5f0 0x420561d4:0x3fc9b610 0x4037ab71:0x3fc9b640
+
+
+
+
+ELF file SHA256: 74df2e30d
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403759a8
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (29) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jun  2 2025 22:14:28[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v0.1[0m
+[0;32mI (34) boot: efuse block revision: v1.2[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (49) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (63) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (69) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (76) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (86) esp_image: segment 0: paddr=00010020 vaddr=3c060020 size=1f650h (128592) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0002f678 vaddr=3fc93500 size=009a0h (  2464) load[0m
+[0;32mI (116) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=56e98h (355992) map[0m
+[0;32mI (182) esp_image: segment 3: paddr=00086ec0 vaddr=3fc93ea0 size=022d8h (  8920) load[0m
+[0;32mI (184) esp_image: segment 4: paddr=000891a0 vaddr=40374000 size=0f4bch ( 62652) load[0m
+[0;32mI (200) esp_image: segment 5: paddr=00098664 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (206) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (206) boot: Disabling RNG early entropy source...[0m
+[0;32mI (217) cpu_start: Multicore app[0m
+[0;32mI (226) cpu_start: Pro cpu start user code[0m
+[0;32mI (227) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (227) app_init: Application information:[0m
+[0;32mI (229) app_init: Project name:     desktop_controller[0m
+[0;32mI (235) app_init: App version:      0496bcb-dirty[0m
+[0;32mI (241) app_init: Compile time:     Jun 26 2025 12:45:03[0m
+[0;32mI (247) app_init: ELF file SHA256:  74df2e30d...[0m
+[0;32mI (252) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (259) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (264) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (269) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (273) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (281) heap_init: At 3FC97AB0 len 00051C60 (327 KiB): RAM[0m
+[0;32mI (287) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (293) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (299) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (306) spi_flash: detected chip: gd[0m
+[0;32mI (309) spi_flash: flash io: dio[0m
+[0;33mW (313) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (327) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (338) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (345) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (353) main_task: Started on CPU0[0m
+[0;32mI (363) main_task: Calling app_main()[0m
+[0;32mI (1363) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1363) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1363) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1373) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1383) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1383) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1443) gpio: GPIO[35]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1443) gpio: GPIO[45]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1443) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1453) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1463) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1473) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1483) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1493) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1503) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1513) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1523) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1533) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1543) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1553) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1553) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1563) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1573) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1583) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1593) MAIN: All systems initialized - starting main loop[0m
+[0;32mI (1603) MAIN: Fan control: ACTIVE[0m
+[0;32mI (1603) MAIN: Single row switches: ACTIVE[0m
+[0;32mI (1613) MAIN: Switch matrix (desk control): ACTIVE[0m
+[0;32mI (1613) MAIN: Relay system: ACTIVE[0m
+[0;32mI (1623) DESK: Moving UP[0m
+[0;33mW (1673) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (1673) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;32mI (1673) DESK: Moving DOWN[0m
+[0;33mW (1723) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (1723) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (1823) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (1823) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;32mI (1823) DESK: Stopped moving[0m
+[0;33mW (1923) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (1923) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (2023) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2023) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (2123) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2123) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (2223) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2223) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (2323) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2323) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (2423) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2423) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (2523) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2523) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (2623) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2623) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (2723) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2723) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (2823) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2823) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (2923) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2923) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;32mI (2973) DESK: Stopped moving[0m
+[0;32mI (15173) KEYSWITCHES: Row 2, Column 2 pressed![0m
+[0;32mI (15173) BUTTON: Down command triggered[0m
+
+assert failed: tcpip_send_msg_wait_sem /IDF/components/lwip/lwip/src/api/tcpip.c:454 (Invalid mbox)
+
+
+Backtrace: 0x40375a69:0x3fc9b0f0 0x4037a245:0x3fc9b110 0x40381401:0x3fc9b130 0x4200f98f:0x3fc9b250 0x4201f2ae:0x3fc9b280 0x42044825:0x3fc9b2c0 0x42036d25:0x3fc9b350 0x42037073:0x3fc9b3b0 0x420375cf:0x3fc9b420 0x42038bd3:0x3fc9b440 0x420536b1:0x3fc9b460 0x42022cba:0x3fc9b480 0x4202389c:0x3fc9b4b0 0x4200be3f:0x3fc9b4e0 0x4200beba:0x3fc9b5b0 0x4200bca2:0x3fc9b5d0 0x4200b7d7:0x3fc9b5f0 0x420561d4:0x3fc9b610 0x4037ab71:0x3fc9b640
+
+
+
+
+ELF file SHA256: 74df2e30d
+
+Rebooting...
+���ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403759a8
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (29) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jun  2 2025 22:14:28[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v0.1[0m
+[0;32mI (34) boot: efuse block revision: v1.2[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (49) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (63) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (69) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (76) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (86) esp_image: segment 0: paddr=00010020 vaddr=3c060020 size=1f650h (128592) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0002f678 vaddr=3fc93500 size=009a0h (  2464) load[0m
+[0;32mI (116) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=56e98h (355992) map[0m
+[0;32mI (182) esp_image: segment 3: paddr=00086ec0 vaddr=3fc93ea0 size=022d8h (  8920) load[0m
+[0;32mI (184) esp_image: segment 4: paddr=000891a0 vaddr=40374000 size=0f4bch ( 62652) load[0m
+[0;32mI (200) esp_image: segment 5: paddr=00098664 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (206) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (206) boot: Disabling RNG early entropy source...[0m
+[0;32mI (217) cpu_start: Multicore app[0m
+[0;32mI (226) cpu_start: Pro cpu start user code[0m
+[0;32mI (227) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (227) app_init: Application information:[0m
+[0;32mI (229) app_init: Project name:     desktop_controller[0m
+[0;32mI (235) app_init: App version:      0496bcb-dirty[0m
+[0;32mI (241) app_init: Compile time:     Jun 26 2025 12:45:03[0m
+[0;32mI (247) app_init: ELF file SHA256:  74df2e30d...[0m
+[0;32mI (252) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (259) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (264) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (269) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (273) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (281) heap_init: At 3FC97AB0 len 00051C60 (327 KiB): RAM[0m
+[0;32mI (287) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (293) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (299) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (306) spi_flash: detected chip: gd[0m
+[0;32mI (309) spi_flash: flash io: dio[0m
+[0;33mW (313) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (327) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (338) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (345) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (353) main_task: Started on CPU0[0m
+[0;32mI (363) main_task: Calling app_main()[0m
+[0;32mI (1363) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1363) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1363) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1373) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1383) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1383) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1443) gpio: GPIO[35]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1443) gpio: GPIO[45]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1443) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1453) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1463) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1473) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1483) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1493) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1503) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1513) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1523) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1533) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1543) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1553) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1553) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1563) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1573) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1583) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1593) MAIN: All systems initialized - starting main loop[0m
+[0;32mI (1603) MAIN: Fan control: ACTIVE[0m
+[0;32mI (1603) MAIN: Single row switches: ACTIVE[0m
+[0;32mI (1613) MAIN: Switch matrix (desk control): ACTIVE[0m
+[0;32mI (1613) MAIN: Relay system: ACTIVE[0m
+[0;32mI (2623) KEYSWITCHES: Row 2, Column 2 pressed![0m
+[0;32mI (2623) BUTTON: Down command triggered[0m
+
+assert failed: tcpip_send_msg_wait_sem /IDF/components/lwip/lwip/src/api/tcpip.c:454 (Invalid mbox)
+
+
+Backtrace: 0x40375a69:0x3fc9b0f0 0x4037a245:0x3fc9b110 0x40381401:0x3fc9b130 0x4200f98f:0x3fc9b250 0x4201f2ae:0x3fc9b280 0x42044825:0x3fc9b2c0 0x42036d25:0x3fc9b350 0x42037073:0x3fc9b3b0 0x420375cf:0x3fc9b420 0x42038bd3:0x3fc9b440 0x420536b1:0x3fc9b460 0x42022cba:0x3fc9b480 0x4202389c:0x3fc9b4b0 0x4200be3f:0x3fc9b4e0 0x4200beba:0x3fc9b5b0 0x4200bca2:0x3fc9b5d0 0x4200b7d7:0x3fc9b5f0 0x420561d4:0x3fc9b610 0x4037ab71:0x3fc9b640
+
+
+
+
+ELF file SHA256: 74df2e30d
+
+Rebooting...
+���ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403759a8
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (29) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jun  2 2025 22:14:28[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v0.1[0m
+[0;32mI (34) boot: efuse block revision: v1.2[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (49) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (63) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (69) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (76) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (86) esp_image: segment 0: paddr=00010020 vaddr=3c060020 size=1f650h (128592) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0002f678 vaddr=3fc93500 size=009a0h (  2464) load[0m
+[0;32mI (116) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=56e98h (355992) map[0m
+[0;32mI (182) esp_image: segment 3: paddr=00086ec0 vaddr=3fc93ea0 size=022d8h (  8920) load[0m
+[0;32mI (184) esp_image: segment 4: paddr=000891a0 vaddr=40374000 size=0f4bch ( 62652) load[0m
+[0;32mI (200) esp_image: segment 5: paddr=00098664 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (206) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (206) boot: Disabling RNG early entropy source...[0m
+[0;32mI (217) cpu_start: Multicore app[0m
+[0;32mI (226) cpu_start: Pro cpu start user code[0m
+[0;32mI (227) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (227) app_init: Application information:[0m
+[0;32mI (229) app_init: Project name:     desktop_controller[0m
+[0;32mI (235) app_init: App version:      0496bcb-dirty[0m
+[0;32mI (241) app_init: Compile time:     Jun 26 2025 12:45:03[0m
+[0;32mI (247) app_init: ELF file SHA256:  74df2e30d...[0m
+[0;32mI (252) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (259) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (264) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (269) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (273) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (281) heap_init: At 3FC97AB0 len 00051C60 (327 KiB): RAM[0m
+[0;32mI (287) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (293) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (299) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (306) spi_flash: detected chip: gd[0m
+[0;32mI (310) spi_flash: flash io: dio[0m
+[0;33mW (313) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (327) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (338) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (345) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (353) main_task: Started on CPU0[0m
+[0;32mI (363) main_task: Calling app_main()[0m
+[0;32mI (1363) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1363) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1363) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1373) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1383) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1383) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1443) gpio: GPIO[35]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1443) gpio: GPIO[45]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1443) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1453) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1463) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1473) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1483) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1493) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1503) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1513) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1523) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1533) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1543) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1553) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1553) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1563) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1573) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1583) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1593) MAIN: All systems initialized - starting main loop[0m
+[0;32mI (1603) MAIN: Fan control: ACTIVE[0m
+[0;32mI (1603) MAIN: Single row switches: ACTIVE[0m
+[0;32mI (1613) MAIN: Switch matrix (desk control): ACTIVE[0m
+[0;32mI (1613) MAIN: Relay system: ACTIVE[0m
+[0;32mI (2023) DESK: Moving DOWN[0m
+[0;33mW (2073) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2073) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (2173) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2173) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (2273) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2273) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (2373) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2373) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (2473) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2473) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (2573) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2573) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (2673) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2673) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (2773) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2773) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (2873) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2873) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (2973) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (2973) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (3073) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (3073) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (3173) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (3173) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;32mI (3223) DESK: Stopped moving[0m
+[0;32mI (54073) DESK: Moving UP[0m
+[0;33mW (54123) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (54123) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (54223) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (54223) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (54323) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (54323) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (54423) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (54423) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (54523) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (54523) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (54623) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (54623) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (54723) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (54723) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (54823) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (54823) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (54923) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (54923) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (55023) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (55023) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (55123) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (55123) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (55223) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (55223) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (55323) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (55323) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (55423) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (55423) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (55523) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (55523) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (55623) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (55623) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (55723) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (55723) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (55823) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (55823) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (55923) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (55923) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;32mI (55973) DESK: Stopped moving[0m
+[0;32mI (57423) DESK: Moving DOWN[0m
+[0;33mW (57473) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (57473) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (57573) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (57573) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (57673) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (57673) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (57773) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (57773) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (57873) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (57873) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (57973) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (57973) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (58073) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (58073) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (58173) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (58173) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (58273) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (58273) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (58373) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (58373) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (58473) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (58473) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (58573) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (58573) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (58673) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (58673) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (58773) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (58773) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (58873) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (58873) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (58973) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (58973) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;32mI (59023) DESK: Stopped moving[0m
+[0;32mI (59823) DESK: Moving UP[0m
+[0;33mW (59873) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (59873) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (59973) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (59973) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (60073) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (60073) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (60173) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (60173) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (60273) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (60273) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (60373) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (60373) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (60473) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (60473) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (60573) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (60573) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (60673) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (60673) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (60773) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (60773) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (60873) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (60873) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (60973) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (60973) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (61073) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (61073) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (61173) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (61173) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (61273) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (61273) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (61373) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (61373) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (61473) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (61473) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (61573) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (61573) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (61673) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (61673) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (61773) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (61773) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;32mI (61823) DESK: Stopped moving[0m
+[0;32mI (62773) DESK: Moving DOWN[0m
+[0;33mW (62823) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (62823) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (62923) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (62923) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (63023) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (63023) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (63123) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (63123) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (63223) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (63223) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (63323) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (63323) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (63423) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (63423) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (63523) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (63523) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (63623) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (63623) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (63723) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (63723) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (63823) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (63823) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (63923) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (63923) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (64023) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (64023) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (64123) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (64123) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (64223) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (64223) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (64323) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (64323) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (64423) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (64423) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (64523) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (64523) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;32mI (64573) DESK: Stopped moving[0m
+[0;32mI (120173) KEYSWITCHES: Switch 1 pressed![0m
+[0;32mI (120173) DESK: Switching PC[0m
+[0;32mI (122123) KEYSWITCHES: Switch 1 pressed![0m
+[0;32mI (122123) DESK: Switching PC[0m
+[0;32mI (124123) KEYSWITCHES: Switch 1 pressed![0m
+[0;32mI (124123) DESK: Switching PC[0m
+[0;32mI (126023) KEYSWITCHES: Switch 1 pressed![0m
+[0;32mI (126023) DESK: Switching PC[0m
+[0;32mI (212073) DESK: Moving UP[0m
+[0;33mW (212123) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (212123) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (212223) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (212223) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (212323) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (212323) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (212423) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (212423) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;33mW (212523) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (212523) ULTRASONIC: Moving up - Distance: 0 cm[0m
+[0;32mI (212573) DESK: Stopped moving[0m
+[0;32mI (213273) DESK: Moving DOWN[0m
+[0;33mW (213323) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (213323) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (213423) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (213423) ULTRASONIC: Moving down - Distance: 0 cm[0m
+[0;33mW (213523) ULTRASONIC: Timeout waiting for ECHO to go LOW[0m
+[0;32mI (213523) UL

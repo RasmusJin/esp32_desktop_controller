@@ -53,25 +53,55 @@ void init_ultrasonic_sensor() {
         .pull_up_en = 0
     };
     gpio_config(&echo_conf);
+
+    // Test TRIG pin functionality
+    ESP_LOGI("ULTRASONIC_INIT", "Testing TRIG pin (GPIO%d)...", TRIG_PIN);
+    gpio_set_level(TRIG_PIN, 0);
+    ESP_LOGI("ULTRASONIC_INIT", "TRIG set LOW, reading: %d", gpio_get_level(TRIG_PIN));
+    gpio_set_level(TRIG_PIN, 1);
+    ESP_LOGI("ULTRASONIC_INIT", "TRIG set HIGH, reading: %d", gpio_get_level(TRIG_PIN));
+    gpio_set_level(TRIG_PIN, 0);
+    ESP_LOGI("ULTRASONIC_INIT", "TRIG set LOW again, reading: %d", gpio_get_level(TRIG_PIN));
 }
 
+// Safety timeout for desk movement (10 seconds max)
+static uint32_t movement_start_time = 0;
+static bool movement_active = false;
+#define MAX_MOVEMENT_TIME_MS 10000
+
 void start_moving_desk(desk_move_t direction) {
+    // Record movement start time for safety timeout
+    movement_start_time = xTaskGetTickCount() * portTICK_PERIOD_MS;
+    movement_active = true;
+
     if (direction == DESK_MOVE_UP) {
         gpio_set_level(RELAY_UP_PIN, 0);    // Activate relay for UP
         gpio_set_level(RELAY_DOWN_PIN, 1);  // Ensure DOWN relay is off
-        ESP_LOGI("DESK", "Moving UP");
+        ESP_LOGI("DESK", "Moving UP - SAFETY TIMEOUT: %d seconds", MAX_MOVEMENT_TIME_MS/1000);
     } else if (direction == DESK_MOVE_DOWN) {
         gpio_set_level(RELAY_DOWN_PIN, 0);  // Activate relay for DOWN
         gpio_set_level(RELAY_UP_PIN, 1);    // Ensure UP relay is off
-        ESP_LOGI("DESK", "Moving DOWN");
+        ESP_LOGI("DESK", "Moving DOWN - SAFETY TIMEOUT: %d seconds", MAX_MOVEMENT_TIME_MS/1000);
     }
 }
 
 void stop_moving_desk(void) {
     gpio_set_level(RELAY_UP_PIN, 1);    // Ensure both relays are off
     gpio_set_level(RELAY_DOWN_PIN, 1);
+    movement_active = false;
     ESP_LOGI("DESK", "Stopped moving");
-} 
+}
+
+// Safety function to check for timeout and force stop
+void check_desk_safety_timeout(void) {
+    if (movement_active) {
+        uint32_t current_time = xTaskGetTickCount() * portTICK_PERIOD_MS;
+        if ((current_time - movement_start_time) > MAX_MOVEMENT_TIME_MS) {
+            ESP_LOGW("DESK_SAFETY", "EMERGENCY STOP! Movement timeout exceeded (%d ms)", MAX_MOVEMENT_TIME_MS);
+            stop_moving_desk();
+        }
+    }
+}
 
 void switch_pc(void) {
     gpio_set_level(RELAY_PC_SWITCH, 0);
@@ -80,7 +110,7 @@ void switch_pc(void) {
     gpio_set_level(RELAY_PC_SWITCH, 1);
 }
 
-#define TIMEOUT_US 50000  // Set timeout to 50ms
+#define TIMEOUT_US 50000  // Set timeout to 50ms (back to normal)
 
 uint32_t measure_distance() {
     // Send 10µs pulse on TRIG pin
@@ -116,7 +146,48 @@ uint32_t measure_distance() {
     uint32_t duration = end_time - start_time;
 
     // Convert duration to distance in centimeters
-    uint32_t distance_cm = duration / 58;
+    // Precise calculation: duration_µs * 0.0343 / 2 = distance_cm
+    uint32_t distance_cm = (duration * 343) / (2 * 10000);
+
+    // Optional debug logging - uncomment for calibration
+    // ESP_LOGI("ULTRASONIC", "Raw: %lu µs → %lu cm", duration, distance_cm);
 
     return distance_cm;
+}
+
+// Test function to continuously monitor sensor without desk movement
+void test_sensor_readings(void) {
+    ESP_LOGI("SENSOR_TEST", "=== SENSOR TEST MODE ===");
+    ESP_LOGI("SENSOR_TEST", "Manually move the desk and observe readings");
+    ESP_LOGI("SENSOR_TEST", "Distance should INCREASE when desk moves UP");
+
+    for (int i = 0; i < 20; i++) {
+        uint32_t distance = measure_distance();
+        ESP_LOGI("SENSOR_TEST", "Reading %d: %lu cm", i+1, distance);
+        vTaskDelay(1000 / portTICK_PERIOD_MS);  // 1 second between readings
+    }
+
+    ESP_LOGI("SENSOR_TEST", "=== TEST COMPLETE ===");
+}
+
+// Test function to help debug wiring issues
+void test_ultrasonic_pins(void) {
+    ESP_LOGI("ULTRASONIC_TEST", "=== ULTRASONIC PIN TEST ===");
+    ESP_LOGI("ULTRASONIC_TEST", "TRIG pin: GPIO%d, ECHO pin: GPIO%d", TRIG_PIN, ECHO_PIN);
+
+    // Test TRIG pin - should toggle between 0 and 3.3V
+    ESP_LOGI("ULTRASONIC_TEST", "Testing TRIG pin (use multimeter on GPIO%d):", TRIG_PIN);
+    for (int i = 0; i < 5; i++) {
+        gpio_set_level(TRIG_PIN, 1);
+        ESP_LOGI("ULTRASONIC_TEST", "TRIG HIGH (should read ~3.3V)");
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+
+        gpio_set_level(TRIG_PIN, 0);
+        ESP_LOGI("ULTRASONIC_TEST", "TRIG LOW (should read ~0V)");
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+    }
+
+    // Test ECHO pin reading
+    ESP_LOGI("ULTRASONIC_TEST", "ECHO pin current state: %d", gpio_get_level(ECHO_PIN));
+    ESP_LOGI("ULTRASONIC_TEST", "=== TEST COMPLETE ===");
 }

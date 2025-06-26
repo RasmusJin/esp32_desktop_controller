@@ -1,0 +1,90 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/ttyACM0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x403c8700: _stext at ??:?
+[0m
+[0;33m--- 0x403c8924: call_start_cpu0 at /home/jin/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0;33m--- 0x40375a69: panic_abort at /home/jin/esp/esp-idf/components/esp_system/panic.c:454
+0x4037a245: esp_system_abort at /home/jin/esp/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40381401: __assert_func at /home/jin/esp/esp-idf/components/newlib/src/assert.c:80
+0x4200f98f: tcpip_send_msg_wait_sem at /home/jin/esp/esp-idf/components/lwip/lwip/src/api/tcpip.c:454 (discriminator 1)
+0x4201f2ae: netconn_gethostbyname_addrtype at /home/jin/esp/esp-idf/components/lwip/lwip/src/api/api_lib.c:1333
+0x42044825: lwip_getaddrinfo at /home/jin/esp/esp-idf/components/lwip/lwip/src/api/netdb.c:495
+0x42036d25: getaddrinfo at /home/jin/esp/esp-idf/components/lwip/include/lwip/netdb.h:45
+ (inlined by) esp_tls_hostname_to_fd at /home/jin/esp/esp-idf/components/esp-tls/esp_tls.c:212
+0x42037073: tcp_connect at /home/jin/esp/esp-idf/components/esp-tls/esp_tls.c:361
+0x420375cf: esp_tls_plain_tcp_connect at /home/jin/esp/esp-idf/components/esp-tls/esp_tls.c:535
+0x42038bd3: tcp_connect at /home/jin/esp/esp-idf/components/tcp_transport/transport_ssl.c:148 (discriminator 1)
+0x420536b1: esp_transport_connect at /home/jin/esp/esp-idf/components/tcp_transport/transport.c:123
+0x42022cba: esp_http_client_connect at /home/jin/esp/esp-idf/components/esp_http_client/esp_http_client.c:1550
+0x4202389c: esp_http_client_perform at /home/jin/esp/esp-idf/components/esp_http_client/esp_http_client.c:1376
+0x4200be3f: send_http_request at /home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/http/http_client_server.c:50
+0x4200beba: skylight_command_down at /home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/http/http_client_server.c:68
+0x4200bca2: poll_switch_matrix at /home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/keyswitches/keyswitches.c:280
+0x4200b7d7: app_main at /home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/desktop_controller.c:47
+0x420561d4: main_task at /home/jin/esp/esp-idf/components/freertos/app_startup.c:208
+0x4037ab71: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759a8: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x403c8700: _stext at ??:?
+[0m
+[0;33m--- 0x403c8924: call_start_cpu0 at /home/jin/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0;33m--- 0x40375a69: panic_abort at /home/jin/esp/esp-idf/components/esp_system/panic.c:454
+0x4037a245: esp_system_abort at /home/jin/esp/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40381401: __assert_func at /home/jin/esp/esp-idf/components/newlib/src/assert.c:80
+0x4200f98f: tcpip_send_msg_wait_sem at /home/jin/esp/esp-idf/components/lwip/lwip/src/api/tcpip.c:454 (discriminator 1)
+0x4201f2ae: netconn_gethostbyname_addrtype at /home/jin/esp/esp-idf/components/lwip/lwip/src/api/api_lib.c:1333
+0x42044825: lwip_getaddrinfo at /home/jin/esp/esp-idf/components/lwip/lwip/src/api/netdb.c:495
+0x42036d25: getaddrinfo at /home/jin/esp/esp-idf/components/lwip/include/lwip/netdb.h:45
+ (inlined by) esp_tls_hostname_to_fd at /home/jin/esp/esp-idf/components/esp-tls/esp_tls.c:212
+0x42037073: tcp_connect at /home/jin/esp/esp-idf/components/esp-tls/esp_tls.c:361
+0x420375cf: esp_tls_plain_tcp_connect at /home/jin/esp/esp-idf/components/esp-tls/esp_tls.c:535
+0x42038bd3: tcp_connect at /home/jin/esp/esp-idf/components/tcp_transport/transport_ssl.c:148 (discriminator 1)
+0x420536b1: esp_transport_connect at /home/jin/esp/esp-idf/components/tcp_transport/transport.c:123
+0x42022cba: esp_http_client_connect at /home/jin/esp/esp-idf/components/esp_http_client/esp_http_client.c:1550
+0x4202389c: esp_http_client_perform at /home/jin/esp/esp-idf/components/esp_http_client/esp_http_client.c:1376
+0x4200be3f: send_http_request at /home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/http/http_client_server.c:50
+0x4200beba: skylight_command_down at /home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/http/http_client_server.c:68
+0x4200bca2: poll_switch_matrix at /home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/keyswitches/keyswitches.c:280
+0x4200b7d7: app_main at /home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/desktop_controller.c:47
+0x420561d4: main_task at /home/jin/esp/esp-idf/components/freertos/app_startup.c:208
+0x4037ab71: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759a8: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x403c8700: _stext at ??:?
+[0m
+[0;33m--- 0x403c8924: call_start_cpu0 at /home/jin/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0;33m--- 0x40375a69: panic_abort at /home/jin/esp/esp-idf/components/esp_system/panic.c:454
+0x4037a245: esp_system_abort at /home/jin/esp/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40381401: __assert_func at /home/jin/esp/esp-idf/components/newlib/src/assert.c:80
+0x4200f98f: tcpip_send_msg_wait_sem at /home/jin/esp/esp-idf/components/lwip/lwip/src/api/tcpip.c:454 (discriminator 1)
+0x4201f2ae: netconn_gethostbyname_addrtype at /home/jin/esp/esp-idf/components/lwip/lwip/src/api/api_lib.c:1333
+0x42044825: lwip_getaddrinfo at /home/jin/esp/esp-idf/components/lwip/lwip/src/api/netdb.c:495
+0x42036d25: getaddrinfo at /home/jin/esp/esp-idf/components/lwip/include/lwip/netdb.h:45
+ (inlined by) esp_tls_hostname_to_fd at /home/jin/esp/esp-idf/components/esp-tls/esp_tls.c:212
+0x42037073: tcp_connect at /home/jin/esp/esp-idf/components/esp-tls/esp_tls.c:361
+0x420375cf: esp_tls_plain_tcp_connect at /home/jin/esp/esp-idf/components/esp-tls/esp_tls.c:535
+0x42038bd3: tcp_connect at /home/jin/esp/esp-idf/components/tcp_transport/transport_ssl.c:148 (discriminator 1)
+0x420536b1: esp_transport_connect at /home/jin/esp/esp-idf/components/tcp_transport/transport.c:123
+0x42022cba: esp_http_client_connect at /home/jin/esp/esp-idf/components/esp_http_client/esp_http_client.c:1550
+0x4202389c: esp_http_client_perform at /home/jin/esp/esp-idf/components/esp_http_client/esp_http_client.c:1376
+0x4200be3f: send_http_request at /home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/http/http_client_server.c:50
+0x4200beba: skylight_command_down at /home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/http/http_client_server.c:68
+0x4200bca2: poll_switch_matrix at /home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/keyswitches/keyswitches.c:280
+0x4200b7d7: app_main at /home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/desktop_controller.c:47
+0x420561d4: main_task at /home/jin/esp/esp-idf/components/freertos/app_startup.c:208
+0x4037ab71: vPortTaskWrapper at /home/jin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759a8: esp_restart_noos at /home/jin/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x403c8700: _stext at ??:?
+[0m
+[0;33m--- 0x403c8924: call_start_cpu0 at /home/jin/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[1;31m--- Error: device reports readiness to read but returned no data (device disconnected or multiple access on port?)[0m
+[0;33m--- Waiting for the device to reconnect[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0mE

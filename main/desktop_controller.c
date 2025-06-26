@@ -25,6 +25,10 @@ void app_main(void)
     //display_wifi_icon(&dev);           // Display the WiFi icon on page 1
     relay_driver_init();
     init_ultrasonic_sensor();
+
+    // Test ultrasonic pins for debugging
+    ESP_LOGI("MAIN", "Running ultrasonic pin test...");
+    test_ultrasonic_pins();
     // DISABLED FOR DEBUGGING - wifi_init_sta();
     // DISABLED FOR DEBUGGING - bool connected = wifi_poll_status(&dev);
     //initialize_ntp_and_time();
@@ -34,11 +38,22 @@ void app_main(void)
     potentiometer_init();
     fan_pwm_init();
     setup_switch_single_row();
+
+    ESP_LOGI("MAIN", "All systems initialized - starting main loop");
+    ESP_LOGI("MAIN", "Fan control: ACTIVE");
+    ESP_LOGI("MAIN", "Single row switches: ACTIVE");
+    ESP_LOGI("MAIN", "Switch matrix (desk control): ACTIVE");
+    ESP_LOGI("MAIN", "Relay system: ACTIVE");
+
+    // Uncomment next line to run sensor test (comment out after testing)
+    // test_sensor_readings();
+
     while(1){
         update_fan_speed();
-        // DISABLED FOR DEBUGGING - poll_single_row();
-        // DISABLED FOR DEBUGGING - poll_switch_matrix();
-        // DISABLED FOR DEBUGGING - poll_rotary_encoders(&dev);
+        poll_single_row();        // PC switch and other single buttons
+        poll_switch_matrix();     // Desk UP/DOWN buttons + skylight controls
+        check_desk_safety_timeout();  // CRITICAL: Check for desk movement timeout
+        // DISABLED FOR DEBUGGING - poll_rotary_encoders(&dev);  // Keep disabled (needs display)
         vTaskDelay(50 / portTICK_PERIOD_MS);  // 50ms = 20Hz polling rate
     }
 }
