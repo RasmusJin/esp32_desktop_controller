@@ -1,0 +1,508 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Jun  2 2025 22:14:28[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: v1.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=2b150h (176464) map[0m
+[0;32mI (120) esp_image: segment 1: paddr=0003b178 vaddr=3fc9be00 size=04ea0h ( 20128) load[0m
+[0;32mI (124) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=a8ca8h (691368) map[0m
+[0;32mI (246) esp_image: segment 3: paddr=000e8cd0 vaddr=3fca0ca0 size=00134h (   308) load[0m
+[0;32mI (247) esp_image: segment 4: paddr=000e8e0c vaddr=40374000 size=17d94h ( 97684) load[0m
+[0;32mI (271) esp_image: segment 5: paddr=00100ba8 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (281) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (281) boot: Disabling RNG early entropy source...[0m
+[0;32mI (291) cpu_start: Multicore app[0m
+[0;32mI (300) cpu_start: Pro cpu start user code[0m
+[0;32mI (300) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (300) app_init: Application information:[0m
+[0;32mI (303) app_init: Project name:     desktop_controller[0m
+[0;32mI (309) app_init: App version:      0b85664-dirty[0m
+[0;32mI (314) app_init: Compile time:     Jun 27 2025 10:23:52[0m
+[0;32mI (320) app_init: ELF file SHA256:  e24cc7ed5...[0m
+[0;32mI (326) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (333) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (337) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (342) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (347) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (355) heap_init: At 3FCA52B0 len 00044460 (273 KiB): RAM[0m
+[0;32mI (361) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (367) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (373) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (380) spi_flash: detected chip: gd[0m
+[0;32mI (383) spi_flash: flash io: dio[0m
+[0;33mW (387) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (401) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (411) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (418) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (426) main_task: Started on CPU0[0m
+[0;32mI (436) main_task: Calling app_main()[0m
+[0;32mI (436) MAIN: Initializing OLED display...[0m
+[0;32mI (436) OLED: I2C initialized successfully[0m
+[0;31mE (1446) SSD1306: OLED configuration failed. code: 0x107[0m
+[0;32mI (1446) OLED: OLED initialized successfully[0m
+[0;32mI (1446) MAIN: Scanning I2C bus for devices...[0m
+[0;31mE (8046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (9046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (10046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (11046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (12046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (13046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (14046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (15046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (16046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (17046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (18046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (19046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (20046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (21046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (22046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (23046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (24046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (25046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (26046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (27046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (28046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (29046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (30046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (31046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (32046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (33046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (34046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (35046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (36046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (37046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (38046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (39046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (40046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (41046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (42046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (43046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (44046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (45046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (46046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (47046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (48046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (49046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (50046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (51046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (52046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (53046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (54776) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (55816) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (56816) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (57826) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (58856) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (59906) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (60906) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (61906) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (63746) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (64746) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (65746) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (66746) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (67746) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (68746) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (69746) SSD1306: Image command failed. code: 0x107[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Jun  2 2025 22:14:28[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: v1.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=2b150h (176464) map[0m
+[0;32mI (120) esp_image: segment 1: paddr=0003b178 vaddr=3fc9be00 size=04ea0h ( 20128) load[0m
+[0;32mI (124) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=a8ca8h (691368) map[0m
+[0;32mI (246) esp_image: segment 3: paddr=000e8cd0 vaddr=3fca0ca0 size=00134h (   308) load[0m
+[0;32mI (247) esp_image: segment 4: paddr=000e8e0c vaddr=40374000 size=17d94h ( 97684) load[0m
+[0;32mI (271) esp_image: segment 5: paddr=00100ba8 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (281) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (281) boot: Disabling RNG early entropy source...[0m
+[0;32mI (291) cpu_start: Multicore app[0m
+[0;32mI (300) cpu_start: Pro cpu start user code[0m
+[0;32mI (300) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (300) app_init: Application information:[0m
+[0;32mI (303) app_init: Project name:     desktop_controller[0m
+[0;32mI (309) app_init: App version:      0b85664-dirty[0m
+[0;32mI (314) app_init: Compile time:     Jun 27 2025 10:23:52[0m
+[0;32mI (320) app_init: ELF file SHA256:  e24cc7ed5...[0m
+[0;32mI (326) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (333) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (337) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (342) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (347) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (355) heap_init: At 3FCA52B0 len 00044460 (273 KiB): RAM[0m
+[0;32mI (361) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (367) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (373) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (380) spi_flash: detected chip: gd[0m
+[0;32mI (383) spi_flash: flash io: dio[0m
+[0;33mW (387) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (401) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (411) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (418) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (426) main_task: Started on CPU0[0m
+[0;32mI (436) main_task: Calling app_main()[0m
+[0;32mI (436) MAIN: Initializing OLED display...[0m
+[0;32mI (436) OLED: I2C initialized successfully[0m
+[0;32mI (446) SSD1306: OLED configured successfully[0m
+[0;32mI (446) OLED: OLED initialized successfully[0m
+[0;32mI (456) MAIN: Scanning I2C bus for devices...[0m
+[0;32mI (466) MAIN: Found I2C device at address: 0x3c[0m
+[0;31mE (1476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (2476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (3476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (4476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (5476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (6476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (7476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (8476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (9476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (10476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (11476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (12476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (13476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (14476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (15476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (16476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (17476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (18476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (19476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (20476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (21476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (22476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (23476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (24476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (25476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (26476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (27476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (28476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (29476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (30476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (31476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (32476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (33476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (34476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (35476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (36476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (37476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (38476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (39476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (40476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (41476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (42476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (43476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (44476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (45476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (46476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (47476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (48476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (49476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (50476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (51476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (52476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (53476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (54476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (55476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (56476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (57476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (58476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (59476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (60476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (61476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (62476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (63476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (64476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (65476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (66476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (67476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (68476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (69476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (70476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (71476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (72476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (73476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (74476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (75476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (76476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (77476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (78476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (79476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (80476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (81476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (82476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (83476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (84476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (85476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (86476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (87476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (88476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (89476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (90476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (91476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (92476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (93476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (94476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (95476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (96476) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (97476) SSD1306: Image command failed. code: 0x107[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Jun  2 2025 22:14:28[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: v1.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=2b150h (176464) map[0m
+[0;32mI (120) esp_image: segment 1: paddr=0003b178 vaddr=3fc9be00 size=04ea0h ( 20128) load[0m
+[0;32mI (124) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=a8ca8h (691368) map[0m
+[0;32mI (246) esp_image: segment 3: paddr=000e8cd0 vaddr=3fca0ca0 size=00134h (   308) load[0m
+[0;32mI (247) esp_image: segment 4: paddr=000e8e0c vaddr=40374000 size=17d94h ( 97684) load[0m
+[0;32mI (271) esp_image: segment 5: paddr=00100ba8 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (281) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (281) boot: Disabling RNG early entropy source...[0m
+[0;32mI (291) cpu_start: Multicore app[0m
+[0;32mI (300) cpu_start: Pro cpu start user code[0m
+[0;32mI (300) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (300) app_init: Application information:[0m
+[0;32mI (303) app_init: Project name:     desktop_controller[0m
+[0;32mI (309) app_init: App version:      0b85664-dirty[0m
+[0;32mI (314) app_init: Compile time:     Jun 27 2025 10:23:52[0m
+[0;32mI (320) app_init: ELF file SHA256:  e24cc7ed5...[0m
+[0;32mI (326) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (333) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (337) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (342) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (347) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (355) heap_init: At 3FCA52B0 len 00044460 (273 KiB): RAM[0m
+[0;32mI (361) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (367) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (373) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (380) spi_flash: detected chip: gd[0m
+[0;32mI (383) spi_flash: flash io: dio[0m
+[0;33mW (387) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (401) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (411) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (418) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (426) main_task: Started on CPU0[0m
+[0;32mI (436) main_task: Calling app_main()[0m
+[0;32mI (436) MAIN: Initializing OLED display...[0m
+[0;32mI (436) OLED: I2C initialized successfully[0m
+[0;31mE (1446) SSD1306: OLED configuration failed. code: 0x107[0m
+[0;32mI (1446) OLED: OLED initialized successfully[0m
+[0;32mI (1446) MAIN: Scanning I2C bus for devices...[0m
+[0;31mE (8046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (9046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (10046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (11046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (12046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (13046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (14046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (15046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (16046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (17046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (18046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (19046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (20046) SSD1306: Image command failed. code: 0x107[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Jun  2 2025 22:14:28[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: v1.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=2b150h (176464) map[0m
+[0;32mI (120) esp_image: segment 1: paddr=0003b178 vaddr=3fc9be00 size=04ea0h ( 20128) load[0m
+[0;32mI (124) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=a8ca8h (691368) map[0m
+[0;32mI (246) esp_image: segment 3: paddr=000e8cd0 vaddr=3fca0ca0 size=00134h (   308) load[0m
+[0;32mI (247) esp_image: segment 4: paddr=000e8e0c vaddr=40374000 size=17d94h ( 97684) load[0m
+[0;32mI (271) esp_image: segment 5: paddr=00100ba8 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (281) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (281) boot: Disabling RNG early entropy source...[0m
+[0;32mI (291) cpu_start: Multicore app[0m
+[0;32mI (300) cpu_start: Pro cpu start user code[0m
+[0;32mI (300) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (300) app_init: Application information:[0m
+[0;32mI (303) app_init: Project name:     desktop_controller[0m
+[0;32mI (309) app_init: App version:      0b85664-dirty[0m
+[0;32mI (314) app_init: Compile time:     Jun 27 2025 10:23:52[0m
+[0;32mI (320) app_init: ELF file SHA256:  e24cc7ed5...[0m
+[0;32mI (326) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (333) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (337) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (342) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (347) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (355) heap_init: At 3FCA52B0 len 00044460 (273 KiB): RAM[0m
+[0;32mI (361) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (367) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (373) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (380) spi_flash: detected chip: gd[0m
+[0;32mI (383) spi_flash: flash io: dio[0m
+[0;33mW (387) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (401) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (411) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (418) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (426) main_task: Started on CPU0[0m
+[0;32mI (436) main_task: Calling app_main()[0m
+[0;32mI (436) MAIN: Initializing OLED display...[0m
+[0;32mI (436) OLED: I2C initialized successfully[0m
+[0;31mE (1446) SSD1306: OLED configuration failed. code: 0x107[0m
+[0;32mI (1446) OLED: OLED initialized successfully[0m
+[0;32mI (1446) MAIN: Scanning I2C bus for devices...[0m
+[0;31mE (8046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (9046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (10046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (11046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (12046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (13046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (14046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (15046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (16046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (17046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (18046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (19046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (20046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (21046) SSD1306: Image command failed. code: 0x107[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Jun  2 2025 22:14:28[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: v1.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=2b150h (176464) map[0m
+[0;32mI (120) esp_image: segment 1: paddr=0003b178 vaddr=3fc9be00 size=04ea0h ( 20128) load[0m
+[0;32mI (124) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=a8ca8h (691368) map[0m
+[0;32mI (246) esp_image: segment 3: paddr=000e8cd0 vaddr=3fca0ca0 size=00134h (   308) load[0m
+[0;32mI (247) esp_image: segment 4: paddr=000e8e0c vaddr=40374000 size=17d94h ( 97684) load[0m
+[0;32mI (271) esp_image: segment 5: paddr=00100ba8 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (281) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (281) boot: Disabling RNG early entropy source...[0m
+[0;32mI (291) cpu_start: Multicore app[0m
+[0;32mI (300) cpu_start: Pro cpu start user code[0m
+[0;32mI (300) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (300) app_init: Application information:[0m
+[0;32mI (303) app_init: Project name:     desktop_controller[0m
+[0;32mI (309) app_init: App version:      0b85664-dirty[0m
+[0;32mI (314) app_init: Compile time:     Jun 27 2025 10:23:52[0m
+[0;32mI (320) app_init: ELF file SHA256:  e24cc7ed5...[0m
+[0;32mI (326) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (333) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (337) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (342) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (347) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (355) heap_init: At 3FCA52B0 len 00044460 (273 KiB): RAM[0m
+[0;32mI (361) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (367) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (373) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (380) spi_flash: detected chip: gd[0m
+[0;32mI (383) spi_flash: flash io: dio[0m
+[0;33mW (387) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (401) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (411) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (418) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (426) main_task: Started on CPU0[0m
+[0;32mI (436) main_task: Calling app_main()[0m
+[0;32mI (436) MAIN: Initializing OLED display...[0m
+[0;32mI (436) OLED: I2C initialized successfully[0m
+[0;31mE (1446) SSD1306: OLED configuration failed. code: 0x107[0m
+[0;32mI (1446) OLED: OLED initialized successfully[0m
+[0;32mI (1446) MAIN: Scanning I2C bus for devices...[0m
+[0;31mE (8046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (9046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (10046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (11046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (12046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (13046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (14046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (15046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (16046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (17046) SSD1306: Image command failed. code: 0x107[0m
+[0;31mE (180

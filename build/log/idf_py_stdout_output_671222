@@ -1,0 +1,60 @@
+Command: ninja all
+[1/12] Performing build step for 'bootloader'
+[1/1] cd /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/esp-idf/esptool_py && /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.bin
+Bootloader binary size 0x52b0 bytes. 0x2d50 bytes (35%) free.
+[2/12] No install step for 'bootloader'
+[3/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/desktop_controller.c.obj
+/home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/desktop_controller.c: In function 'app_main':
+/home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/desktop_controller.c:13:15: warning: unused variable 'dev' [-Wunused-variable]
+   13 |     SSD1306_t dev;
+      |               ^~~
+[4/12] Completed 'bootloader'
+[5/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/oled_screen/oled_screen.c.obj
+/home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/oled_screen/oled_screen.c: In function 'display_time_x3':
+/home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/oled_screen/oled_screen.c:170:9: warning: unused variable 'seg_offset' [-Wunused-variable]
+  170 |     int seg_offset = (SCREEN_WIDTH - total_width) / 2;  // Center the text
+      |         ^~~~~~~~~~
+/home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/oled_screen/oled_screen.c: In function 'time_update_task':
+/home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/oled_screen/oled_screen.c:182:16: warning: unused variable 'dev' [-Wunused-variable]
+  182 |     SSD1306_t *dev = (SSD1306_t *)pvParameter;
+      |                ^~~
+[6/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/keyswitches/keyswitches.c.obj
+/home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/keyswitches/keyswitches.c: In function 'poll_switch_matrix':
+/home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/keyswitches/keyswitches.c:230:21: warning: unused variable 'down_press_time' [-Wunused-variable]
+  230 |     static uint32_t down_press_time = 0;
+      |                     ^~~~~~~~~~~~~~~
+/home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/keyswitches/keyswitches.c:229:21: warning: unused variable 'up_press_time' [-Wunused-variable]
+  229 |     static uint32_t up_press_time = 0;
+      |                     ^~~~~~~~~~~~~
+[7/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/wifi_connection/wifi_connection.c.obj
+/home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/wifi_connection/wifi_connection.c: In function 'initialize_sntp':
+/home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/wifi_connection/wifi_connection.c:165:5: warning: 'sntp_setoperatingmode' is deprecated: use esp_sntp_setoperatingmode() instead [-Wdeprecated-declarations]
+  165 |     sntp_setoperatingmode(SNTP_OPMODE_POLL);
+      |     ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/wifi_connection/wifi_connection.c:8:
+/home/jin/esp/esp-idf/components/lwip/include/apps/esp_sntp.h:249:6: note: declared here
+  249 | void sntp_setoperatingmode(u8_t operating_mode)
+      |      ^~~~~~~~~~~~~~~~~~~~~
+/home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/wifi_connection/wifi_connection.c:166:5: warning: 'sntp_setservername' is deprecated: use esp_sntp_setservername() instead [-Wdeprecated-declarations]
+  166 |     sntp_setservername(0, "pool.ntp.org");  // Use a reliable NTP server
+      |     ^~~~~~~~~~~~~~~~~~
+/home/jin/esp/esp-idf/components/lwip/include/apps/esp_sntp.h:263:6: note: declared here
+  263 | void sntp_setservername(u8_t idx, const char *server)
+      |      ^~~~~~~~~~~~~~~~~~
+/home/jin/workspaces/espWorkspace/esp32_desktop_controller/main/wifi_connection/wifi_connection.c:167:5: warning: 'sntp_init' is deprecated: use esp_sntp_init() instead [-Wdeprecated-declarations]
+  167 |     sntp_init();
+      |     ^~~~~~~~~
+/home/jin/esp/esp-idf/components/lwip/include/apps/esp_sntp.h:269:6: note: declared here
+  269 | void sntp_init(void)
+      |      ^~~~~~~~~
+[8/12] Linking C static library esp-idf/main/libmain.a
+[9/12] Generating ld/sections.ld
+[10/12] Linking CXX executable desktop_controller.elf
+[11/12] Generating binary image from built executable
+esptool.py v4.9.dev5
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+Generated /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.bin
+[12/12] cd /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/esp-idf/esptool_py && /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/partition_table/partition-table.bin /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.bin
+desktop_controller.bin binary size 0xe4a10 bytes. Smallest app partition is 0x100000 bytes. 0x1b5f0 bytes (11%) free.

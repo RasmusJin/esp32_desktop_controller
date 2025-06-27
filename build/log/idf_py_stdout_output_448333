@@ -1,0 +1,8 @@
+Command: ninja all
+[0/1] Re-running CMake...
+-- Component directory /home/jin/workspaces/espWorkspace/esp32_desktop_controller/components/esp-idf-ssd1306 does not contain a CMakeLists.txt file. No component will be added
+-- Minimal build - OFF
+-- Building ESP-IDF components for target esp32s3
+-- Configuring incomplete, errors occurred!
+FAILED: build.ninja 
+/usr/bin/cmake --regenerate-during-build -S/home/jin/workspaces/espWorkspace/esp32_desktop_controller -B/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build

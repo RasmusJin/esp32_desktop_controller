@@ -65,32 +65,105 @@ void fan_pwm_init(void) {
 }
 // Function to update fan speed based on potentiometer value
 void update_fan_speed(void) {
+    static uint32_t last_adc = 0;
+    static uint8_t off_count = 0;
+    static uint8_t on_count = 0;
+    static uint32_t log_counter = 0;
 
-    uint32_t adc_value = potentiometer_read();  // Read the potentiometer value
+    uint32_t raw_adc = potentiometer_read();  // Read the potentiometer value
 
-    const uint32_t min_adc_value = 0;    // Min ADC value for the potentiometer
-    const uint32_t max_adc_value = 942;  // Max ADC value from your potentiometer (adjust if needed)
+    // Simple filtering - just use the raw value with light smoothing
+    uint32_t adc_value;
+
+    if (last_adc == 0) {
+        // First reading - use raw value directly
+        adc_value = raw_adc;
+    } else {
+        // Light smoothing: 70% new, 30% old for responsiveness
+        adc_value = (raw_adc * 7 + last_adc * 3) / 10;
+    }
+    last_adc = adc_value;
+
+    // Your actual potentiometer range (based on RAW ADC readings)
+    const uint32_t max_adc_value = 4095;  // 12-bit ADC full range
+
+    // Stepped fan control - discrete speed levels for smooth operation
+    // INVERTED: ADC 0 = full speed, ADC 4095 = off
+    const uint32_t off_threshold = 3999;   // OFF when ADC >= 3800 (much closer to counterclockwise)
+
+    // Define speed steps (ADC ranges and corresponding PWM duty cycles)
+    typedef struct {
+        uint32_t adc_min;
+        uint32_t adc_max;
+        uint32_t duty_cycle;
+        uint8_t speed_percent;
+    } fan_step_t;
+
+    const fan_step_t fan_steps[] = {
+        {0,    600,  255, 100},  // Step 1: Max speed (full clockwise)
+        {601,  1200, 200, 78},   // Step 2: High speed
+        {1201, 1800, 150, 59},   // Step 3: Medium-high speed
+        {1801, 2800, 100, 39},   // Step 4: Medium speed
+        {2801, 3799, 70,  27},   // Step 5: Low speed (extends much closer to OFF)
+    };
+    const uint32_t num_steps = sizeof(fan_steps) / sizeof(fan_step_t);
 
     uint32_t duty_cycle = 0;  // Initialize duty cycle
     uint8_t fan_speed_percentage = 0;  // Initialize fan speed percentage
 
-    //ESP_LOGI(TAG, "Raw ADC Value: %" PRIu32, adc_value);
+    // Fan control logging - ENABLED for debugging
+    log_counter++;
+    bool should_log = (log_counter % 20 == 0);  // Log every 1 second (20Hz / 20 = 1Hz)
 
-    // Calculate the duty cycle based on the adjusted range
-    duty_cycle = ((max_adc_value - adc_value) * 255) / (max_adc_value - min_adc_value);
+    // Debug logging ENABLED to fix fan issues
+    if (should_log) {
+        ESP_LOGI(TAG, "RAW ADC: %d, Filtered ADC: %d, Threshold: %d", raw_adc, adc_value, off_threshold);
+    }
 
-    // Calculate the fan speed percentage
-    fan_speed_percentage = (duty_cycle * 100) / 255;
+    // Clamp ADC value to expected range
+    if (adc_value > max_adc_value) adc_value = max_adc_value;
 
-    //ESP_LOGI(TAG, "Calculated Duty Cycle: %" PRIu32, duty_cycle);
-    //ESP_LOGI(TAG, "Fan Speed Percentage: %" PRIu8 "%%", fan_speed_percentage);
+    // Stepped fan control logic
+    if (adc_value >= off_threshold) {
+        // OFF zone
+        duty_cycle = 0;
+        fan_speed_percentage = 0;
+        // ESP_LOGW(TAG, "FANS OFF - ADC %d >= threshold %d", adc_value, off_threshold);
+    } else {
+        // Find the appropriate speed step
+        bool step_found = false;
+        for (uint32_t i = 0; i < num_steps; i++) {
+            if (adc_value >= fan_steps[i].adc_min && adc_value <= fan_steps[i].adc_max) {
+                duty_cycle = fan_steps[i].duty_cycle;
+                fan_speed_percentage = fan_steps[i].speed_percent;
+                step_found = true;
+                if (should_log) {
+                    ESP_LOGI(TAG, "Step %d: ADC %d -> %d%% (duty %d)", i+1, adc_value, fan_speed_percentage, duty_cycle);
+                }
+                break;
+            }
+        }
+
+        // Fallback if no step found (shouldn't happen)
+        if (!step_found) {
+            duty_cycle = 40;  // Default low speed
+            fan_speed_percentage = 16;
+        }
+    }
+
+    // Fan calculation logging - ENABLED for debugging fan issues
+    if (should_log) {
+        ESP_LOGI(TAG, "Final: Duty Cycle: %" PRIu32 ", Fan Speed: %" PRIu8 "%%", duty_cycle, fan_speed_percentage);
+    }
 
     // Update the PWM duty cycle
     ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL, duty_cycle);
     ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL);
 
-    // Log the final duty cycle for debugging
-    //ESP_LOGI(TAG, "Final Duty Cycle Set: %" PRIu32, duty_cycle);
+    // PWM logging ENABLED for debugging
+    if (should_log) {
+        ESP_LOGI(TAG, "PWM SET: %d (%d%%)", duty_cycle, fan_speed_percentage);
+    }
 
     // Later, you can display fan_speed_percentage on a display
 }
@@ -104,7 +177,11 @@ uint32_t potentiometer_read(void) {
     int calibrated_value;
     adc_cali_raw_to_voltage(cali_handle, raw_value, &calibrated_value);
 
-    return calibrated_value;
+    // Debug: Log both raw and calibrated values - uncomment for debugging
+    // ESP_LOGI(TAG, "ADC Raw: %d, Calibrated (mV): %d", raw_value, calibrated_value);
+
+    // Return RAW value instead of calibrated voltage
+    return raw_value;
 }
 
 // Function to print the potentiometer value (for testing)

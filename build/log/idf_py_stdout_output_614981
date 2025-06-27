@@ -1,0 +1,1154 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Jun  2 2025 22:14:28[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: v1.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c060020 size=1fbc0h (129984) map[0m
+[0;32mI (111) esp_image: segment 1: paddr=0002fbe8 vaddr=3fc93500 size=00430h (  1072) load[0m
+[0;32mI (112) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=57200h (356864) map[0m
+[0;32mI (178) esp_image: segment 3: paddr=00087228 vaddr=3fc93930 size=02848h ( 10312) load[0m
+[0;32mI (181) esp_image: segment 4: paddr=00089a78 vaddr=40374000 size=0f4bch ( 62652) load[0m
+[0;32mI (196) esp_image: segment 5: paddr=00098f3c vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (202) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (202) boot: Disabling RNG early entropy source...[0m
+[0;32mI (213) cpu_start: Multicore app[0m
+[0;32mI (222) cpu_start: Pro cpu start user code[0m
+[0;32mI (223) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (223) app_init: Application information:[0m
+[0;32mI (225) app_init: Project name:     desktop_controller[0m
+[0;32mI (231) app_init: App version:      0496bcb-dirty[0m
+[0;32mI (237) app_init: Compile time:     Jun 26 2025 12:45:03[0m
+[0;32mI (243) app_init: ELF file SHA256:  c41ba576d...[0m
+[0;32mI (248) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (255) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (260) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (265) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (269) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (277) heap_init: At 3FC97AB8 len 00051C58 (327 KiB): RAM[0m
+[0;32mI (283) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (289) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (295) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (302) spi_flash: detected chip: gd[0m
+[0;32mI (306) spi_flash: flash io: dio[0m
+[0;33mW (309) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (323) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (334) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (341) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (349) main_task: Started on CPU0[0m
+[0;32mI (359) main_task: Calling app_main()[0m
+[0;32mI (1359) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1359) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDra[0;32mI (38719) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (38719) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (38719) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (38719) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (38729) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (38729) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (38739) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (38739) ULTRASONIC: Moving up - Distance: 71 cm[0m
+[0;32mI (38799) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (38799) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (38799) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (38799) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (38799) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (38809) ULTRASONIC: Moving up - Distance: 71 cm[0m
+[0;32mI (38869) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (38869) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (38869) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (38869) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (38869) ULTRASONIC: Pulse duration: 4164 µs, Distance: 71 cm[0m
+[0;32mI (38879) ULTRASONIC: Moving up - Distance: 71 cm[0m
+[0;32mI (38939) DESK: Stopped moving[0m
+[0;32mI (38939) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (43739) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (43739) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (43739) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (43739) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (43749) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (43749) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (43759) ULTRASONIC: Pulse duration: 4164 µs, Distance: 71 cm[0m
+[0;32mI (43759) ULTRASONIC: Moving down - Distance: 71 cm[0m
+[0;32mI (43819) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (43819) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (43819) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (43819) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (43819) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (43829) ULTRASONIC: Moving down - Distance: 71 cm[0m
+[0;32mI (43889) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (43889) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (43889) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (43889) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (43889) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (43899) ULTRASONIC: Moving down - Distance: 71 cm[0m
+[0;32mI (43959) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (43959) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (43959) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (43959) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (43959) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (43969) ULTRASONIC: Moving down - Distance: 71 cm[0m
+[0;32mI (44029) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (44029) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (44029) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (44029) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (44029) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (44039) ULTRASONIC: Moving down - Distance: 71 cm[0m
+[0;32mI (44099) DESK: Stopped moving[0m
+[0;32mI (44099) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (44849) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (44849) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (44849) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (44849) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (44859) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (44859) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (44869) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (44869) ULTRASONIC: Moving up - Distance: 71 cm[0m
+[0;32mI (44929) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (44929) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (44929) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (44929) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (44929) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (44939) ULTRASONIC: Moving up - Distance: 71 cm[0m
+[0;32mI (44999) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (44999) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (44999) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (44999) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (44999) ULTRASONIC: Pulse duration: 4164 µs, Distance: 71 cm[0m
+[0;32mI (45009) ULTRASONIC: Moving up - Distance: 71 cm[0m
+[0;32mI (45069) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (45069) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (45069) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (45069) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (45069) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (45079) ULTRASONIC: Moving up - Distance: 71 cm[0m
+[0;32mI (45139) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (45139) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (45139) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (45139) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (45139) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (45149) ULTRASONIC: Moving up - Distance: 71 cm[0m
+[0;32mI (45209) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (45209) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (45209) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (45209) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (45209) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (45219) ULTRASONIC: Moving up - Distance: 71 cm[0m
+[0;32mI (45279) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (45279) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (45279) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (45279) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (45279) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (45289) ULTRASONIC: Moving up - Distance: 71 cm[0m
+[0;32mI (45349) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (45349) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (45349) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (45349) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (45349) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (45359) ULTRASONIC: Moving up - Distance: 71 cm[0m
+[0;32mI (45419) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (45419) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (45419) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (45419) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (45419) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (45429) ULTRASONIC: Moving up - Distance: 71 cm[0m
+[0;32mI (45489) DESK: Stopped moving[0m
+[0;32mI (45489) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (47889) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (47889) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (47889) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (47889) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (47899) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (47899) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (47909) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (47909) ULTRASONIC: Moving down - Distance: 71 cm[0m
+[0;32mI (47969) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (47969) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (47969) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (47969) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (47969) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (47979) ULTRASONIC: Moving down - Distance: 71 cm[0m
+[0;32mI (48039) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (48039) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (48039) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (48039) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (48039) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (48049) ULTRASONIC: Moving down - Distance: 71 cm[0m
+[0;32mI (48109) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (48109) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (48109) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (48109) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (48109) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (48119) ULTRASONIC: Moving down - Distance: 71 cm[0m
+[0;32mI (48179) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (48179) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (48179) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (48179) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (48179) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (48189) ULTRASONIC: Moving down - Distance: 71 cm[0m
+[0;32mI (48249) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (48249) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (48249) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (48249) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (48249) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (48259) ULTRASONIC: Moving down - Distance: 71 cm[0m
+[0;32mI (48319) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (48319) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (48319) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (48319) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (48319) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (48329) ULTRASONIC: Moving down - Distance: 71 cm[0m
+[0;32mI (48389) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (48389) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (48389) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (48389) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (48389) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (48399) ULTRASONIC: Moving down - Distance: 71 cm[0m
+[0;32mI (48459) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (48459) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (48459) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (48459) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (48459) ULTRASONIC: Pulse duration: 4165 µs, Distance: 71 cm[0m
+[0;32mI (48469) ULTRASONIC: Moving down - Distance: 71 cm[0m
+[0;32mI (48529) DESK: Stopped moving[0m
+[0;32mI (48529) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1250479) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1250479) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (1250479) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1250479) ULTRASONIC: Trigger pulse sent[0m
+[0;33mW (1250689) ULTRASONIC: Timeout waiting for ECHO to go HIGH - ECHO stuck at 0[0m
+[0;32mI (1250739) DESK: Stopped moving[0m
+[0;32mI (1250739) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (1256389) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1256389) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1256389) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1256389) ULTRASONIC: Trigger pulse sent[0m
+[0;33mW (1256599) ULTRASONIC: Timeout waiting for ECHO to go HIGH - ECHO stuck at 0[0m
+[0;32mI (1256649) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1256649) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1256649) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1256649) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1256649) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1256659) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1256719) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1256719) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1256719) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1256719) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1256719) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1256729) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1256789) DESK: Stopped moving[0m
+[0;32mI (1256789) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1257989) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1257989) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1257989) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1257989) ULTRASONIC: Trigger pulse sent[0m
+[0;33mW (1258199) ULTRASONIC: Timeout waiting for ECHO to go HIGH - ECHO stuck at 0[0m
+[0;32mI (1258249) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1258249) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1258249) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1258249) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1258249) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1258259) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1258319) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1258319) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1258319) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1258319) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1258319) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1258329) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1258389) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1258389) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1258389) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1258389) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1258389) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1258399) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1258459) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1258459) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1258459) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1258459) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1258459) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1258469) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1258529) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1258529) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1258529) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1258529) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1258529) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1258539) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1258599) DESK: Stopped moving[0m
+[0;32mI (1258599) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1259349) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1259349) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (1259349) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1259349) ULTRASONIC: Trigger pulse sent[0m
+[0;33mW (1259559) ULTRASONIC: Timeout waiting for ECHO to go HIGH - ECHO stuck at 0[0m
+[0;32mI (1259609) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1259609) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1259609) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1259609) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1259609) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1259619) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1259679) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1259679) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1259679) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1259679) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1259679) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1259689) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1259749) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1259749) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1259749) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1259749) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1259749) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1259759) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1259819) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1259819) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1259819) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1259819) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1259819) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1259829) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1259889) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1259889) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1259889) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1259889) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1259889) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1259899) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1259959) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1259959) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1259959) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1259959) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1259959) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1259969) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1260029) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1260029) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1260029) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1260029) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1260029) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1260039) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1260099) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1260099) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1260099) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1260099) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1260099) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1260109) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1260169) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1260169) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1260169) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1260169) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1260169) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1260179) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1260239) DESK: Stopped moving[0m
+[0;32mI (1260239) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (1264939) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1264939) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1264939) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1264939) ULTRASONIC: Trigger pulse sent[0m
+[0;33mW (1265149) ULTRASONIC: Timeout waiting for ECHO to go HIGH - ECHO stuck at 0[0m
+[0;32mI (1265199) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1265199) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1265199) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1265199) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1265199) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1265209) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1265269) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1265269) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1265269) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1265269) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1265269) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1265279) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1265339) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1265339) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1265339) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1265339) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1265339) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1265349) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1265409) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1265409) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1265409) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1265409) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1265409) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1265419) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1265479) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1265479) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1265479) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1265479) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1265479) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1265489) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1265549) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1265549) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1265549) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1265549) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1265549) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1265559) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1265619) DESK: Stopped moving[0m
+[0;32mI (1265619) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1267219) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1267219) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1267219) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1267219) ULTRASONIC: Trigger pulse sent[0m
+[0;33mW (1267429) ULTRASONIC: Timeout waiting for ECHO to go HIGH - ECHO stuck at 0[0m
+[0;32mI (1267479) DESK: Stopped moving[0m
+[0;32mI (1267479) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1375879) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1375879) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1375879) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1375879) ULTRASONIC: Trigger pulse sent[0m
+[0;33mW (1376089) ULTRASONIC: Timeout waiting for ECHO to go HIGH - ECHO stuck at 0[0m
+[0;32mI (1376139) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1376139) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1376139) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1376139) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1376139) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1376149) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1376209) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1376209) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1376209) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1376209) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1376209) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1376219) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1376279) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1376279) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1376279) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1376279) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1376279) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1376289) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1376349) DESK: Stopped moving[0m
+[0;32mI (1376349) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1380149) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1380149) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1380149) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1380149) ULTRASONIC: Trigger pulse sent[0m
+[0;33mW (1380359) ULTRASONIC: Timeout waiting for ECHO to go HIGH - ECHO stuck at 0[0m
+[0;32mI (1380409) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1380409) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1380409) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1380409) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1380409) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1380419) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1380479) DESK: Stopped moving[0m
+[0;32mI (1380479) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1381429) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1381429) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1381429) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1381429) ULTRASONIC: Trigger pulse sent[0m
+[0;33mW (1381639) ULTRASONIC: Timeout waiting for ECHO to go HIGH - ECHO stuck at 0[0m
+[0;32mI (1381689) DESK: Stopped moving[0m
+[0;32mI (1381689) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1382689) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1382689) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1382689) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1382689) ULTRASONIC: Trigger pulse sent[0m
+[0;33mW (1382899) ULTRASONIC: Timeout waiting for ECHO to go HIGH - ECHO stuck at 0[0m
+[0;32mI (1382949) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1382949) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1382949) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1382949) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1382949) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1382959) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1383019) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1383019) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1383019) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1383019) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1383019) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1383029) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1383089) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1383089) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1383089) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1383089) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1383089) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1383099) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1383159) DESK: Stopped moving[0m
+[0;32mI (1383159) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (1383609) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1383609) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (1383609) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1383609) ULTRASONIC: Trigger pulse sent[0m
+[0;33mW (1383819) ULTRASONIC: Timeout waiting for ECHO to go HIGH - ECHO stuck at 0[0m
+[0;32mI (1383869) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1383869) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1383869) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1383869) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1383869) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1383879) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1383939) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1383939) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1383939) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1383939) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1383939) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1383949) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1384009) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1384009) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1384009) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1384009) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1384009) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1384019) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1384079) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1384079) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1384079) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1384079) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1384079) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1384089) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1384149) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1384149) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1384149) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1384149) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1384149) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1384159) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1384219) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1384219) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1384219) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1384219) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1384219) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1384229) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1384289) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1384289) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1384289) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1384289) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1384289) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1384299) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1384359) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1384359) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1384359) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1384359) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1384359) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1384369) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1384429) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1384429) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1384429) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1384429) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1384429) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1384439) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1384499) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1384499) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1384499) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1384499) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1384499) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1384509) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1384569) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1384569) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1384569) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1384569) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1384569) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1384579) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1384639) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1384639) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1384639) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1384639) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1384639) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1384649) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1384709) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1384709) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1384709) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1384709) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1384709) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1384719) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1384779) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1384779) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1384779) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1384779) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1384779) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1384789) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1384849) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1384849) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1384849) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1384849) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1384849) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1384859) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1384919) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1384919) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1384919) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1384919) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1384919) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1384929) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1384989) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1384989) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1384989) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1384989) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1384989) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1384999) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1385059) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1385059) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1385059) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1385059) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1385059) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1385069) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1385129) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1385129) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1385129) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1385129) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1385129) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1385139) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1385199) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1385199) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1385199) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1385199) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1385199) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1385209) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1385269) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1385269) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1385269) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1385269) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1385269) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1385279) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1385339) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1385339) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1385339) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1385339) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1385339) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1385349) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1385409) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1385409) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1385409) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1385409) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1385409) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1385419) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1385479) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1385479) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1385479) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1385479) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1385479) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1385489) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1385549) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1385549) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1385549) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1385549) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1385549) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1385559) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1385619) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1385619) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1385619) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1385619) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1385619) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1385629) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1385689) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1385689) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1385689) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1385689) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1385689) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1385699) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1385759) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1385759) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1385759) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1385759) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1385759) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1385769) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1385829) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1385829) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1385829) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1385829) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1385829) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1385839) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1385899) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1385899) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1385899) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1385899) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1385899) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1385909) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1385969) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1385969) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1385969) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1385969) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1385969) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1385979) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1386039) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1386039) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1386039) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1386039) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1386039) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1386049) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1386109) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1386109) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1386109) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1386109) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1386109) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1386119) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1386179) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1386179) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1386179) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1386179) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1386179) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1386189) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1386249) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1386249) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1386249) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1386249) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1386249) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1386259) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1386319) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1386319) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1386319) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1386319) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1386319) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1386329) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1386389) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1386389) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1386389) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1386389) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1386389) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1386399) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1386459) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1386459) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1386459) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1386459) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1386459) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1386469) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1386529) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1386529) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1386529) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1386529) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1386529) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1386539) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1386599) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1386599) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1386599) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1386599) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1386599) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1386609) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1386669) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1386669) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1386669) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1386669) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1386669) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1386679) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1386739) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1386739) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1386739) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1386739) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1386739) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1386749) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1386809) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1386809) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1386809) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1386809) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1386809) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1386819) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1386879) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1386879) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1386879) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1386879) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1386879) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1386889) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1386949) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1386949) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1386949) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1386949) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1386949) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1386959) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1387019) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1387019) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1387019) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1387019) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1387019) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1387029) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1387089) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1387089) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1387089) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1387089) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1387089) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1387099) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1387159) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1387159) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1387159) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1387159) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1387159) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1387169) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1387229) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1387229) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1387229) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1387229) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1387229) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1387239) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1387299) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1387299) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1387299) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1387299) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1387299) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1387309) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1387369) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1387369) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1387369) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1387369) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1387369) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1387379) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1387439) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1387439) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1387439) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1387439) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1387439) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1387449) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1387509) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1387509) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1387509) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1387509) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1387509) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1387519) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1387579) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1387579) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1387579) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1387579) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1387579) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1387589) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1387649) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1387649) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1387649) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1387649) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1387649) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1387659) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1387719) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1387719) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1387719) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1387719) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1387719) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1387729) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1387789) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1387789) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1387789) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1387789) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1387789) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1387799) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1387859) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1387859) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1387859) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1387859) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1387859) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1387869) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1387929) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1387929) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1387929) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1387929) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1387929) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1387939) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1387999) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1387999) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1387999) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1387999) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1387999) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1388009) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1388069) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1388069) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1388069) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1388069) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1388069) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1388079) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1388139) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1388139) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1388139) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1388139) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1388139) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1388149) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1388209) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1388209) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1388209) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1388209) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1388209) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1388219) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1388279) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1388279) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1388279) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1388279) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1388279) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1388289) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1388349) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1388349) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1388349) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1388349) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1388349) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1388359) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1388419) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1388419) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1388419) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1388419) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1388419) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1388429) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1388489) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1388489) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1388489) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1388489) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1388489) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1388499) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1388559) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1388559) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1388559) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1388559) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1388559) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1388569) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1388629) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1388629) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1388629) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1388629) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1388629) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1388639) ULTRASONIC: Moving up - Distance: 74 cm[0m
+[0;32mI (1388699) DESK: Stopped moving[0m
+[0;32mI (1388699) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (1395799) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (1395799) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (1395799) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1395799) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1395809) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1395809) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1395819) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1395819) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1395879) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1395879) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1395879) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1395879) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1395879) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1395889) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1395949) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1395949) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1395949) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1395949) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1395949) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1395959) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1396019) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1396019) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1396019) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1396019) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1396019) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1396029) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1396089) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1396089) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1396089) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1396089) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1396089) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1396099) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1396159) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1396159) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1396159) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1396159) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1396159) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1396169) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1396229) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1396229) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1396229) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1396229) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1396229) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1396239) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1396299) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1396299) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1396299) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1396299) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1396299) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1396309) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1396369) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1396369) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1396369) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1396369) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1396369) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1396379) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1396439) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1396439) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1396439) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1396439) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1396439) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1396449) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1396509) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1396509) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1396509) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1396509) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1396509) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1396519) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1396579) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1396579) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1396579) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1396579) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1396579) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1396589) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1396649) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1396649) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1396649) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1396649) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1396649) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1396659) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1396719) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1396719) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1396719) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1396719) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1396719) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1396729) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1396789) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1396789) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1396789) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1396789) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1396789) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1396799) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1396859) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1396859) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1396859) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1396859) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1396859) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1396869) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1396929) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1396929) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1396929) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1396929) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1396929) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1396939) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1396999) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1396999) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1396999) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1396999) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1396999) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1397009) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1397069) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1397069) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1397069) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1397069) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1397069) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1397079) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1397139) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1397139) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1397139) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1397139) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1397139) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1397149) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1397209) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1397209) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1397209) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1397209) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1397209) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1397219) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1397279) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1397279) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1397279) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1397279) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1397279) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1397289) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1397349) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1397349) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1397349) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1397349) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1397349) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1397359) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1397419) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1397419) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1397419) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1397419) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1397419) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1397429) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1397489) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1397489) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1397489) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1397489) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1397489) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1397499) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1397559) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1397559) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1397559) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1397559) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1397559) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1397569) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1397629) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1397629) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1397629) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1397629) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1397629) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1397639) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1397699) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1397699) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1397699) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1397699) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1397699) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1397709) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1397769) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1397769) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1397769) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1397769) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1397769) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1397779) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1397839) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1397839) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1397839) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1397839) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1397839) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1397849) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1397909) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1397909) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1397909) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1397909) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1397909) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1397919) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1397979) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1397979) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1397979) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1397979) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1397979) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1397989) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1398049) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1398049) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1398049) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1398049) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1398049) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1398059) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1398119) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1398119) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1398119) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1398119) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1398119) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1398129) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1398189) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1398189) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1398189) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1398189) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1398189) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1398199) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1398259) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1398259) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1398259) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1398259) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1398259) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1398269) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1398329) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1398329) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1398329) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1398329) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1398329) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1398339) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1398399) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1398399) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1398399) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1398399) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1398399) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1398409) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1398469) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1398469) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1398469) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1398469) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1398469) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1398479) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1398539) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1398539) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1398539) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1398539) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1398539) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1398549) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1398609) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1398609) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1398609) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1398609) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1398609) ULTRASONIC: Pulse duration: 4339 µs, Distance: 74 cm[0m
+[0;32mI (1398619) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1398679) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1398679) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1398679) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1398679) ULTRASONIC: ECHO went LOW[0m
+[0;32mI (1398679) ULTRASONIC: Pulse duration: 4338 µs, Distance: 74 cm[0m
+[0;32mI (1398689) ULTRASONIC: Moving down - Distance: 74 cm[0m
+[0;32mI (1398749) ULTRASONIC: Starting measurement - ECHO initial state: 0[0m
+[0;32mI (1398749) ULTRASONIC: Trigger pulse sent[0m
+[0;32mI (1398749) ULTRASONIC: ECHO went HIGH[0m
+[0;32mI (1398749)

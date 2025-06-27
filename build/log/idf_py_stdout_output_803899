@@ -1,0 +1,528 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Jun  2 2025 22:14:28[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: v1.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=28a10h (166416) map[0m
+[0;32mI (118) esp_image: segment 1: paddr=00038a38 vaddr=3fc9a500 size=04b64h ( 19300) load[0m
+[0;32mI (122) esp_image: segment 2: paddr=0003d5a4 vaddr=40374000 size=02a74h ( 10868) load[0m
+[0;32mI (125) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=a1590h (660880) map[0m
+[0;32mI (246) esp_image: segment 4: paddr=000e15b8 vaddr=40376a74 size=13a44h ( 80452) load[0m
+[0;32mI (263) esp_image: segment 5: paddr=000f5004 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (273) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (273) boot: Disabling RNG early entropy source...[0m
+[0;32mI (283) cpu_start: Multicore app[0m
+[0;32mI (292) cpu_start: Pro cpu start user code[0m
+[0;32mI (292) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (292) app_init: Application information:[0m
+[0;32mI (295) app_init: Project name:     desktop_controller[0m
+[0;32mI (301) app_init: App version:      ce8f10c-dirty[0m
+[0;32mI (306) app_init: Compile time:     Jun 26 2025 15:50:23[0m
+[0;32mI (312) app_init: ELF file SHA256:  e20a1a498...[0m
+[0;32mI (317) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (324) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (329) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (334) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (339) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (346) heap_init: At 3FCA34D0 len 00046240 (280 KiB): RAM[0m
+[0;32mI (352) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (358) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (364) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (372) spi_flash: detected chip: gd[0m
+[0;32mI (375) spi_flash: flash io: dio[0m
+[0;33mW (379) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (392) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (403) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (410) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (418) main_task: Started on CPU0[0m
+[0;32mI (428) main_task: Calling app_main()[0m
+[0;32mI (1428) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1428) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1428) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1438) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1448) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1448) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1508) gpio: GPIO[45]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1508) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1508) ULTRASONIC_INIT: Testing TRIG pin (GPIO45)...[0m
+[0;32mI (1518) ULTRASONIC_INIT: TRIG set LOW, reading: 0[0m
+[0;32mI (1518) ULTRASONIC_INIT: TRIG set HIGH, reading: 0[0m
+[0;32mI (1528) ULTRASONIC_INIT: TRIG set LOW again, reading: 0[0m
+[0;32mI (1538) MAIN: Running ultrasonic pin test...[0m
+[0;32mI (1538) ULTRASONIC_TEST: === ULTRASONIC PIN TEST ===[0m
+[0;32mI (1548) ULTRASONIC_TEST: TRIG pin: GPIO45, ECHO pin: GPIO35[0m
+[0;32mI (1548) ULTRASONIC_TEST: Testing TRIG pin (use multimeter on GPIO45):[0m
+[0;32mI (1558) ULTRASONIC_TEST: TRIG HIGH (should read ~3.3V)[0m
+[0;32mI (2568) ULTRASONIC_TEST: TRIG LOW (should read ~0V)[0m
+[0;32mI (3568) ULTRASONIC_TEST: TRIG HIGH (should read ~3.3V)[0m
+[0;32mI (4568) ULTRASONIC_TEST: TRIG LOW (should read ~0V)[0m
+[0;32mI (5568) ULTRASONIC_TEST: TRIG HIGH (should read ~3.3V)[0m
+[0;32mI (6568) ULTRASONIC_TEST: TRIG LOW (should read ~0V)[0m
+[0;32mI (7568) ULTRASONIC_TEST: TRIG HIGH (should read ~3.3V)[0m
+[0;32mI (8568) ULTRASONIC_TEST: TRIG LOW (should read ~0V)[0m
+[0;32mI (9568) ULTRASONIC_TEST: TRIG HIGH (should read ~3.3V)[0m
+[0;32mI (10568) ULTRASONIC_TEST: TRIG LOW (should read ~0V)[0m
+[0;32mI (11568) ULTRASONIC_TEST: ECHO pin current state: 0[0m
+[0;32mI (11568) ULTRASONIC_TEST: === TEST COMPLETE ===[0m
+[0;32mI (11568) MAIN: Initializing WiFi...[0m
+[0;32mI (11588) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (11588) pp: pp rom version: e7ae62f[0m
+[0;32mI (11588) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (11608) wifi:wifi driver task: 3fced4f8, prio:23, stack:6656, core=0[0m
+[0;32mI (11618) wifi:wifi firmware version: 090f94a[0m
+[0;32mI (11618) wifi:wifi certification version: v7.0[0m
+[0;32mI (11618) wifi:config NVS flash: enabled[0m
+[0;32mI (11618) wifi:config nano formatting: disabled[0m
+[0;32mI (11618) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (11628) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (11628) wifi:Init management short buffer num: 32[0m
+[0;32mI (11638) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (11638) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (11648) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (11648) wifi:Init static rx buffer num: 10[0m
+[0;32mI (11648) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (11658) wifi_init: rx ba win: 6[0m
+[0;32mI (11658) wifi_init: accept mbox: 6[0m
+[0;32mI (11668) wifi_init: tcpip mbox: 32[0m
+[0;32mI (11668) wifi_init: udp mbox: 6[0m
+[0;32mI (11678) wifi_init: tcp mbox: 6[0m
+[0;32mI (11678) wifi_init: tcp tx win: 5760[0m
+[0;32mI (11678) wifi_init: tcp rx win: 5760[0m
+[0;32mI (11688) wifi_init: tcp mss: 1440[0m
+[0;32mI (11688) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (11698) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (11698) WiFi: Configuring static IP: 192.168.50.100[0m
+[0;32mI (11708) WiFi: Static IP configured successfully[0m
+[0;32mI (11708) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (11718) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (11758) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (11828) wifi:mode : sta (34:85:18:75:f3:0c)[0m
+[0;32mI (11828) wifi:enable tsf[0m
+[0;32mI (11828) WiFi: Wi-Fi initialization done.[0m
+[0;32mI (11828) WiFi: WiFi started, connecting...[0m
+[0;32mI (11838) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;32mI (11838) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (11888) wifi:state: auth -> init (0x2c0)[0m
+[0;32mI (11898) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;33mW (11898) WiFi: WiFi disconnected (reason: 2), retry 1/10[0m
+[0;33mW (14308) WiFi: WiFi disconnected (reason: 205), retry 2/10[0m
+[0;32mI (14328) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;32mI (14328) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (14348) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (14348) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (14438) wifi:connected with NeverNude_IoT, aid = 27, channel 1, BW20, bssid = 72:d9:f5:9b:25:21[0m
+[0;32mI (14438) wifi:security: WPA2-PSK, phy: bgn, rssi: -57[0m
+[0;32mI (14448) wifi:pm start, type: 0[0m
+
+[0;32mI (14448) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (14458) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (14468) esp_netif_handlers: sta ip: 192.168.50.100, mask: 255.255.255.0, gw: 192.168.50.1[0m
+[0;32mI (14478) WiFi: Connected! IP: 192.168.50.100[0m
+[0;32mI (14478) WiFi: Connected to Wi-Fi[0m
+[0;32mI (14488) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (14488) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (14498) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (14508) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (14518) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (14528) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (14538) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (14548) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (14558) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (14568) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (14578) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (14588) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (14598) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (14598) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (14608) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (14618) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (14628) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (14638) MAIN: All systems initialized - starting main loop[0m
+[0;32mI (14648) MAIN: Fan control: ACTIVE[0m
+[0;32mI (14648) MAIN: Single row switches: ACTIVE[0m
+[0;32mI (14658) MAIN: Switch matrix (desk control): ACTIVE[0m
+[0;32mI (14658) MAIN: Relay system: ACTIVE[0m
+[0;32mI (14668) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 230[0m
+[0;32mI (14678) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (14678) KEYSWITCHES: Rotary Encoder 2 Value: -1[0m
+[0;32mI (15828) POTENTIOMETER: ADC: 735 (Raw: 735), Duty: 0, Threshold: 700[0m
+[0;32mI (17028) POTENTIOMETER: ADC: 745 (Raw: 745), Duty: 0, Threshold: 700[0m
+[0;32mI (18228) POTENTIOMETER: ADC: 740 (Raw: 740), Duty: 0, Threshold: 700[0m
+[0;32mI (19428) POTENTIOMETER: ADC: 744 (Raw: 744), Duty: 0, Threshold: 700[0m
+[0;32mI (20628) POTENTIOMETER: ADC: 749 (Raw: 749), Duty: 0, Threshold: 700[0m
+[0;32mI (20628) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (20648) wifi:<ba-add>idx:0 (ifx:0, 72:d9:f5:9b:25:21), tid:0, ssn:1, winSize:64[0m
+[0;32mI (20758) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (21968) POTENTIOMETER: ADC: 741 (Raw: 741), Duty: 0, Threshold: 700[0m
+[0;32mI (23168) POTENTIOMETER: ADC: 739 (Raw: 739), Duty: 0, Threshold: 700[0m
+[0;32mI (23288) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (23518) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (24598) POTENTIOMETER: ADC: 745 (Raw: 745), Duty: 0, Threshold: 700[0m
+[0;32mI (25798) POTENTIOMETER: ADC: 745 (Raw: 745), Duty: 0, Threshold: 700[0m
+[0;32mI (25798) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (26008) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (27208) POTENTIOMETER: ADC: 745 (Raw: 745), Duty: 0, Threshold: 700[0m
+[0;32mI (27868) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 205[0m
+[0;32mI (27868) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (27868) KEYSWITCHES: Rotary Encoder 2 Value: -2[0m
+[0;32mI (28418) POTENTIOMETER: ADC: 762 (Raw: 762), Duty: 0, Threshold: 700[0m
+[0;32mI (29618) POTENTIOMETER: ADC: 2363 (Raw: 2363), Duty: 0, Threshold: 700[0m
+[0;32mI (30818) POTENTIOMETER: ADC: 2365 (Raw: 2365), Duty: 0, Threshold: 700[0m
+[0;32mI (32018) POTENTIOMETER: ADC: 2217 (Raw: 2217), Duty: 0, Threshold: 700[0m
+[0;32mI (32078) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (32078) KEYSWITCHES: Rotary Encoder 2 Value: -3[0m
+[0;32mI (32138) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 180[0m
+[0;32mI (32258) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (32258) KEYSWITCHES: Rotary Encoder 2 Value: -4[0m
+[0;32mI (32318) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 155[0m
+[0;32mI (32558) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 130[0m
+[0;32mI (32558) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (32558) KEYSWITCHES: Rotary Encoder 2 Value: -5[0m
+[0;32mI (33228) POTENTIOMETER: ADC: 763 (Raw: 763), Duty: 0, Threshold: 700[0m
+[0;32mI (33528) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 105[0m
+[0;32mI (33528) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (33528) KEYSWITCHES: Rotary Encoder 2 Value: -6[0m
+[0;32mI (33658) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (33658) KEYSWITCHES: Rotary Encoder 2 Value: -7[0m
+[0;32mI (33718) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 80[0m
+[0;32mI (33898) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 55[0m
+[0;32mI (33898) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (33898) KEYSWITCHES: Rotary Encoder 2 Value: -8[0m
+[0;32mI (34448) POTENTIOMETER: ADC: 761 (Raw: 761), Duty: 0, Threshold: 700[0m
+[0;32mI (35648) POTENTIOMETER: ADC: 758 (Raw: 758), Duty: 0, Threshold: 700[0m
+[0;32mI (36848) POTENTIOMETER: ADC: 759 (Raw: 759), Duty: 0, Threshold: 700[0m
+[0;32mI (38048) POTENTIOMETER: ADC: 765 (Raw: 765), Duty: 0, Threshold: 700[0m
+[0;32mI (39248) POTENTIOMETER: ADC: 157 (Raw: 157), Duty: 0, Threshold: 700[0m
+[0;32mI (39248) POTENTIOMETER: Step 3: ADC 157 -> 59% (duty 150)[0m
+[0;32mI (40448) POTENTIOMETER: ADC: 141 (Raw: 141), Duty: 0, Threshold: 700[0m
+[0;32mI (40448) POTENTIOMETER: Step 2: ADC 141 -> 78% (duty 200)[0m
+[0;32mI (41648) POTENTIOMETER: ADC: 133 (Raw: 133), Duty: 0, Threshold: 700[0m
+[0;32mI (41648) POTENTIOMETER: Step 2: ADC 133 -> 78% (duty 200)[0m
+[0;32mI (42848) POTENTIOMETER: ADC: 165 (Raw: 165), Duty: 0, Threshold: 700[0m
+[0;32mI (42848) POTENTIOMETER: Step 3: ADC 165 -> 59% (duty 150)[0m
+[0;32mI (44048) POTENTIOMETER: ADC: 123 (Raw: 123), Duty: 0, Threshold: 700[0m
+[0;32mI (44048) POTENTIOMETER: Step 2: ADC 123 -> 78% (duty 200)[0m
+[0;32mI (45248) POTENTIOMETER: ADC: 135 (Raw: 135), Duty: 0, Threshold: 700[0m
+[0;32mI (45248) POTENTIOMETER: Step 2: ADC 135 -> 78% (duty 200)[0m
+[0;32mI (46448) POTENTIOMETER: ADC: 142 (Raw: 142), Duty: 0, Threshold: 700[0m
+[0;32mI (46448) POTENTIOMETER: Step 2: ADC 142 -> 78% (duty 200)[0m
+[0;32mI (47648) POTENTIOMETER: ADC: 178 (Raw: 178), Duty: 0, Threshold: 700[0m
+[0;32mI (47648) POTENTIOMETER: Step 3: ADC 178 -> 59% (duty 150)[0m
+[0;32mI (48848) POTENTIOMETER: ADC: 133 (Raw: 133), Duty: 0, Threshold: 700[0m
+[0;32mI (48848) POTENTIOMETER: Step 2: ADC 133 -> 78% (duty 200)[0m
+[0;32mI (50048) POTENTIOMETER: ADC: 118 (Raw: 118), Duty: 0, Threshold: 700[0m
+[0;32mI (50048) POTENTIOMETER: Step 2: ADC 118 -> 78% (duty 200)[0m
+[0;32mI (50168) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (50348) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (51428) POTENTIOMETER: ADC: 111 (Raw: 111), Duty: 0, Threshold: 700[0m
+[0;32mI (51428) POTENTIOMETER: Step 2: ADC 111 -> 78% (duty 200)[0m
+[0;32mI (52268) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (52488) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (52848) POTENTIOMETER: ADC: 141 (Raw: 141), Duty: 0, Threshold: 700[0m
+[0;32mI (52848) POTENTIOMETER: Step 2: ADC 141 -> 78% (duty 200)[0m
+[0;32mI (54048) POTENTIOMETER: ADC: 137 (Raw: 137), Duty: 0, Threshold: 700[0m
+[0;32mI (54048) POTENTIOMETER: Step 2: ADC 137 -> 78% (duty 200)[0m
+[0;32mI (55248) POTENTIOMETER: ADC: 119 (Raw: 119), Duty: 0, Threshold: 700[0m
+[0;32mI (55248) POTENTIOMETER: Step 2: ADC 119 -> 78% (duty 200)[0m
+[0;32mI (56448) POTENTIOMETER: ADC: 739 (Raw: 739), Duty: 0, Threshold: 700[0m
+[0;32mI (57648) POTENTIOMETER: ADC: 739 (Raw: 739), Duty: 0, Threshold: 700[0m
+[0;32mI (58848) POTENTIOMETER: ADC: 729 (Raw: 729), Duty: 0, Threshold: 700[0m
+[0;32mI (59088) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 30[0m
+[0;32mI (59088) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (59088) KEYSWITCHES: Rotary Encoder 2 Value: -9[0m
+[0;32mI (60058) POTENTIOMETER: ADC: 2361 (Raw: 2361), Duty: 0, Threshold: 700[0m
+[0;32mI (60718) KEYSWITCHES: Rotary Encoder 2 turned Clockwise[0m
+[0;32mI (60718) KEYSWITCHES: Rotary Encoder 2 Value: -8[0m
+[0;32mI (60778) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 5[0m
+[0;32mI (60958) KEYSWITCHES: Rotary Encoder 2 turned Clockwise[0m
+[0;32mI (60958) KEYSWITCHES: Rotary Encoder 2 Value: -7[0m
+[0;32mI (61018) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 0[0m
+[0;32mI (61258) POTENTIOMETER: ADC: 2367 (Raw: 2367), Duty: 0, Threshold: 700[0m
+[0;32mI (62458) POTENTIOMETER: ADC: 2355 (Raw: 2355), Duty: 0, Threshold: 700[0m
+[0;32mI (63598) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 0[0m
+[0;32mI (63598) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (63598) KEYSWITCHES: Rotary Encoder 2 Value: -8[0m
+[0;32mI (63668) POTENTIOMETER: ADC: 763 (Raw: 763), Duty: 0, Threshold: 700[0m
+[0;32mI (64868) POTENTIOMETER: ADC: 755 (Raw: 755), Duty: 0, Threshold: 700[0m
+[0;32mI (66068) POTENTIOMETER: ADC: 2379 (Raw: 2379), Duty: 0, Threshold: 700[0m
+[0;32mI (66248) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 0[0m
+[0;32mI (66248) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (66248) KEYSWITCHES: Rotary Encoder 2 Value: -9[0m
+[0;32mI (67278) POTENTIOMETER: ADC: 2357 (Raw: 2357), Duty: 0, Threshold: 700[0m
+[0;32mI (67518) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 0[0m
+[0;32mI (67518) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (67518) KEYSWITCHES: Rotary Encoder 2 Value: -10[0m
+[0;32mI (68308) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 0[0m
+[0;32mI (68308) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (68308) KEYSWITCHES: Rotary Encoder 2 Value: -11[0m
+[0;32mI (68498) POTENTIOMETER: ADC: 2277 (Raw: 2277), Duty: 0, Threshold: 700[0m
+[0;32mI (69278) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 0[0m
+[0;32mI (69278) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (69278) KEYSWITCHES: Rotary Encoder 2 Value: -12[0m
+[0;32mI (69708) POTENTIOMETER: ADC: 1718 (Raw: 1718), Duty: 0, Threshold: 700[0m
+[0;32mI (69768) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 0[0m
+[0;32mI (69768) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (69768) KEYSWITCHES: Rotary Encoder 2 Value: -13[0m
+[0;32mI (70678) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 0[0m
+[0;32mI (70678) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (70678) KEYSWITCHES: Rotary Encoder 2 Value: -14[0m
+[0;32mI (70928) POTENTIOMETER: ADC: 2349 (Raw: 2349), Duty: 0, Threshold: 700[0m
+[0;32mI (71048) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 25[0m
+[0;32mI (71108) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (71108) KEYSWITCHES: Rotary Encoder 2 Value: -15[0m
+[0;32mI (72128) POTENTIOMETER: ADC: 760 (Raw: 760), Duty: 0, Threshold: 700[0m
+[0;32mI (72428) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 0[0m
+[0;32mI (72428) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (72428) KEYSWITCHES: Rotary Encoder 2 Value: -16[0m
+[0;32mI (72798) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 0[0m
+[0;32mI (72798) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (72798) KEYSWITCHES: Rotary Encoder 2 Value: -17[0m
+[0;32mI (73348) POTENTIOMETER: ADC: 2283 (Raw: 2283), Duty: 0, Threshold: 700[0m
+[0;32mI (73408) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 25[0m
+[0;32mI (73468) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (73468) KEYSWITCHES: Rotary Encoder 2 Value: -18[0m
+[0;32mI (73708) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 50[0m
+[0;32mI (73768) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (73768) KEYSWITCHES: Rotary Encoder 2 Value: -19[0m
+[0;32mI (74548) POTENTIOMETER: ADC: 767 (Raw: 767), Duty: 0, Threshold: 700[0m
+[0;32mI (75748) POTENTIOMETER: ADC: 774 (Raw: 774), Duty: 0, Threshold: 700[0m
+[0;32mI (76948) POTENTIOMETER: ADC: 749 (Raw: 749), Duty: 0, Threshold: 700[0m
+[0;32mI (78148) POTENTIOMETER: ADC: 379 (Raw: 379), Duty: 0, Threshold: 700[0m
+[0;32mI (78148) POTENTIOMETER: Step 4: ADC 379 -> 39% (duty 100)[0m
+[0;32mI (79348) POTENTIOMETER: ADC: 239 (Raw: 239), Duty: 0, Threshold: 700[0m
+[0;32mI (79348) POTENTIOMETER: Step 3: ADC 239 -> 59% (duty 150)[0m
+[0;32mI (80548) POTENTIOMETER: ADC: 0 (Raw: 0), Duty: 0, Threshold: 700[0m
+[0;32mI (80548) POTENTIOMETER: Step 1: ADC 0 -> 100% (duty 255)[0m
+[0;32mI (81748) POTENTIOMETER: ADC: 0 (Raw: 0), Duty: 0, Threshold: 700[0m
+[0;32mI (81748) POTENTIOMETER: Step 1: ADC 0 -> 100% (duty 255)[0m
+[0;32mI (82948) POTENTIOMETER: ADC: 372 (Raw: 372), Duty: 0, Threshold: 700[0m
+[0;32mI (82948) POTENTIOMETER: Step 4: ADC 372 -> 39% (duty 100)[0m
+[0;32mI (84148) POTENTIOMETER: ADC: 636 (Raw: 636), Duty: 0, Threshold: 700[0m
+[0;32mI (84148) POTENTIOMETER: Step 6: ADC 636 -> 16% (duty 40)[0m
+[0;32mI (85348) POTENTIOMETER: ADC: 763 (Raw: 763), Duty: 0, Threshold: 700[0m
+[0;32mI (86548) POTENTIOMETER: ADC: 760 (Raw: 760), Duty: 0, Threshold: 700[0m
+[0;32mI (87748) POTENTIOMETER: ADC: 1301 (Raw: 1301), Duty: 0, Threshold: 700[0m
+[0;32mI (87748) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 25[0m
+[0;32mI (87748) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (87758) KEYSWITCHES: Rotary Encoder 2 Value: -20[0m
+[0;32mI (88298) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 0[0m
+[0;32mI (88298) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (88298) KEYSWITCHES: Rotary Encoder 2 Value: -21[0m
+[0;32mI (88968) POTENTIOMETER: ADC: 2366 (Raw: 2366), Duty: 0, Threshold: 700[0m
+[0;32mI (89088) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 25[0m
+[0;32mI (89148) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (89148) KEYSWITCHES: Rotary Encoder 2 Value: -22[0m
+[0;32mI (89508) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 0[0m
+[0;32mI (89508) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (89508) KEYSWITCHES: Rotary Encoder 2 Value: -23[0m
+[0;32mI (90178) POTENTIOMETER: ADC: 2347 (Raw: 2347), Duty: 0, Threshold: 700[0m
+[0;32mI (90298) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 25[0m
+[0;32mI (90358) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (90358) KEYSWITCHES: Rotary Encoder 2 Value: -24[0m
+[0;32mI (91378) POTENTIOMETER: ADC: 767 (Raw: 767), Duty: 0, Threshold: 700[0m
+[0;32mI (91858) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 0[0m
+[0;32mI (91858) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (91858) KEYSWITCHES: Rotary Encoder 2 Value: -25[0m
+[0;32mI (92588) POTENTIOMETER: ADC: 2360 (Raw: 2360), Duty: 0, Threshold: 700[0m
+[0;32mI (92768) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 0[0m
+[0;32mI (92768) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise[0m
+[0;32mI (92768) KEYSWITCHES: Rotary Encoder 2 Value: -26[0m
+[0;32mI (93798) POTENTIOMETER: ADC: 2352 (Raw: 2352), Duty: 0, Threshold: 700[0m
+[0;32mI (94998) POTENTIOMETER: ADC: 2362 (Raw: 2362), Duty: 0, Threshold: 700[0m
+[0;32mI (95658) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (95848) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (96388) POTENTIOMETER: ADC: 2367 (Raw: 2367), Duty: 0, Threshold: 700[0m
+[0;32mI (96928) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (97158) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (97818) POTENTIOMETER: ADC: 2360 (Raw: 2360), Duty: 0, Threshold: 700[0m
+[0;32mI (98178) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (98358) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (99208) POTENTIOMETER: ADC: 2360 (Raw: 2360), Duty: 0, Threshold: 700[0m
+[0;32mI (99388) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (99558) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (100458) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (100648) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (100768) POTENTIOMETER: ADC: 2361 (Raw: 2361), Duty: 0, Threshold: 700[0m
+[0;32mI (101008) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (101228) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (101528) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (101698) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (101998) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (102208) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (102448) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (102678) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (102798) POTENTIOMETER: ADC: 2361 (Raw: 2361), Duty: 0, Threshold: 700[0m
+[0;32mI (102918) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (103138) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (103318) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (103498) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (104228) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (104418) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (104598) POTENTIOMETER: ADC: 2363 (Raw: 2363), Duty: 0, Threshold: 700[0m
+[0;32mI (105198) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (105368) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (105968) POTENTIOMETER: ADC: 2364 (Raw: 2364), Duty: 0, Threshold: 700[0m
+[0;32mI (106928) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (107138) HTTP_CLIENT: Hue command successful[0m
+[0;32mI (107378) POTENTIOMETER: ADC: 2351 (Raw: 2351), Duty: 0, Threshold: 700[0m
+[0;32mI (108578) POTENTIOMETER: ADC: 2363 (Raw: 2363), Duty: 0, Threshold: 700[0m
+[0;32mI (109778) POTENTIOMETER: ADC: 2367 (Raw: 2367), Duty: 0, Threshold: 700[0m
+[0;32mI (110978) POTENTIOMETER: ADC: 2363 (Raw: 2363), Duty: 0, Threshold: 700[0m
+[0;32mI (112178) POTENTIOMETER: ADC: 2364 (Raw: 2364), Duty: 0, Threshold: 700[0m
+[0;32mI (113378) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (114578) POTENTIOMETER: ADC: 2361 (Raw: 2361), Duty: 0, Threshold: 700[0m
+[0;32mI (115778) POTENTIOMETER: ADC: 2356 (Raw: 2356), Duty: 0, Threshold: 700[0m
+[0;32mI (116978) POTENTIOMETER: ADC: 2365 (Raw: 2365), Duty: 0, Threshold: 700[0m
+[0;32mI (118178) POTENTIOMETER: ADC: 2361 (Raw: 2361), Duty: 0, Threshold: 700[0m
+[0;32mI (119378) POTENTIOMETER: ADC: 2365 (Raw: 2365), Duty: 0, Threshold: 700[0m
+[0;32mI (120578) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (121778) POTENTIOMETER: ADC: 2360 (Raw: 2360), Duty: 0, Threshold: 700[0m
+[0;32mI (122978) POTENTIOMETER: ADC: 2367 (Raw: 2367), Duty: 0, Threshold: 700[0m
+[0;32mI (124178) POTENTIOMETER: ADC: 2377 (Raw: 2377), Duty: 0, Threshold: 700[0m
+[0;32mI (125378) POTENTIOMETER: ADC: 2360 (Raw: 2360), Duty: 0, Threshold: 700[0m
+[0;32mI (126578) POTENTIOMETER: ADC: 2351 (Raw: 2351), Duty: 0, Threshold: 700[0m
+[0;32mI (127778) POTENTIOMETER: ADC: 2358 (Raw: 2358), Duty: 0, Threshold: 700[0m
+[0;32mI (128978) POTENTIOMETER: ADC: 2361 (Raw: 2361), Duty: 0, Threshold: 700[0m
+[0;32mI (130178) POTENTIOMETER: ADC: 2356 (Raw: 2356), Duty: 0, Threshold: 700[0m
+[0;32mI (131378) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (132578) POTENTIOMETER: ADC: 2365 (Raw: 2365), Duty: 0, Threshold: 700[0m
+[0;32mI (133778) POTENTIOMETER: ADC: 2375 (Raw: 2375), Duty: 0, Threshold: 700[0m
+[0;32mI (134978) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (136178) POTENTIOMETER: ADC: 2355 (Raw: 2355), Duty: 0, Threshold: 700[0m
+[0;32mI (137378) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (138578) POTENTIOMETER: ADC: 2360 (Raw: 2360), Duty: 0, Threshold: 700[0m
+[0;32mI (139778) POTENTIOMETER: ADC: 2363 (Raw: 2363), Duty: 0, Threshold: 700[0m
+[0;32mI (140978) POTENTIOMETER: ADC: 2377 (Raw: 2377), Duty: 0, Threshold: 700[0m
+[0;32mI (142178) POTENTIOMETER: ADC: 2346 (Raw: 2346), Duty: 0, Threshold: 700[0m
+[0;32mI (143378) POTENTIOMETER: ADC: 2350 (Raw: 2350), Duty: 0, Threshold: 700[0m
+[0;32mI (144578) POTENTIOMETER: ADC: 2351 (Raw: 2351), Duty: 0, Threshold: 700[0m
+[0;32mI (145778) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (146978) POTENTIOMETER: ADC: 2351 (Raw: 2351), Duty: 0, Threshold: 700[0m
+[0;32mI (148178) POTENTIOMETER: ADC: 2378 (Raw: 2378), Duty: 0, Threshold: 700[0m
+[0;32mI (149378) POTENTIOMETER: ADC: 2374 (Raw: 2374), Duty: 0, Threshold: 700[0m
+[0;32mI (150578) POTENTIOMETER: ADC: 2345 (Raw: 2345), Duty: 0, Threshold: 700[0m
+[0;32mI (151778) POTENTIOMETER: ADC: 2365 (Raw: 2365), Duty: 0, Threshold: 700[0m
+[0;32mI (152978) POTENTIOMETER: ADC: 2351 (Raw: 2351), Duty: 0, Threshold: 700[0m
+[0;32mI (154178) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (155378) POTENTIOMETER: ADC: 2367 (Raw: 2367), Duty: 0, Threshold: 700[0m
+[0;32mI (156578) POTENTIOMETER: ADC: 2364 (Raw: 2364), Duty: 0, Threshold: 700[0m
+[0;32mI (157778) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (158978) POTENTIOMETER: ADC: 2346 (Raw: 2346), Duty: 0, Threshold: 700[0m
+[0;32mI (160178) POTENTIOMETER: ADC: 2361 (Raw: 2361), Duty: 0, Threshold: 700[0m
+[0;32mI (161378) POTENTIOMETER: ADC: 2360 (Raw: 2360), Duty: 0, Threshold: 700[0m
+[0;32mI (162578) POTENTIOMETER: ADC: 2373 (Raw: 2373), Duty: 0, Threshold: 700[0m
+[0;32mI (163778) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (164978) POTENTIOMETER: ADC: 2361 (Raw: 2361), Duty: 0, Threshold: 700[0m
+[0;32mI (166178) POTENTIOMETER: ADC: 2354 (Raw: 2354), Duty: 0, Threshold: 700[0m
+[0;32mI (167378) POTENTIOMETER: ADC: 2363 (Raw: 2363), Duty: 0, Threshold: 700[0m
+[0;32mI (168578) POTENTIOMETER: ADC: 2355 (Raw: 2355), Duty: 0, Threshold: 700[0m
+[0;32mI (169778) POTENTIOMETER: ADC: 2361 (Raw: 2361), Duty: 0, Threshold: 700[0m
+[0;32mI (170978) POTENTIOMETER: ADC: 2357 (Raw: 2357), Duty: 0, Threshold: 700[0m
+[0;32mI (172178) POTENTIOMETER: ADC: 2363 (Raw: 2363), Duty: 0, Threshold: 700[0m
+[0;32mI (173378) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (174578) POTENTIOMETER: ADC: 2352 (Raw: 2352), Duty: 0, Threshold: 700[0m
+[0;32mI (175778) POTENTIOMETER: ADC: 2367 (Raw: 2367), Duty: 0, Threshold: 700[0m
+[0;32mI (176978) POTENTIOMETER: ADC: 2365 (Raw: 2365), Duty: 0, Threshold: 700[0m
+[0;32mI (178178) POTENTIOMETER: ADC: 2347 (Raw: 2347), Duty: 0, Threshold: 700[0m
+[0;32mI (179378) POTENTIOMETER: ADC: 2361 (Raw: 2361), Duty: 0, Threshold: 700[0m
+[0;32mI (180578) POTENTIOMETER: ADC: 2356 (Raw: 2356), Duty: 0, Threshold: 700[0m
+[0;32mI (181778) POTENTIOMETER: ADC: 2361 (Raw: 2361), Duty: 0, Threshold: 700[0m
+[0;32mI (182978) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (184178) POTENTIOMETER: ADC: 2367 (Raw: 2367), Duty: 0, Threshold: 700[0m
+[0;32mI (185378) POTENTIOMETER: ADC: 2376 (Raw: 2376), Duty: 0, Threshold: 700[0m
+[0;32mI (186578) POTENTIOMETER: ADC: 2363 (Raw: 2363), Duty: 0, Threshold: 700[0m
+[0;32mI (187778) POTENTIOMETER: ADC: 2365 (Raw: 2365), Duty: 0, Threshold: 700[0m
+[0;32mI (188978) POTENTIOMETER: ADC: 2355 (Raw: 2355), Duty: 0, Threshold: 700[0m
+[0;32mI (190178) POTENTIOMETER: ADC: 2351 (Raw: 2351), Duty: 0, Threshold: 700[0m
+[0;32mI (191378) POTENTIOMETER: ADC: 2348 (Raw: 2348), Duty: 0, Threshold: 700[0m
+[0;32mI (192578) POTENTIOMETER: ADC: 2351 (Raw: 2351), Duty: 0, Threshold: 700[0m
+[0;32mI (193778) POTENTIOMETER: ADC: 2364 (Raw: 2364), Duty: 0, Threshold: 700[0m
+[0;32mI (194978) POTENTIOMETER: ADC: 2357 (Raw: 2357), Duty: 0, Threshold: 700[0m
+[0;32mI (196178) POTENTIOMETER: ADC: 2349 (Raw: 2349), Duty: 0, Threshold: 700[0m
+[0;32mI (197378) POTENTIOMETER: ADC: 2368 (Raw: 2368), Duty: 0, Threshold: 700[0m
+[0;32mI (198578) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (199778) POTENTIOMETER: ADC: 2363 (Raw: 2363), Duty: 0, Threshold: 700[0m
+[0;32mI (200978) POTENTIOMETER: ADC: 2357 (Raw: 2357), Duty: 0, Threshold: 700[0m
+[0;32mI (202178) POTENTIOMETER: ADC: 2348 (Raw: 2348), Duty: 0, Threshold: 700[0m
+[0;32mI (203378) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (204578) POTENTIOMETER: ADC: 2365 (Raw: 2365), Duty: 0, Threshold: 700[0m
+[0;32mI (205778) POTENTIOMETER: ADC: 2374 (Raw: 2374), Duty: 0, Threshold: 700[0m
+[0;32mI (206978) POTENTIOMETER: ADC: 2363 (Raw: 2363), Duty: 0, Threshold: 700[0m
+[0;32mI (208178) POTENTIOMETER: ADC: 2355 (Raw: 2355), Duty: 0, Threshold: 700[0m
+[0;32mI (209378) POTENTIOMETER: ADC: 2375 (Raw: 2375), Duty: 0, Threshold: 700[0m
+[0;32mI (210578) POTENTIOMETER: ADC: 2351 (Raw: 2351), Duty: 0, Threshold: 700[0m
+[0;32mI (211778) POTENTIOMETER: ADC: 2358 (Raw: 2358), Duty: 0, Threshold: 700[0m
+[0;32mI (212978) POTENTIOMETER: ADC: 2351 (Raw: 2351), Duty: 0, Threshold: 700[0m
+[0;32mI (214178) POTENTIOMETER: ADC: 2349 (Raw: 2349), Duty: 0, Threshold: 700[0m
+[0;32mI (215378) POTENTIOMETER: ADC: 2358 (Raw: 2358), Duty: 0, Threshold: 700[0m
+[0;32mI (216578) POTENTIOMETER: ADC: 2361 (Raw: 2361), Duty: 0, Threshold: 700[0m
+[0;32mI (217778) POTENTIOMETER: ADC: 2361 (Raw: 2361), Duty: 0, Threshold: 700[0m
+[0;32mI (218978) POTENTIOMETER: ADC: 2363 (Raw: 2363), Duty: 0, Threshold: 700[0m
+[0;32mI (220178) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (221378) POTENTIOMETER: ADC: 2379 (Raw: 2379), Duty: 0, Threshold: 700[0m
+[0;32mI (222578) POTENTIOMETER: ADC: 2364 (Raw: 2364), Duty: 0, Threshold: 700[0m
+[0;32mI (223778) POTENTIOMETER: ADC: 2361 (Raw: 2361), Duty: 0, Threshold: 700[0m
+[0;32mI (224978) POTENTIOMETER: ADC: 2377 (Raw: 2377), Duty: 0, Threshold: 700[0m
+[0;32mI (226178) POTENTIOMETER: ADC: 2376 (Raw: 2376), Duty: 0, Threshold: 700[0m
+[0;32mI (227378) POTENTIOMETER: ADC: 2361 (Raw: 2361), Duty: 0, Threshold: 700[0m
+[0;32mI (228578) POTENTIOMETER: ADC: 2373 (Raw: 2373), Duty: 0, Threshold: 700[0m
+[0;32mI (229778) POTENTIOMETER: ADC: 2357 (Raw: 2357), Duty: 0, Threshold: 700[0m
+[0;32mI (230978) POTENTIOMETER: ADC: 2363 (Raw: 2363), Duty: 0, Threshold: 700[0m
+[0;32mI (232178) POTENTIOMETER: ADC: 2353 (Raw: 2353), Duty: 0, Threshold: 700[0m
+[0;32mI (233378) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (234578) POTENTIOMETER: ADC: 2363 (Raw: 2363), Duty: 0, Threshold: 700[0m
+[0;32mI (235778) POTENTIOMETER: ADC: 2367 (Raw: 2367), Duty: 0, Threshold: 700[0m
+[0;32mI (236978) POTENTIOMETER: ADC: 2355 (Raw: 2355), Duty: 0, Threshold: 700[0m
+[0;32mI (238178) POTENTIOMETER: ADC: 2343 (Raw: 2343), Duty: 0, Threshold: 700[0m
+[0;32mI (239378) POTENTIOMETER: ADC: 2364 (Raw: 2364), Duty: 0, Threshold: 700[0m
+[0;32mI (240578) POTENTIOMETER: ADC: 2360 (Raw: 2360), Duty: 0, Threshold: 700[0m
+[0;32mI (241778) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (242978) POTENTIOMETER: ADC: 2356 (Raw: 2356), Duty: 0, Threshold: 700[0m
+[0;32mI (244178) POTENTIOMETER: ADC: 2363 (Raw: 2363), Duty: 0, Threshold: 700[0m
+[0;32mI (245378) POTENTIOMETER: ADC: 2364 (Raw: 2364), Duty: 0, Threshold: 700[0m
+[0;32mI (246578) POTENTIOMETER: ADC: 2341 (Raw: 2341), Duty: 0, Threshold: 700[0m
+[0;32mI (247778) POTENTIOMETER: ADC: 2355 (Raw: 2355), Duty: 0, Threshold: 700[0m
+[0;32mI (248978) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (250178) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (251378) POTENTIOMETER: ADC: 2358 (Raw: 2358), Duty: 0, Threshold: 700[0m
+[0;32mI (252578) POTENTIOMETER: ADC: 2365 (Raw: 2365), Duty: 0, Threshold: 700[0m
+[0;32mI (253778) POTENTIOMETER: ADC: 2362 (Raw: 2362), Duty: 0, Threshold: 700[0m
+[0;32mI (254978) POTENTIOMETER: ADC: 2355 (Raw: 2355), Duty: 0, Threshold: 700[0m
+[0;32mI (256178) POTENTIOMETER: ADC: 2357 (Raw: 2357), Duty: 0, Threshold: 700[0m
+[0;32mI (257378) POTENTIOMETER: ADC: 2363 (Raw: 2363), Duty: 0, Threshold: 700[0m
+[0;32mI (258578) POTENTIOMETER: ADC: 2373 (Raw: 2373), Duty: 0, Threshold: 700[0m
+[0;32mI (259778) POTENTIOMETER: ADC: 2365 (Raw: 2365), Duty: 0, Threshold: 700[0m
+[0;32mI (260978) POTENTIOMETER: ADC: 2363 (Raw: 2363), Duty: 0, Threshold: 700[0m
+[0;32mI (262178) POTENTIOMETER: ADC: 2358 (Raw: 2358), Duty: 0, Threshold: 700[0m
+[0;32mI (263378) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (264578) POTENTIOMETER: ADC: 2365 (Raw: 2365), Duty: 0, Threshold: 700[0m
+[0;32mI (265778) POTENTIOMETER: ADC: 2355 (Raw: 2355), Duty: 0, Threshold: 700[0m
+[0;32mI (266978) POTENTIOMETER: ADC: 2355 (Raw: 2355), Duty: 0, Threshold: 700[0m
+[0;32mI (268178) POTENTIOMETER: ADC: 2347 (Raw: 2347), Duty: 0, Threshold: 700[0m
+[0;32mI (269378) POTENTIOMETER: ADC: 2355 (Raw: 2355), Duty: 0, Threshold: 700[0m
+[0;32mI (270578) POTENTIOMETER: ADC: 2347 (Raw: 2347), Duty: 0, Threshold: 700[0m
+[0;32mI (271778) POTENTIOMETER: ADC: 2377 (Raw: 2377), Duty: 0, Threshold: 700[0m
+[0;32mI (272978) POTENTIOMETER: ADC: 2348 (Raw: 2348), Duty: 0, Threshold: 700[0m
+[0;32mI (274178) POTENTIOMETER: ADC: 2359 (Raw: 2359), Duty: 0, Threshold: 700[0m
+[0;32mI (275378) POTENTIOMETER: ADC: 2362 (Raw: 2362), Duty: 0, Threshold: 700[0m
+[0;32mI (276578) POTENTIOME

@@ -1,0 +1,221 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+[0;32mI (1530) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1630) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1640) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1650) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1660) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1660) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1660) RELAY_INIT: Relay PC_SWITCH initial state: 0[0m
+[0;32mI (1760) RELAY_INIT: ✅ All relays initialized and stable - system ready![0m
+[0;32mI (1760) gpio: GPIO[45]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1760) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1770) ULTRASONIC_INIT: Testing TRIG pin (GPIO45)...[0m
+[0;32mI (1780) ULTRASONIC_INIT: TRIG set LOW, reading: 0[0m
+[0;32mI (1780) ULTRASONIC_INIT: TRIG set HIGH, reading: 0[0m
+[0;32mI (1790) ULTRASONIC_INIT: TRIG set LOW again, reading: 0[0m
+[0;32mI (1790) MAIN: Initializing USB HID device...[0m
+[0;32mI (1800) HID_DEVICE: USB initialization[0m
+[0;33mW (1800) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (1810) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 0           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4004      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (1980) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (1980) HID_DEVICE: USB initialization DONE[0m
+[0;32mI (1990) MAIN: Initializing WiFi...[0m
+[0;32mI (2010) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (2020) pp: pp rom version: e7ae62f[0m
+[0;32mI (2020) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (2030) wifi:wifi driver task: 3fcad4e0, prio:23, stack:6656, core=0[0m
+[0;32mI (2040) wifi:wifi firmware version: 090f94a[0m
+[0;32mI (2040) wifi:wifi certification version: v7.0[0m
+[0;32mI (2040) wifi:config NVS flash: enabled[0m
+[0;32mI (2040) wifi:config nano formatting: disabled[0m
+[0;32mI (2040) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2050) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2050) wifi:Init management short buffer num: 32[0m
+[0;32mI (2060) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2060) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (2070) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2070) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2070) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2080) wifi_init: rx ba win: 6[0m
+[0;32mI (2080) wifi_init: accept mbox: 6[0m
+[0;32mI (2090) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2090) wifi_init: udp mbox: 6[0m
+[0;32mI (2090) wifi_init: tcp mbox: 6[0m
+[0;32mI (2100) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2100) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2110) wifi_init: tcp mss: 1440[0m
+[0;32mI (2110) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2110) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2120) WiFi: Configuring static IP: 192.168.50.100[0m
+[0;32mI (2130) WiFi: Static IP configured successfully[0m
+[0;32mI (2130) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (2130) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (2180) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (2230) wifi:mode : sta (34:85:18:75:f3:0c)[0m
+[0;32mI (2240) wifi:enable tsf[0m
+[0;32mI (2240) WiFi: Wi-Fi initialization done.[0m
+[0;32mI (2240) WiFi: WiFi started, connecting...[0m
+[0;32mI (2260) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;32mI (2260) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2280) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2290) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2310) wifi:connected with NeverNude_IoT, aid = 21, channel 1, BW20, bssid = 72:d9:f5:9b:25:21[0m
+[0;32mI (2310) wifi:security: WPA2-PSK, phy: bgn, rssi: -54[0m
+[0;32mI (2320) wifi:pm start, type: 0[0m
+
+[0;32mI (2320) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2320) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (2330) esp_netif_handlers: sta ip: 192.168.50.100, mask: 255.255.255.0, gw: 192.168.50.1[0m
+[0;32mI (2340) WiFi: Connected! IP: 192.168.50.100[0m
+[0;32mI (2350) WiFi: Connected to Wi-Fi[0m
+[0;32mI (2350) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (2360) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2370) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2380) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2380) wifi:<ba-add>idx:0 (ifx:0, 72:d9:f5:9b:25:21), tid:0, ssn:1, winSize:64[0m
+[0;32mI (2390) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (2400) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2410) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2420) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2430) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2430) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2440) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2450) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2460) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2470) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2480) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (2490) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 255[0m
+[0;32mI (2500) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2510) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2520) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2530) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2530) KEYSWITCHES: Both rotary encoders configured - ROT1: brightness, ROT2: scenes[0m
+[0;32mI (2540) KEYSWITCHES: Getting current Hue light state...[0m
+[0;32mI (2550) KEYSWITCHES: Fetching current Hue group state...[0m
+[0;32mI (2560) HTTP_CLIENT: Brightness for Gaming group set to 255[0m
+[0;33mW (7630) KEYSWITCHES: No response data received, assuming lights OFF[0m
+[0;32mI (7630) KEYSWITCHES: Hue state initialized: lights_on = false[0m
+[0;32mI (7630) MAIN: All systems initialized - starting main loop[0m
+[0;32mI (7630) MAIN: Fan control: ACTIVE[0m
+[0;32mI (7640) MAIN: Single row switches: ACTIVE[0m
+[0;32mI (7640) MAIN: Switch matrix (desk control): ACTIVE[0m
+[0;32mI (7650) MAIN: Relay system: ACTIVE[0m
+[0;32mI (12880) KEYSWITCHES: Rotary Encoder 2 Button Pressed! - Toggling lights[0m
+[0;32mI (12940) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (12940) KEYSWITCHES: Hue lights turned ON[0m
+[0;32mI (13900) KEYSWITCHES: Rotary Encoder 2 Button Pressed! - Toggling lights[0m
+[0;32mI (14050) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (14050) KEYSWITCHES: Hue lights turned OFF[0m
+[0;32mI (15250) KEYSWITCHES: Rotary Encoder 2 Button Pressed! - Toggling lights[0m
+[0;32mI (15410) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (15410) KEYSWITCHES: Hue lights turned ON[0m
+[0;32mI (16870) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (16870) KEYSWITCHES: Scene 2: Koncentrer dig (Concentrate)[0m
+[0;32mI (17070) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (19510) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (19510) KEYSWITCHES: Scene 3: Læs (Read)[0m
+[0;32mI (19750) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (23690) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 255[0m
+[0;32mI (23790) HTTP_CLIENT: Brightness for Gaming group set to 255[0m
+[0;32mI (26330) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 230[0m
+[0;32mI (26450) HTTP_CLIENT: Brightness for Gaming group set to 230[0m
+[0;32mI (29230) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 205[0m
+[0;32mI (29360) HTTP_CLIENT: Brightness for Gaming group set to 205[0m
+[0;32mI (29720) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 180[0m
+[0;32mI (29850) HTTP_CLIENT: Brightness for Gaming group set to 180[0m
+[0;32mI (30560) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 205[0m
+[0;32mI (30700) HTTP_CLIENT: Brightness for Gaming group set to 205[0m
+[0;32mI (30740) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 230[0m
+[0;32mI (30880) HTTP_CLIENT: Brightness for Gaming group set to 230[0m
+[0;32mI (76330) HID_DEVICE: USB HID device mounted[0m
+[0;32mI (79650) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (79650) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (79860) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (79860) HID_DEVICE: Sending Volume Up[0m
+[0;31mE (79870) HID_DEVICE: Failed to send consumer release report[0m
+[0;32mI (81520) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (81520) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (82310) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (82310) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (83150) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (83150) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (83850) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (83850) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (84100) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (84100) HID_DEVICE: Sending Volume Down[0m
+[0;31mE (84110) HID_DEVICE: Failed to send consumer release report[0m
+[0;32mI (84290) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (84290) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (84960) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (84960) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (87480) KEYSWITCHES: Switch 5 pressed! - System Sleep/Suspend[0m
+[0;32mI (87480) HID_DEVICE: Sending System Sleep (0x82)[0m
+[0;32mI (112380) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (112380) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (112380) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (112440) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (112500) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (112560) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (112620) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (112680) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (112740) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (112800) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (112860) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (112920) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (112980) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (113040) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (113100) DESK: Stopped moving[0m
+[0;32mI (113100) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (114530) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (114530) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (114530) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (114590) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (114650) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (114710) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (114770) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (114830) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (114890) ULTRASONIC: Moving up - Distance: 57 cm[0m
+[0;32mI (114950) ULTRASONIC: Moving up - Distance: 56 cm[0m
+[0;32mI (115010) ULTRASONIC: Moving up - Distance: 57 cm[0m
+[0;32mI (115070) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (115130) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (115190) ULTRASONIC: Moving up - Distance: 57 cm[0m
+[0;32mI (115250) ULTRASONIC: Moving up - Distance: 57 cm[0m
+[0;32mI (115310) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (115370) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (115430) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (115490) ULTRASONIC: Moving up - Distance: 63 cm[0m
+[0;32mI (115550) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (115610) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (115670) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (115730) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (115790) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (115850) ULTRASONIC: Moving up - Distance: 64 cm[0m
+[0;32mI (115910) ULTRASONIC: Moving up - Distance: 63 cm[0m
+[0;32mI (115970) ULTRASONIC: Moving up - Distance: 55 c

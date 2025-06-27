@@ -1,0 +1,123 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Jun  2 2025 22:14:28[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: v1.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=29358h (168792) map[0m
+[0;32mI (118) esp_image: segment 1: paddr=00039380 vaddr=3fc9a600 size=04b54h ( 19284) load[0m
+[0;32mI (122) esp_image: segment 2: paddr=0003dedc vaddr=40374000 size=0213ch (  8508) load[0m
+[0;32mI (125) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=a2738h (665400) map[0m
+[0;32mI (247) esp_image: segment 4: paddr=000e2760 vaddr=4037613c size=1449ch ( 83100) load[0m
+[0;32mI (265) esp_image: segment 5: paddr=000f6c04 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (274) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (275) boot: Disabling RNG early entropy source...[0m
+[0;32mI (285) cpu_start: Multicore app[0m
+[0;32mI (294) cpu_start: Pro cpu start user code[0m
+[0;32mI (294) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (294) app_init: Application information:[0m
+[0;32mI (297) app_init: Project name:     desktop_controller[0m
+[0;32mI (302) app_init: App version:      ce8f10c-dirty[0m
+[0;32mI (308) app_init: Compile time:     Jun 26 2025 15:50:23[0m
+[0;32mI (314) app_init: ELF file SHA256:  04f21cd9d...[0m
+[0;32mI (319) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (326) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (331) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (336) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (341) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (348) heap_init: At 3FCA35C8 len 00046148 (280 KiB): RAM[0m
+[0;32mI (354) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (360) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (366) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (373) spi_flash: detected chip: gd[0m
+[0;32mI (377) spi_flash: flash io: dio[0m
+[0;33mW (381) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (394) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (405) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (412) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (420) main_task: Started on CPU0[0m
+[0;32mI (430) main_task: Calling app_main()[0m
+[0;32mI (1430) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1430) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1430) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1440) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1450) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1450) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1510) gpio: GPIO[45]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1510) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1510) ULTRASONIC_INIT: Testing TRIG pin (GPIO45)...[0m
+[0;32mI (1520) ULTRASONIC_INIT: TRIG set LOW, reading: 0[0m
+[0;32mI (1520) ULTRASONIC_INIT: TRIG set HIGH, reading: 0[0m
+[0;32mI (1530) ULTRASONIC_INIT: TRIG set LOW again, reading: 0[0m
+[0;32mI (1540) MAIN: Running ultrasonic pin test...[0m
+[0;32mI (1540) ULTRASONIC_TEST: === ULTRASONIC PIN TEST ===[0m
+[0;32mI (1550) ULTRASONIC_TEST: TRIG pin: GPIO45, ECHO pin: GPIO35[0m
+[0;32mI (1550) ULTRASONIC_TEST: Testing TRIG pin (use multimeter on GPIO45):[0m
+[0;32mI (1560) ULTRASONIC_TEST: TRIG HIGH (should read ~3.3V)[0m
+[0;32mI (2570) ULTRASONIC_TEST: TRIG LOW (should read ~0V)[0m
+[0;32mI (3570) ULTRASONIC_TEST: TRIG HIGH (should read ~3.3V)[0m
+[0;32mI (4570) ULTRASONIC_TEST: TRIG LOW (should read ~0V)[0m
+[0;32mI (5570) ULTRASONIC_TEST: TRIG HIGH (should read ~3.3V)[0m
+[0;32mI (6570) ULTRASONIC_TEST: TRIG LOW (should read ~0V)[0m
+[0;32mI (7570) ULTRASONIC_TEST: TRIG HIGH (should read ~3.3V)[0m
+[0;32mI (8570) ULTRASONIC_TEST: TRIG LOW (should read ~0V)[0m
+[0;32mI (9570) ULTRASONIC_TEST: TRIG HIGH (should read ~3.3V)[0m
+[0;32mI (10570) ULTRASONIC_TEST: TRIG LOW (should read ~0V)[0m
+[0;32mI (11570) ULTRASONIC_TEST: ECHO pin current state: 0[0m
+[0;32mI (11570) ULTRASONIC_TEST: === TEST COMPLETE ===[0m
+[0;32mI (11570) MAIN: Initializing WiFi...[0m
+[0;32mI (11590) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (11590) pp: pp rom version: e7ae62f[0m
+[0;32mI (11590) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (11610) wifi:wifi driver task: 3fced474, prio:23, stack:6656, core=0[0m
+[0;32mI (11620) wifi:wifi firmware version: 090f94a[0m
+[0;32mI (11620) wifi:wifi certification version: v7.0[0m
+[0;32mI (11620) wifi:config NVS flash: enabled[0m
+[0;32mI (11620) wifi:config nano formatting: disabled[0m
+[0;32mI (11620) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (11630) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (11630) wifi:Init management short buffer num: 32[0m
+[0;32mI (11640) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (11640) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (11650) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (11650) wifi:Init static rx buffer num: 10[0m
+[0;32mI (11650) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (11660) wifi_init: rx ba win: 6[0m
+[0;32mI (11660) wifi_init: accept mbox: 6[0m
+[0;32mI (11670) wifi_init: tcpip mbox: 32[0m
+[0;32mI (11670) wifi_init: udp mbox: 6[0m
+[0;32mI (11680) wifi_init: tcp mbox: 6[0m
+[0;32mI (11680) wifi_init: tcp tx win: 5760[0m
+[0;32mI (11680) wifi_init: tcp rx win: 5760[0m
+[0;32mI (11690) wifi_init: tcp mss: 1440[0m
+[0;32mI (11690) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (11700) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (11700) WiFi: Configuring static IP: 192.168.50.100[0m
+[0;32mI (11710) WiFi: Static IP configured successfully[0m
+[0;32mI (11710) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (11720) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (11770) wifi:mode : sta (34:85:18:75:f3:0c)[0m
+[0;32mI (11770) wifi:enable tsf[0m
+[0;32mI (11770) WiFi: Wi-Fi initialization done.[0m
+[0;32mI (11770) WiFi: WiFi started, connecting...[0m
+[0;32mI (11790) wifi:new:<1
