@@ -11,8 +11,9 @@
 
 static const char *KEYTAG = "KEYSWITCHES";
 bool lights_on = false;
-int brightness_value = 255;  // Start at max brightnessconst 
+int brightness_value = 255;  // Start at max brightness
 int brightness_step = 25;
+int current_scene = 1;  // Track current Hue scene (1-4)
 
 #define DEBOUNCE_DELAY_MS 150  // Debounce delay of 150 ms
 #define TAP_THRESHOLD_MS 500
@@ -217,10 +218,70 @@ void poll_single_row(void) {
         ESP_LOGI(KEYTAG, "Switch 3 pressed!");
     }
     if (debounce(current_time, KEY_GPIO4, &last_press_time_single_row[3])) {
-        ESP_LOGI(KEYTAG, "Switch 4 pressed!");
+        ESP_LOGI(KEYTAG, "Switch 4 pressed! - Switching Hue scene");
+
+        // Cycle through scenes 1-7
+        current_scene++;
+        if (current_scene > 7) {
+            current_scene = 1;
+        }
+
+        // Send scene command to Hue using actual scene IDs from your Gaming group
+        char scene_command[200];
+        switch (current_scene) {
+            case 1: // Energize
+                snprintf(scene_command, sizeof(scene_command),
+                        "{\"scene\": \"yeMUOrmyqMim52B\"}");
+                ESP_LOGI(KEYTAG, "Scene 1: Få ny energi (Energize)");
+                break;
+            case 2: // Concentrate
+                snprintf(scene_command, sizeof(scene_command),
+                        "{\"scene\": \"-OT9KSoQe5AL6xI\"}");
+                ESP_LOGI(KEYTAG, "Scene 2: Koncentrer dig (Concentrate)");
+                break;
+            case 3: // Read
+                snprintf(scene_command, sizeof(scene_command),
+                        "{\"scene\": \"juAjcZZqsbftwWd\"}");
+                ESP_LOGI(KEYTAG, "Scene 3: Læs (Read)");
+                break;
+            case 4: // Relax
+                snprintf(scene_command, sizeof(scene_command),
+                        "{\"scene\": \"fmYJ1qrn20RqoYP\"}");
+                ESP_LOGI(KEYTAG, "Scene 4: Slap af (Relax)");
+                break;
+            case 5: // Relax (different version)
+                snprintf(scene_command, sizeof(scene_command),
+                        "{\"scene\": \"GAdVLQisxGioz7y\"}");
+                ESP_LOGI(KEYTAG, "Scene 5: Slap af v2 (Relax Alt)");
+                break;
+            case 6: // Studying
+                snprintf(scene_command, sizeof(scene_command),
+                        "{\"scene\": \"CLT3fzKp02r8L2Ys\"}");
+                ESP_LOGI(KEYTAG, "Scene 6: Studyin'");
+                break;
+            case 7: // Night Light
+                snprintf(scene_command, sizeof(scene_command),
+                        "{\"scene\": \"a9pvx0Cqq8oM1x7\"}");
+                ESP_LOGI(KEYTAG, "Scene 7: Natlys (Night Light)");
+                break;
+        }
+
+        hue_send_command("http://192.168.50.170/api/AicZqASmH6YLHxDyBxD-pci3vEmn0jLU0XvQ9g9N/groups/1/action", scene_command);
+        ESP_LOGI(KEYTAG, "Switched to Hue scene %d", current_scene);
     }
     if (debounce(current_time, KEY_GPIO5, &last_press_time_single_row[4])) {
-        ESP_LOGI(KEYTAG, "Switch 5 pressed!");
+        ESP_LOGI(KEYTAG, "Switch 5 pressed! - Toggling Hue lights");
+        if (lights_on) {
+            // Turn off the lights
+            hue_send_command("http://192.168.50.170/api/AicZqASmH6YLHxDyBxD-pci3vEmn0jLU0XvQ9g9N/groups/1/action", "{\"on\": false}");
+            lights_on = false;
+            ESP_LOGI(KEYTAG, "Hue lights turned OFF");
+        } else {
+            // Turn on the lights
+            hue_send_command("http://192.168.50.170/api/AicZqASmH6YLHxDyBxD-pci3vEmn0jLU0XvQ9g9N/groups/1/action", "{\"on\": true}");
+            lights_on = true;
+            ESP_LOGI(KEYTAG, "Hue lights turned ON");
+        }
     }
 }
 
@@ -270,8 +331,19 @@ void poll_switch_matrix(void) {
         int col3_level = gpio_get_level(COL3_PIN);
         int row1_level = gpio_get_level(ROW1_PIN);
         int row2_level = gpio_get_level(ROW2_PIN);
-        ESP_LOGI(KEYTAG, "Row 1, Column 3 pressed! (COL3: %d, ROW1: %d, ROW2: %d)",
+        ESP_LOGI(KEYTAG, "Row 1, Column 3 pressed! (COL3: %d, ROW1: %d, ROW2: %d) - Brightness UP",
                  col3_level, row1_level, row2_level);
+
+        // Increase brightness
+        brightness_value += brightness_step;
+        if (brightness_value > 255) {
+            brightness_value = 255;
+        }
+
+        // Send brightness command to Hue
+        hue_set_group_brightness(brightness_value);
+        ESP_LOGI(KEYTAG, "Brightness increased to %d", brightness_value);
+
         // Add extra delay after detecting a button press to prevent double detection
         vTaskDelay(20 / portTICK_PERIOD_MS);
     }
@@ -319,8 +391,18 @@ void poll_switch_matrix(void) {
         int col3_level = gpio_get_level(COL3_PIN);
         int row1_level = gpio_get_level(ROW1_PIN);
         int row2_level = gpio_get_level(ROW2_PIN);
-        ESP_LOGI(KEYTAG, "Row 2, Column 3 pressed! (COL3: %d, ROW1: %d, ROW2: %d)",
+        ESP_LOGI(KEYTAG, "Row 2, Column 3 pressed! (COL3: %d, ROW1: %d, ROW2: %d) - Brightness DOWN",
                  col3_level, row1_level, row2_level);
+
+        // Decrease brightness
+        brightness_value -= brightness_step;
+        if (brightness_value < 0) {
+            brightness_value = 0;
+        }
+
+        // Send brightness command to Hue
+        hue_set_group_brightness(brightness_value);
+        ESP_LOGI(KEYTAG, "Brightness decreased to %d", brightness_value);
     }
 
     gpio_set_level(ROW2_PIN, 0);  // Deactivate Row 2
