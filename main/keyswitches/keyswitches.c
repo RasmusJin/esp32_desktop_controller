@@ -3,11 +3,13 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_log.h"
+#include "esp_http_client.h"
 #include "http/http_client_server.h"
 #include "ssd1306.h"
 #include "oled_screen/oled_screen.h"
-#include "wifi_connection/wifi_connection.h" 
+#include "wifi_connection/wifi_connection.h"
 #include "relay_driver/relay_driver.h"
+#include "hid_device/hid_device.h"
 
 static const char *KEYTAG = "KEYSWITCHES";
 bool lights_on = false;
@@ -67,7 +69,58 @@ void setup_switch_single_row(void) {
     gpio_config(&single_row_io_conf);
 
     setup_switch_matrix();
-    // DISABLED: setup_rotary_encoders();  // Causing fan interference
+    setup_rotary_encoders();  // Re-enabled - 3.3V rail fixed!
+}
+
+// Function to get current Hue light state on startup
+void get_current_hue_state(void) {
+    ESP_LOGI(KEYTAG, "Fetching current Hue group state...");
+
+    // Make HTTP GET request to get current group state
+    esp_http_client_config_t config = {
+        .url = "http://192.168.50.170/api/AicZqASmH6YLHxDyBxD-pci3vEmn0jLU0XvQ9g9N/groups/1",
+        .method = HTTP_METHOD_GET,
+        .timeout_ms = 5000,
+    };
+
+    esp_http_client_handle_t client = esp_http_client_init(&config);
+    esp_err_t err = esp_http_client_perform(client);
+
+    if (err == ESP_OK) {
+        int status_code = esp_http_client_get_status_code(client);
+        int content_length = esp_http_client_get_content_length(client);
+
+        if (status_code == 200) {
+            // Read response data
+            char response_buffer[512];
+            int data_read = esp_http_client_read_response(client, response_buffer, sizeof(response_buffer) - 1);
+            if (data_read > 0) {
+                response_buffer[data_read] = '\0';
+                ESP_LOGI(KEYTAG, "Hue group response: %s", response_buffer);
+
+                // Parse JSON to check if lights are on
+                // Look for "all_on":true or "any_on":true in the response
+                if (strstr(response_buffer, "\"any_on\":true") != NULL) {
+                    lights_on = true;
+                    ESP_LOGI(KEYTAG, "Detected lights are currently ON");
+                } else {
+                    lights_on = false;
+                    ESP_LOGI(KEYTAG, "Detected lights are currently OFF");
+                }
+            } else {
+                ESP_LOGW(KEYTAG, "No response data received, assuming lights OFF");
+                lights_on = false;
+            }
+        } else {
+            ESP_LOGW(KEYTAG, "HTTP GET failed with status %d, assuming lights OFF", status_code);
+            lights_on = false;
+        }
+    } else {
+        ESP_LOGE(KEYTAG, "HTTP GET request failed: %s, assuming lights OFF", esp_err_to_name(err));
+        lights_on = false;
+    }
+
+    esp_http_client_cleanup(client);
 }
 
 void setup_switch_matrix(void) {
@@ -107,6 +160,13 @@ void setup_rotary_encoders(void) {
         .pin_bit_mask = (1ULL << ROT2_CLK) | (1ULL << ROT2_DT) | (1ULL << ROT2_SW),
     };
     gpio_config(&io_conf2);
+
+    ESP_LOGI(KEYTAG, "Both rotary encoders configured - ROT1: brightness, ROT2: scenes");
+
+    // Get current Hue state on boot so buttons work immediately
+    ESP_LOGI(KEYTAG, "Getting current Hue light state...");
+    get_current_hue_state();
+    ESP_LOGI(KEYTAG, "Hue state initialized: lights_on = %s", lights_on ? "true" : "false");
 }
 
 void poll_rotary_encoders_task(void *pvParameter) {
@@ -144,17 +204,17 @@ void poll_rotary_encoders(SSD1306_t *dev) {
     }
     previous_rot1_sw = rot1_sw;
 
-    // Rotary Encoder 1 Turning Logic (Edge Detection)
+    // Rotary Encoder 1 Turning Logic (Edge Detection) - FIXED DIRECTION
     if (rot1_clk != previous_rot1_clk) {  // Only act when CLK changes state
         if (rot1_clk == 0) {  // Detect the falling edge of CLK
-            if (rot1_dt == 1) {
+            if (rot1_dt == 0) {  // SWAPPED: DT=0 means clockwise
                 // Clockwise, increase brightness
                 brightness_value = brightness_value + 25;
                 if (brightness_value > 255) {
                 brightness_value = 255;
                 }
                 ESP_LOGI(KEYTAG, "Rotary Encoder 1 turned Clockwise, increasing brightness to %d", brightness_value);
-            } else {
+            } else {  // SWAPPED: DT=1 means counterclockwise
                 // Counterclockwise, decrease brightness
                 brightness_value = brightness_value - 25;
                 if (brightness_value < 0) {
@@ -163,9 +223,10 @@ void poll_rotary_encoders(SSD1306_t *dev) {
                 ESP_LOGI(KEYTAG, "Rotary Encoder 1 turned Counterclockwise, decreasing brightness to %d", brightness_value);
             }
             // Send brightness command to the Hue lights
+            hue_set_group_brightness(brightness_value);
             snprintf(event.display_text, sizeof(event.display_text), "Brightness: %d", brightness_value);
             event.event_type = DISPLAY_UPDATE_LIGHT_STATUS;  // Reuse event type for brightness
-            oled_send_display_event(&event);  
+            oled_send_display_event(&event);
             }
     }
     previous_rot1_clk = rot1_clk;
@@ -175,24 +236,84 @@ void poll_rotary_encoders(SSD1306_t *dev) {
     int rot2_dt = gpio_get_level(ROT2_DT);
     int rot2_sw = gpio_get_level(ROT2_SW);
 
-    // Button Press Detection with Debouncing for Encoder 2
+    // Button Press Detection with Debouncing for Encoder 2 (Light Toggle)
     if (rot2_sw == 0 && previous_rot2_sw == 1 && (current_time - last_press_time_rot2_sw) > DEBOUNCE_DELAY_MS) {
-        ESP_LOGI(KEYTAG, "Rotary Encoder 2 Button Pressed!");
+        ESP_LOGI(KEYTAG, "Rotary Encoder 2 Button Pressed! - Toggling lights");
+        if (lights_on) {
+            // Turn off the lights
+            hue_send_command("http://192.168.50.170/api/AicZqASmH6YLHxDyBxD-pci3vEmn0jLU0XvQ9g9N/groups/1/action", "{\"on\": false}");
+            lights_on = false;
+            ESP_LOGI(KEYTAG, "Hue lights turned OFF");
+        } else {
+            // Turn on the lights
+            hue_send_command("http://192.168.50.170/api/AicZqASmH6YLHxDyBxD-pci3vEmn0jLU0XvQ9g9N/groups/1/action", "{\"on\": true}");
+            lights_on = true;
+            ESP_LOGI(KEYTAG, "Hue lights turned ON");
+        }
         last_press_time_rot2_sw = current_time;  // Update last press time
     }
     previous_rot2_sw = rot2_sw;
 
-    // Rotary Encoder 2 Turning Logic (similar to Rotary 1)
+    // Rotary Encoder 2 Turning Logic (Scene Switching) - FIXED DIRECTION
     if (rot2_clk != previous_rot2_clk) {
         if (rot2_clk == 0) {  // Detect the falling edge of CLK
-            if (rot2_dt == 1) {
-                encoder2_value++;  // Clockwise
-                ESP_LOGI(KEYTAG, "Rotary Encoder 2 turned Clockwise");
-            } else {
-                encoder2_value--;  // Counterclockwise
-                ESP_LOGI(KEYTAG, "Rotary Encoder 2 turned Counterclockwise");
+            if (rot2_dt == 0) {  // SWAPPED: DT=0 means clockwise
+                // Clockwise - next scene
+                current_scene++;
+                if (current_scene > 7) {
+                    current_scene = 1;
+                }
+                ESP_LOGI(KEYTAG, "Rotary Encoder 2 turned Clockwise - Next scene");
+            } else {  // SWAPPED: DT=1 means counterclockwise
+                // Counterclockwise - previous scene
+                current_scene--;
+                if (current_scene < 1) {
+                    current_scene = 7;
+                }
+                ESP_LOGI(KEYTAG, "Rotary Encoder 2 turned Counterclockwise - Previous scene");
             }
-            ESP_LOGI(KEYTAG, "Rotary Encoder 2 Value: %ld", (long)encoder2_value);
+
+            // Send scene command to Hue using actual scene IDs
+            char scene_command[200];
+            switch (current_scene) {
+                case 1: // Energize
+                    snprintf(scene_command, sizeof(scene_command),
+                            "{\"scene\": \"yeMUOrmyqMim52B\"}");
+                    ESP_LOGI(KEYTAG, "Scene %d: Få ny energi (Energize)", current_scene);
+                    break;
+                case 2: // Concentrate
+                    snprintf(scene_command, sizeof(scene_command),
+                            "{\"scene\": \"-OT9KSoQe5AL6xI\"}");
+                    ESP_LOGI(KEYTAG, "Scene %d: Koncentrer dig (Concentrate)", current_scene);
+                    break;
+                case 3: // Read
+                    snprintf(scene_command, sizeof(scene_command),
+                            "{\"scene\": \"juAjcZZqsbftwWd\"}");
+                    ESP_LOGI(KEYTAG, "Scene %d: Læs (Read)", current_scene);
+                    break;
+                case 4: // Relax
+                    snprintf(scene_command, sizeof(scene_command),
+                            "{\"scene\": \"fmYJ1qrn20RqoYP\"}");
+                    ESP_LOGI(KEYTAG, "Scene %d: Slap af (Relax)", current_scene);
+                    break;
+                case 5: // Relax (different version)
+                    snprintf(scene_command, sizeof(scene_command),
+                            "{\"scene\": \"GAdVLQisxGioz7y\"}");
+                    ESP_LOGI(KEYTAG, "Scene %d: Slap af v2 (Relax Alt)", current_scene);
+                    break;
+                case 6: // Studying
+                    snprintf(scene_command, sizeof(scene_command),
+                            "{\"scene\": \"CLT3fzKp02r8L2Ys\"}");
+                    ESP_LOGI(KEYTAG, "Scene %d: Studyin'", current_scene);
+                    break;
+                case 7: // Night Light
+                    snprintf(scene_command, sizeof(scene_command),
+                            "{\"scene\": \"a9pvx0Cqq8oM1x7\"}");
+                    ESP_LOGI(KEYTAG, "Scene %d: Natlys (Night Light)", current_scene);
+                    break;
+            }
+
+            hue_send_command("http://192.168.50.170/api/AicZqASmH6YLHxDyBxD-pci3vEmn0jLU0XvQ9g9N/groups/1/action", scene_command);
         }
     }
     previous_rot2_clk = rot2_clk;
@@ -218,70 +339,11 @@ void poll_single_row(void) {
         ESP_LOGI(KEYTAG, "Switch 3 pressed!");
     }
     if (debounce(current_time, KEY_GPIO4, &last_press_time_single_row[3])) {
-        ESP_LOGI(KEYTAG, "Switch 4 pressed! - Switching Hue scene");
-
-        // Cycle through scenes 1-7
-        current_scene++;
-        if (current_scene > 7) {
-            current_scene = 1;
-        }
-
-        // Send scene command to Hue using actual scene IDs from your Gaming group
-        char scene_command[200];
-        switch (current_scene) {
-            case 1: // Energize
-                snprintf(scene_command, sizeof(scene_command),
-                        "{\"scene\": \"yeMUOrmyqMim52B\"}");
-                ESP_LOGI(KEYTAG, "Scene 1: Få ny energi (Energize)");
-                break;
-            case 2: // Concentrate
-                snprintf(scene_command, sizeof(scene_command),
-                        "{\"scene\": \"-OT9KSoQe5AL6xI\"}");
-                ESP_LOGI(KEYTAG, "Scene 2: Koncentrer dig (Concentrate)");
-                break;
-            case 3: // Read
-                snprintf(scene_command, sizeof(scene_command),
-                        "{\"scene\": \"juAjcZZqsbftwWd\"}");
-                ESP_LOGI(KEYTAG, "Scene 3: Læs (Read)");
-                break;
-            case 4: // Relax
-                snprintf(scene_command, sizeof(scene_command),
-                        "{\"scene\": \"fmYJ1qrn20RqoYP\"}");
-                ESP_LOGI(KEYTAG, "Scene 4: Slap af (Relax)");
-                break;
-            case 5: // Relax (different version)
-                snprintf(scene_command, sizeof(scene_command),
-                        "{\"scene\": \"GAdVLQisxGioz7y\"}");
-                ESP_LOGI(KEYTAG, "Scene 5: Slap af v2 (Relax Alt)");
-                break;
-            case 6: // Studying
-                snprintf(scene_command, sizeof(scene_command),
-                        "{\"scene\": \"CLT3fzKp02r8L2Ys\"}");
-                ESP_LOGI(KEYTAG, "Scene 6: Studyin'");
-                break;
-            case 7: // Night Light
-                snprintf(scene_command, sizeof(scene_command),
-                        "{\"scene\": \"a9pvx0Cqq8oM1x7\"}");
-                ESP_LOGI(KEYTAG, "Scene 7: Natlys (Night Light)");
-                break;
-        }
-
-        hue_send_command("http://192.168.50.170/api/AicZqASmH6YLHxDyBxD-pci3vEmn0jLU0XvQ9g9N/groups/1/action", scene_command);
-        ESP_LOGI(KEYTAG, "Switched to Hue scene %d", current_scene);
+        ESP_LOGI(KEYTAG, "Switch 4 pressed!");
     }
     if (debounce(current_time, KEY_GPIO5, &last_press_time_single_row[4])) {
-        ESP_LOGI(KEYTAG, "Switch 5 pressed! - Toggling Hue lights");
-        if (lights_on) {
-            // Turn off the lights
-            hue_send_command("http://192.168.50.170/api/AicZqASmH6YLHxDyBxD-pci3vEmn0jLU0XvQ9g9N/groups/1/action", "{\"on\": false}");
-            lights_on = false;
-            ESP_LOGI(KEYTAG, "Hue lights turned OFF");
-        } else {
-            // Turn on the lights
-            hue_send_command("http://192.168.50.170/api/AicZqASmH6YLHxDyBxD-pci3vEmn0jLU0XvQ9g9N/groups/1/action", "{\"on\": true}");
-            lights_on = true;
-            ESP_LOGI(KEYTAG, "Hue lights turned ON");
-        }
+        ESP_LOGI(KEYTAG, "Switch 5 pressed! - System Sleep/Suspend");
+        hid_system_sleep();
     }
 }
 
@@ -331,18 +393,11 @@ void poll_switch_matrix(void) {
         int col3_level = gpio_get_level(COL3_PIN);
         int row1_level = gpio_get_level(ROW1_PIN);
         int row2_level = gpio_get_level(ROW2_PIN);
-        ESP_LOGI(KEYTAG, "Row 1, Column 3 pressed! (COL3: %d, ROW1: %d, ROW2: %d) - Brightness UP",
+        ESP_LOGI(KEYTAG, "Row 1, Column 3 pressed! (COL3: %d, ROW1: %d, ROW2: %d) - Volume UP",
                  col3_level, row1_level, row2_level);
 
-        // Increase brightness
-        brightness_value += brightness_step;
-        if (brightness_value > 255) {
-            brightness_value = 255;
-        }
-
-        // Send brightness command to Hue
-        hue_set_group_brightness(brightness_value);
-        ESP_LOGI(KEYTAG, "Brightness increased to %d", brightness_value);
+        // Send HID volume up command
+        hid_volume_up();
 
         // Add extra delay after detecting a button press to prevent double detection
         vTaskDelay(20 / portTICK_PERIOD_MS);
@@ -391,18 +446,11 @@ void poll_switch_matrix(void) {
         int col3_level = gpio_get_level(COL3_PIN);
         int row1_level = gpio_get_level(ROW1_PIN);
         int row2_level = gpio_get_level(ROW2_PIN);
-        ESP_LOGI(KEYTAG, "Row 2, Column 3 pressed! (COL3: %d, ROW1: %d, ROW2: %d) - Brightness DOWN",
+        ESP_LOGI(KEYTAG, "Row 2, Column 3 pressed! (COL3: %d, ROW1: %d, ROW2: %d) - Volume DOWN",
                  col3_level, row1_level, row2_level);
 
-        // Decrease brightness
-        brightness_value -= brightness_step;
-        if (brightness_value < 0) {
-            brightness_value = 0;
-        }
-
-        // Send brightness command to Hue
-        hue_set_group_brightness(brightness_value);
-        ESP_LOGI(KEYTAG, "Brightness decreased to %d", brightness_value);
+        // Send HID volume down command
+        hid_volume_down();
     }
 
     gpio_set_level(ROW2_PIN, 0);  // Deactivate Row 2

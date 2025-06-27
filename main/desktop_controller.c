@@ -8,17 +8,19 @@
 #include "driver/i2c.h"
 #include "ssd1306.h"
 #include "relay_driver/relay_driver.h"
+#include "hid_device/hid_device.h"
 void app_main(void)
 {
     SSD1306_t dev;
 
-    // DISABLED FOR DEBUGGING - oled_init(&dev);
+    // Initialize OLED display (3.3V rail fixed!)
+    ESP_LOGI("MAIN", "Initializing OLED display...");
+    oled_init(&dev);
 
-    // DISABLED FOR DEBUGGING - Clear the screen
-    // ssd1306_clear_screen(&dev, false);
-    // Register the event handlers after initializing Wi-Fi
-
-    // DISABLED FOR DEBUGGING - display_bluetooth_icon(&dev);
+    // Clear screen and show startup message
+    ssd1306_clear_screen(&dev, false);
+    ssd1306_display_text(&dev, 0, "ESP32 Ready!", 12, false);
+    ssd1306_show_buffer(&dev);
     vTaskDelay(pdMS_TO_TICKS(1000)); // Wait for 1 second
     //oled_display_text(&dev, 0, "Hello, OLED!", false);
     //display_time_x3(&dev, "11:11");    // Display "Hello, OLED!" on page 0
@@ -30,12 +32,18 @@ void app_main(void)
     // ESP_LOGI("MAIN", "Running ultrasonic pin test...");
     // test_ultrasonic_pins();
 
+    // Initialize USB HID device
+    ESP_LOGI("MAIN", "Initializing USB HID device...");
+    hid_device_init();
+
     // Initialize WiFi with static IP
     ESP_LOGI("MAIN", "Initializing WiFi...");
     wifi_init_sta();
-    //initialize_ntp_and_time();
-    //xTaskCreate(time_update_task, "time_update_task", 4096, (void *)&dev, 5, NULL);
-    //xTaskCreate(poll_rotary_encoders_task, "rotary_encoder_task", 4096, (void *)&dev, 5, NULL);
+
+    // DISABLED: Time display task (requires OLED)
+    // initialize_ntp_and_time();
+    // xTaskCreate(time_update_task, "time_update_task", 4096, (void *)&dev, 5, NULL);
+    xTaskCreate(poll_rotary_encoders_task, "rotary_encoder_task", 4096, (void *)&dev, 5, NULL);  // Re-enabled - 3.3V fixed!
 
     potentiometer_init();
     fan_pwm_init();

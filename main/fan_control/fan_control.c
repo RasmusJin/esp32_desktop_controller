@@ -85,10 +85,11 @@ void update_fan_speed(void) {
     last_adc = adc_value;
 
     // Your actual potentiometer range (based on RAW ADC readings)
-    const uint32_t max_adc_value = 520;  // Pot turned counterclockwise (actual max observed)
+    const uint32_t max_adc_value = 4095;  // 12-bit ADC full range
 
     // Stepped fan control - discrete speed levels for smooth operation
-    const uint32_t off_threshold = 450;   // OFF when ADC >= 450 (counterclockwise position)
+    // INVERTED: ADC 0 = full speed, ADC 4095 = off
+    const uint32_t off_threshold = 3999;   // OFF when ADC >= 3800 (much closer to counterclockwise)
 
     // Define speed steps (ADC ranges and corresponding PWM duty cycles)
     typedef struct {
@@ -99,25 +100,25 @@ void update_fan_speed(void) {
     } fan_step_t;
 
     const fan_step_t fan_steps[] = {
-        {0,   80,  255, 100},  // Step 1: Max speed (full clockwise)
-        {81,  160, 200, 78},   // Step 2: High speed
-        {161, 240, 150, 59},   // Step 3: Medium-high speed
-        {241, 320, 100, 39},   // Step 4: Medium speed
-        {321, 449, 70,  27},   // Step 5: Low speed
+        {0,    600,  255, 100},  // Step 1: Max speed (full clockwise)
+        {601,  1200, 200, 78},   // Step 2: High speed
+        {1201, 1800, 150, 59},   // Step 3: Medium-high speed
+        {1801, 2800, 100, 39},   // Step 4: Medium speed
+        {2801, 3799, 70,  27},   // Step 5: Low speed (extends much closer to OFF)
     };
     const uint32_t num_steps = sizeof(fan_steps) / sizeof(fan_step_t);
 
     uint32_t duty_cycle = 0;  // Initialize duty cycle
     uint8_t fan_speed_percentage = 0;  // Initialize fan speed percentage
 
-    // Fan control logging - uncomment for debugging fan issues
+    // Fan control logging - ENABLED for debugging
     log_counter++;
     bool should_log = (log_counter % 20 == 0);  // Log every 1 second (20Hz / 20 = 1Hz)
 
-    // Debug logging disabled for clean output
-    // if (should_log) {
-    //     ESP_LOGI(TAG, "ADC: %d (Raw: %d), Duty: %d, Threshold: %d", adc_value, raw_adc, duty_cycle, off_threshold);
-    // }
+    // Debug logging ENABLED to fix fan issues
+    if (should_log) {
+        ESP_LOGI(TAG, "RAW ADC: %d, Filtered ADC: %d, Threshold: %d", raw_adc, adc_value, off_threshold);
+    }
 
     // Clamp ADC value to expected range
     if (adc_value > max_adc_value) adc_value = max_adc_value;
@@ -136,9 +137,9 @@ void update_fan_speed(void) {
                 duty_cycle = fan_steps[i].duty_cycle;
                 fan_speed_percentage = fan_steps[i].speed_percent;
                 step_found = true;
-                // if (should_log) {
-                //     ESP_LOGI(TAG, "Step %d: ADC %d -> %d%% (duty %d)", i+1, adc_value, fan_speed_percentage, duty_cycle);
-                // }
+                if (should_log) {
+                    ESP_LOGI(TAG, "Step %d: ADC %d -> %d%% (duty %d)", i+1, adc_value, fan_speed_percentage, duty_cycle);
+                }
                 break;
             }
         }
@@ -150,20 +151,19 @@ void update_fan_speed(void) {
         }
     }
 
-    // Fan calculation logging - uncomment for debugging fan issues
-    // if (should_log) {
-    //     ESP_LOGI(TAG, "Calculated Duty Cycle: %" PRIu32, duty_cycle);
-    //     ESP_LOGI(TAG, "Fan Speed Percentage: %" PRIu8 "%%", fan_speed_percentage);
-    // }
+    // Fan calculation logging - ENABLED for debugging fan issues
+    if (should_log) {
+        ESP_LOGI(TAG, "Final: Duty Cycle: %" PRIu32 ", Fan Speed: %" PRIu8 "%%", duty_cycle, fan_speed_percentage);
+    }
 
     // Update the PWM duty cycle
     ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL, duty_cycle);
     ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL);
 
-    // PWM logging disabled for clean output
-    // if (should_log) {
-    //     ESP_LOGI(TAG, "PWM SET: %d (%d%%)", duty_cycle, fan_speed_percentage);
-    // }
+    // PWM logging ENABLED for debugging
+    if (should_log) {
+        ESP_LOGI(TAG, "PWM SET: %d (%d%%)", duty_cycle, fan_speed_percentage);
+    }
 
     // Later, you can display fan_speed_percentage on a display
 }

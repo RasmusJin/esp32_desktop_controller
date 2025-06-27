@@ -29,6 +29,41 @@ typedef enum {
     DISPLAY_UPDATE_SKYLIGHT
 } display_event_type_t;
 
+// UI State Management for contextual displays
+typedef enum {
+    UI_STATE_MAIN,          // Default clock + WiFi
+    UI_STATE_DESK,          // Desk height + movement
+    UI_STATE_VOLUME,        // Volume level
+    UI_STATE_HUE,           // Hue scene + brightness
+    UI_STATE_PC_SWITCH,     // PC switching
+    UI_STATE_WINDOW,        // Window control
+    UI_STATE_FAN            // Fan speed control
+} ui_state_t;
+
+typedef struct {
+    ui_state_t current_state;
+    uint32_t state_start_time;
+    uint32_t display_duration_ms;
+
+    // Context data
+    struct {
+        float desk_height;
+        bool desk_moving;
+        bool desk_moving_up;
+        int volume_level;
+        char hue_scene[32];
+        int hue_brightness;
+        int pc_number;
+        bool window_opening;
+        bool window_closing;
+        bool http_ack_received;
+        char wifi_status[16];
+        char ip_address[16];
+        int fan_speed_percent;
+        bool fan_active;
+    } context;
+} ui_context_t;
+
 // Event structure to be sent via queue
 typedef struct {
     display_event_type_t event_type;
@@ -52,4 +87,26 @@ void i2c_master_init_custom(SSD1306_t *dev, int16_t sda, int16_t scl, int16_t re
 // Function to display the time in a large font (Pages 2-5)
 void display_time_x3(SSD1306_t *dev, const char *time);
 void time_update_task(void *pvParameter);
+
+// New contextual UI functions
+void ui_show_main(SSD1306_t *dev);
+void ui_show_desk(SSD1306_t *dev, float height, bool moving, bool moving_up);
+void ui_show_volume(SSD1306_t *dev, int volume_percent);
+void ui_show_hue(SSD1306_t *dev, const char* scene, int brightness);
+void ui_show_pc_switch(SSD1306_t *dev, int pc_number);
+void ui_show_window(SSD1306_t *dev, bool opening, bool closing, bool ack);
+void ui_show_fan(SSD1306_t *dev, int fan_percent, bool active);
+
+// UI state management
+void ui_set_state(ui_state_t state, uint32_t duration_ms);
+void ui_update_display(SSD1306_t *dev);
+bool ui_should_return_to_main(void);
+void ui_set_wifi_status(const char* status, const char* ip);
+void ui_set_desk_context(float height, bool moving, bool moving_up);
+void ui_set_volume_context(int volume_percent);
+void ui_set_hue_context(const char* scene, int brightness);
+void ui_set_pc_context(int pc_number);
+void ui_set_window_context(bool opening, bool closing, bool ack);
+void ui_set_fan_context(int fan_percent, bool active);
+
 #endif // OLED_SCREEN_H

@@ -86,4 +86,6 @@
 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/esp-idf/ssd1306/libssd1306.a
 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/esp-idf/iot_iconset/libiot_iconset.a
+/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/esp-idf/espressif__tinyusb/libespressif__tinyusb.a
+/home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/esp-idf/espressif__esp_tinyusb/libespressif__esp_tinyusb.a
 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/esp-idf/main/libmain.a

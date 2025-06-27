@@ -1,0 +1,110 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+[0;32mI (1530) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1630) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1640) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1650) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1660) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1660) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1660) RELAY_INIT: Relay PC_SWITCH initial state: 0[0m
+[0;32mI (1760) RELAY_INIT: ✅ All relays initialized and stable - system ready![0m
+[0;32mI (1760) gpio: GPIO[45]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1760) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1770) ULTRASONIC_INIT: Testing TRIG pin (GPIO45)...[0m
+[0;32mI (1780) ULTRASONIC_INIT: TRIG set LOW, reading: 0[0m
+[0;32mI (1780) ULTRASONIC_INIT: TRIG set HIGH, reading: 0[0m
+[0;32mI (1790) ULTRASONIC_INIT: TRIG set LOW again, reading: 0[0m
+[0;32mI (1790) MAIN: Initializing USB HID device...[0m
+[0;32mI (1800) HID_DEVICE: USB initialization[0m
+[0;33mW (1800) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (1810) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 0           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4004      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (1980) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (1980) HID_DEVICE: USB initialization DONE[0m
+[0;32mI (1990) MAIN: Initializing WiFi...[0m
+[0;32mI (2010) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (2020) pp: pp rom version: e7ae62f[0m
+[0;32mI (2020) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (2030) wifi:wifi driver task: 3fcad574, prio:23, stack:6656, core=0[0m
+[0;32mI (2040) wifi:wifi firmware version: 090f94a[0m
+[0;32mI (2040) wifi:wifi certification version: v7.0[0m
+[0;32mI (2040) wifi:config NVS flash: enabled[0m
+[0;32mI (2040) wifi:config nano formatting: disabled[0m
+[0;32mI (2040) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2050) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2050) wifi:Init management short buffer num: 32[0m
+[0;32mI (2060) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2060) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (2070) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2070) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2070) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2080) wifi_init: rx ba win: 6[0m
+[0;32mI (2080) wifi_init: accept mbox: 6[0m
+[0;32mI (2090) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2090) wifi_init: udp mbox: 6[0m
+[0;32mI (2090) wifi_init: tcp mbox: 6[0m
+[0;32mI (2100) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2100) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2110) wifi_init: tcp mss: 1440[0m
+[0;32mI (2110) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2110) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2120) WiFi: Configuring static IP: 192.168.50.100[0m
+[0;32mI (2130) WiFi: Static IP configured successfully[0m
+[0;32mI (2130) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (2130) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (2180) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (2200) wifi:mode : sta (34:85:18:75:f3:0c)[0m
+[0;32mI (2200) wifi:enable tsf[0m
+[0;32mI (2200) WiFi: Wi-Fi initialization done.[0m
+[0;32mI (2200) WiFi: WiFi started, connecting...[0m
+[0;32mI (2220) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;32mI (2230) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2240) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2250) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2270) wifi:connected with NeverNude_IoT, aid = 33, channel 1, BW20, bssid = 72:d9:f5:9b:25:21[0m
+[0;32mI (2270) wifi:security: WPA2-PSK, phy: bgn, rssi: -55[0m
+[0;32mI (2280) wifi:pm start, type: 0[0m
+
+[0;32mI (2280) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2290) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (2300) esp_netif_handlers: sta ip: 192.168.50.100, mask: 255.255.255.0, gw: 192.168.50.1[0m
+[0;32mI (2300) WiFi: Connected! IP: 192.168.50.100[0m
+[0;32mI (2310) WiFi: Connected to Wi-Fi[0m
+[0;32mI (2310) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (2320) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2330) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2340) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2340) wifi:<ba-add>idx:0 (ifx:0, 72:d9:f5:9b:25:21), tid:0, ssn:1, winSize:64[0m
+[0;32mI (2350) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2360) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2370) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2380) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2380) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (2400) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2410) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2420) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2420) gpio: GPIO[3]| In
