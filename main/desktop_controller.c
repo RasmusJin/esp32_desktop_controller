@@ -26,9 +26,9 @@ void app_main(void)
     relay_driver_init();
     init_ultrasonic_sensor();
 
-    // Test ultrasonic pins for debugging
-    ESP_LOGI("MAIN", "Running ultrasonic pin test...");
-    test_ultrasonic_pins();
+    // DISABLED: Ultrasonic test removed for cleaner startup
+    // ESP_LOGI("MAIN", "Running ultrasonic pin test...");
+    // test_ultrasonic_pins();
 
     // Initialize WiFi with static IP
     ESP_LOGI("MAIN", "Initializing WiFi...");

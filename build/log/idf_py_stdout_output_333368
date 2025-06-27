@@ -1,0 +1,239 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+��04b44h ( 19268) load
+[0;32mI (122) esp_image: segment 2: paddr=0003d434�ESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Jun  2 2025 22:14:28[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: v1.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=288c0h (166080) map[0m
+[0;32mI (118) esp_image: segment 1: paddr=000388e8 vaddr=3fc9a500 size=04b44h ( 19268) load[0m
+[0;32mI (122) esp_image: segment 2: paddr=0003d434 vaddr=40374000 size=02be4h ( 11236) load[0m
+[0;32mI (125) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=a1118h (659736) map[0m
+[0;32mI (245) esp_image: segment 4: paddr=000e1140 vaddr=40376be4 size=138d4h ( 80084) load[0m
+[0;32mI (263) esp_image: segment 5: paddr=000f4a1c vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (272) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (272) boot: Disabling RNG early entropy source...[0m
+[0;32mI (282) cpu_start: Multicore app[0m
+[0;32mI (291) cpu_start: Pro cpu start user code[0m
+[0;32mI (291) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (292) app_init: Application information:[0m
+[0;32mI (294) app_init: Project name:     desktop_controller[0m
+[0;32mI (300) app_init: App version:      e7662e6-dirty[0m
+[0;32mI (306) app_init: Compile time:     Jun 27 2025 09:46:42[0m
+[0;32mI (312) app_init: ELF file SHA256:  d64f1a7fa...[0m
+[0;32mI (317) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (324) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (329) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (334) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (338) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (346) heap_init: At 3FCA34A0 len 00046270 (280 KiB): RAM[0m
+[0;32mI (352) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (358) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (364) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (371) spi_flash: detected chip: gd[0m
+[0;32mI (374) spi_flash: flash io: dio[0m
+[0;33mW (378) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (392) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (403) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (410) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (418) main_task: Started on CPU0[0m
+[0;32mI (428) main_task: Calling app_main()[0m
+[0;32mI (1428) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1528) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1538) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1548) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1558) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1558) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1608) gpio: GPIO[45]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1608) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1608) ULTRASONIC_INIT: Testing TRIG pin (GPIO45)...[0m
+[0;32mI (1618) ULTRASONIC_INIT: TRIG set LOW, reading: 0[0m
+[0;32mI (1618) ULTRASONIC_INIT: TRIG set HIGH, reading: 0[0m
+[0;32mI (1628) ULTRASONIC_INIT: TRIG set LOW again, reading: 0[0m
+[0;32mI (1638) MAIN: Running ultrasonic pin test...[0m
+[0;32mI (1638) ULTRASONIC_TEST: === ULTRASONIC PIN TEST ===[0m
+[0;32mI (1648) ULTRASONIC_TEST: TRIG pin: GPIO45, ECHO pin: GPIO35[0m
+[0;32mI (1648) ULTRASONIC_TEST: Testing TRIG pin (use multimeter on GPIO45):[0m
+[0;32mI (1658) ULTRASONIC_TEST: TRIG HIGH (should read ~3.3V)[0m
+[0;32mI (2668) ULTRASONIC_TEST: TRIG LOW (should read ~0V)[0m
+[0;32mI (3668) ULTRASONIC_TEST: TRIG HIGH (should read ~3.3V)[0m
+[0;32mI (4668) ULTRASONIC_TEST: TRIG LOW (should read ~0V)[0m
+[0;32mI (5668) ULTRASONIC_TEST: TRIG HIGH (should read ~3.3V)[0m
+[0;32mI (6668) ULTRASONIC_TEST: TRIG LOW (should read ~0V)[0m
+[0;32mI (7668) ULTRASONIC_TEST: TRIG HIGH (should read ~3.3V)[0m
+[0;32mI (8668) ULTRASONIC_TEST: TRIG LOW (should read ~0V)[0m
+[0;32mI (9668) ULTRASONIC_TEST: TRIG HIGH (should read ~3.3V)[0m
+[0;32mI (10668) ULTRASONIC_TEST: TRIG LOW (should read ~0V)[0m
+[0;32mI (11668) ULTRASONIC_TEST: ECHO pin current state: 0[0m
+[0;32mI (11668) ULTRASONIC_TEST: === TEST COMPLETE ===[0m
+[0;32mI (11668) MAIN: Initializing WiFi...[0m
+[0;32mI (11688) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (11688) pp: pp rom version: e7ae62f[0m
+[0;32mI (11688) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (11708) wifi:wifi driver task: 3fced4f8, prio:23, stack:6656, core=0[0m
+[0;32mI (11718) wifi:wifi firmware version: 090f94a[0m
+[0;32mI (11718) wifi:wifi certification version: v7.0[0m
+[0;32mI (11718) wifi:config NVS flash: enabled[0m
+[0;32mI (11718) wifi:config nano formatting: disabled[0m
+[0;32mI (11718) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (11728) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (11728) wifi:Init management short buffer num: 32[0m
+[0;32mI (11738) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (11738) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (11748) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (11748) wifi:Init static rx buffer num: 10[0m
+[0;32mI (11748) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (11758) wifi_init: rx ba win: 6[0m
+[0;32mI (11758) wifi_init: accept mbox: 6[0m
+[0;32mI (11768) wifi_init: tcpip mbox: 32[0m
+[0;32mI (11768) wifi_init: udp mbox: 6[0m
+[0;32mI (11778) wifi_init: tcp mbox: 6[0m
+[0;32mI (11778) wifi_init: tcp tx win: 5760[0m
+[0;32mI (11778) wifi_init: tcp rx win: 5760[0m
+[0;32mI (11788) wifi_init: tcp mss: 1440[0m
+[0;32mI (11788) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (11798) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (11798) WiFi: Configuring static IP: 192.168.50.100[0m
+[0;32mI (11808) WiFi: Static IP configured successfully[0m
+[0;32mI (11808) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (11818) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (11858) wifi:mode : sta (34:85:18:75:f3:0c)[0m
+[0;32mI (11858) wifi:enable tsf[0m
+[0;32mI (11858) WiFi: Wi-Fi initialization done.[0m
+[0;32mI (11858) WiFi: WiFi started, connecting...[0m
+[0;32mI (11888) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;32mI (11888) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (11908) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (11908) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (11958) wifi:connected with NeverNude_IoT, aid = 25, channel 1, BW20, bssid = 72:d9:f5:9b:25:21[0m
+[0;32mI (11958) wifi:security: WPA2-PSK, phy: bgn, rssi: -60[0m
+[0;32mI (11958) wifi:pm start, type: 0[0m
+
+[0;32mI (11958) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (11968) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (11978) esp_netif_handlers: sta ip: 192.168.50.100, mask: 255.255.255.0, gw: 192.168.50.1[0m
+[0;32mI (11988) WiFi: Connected! IP: 192.168.50.100[0m
+[0;32mI (11988) WiFi: Connected to Wi-Fi[0m
+[0;32mI (11998) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (12008) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (12018) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (12018) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (12028) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (12038) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (12048) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (12058) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (12068) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (12078) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (12088) MAIN: All systems initialized - starting main loop[0m
+[0;32mI (12098) MAIN: Fan control: ACTIVE[0m
+[0;32mI (12098) MAIN: Single row switches: ACTIVE[0m
+[0;32mI (12108) MAIN: Switch matrix (desk control): ACTIVE[0m
+[0;32mI (12108) MAIN: Relay system: ACTIVE[0m
+[0;32mI (12138) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (17418) KEYSWITCHES: Row 1, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (17418) KEYSWITCHES: Row 2, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (18818) KEYSWITCHES: Row 2, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (22218) KEYSWITCHES: Row 1, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (22218) KEYSWITCHES: Row 2, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (24318) KEYSWITCHES: Row 1, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (24318) KEYSWITCHES: Row 2, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (25168) KEYSWITCHES: Row 1, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (25168) KEYSWITCHES: Row 2, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (25368) KEYSWITCHES: Row 1, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (25368) KEYSWITCHES: Row 2, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (25568) KEYSWITCHES: Row 1, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (25568) KEYSWITCHES: Row 2, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (25768) KEYSWITCHES: Row 1, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (25768) KEYSWITCHES: Row 2, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (25968) KEYSWITCHES: Row 1, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (25968) KEYSWITCHES: Row 2, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (32468) KEYSWITCHES: Row 1, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (32468) KEYSWITCHES: Row 2, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (33418) KEYSWITCHES: Row 1, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (33418) KEYSWITCHES: Row 2, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (34018) KEYSWITCHES: Row 2, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (34518) KEYSWITCHES: Row 2, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (34818) KEYSWITCHES: Row 2, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (35318) KEYSWITCHES: Row 2, Column 3 pressed! (COL3 level: 0)[0m
+[0;32mI (40268) BUTTON: Up command triggered[0m
+[0;31mE (45278) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (45278) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (45278) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;32mI (45278) HTTP_EVENT: HTTP_EVENT_ERROR[0m
+[0;31mE (45288) HTTP_CLIENT: HTTP GET request failed: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (45288) HTTP_EVENT: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (48248) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (48248) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (48248) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (48298) ULTRASONIC: Moving up - Distance: 57 cm[0m
+[0;32mI (48348) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (48398) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (48448) ULTRASONIC: Moving up - Distance: 57 cm[0m
+[0;32mI (48498) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (48548) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (48598) DESK: Stopped moving[0m
+[0;32mI (48598) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (49898) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (49898) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (49898) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (49948) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (49998) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (50048) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (50098) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (50148) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (50198) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (50248) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (50298) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (50348) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (50398) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (50448) DESK: Stopped moving[0m
+[0;32mI (50448) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (52148) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (52148) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (52148) ULTRASONIC: Moving up - Distance: 59 cm[0m
+[0;32mI (52198) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (52248) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (52298) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (52348) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (52398) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (52448) ULTRASONIC: Moving up - Distance: 59 cm[0m
+[0;32mI (52498) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (52548) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (52598) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (52648) ULTRASONIC: Moving up - Distance: 59 cm[0m
+[0;32mI (52698) ULTRASONIC: Moving up - Distance: 57 cm[0m
+[0;32mI (52748) ULTRASONIC: Moving up - Distance: 56 cm[0m
+[0;32mI (52798) ULTRASONIC: Moving up - Distance: 56 cm[0m
+[0;32mI (52848) ULTRASONIC: Moving up - Distance: 56 cm[0m
+[0;32mI (52898) ULTRASONIC: Moving up - Distance: 57 cm[0m
+[0;32mI (52948) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (52998) ULTRASONIC: Moving up - Distance: 56 cm[0m
+[0;32mI (53048) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (53098) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (53148) ULTRASONIC: Moving up - Distance: 48 cm[0m
+[0;32mI (53198) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (53248) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (53298) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (53348) ULTRASONIC: Moving up - Distance: 59 cm[0m
+[0;32mI (53398) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (53448) ULTRASONIC: Moving up - Di

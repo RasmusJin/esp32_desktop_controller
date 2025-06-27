@@ -10,28 +10,41 @@ static const char *RELAYTAG = "RELAY";
 void relay_driver_init(void) {
     ESP_LOGI("RELAY_INIT", "Starting relay driver setup...");
 
-    // Set the GPIO levels high *before* configuring as outputs
+    // Add initial delay to let ESP32 boot stabilize
+    vTaskDelay(100 / portTICK_PERIOD_MS);
 
-
-    // Configure relays as outputs, with no internal pull-down
-    gpio_config_t io_conf = {
+    // Configure each relay pin individually to minimize glitches
+    gpio_config_t relay_conf = {
         .intr_type = GPIO_INTR_DISABLE,
         .mode = GPIO_MODE_OUTPUT,
-        .pin_bit_mask = (1ULL << RELAY_UP_PIN) | (1ULL << RELAY_DOWN_PIN) | (1ULL << RELAY_PC_SWITCH),
-        .pull_down_en = 0, // No pull-down to prevent triggering
-        .pull_up_en = 0    // Enable pull-up to hold HIGH state more reliably
+        .pull_down_en = 0,
+        .pull_up_en = 1,  // Enable pull-up to help maintain HIGH state during boot
     };
-    gpio_config(&io_conf);
 
+    // Configure and set each relay individually
+    relay_conf.pin_bit_mask = (1ULL << RELAY_UP_PIN);
+    gpio_config(&relay_conf);
     gpio_set_level(RELAY_UP_PIN, 1);
+    vTaskDelay(10 / portTICK_PERIOD_MS);
+
+    relay_conf.pin_bit_mask = (1ULL << RELAY_DOWN_PIN);
+    gpio_config(&relay_conf);
     gpio_set_level(RELAY_DOWN_PIN, 1);
+    vTaskDelay(10 / portTICK_PERIOD_MS);
+
+    relay_conf.pin_bit_mask = (1ULL << RELAY_PC_SWITCH);
+    gpio_config(&relay_conf);
     gpio_set_level(RELAY_PC_SWITCH, 1);
+    vTaskDelay(10 / portTICK_PERIOD_MS);
 
     ESP_LOGI("RELAY_INIT", "Relay UP initial state: %d", gpio_get_level(RELAY_UP_PIN));
     ESP_LOGI("RELAY_INIT", "Relay DOWN initial state: %d", gpio_get_level(RELAY_DOWN_PIN));
+    ESP_LOGI("RELAY_INIT", "Relay PC_SWITCH initial state: %d", gpio_get_level(RELAY_PC_SWITCH));
 
-    // Final confirmation delay
-    vTaskDelay(50 / portTICK_PERIOD_MS);
+    // Final stabilization delay
+    vTaskDelay(100 / portTICK_PERIOD_MS);
+
+    ESP_LOGI("RELAY_INIT", "✅ All relays initialized and stable - system ready!");
 }
 void init_ultrasonic_sensor() {
     // Set up TRIG pin as output

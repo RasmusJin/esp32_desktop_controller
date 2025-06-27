@@ -230,9 +230,14 @@ void poll_switch_matrix(void) {
     static uint32_t down_press_time = 0;
     static bool up_button_pressed = false;
     static bool down_button_pressed = false;
+    // Ensure all rows are OFF before starting
+    gpio_set_level(ROW1_PIN, 0);
+    gpio_set_level(ROW2_PIN, 0);
+    vTaskDelay(2 / portTICK_PERIOD_MS);  // Let signals settle
+
     // Poll Row 1
     gpio_set_level(ROW1_PIN, 1);
-    vTaskDelay(1 / portTICK_PERIOD_MS);  // Allow signal stabilization
+    vTaskDelay(3 / portTICK_PERIOD_MS);  // Longer stabilization delay
 
     
     // UP button handling - SAFETY CRITICAL: immediate response, no debounce
@@ -261,13 +266,26 @@ void poll_switch_matrix(void) {
         skylight_command_up();
     }
     if (debounce(current_time, COL3_PIN, &last_press_time_matrix[0][2])) {
-        ESP_LOGI(KEYTAG, "Row 1, Column 3 pressed!");
+        // Read GPIO levels immediately while row is still active
+        int col3_level = gpio_get_level(COL3_PIN);
+        int row1_level = gpio_get_level(ROW1_PIN);
+        int row2_level = gpio_get_level(ROW2_PIN);
+        ESP_LOGI(KEYTAG, "Row 1, Column 3 pressed! (COL3: %d, ROW1: %d, ROW2: %d)",
+                 col3_level, row1_level, row2_level);
+        // Add extra delay after detecting a button press to prevent double detection
+        vTaskDelay(20 / portTICK_PERIOD_MS);
     }
     gpio_set_level(ROW1_PIN, 0);  // Deactivate Row 1
+    vTaskDelay(10 / portTICK_PERIOD_MS);  // Longer delay to ensure row isolation
+
+    // Debug: Check that Row 1 is actually OFF before scanning Row 2
+    if (gpio_get_level(ROW1_PIN) != 0) {
+        ESP_LOGW(KEYTAG, "WARNING: ROW1 still HIGH when starting Row 2 scan!");
+    }
 
     // Poll Row 2
     gpio_set_level(ROW2_PIN, 1);
-    vTaskDelay(1 / portTICK_PERIOD_MS);  // Allow signal stabilization
+    vTaskDelay(5 / portTICK_PERIOD_MS);  // Longer stabilization delay
 
     // DOWN button handling - SAFETY CRITICAL: immediate response, no debounce
     int down_button_state = gpio_get_level(COL1_PIN);
@@ -289,14 +307,25 @@ void poll_switch_matrix(void) {
             ESP_LOGI("DESK_CONTROL", "DOWN button released - STOPPED");
         }
     }
-    gpio_set_level(ROW2_PIN, 0);
+
+    // Check Row 2 buttons BEFORE deactivating the row
     if (debounce(current_time, COL2_PIN, &last_press_time_matrix[1][1])) {
         ESP_LOGI(KEYTAG, "Row 2, Column 2 pressed!");
         ESP_LOGI("BUTTON", "Down command triggered");
         skylight_command_down();
     }
     if (debounce(current_time, COL3_PIN, &last_press_time_matrix[1][2])) {
-        ESP_LOGI(KEYTAG, "Row 2, Column 3 pressed!");
+        // Read GPIO levels immediately while row is still active
+        int col3_level = gpio_get_level(COL3_PIN);
+        int row1_level = gpio_get_level(ROW1_PIN);
+        int row2_level = gpio_get_level(ROW2_PIN);
+        ESP_LOGI(KEYTAG, "Row 2, Column 3 pressed! (COL3: %d, ROW1: %d, ROW2: %d)",
+                 col3_level, row1_level, row2_level);
     }
+
     gpio_set_level(ROW2_PIN, 0);  // Deactivate Row 2
+
+    // Ensure all rows are deactivated at the end
+    gpio_set_level(ROW1_PIN, 0);
+    gpio_set_level(ROW2_PIN, 0);
 }

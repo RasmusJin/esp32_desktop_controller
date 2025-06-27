@@ -114,9 +114,10 @@ void update_fan_speed(void) {
     log_counter++;
     bool should_log = (log_counter % 20 == 0);  // Log every 1 second (20Hz / 20 = 1Hz)
 
-    if (should_log) {
-        ESP_LOGI(TAG, "ADC: %d (Raw: %d), Duty: %d, Threshold: %d", adc_value, raw_adc, duty_cycle, off_threshold);
-    }
+    // Debug logging disabled for clean output
+    // if (should_log) {
+    //     ESP_LOGI(TAG, "ADC: %d (Raw: %d), Duty: %d, Threshold: %d", adc_value, raw_adc, duty_cycle, off_threshold);
+    // }
 
     // Clamp ADC value to expected range
     if (adc_value > max_adc_value) adc_value = max_adc_value;
@@ -159,10 +160,10 @@ void update_fan_speed(void) {
     ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL, duty_cycle);
     ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL);
 
-    // PWM logging - ENABLED for debugging fan issues
-    if (should_log) {
-        ESP_LOGI(TAG, "PWM SET: %d (%d%%)", duty_cycle, fan_speed_percentage);
-    }
+    // PWM logging disabled for clean output
+    // if (should_log) {
+    //     ESP_LOGI(TAG, "PWM SET: %d (%d%%)", duty_cycle, fan_speed_percentage);
+    // }
 
     // Later, you can display fan_speed_percentage on a display
 }
