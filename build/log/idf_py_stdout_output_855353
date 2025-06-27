@@ -1,0 +1,911 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+[0;32mI (1660) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1760) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1770) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1780) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1790) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1790) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1790) RELAY_INIT: Relay PC_SWITCH initial state: 0[0m
+[0;32mI (1890) RELAY_INIT: ✅ All relays initialized and stable - system ready![0m
+[0;32mI (1890) gpio: GPIO[45]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1890) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1900) ULTRASONIC_INIT: Testing TRIG pin (GPIO45)...[0m
+[0;32mI (1910) ULTRASONIC_INIT: TRIG set LOW, reading: 0[0m
+[0;32mI (1910) ULTRASONIC_INIT: TRIG set HIGH, reading: 0[0m
+[0;32mI (1920) ULTRASONIC_INIT: TRIG set LOW again, reading: 0[0m
+[0;32mI (1920) MAIN: Initializing USB HID device...[0m
+[0;32mI (1930) HID_DEVICE: USB initialization[0m
+[0;33mW (1930) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (1940) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 0           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4004      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (2110) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (2110) HID_DEVICE: USB initialization DONE[0m
+[0;32mI (2120) MAIN: Initializing WiFi...[0m
+[0;32mI (2140) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (2150) pp: pp rom version: e7ae62f[0m
+[0;32mI (2150) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (2160) wifi:wifi driver task: 3fcac4f0, prio:23, stack:6656, core=0[0m
+[0;32mI (2170) wifi:wifi firmware version: 090f94a[0m
+[0;32mI (2170) wifi:wifi certification version: v7.0[0m
+[0;32mI (2170) wifi:config NVS flash: enabled[0m
+[0;32mI (2170) wifi:config nano formatting: disabled[0m
+[0;32mI (2170) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2180) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2180) wifi:Init management short buffer num: 32[0m
+[0;32mI (2190) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2190) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (2200) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2200) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2200) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2210) wifi_init: rx ba win: 6[0m
+[0;32mI (2210) wifi_init: accept mbox: 6[0m
+[0;32mI (2220) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2220) wifi_init: udp mbox: 6[0m
+[0;32mI (2220) wifi_init: tcp mbox: 6[0m
+[0;32mI (2230) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2230) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2240) wifi_init: tcp mss: 1440[0m
+[0;32mI (2240) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2240) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2250) WiFi: Configuring static IP: 192.168.50.100[0m
+[0;32mI (2260) WiFi: Static IP configured successfully[0m
+[0;32mI (2260) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (2260) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (2310) wifi:mode : sta (34:85:18:75:f3:0c)[0m
+[0;32mI (2310) wifi:enable tsf[0m
+[0;32mI (2310) WiFi: Wi-Fi initialization done.[0m
+[0;32mI (2310) WiFi: WiFi started, connecting...[0m
+[0;32mI (2330) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;32mI (2330) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2350) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2350) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2400) wifi:connected with NeverNude_IoT, aid = 25, channel 1, BW20, bssid = 72:d9:f5:9b:25:21[0m
+[0;32mI (2400) wifi:security: WPA2-PSK, phy: bgn, rssi: -57[0m
+[0;32mI (2400) wifi:pm start, type: 0[0m
+
+[0;32mI (2400) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2410) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (2420) esp_netif_handlers: sta ip: 192.168.50.100, mask: 255.255.255.0, gw: 192.168.50.1[0m
+[0;32mI (2430) WiFi: Connected! IP: 192.168.50.100[0m
+[0;32mI (2430) WiFi: Connected to Wi-Fi[0m
+[0;32mI (2440) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (2450) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2450) wifi:<ba-add>idx:0 (ifx:0, 72:d9:f5:9b:25:21), tid:0, ssn:1, winSize:64[0m
+[0;32mI (2460) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2470) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2480) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2490) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2500) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2510) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2520) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2520) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2530) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2540) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2550) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2560) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (2570) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (2580) OLED_UI: Legacy display event: type=1, text='Lights: ON'[0m
+[0;32mI (2580) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2590) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2600) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2610) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2620) KEYSWITCHES: Both rotary encoders configured - ROT1: brightness, ROT2: scenes[0m
+[0;32mI (2630) KEYSWITCHES: Getting current Hue light state...[0m
+[0;32mI (2630) KEYSWITCHES: Fetching current Hue group state...[0m
+
+***ERROR*** A stack overflow in task main has been detected.
+
+
+Backtrace: 0x40375c75:0x3fca7db0 0x4037decd:0x3fca7dd0 0x4037ed4a:0x3fca7df0 0x403801f3:0x3fca7e70 0x4037ee10:0x3fca7e90 0x4037ee06:0xa5a5a5a5 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 4ff212888
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x2f (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375bb4
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (29) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jun  2 2025 22:14:28[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v0.1[0m
+[0;32mI (34) boot: efuse block revision: v1.2[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (46) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (49) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (63) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (69) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (76) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (86) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=2ce40h (183872) map[0m
+[0;32mI (125) esp_image: segment 1: paddr=0003ce68 vaddr=3fc9b900 size=031b0h ( 12720) load[0m
+[0;32mI (128) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=ade84h (712324) map[0m
+[0;32mI (255) esp_image: segment 3: paddr=000edeac vaddr=3fc9eab0 size=0203ch (  8252) load[0m
+[0;32mI (257) esp_image: segment 4: paddr=000efef0 vaddr=40374000 size=17828h ( 96296) load[0m
+[0;32mI (279) esp_image: segment 5: paddr=00107720 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (289) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (289) boot: Disabling RNG early entropy source...[0m
+[0;32mI (299) cpu_start: Multicore app[0m
+[0;32mI (308) cpu_start: Pro cpu start user code[0m
+[0;32mI (308) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (309) app_init: Application information:[0m
+[0;32mI (311) app_init: Project name:     desktop_controller[0m
+[0;32mI (317) app_init: App version:      076269c-dirty[0m
+[0;32mI (323) app_init: Compile time:     Jun 27 2025 21:27:31[0m
+[0;32mI (329) app_init: ELF file SHA256:  4ff212888...[0m
+[0;32mI (334) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (341) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (346) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (351) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (355) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (363) heap_init: At 3FCA5140 len 000445D0 (273 KiB): RAM[0m
+[0;32mI (369) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (375) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (381) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (388) spi_flash: detected chip: gd[0m
+[0;32mI (391) spi_flash: flash io: dio[0m
+[0;33mW (395) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (409) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (420) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (427) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (434) main_task: Started on CPU0[0m
+[0;32mI (444) main_task: Calling app_main()[0m
+[0;32mI (444) MAIN: Initializing OLED display...[0m
+[0;32mI (444) OLED_UI: I2C initialized successfully[0m
+[0;32mI (454) SSD1306: OLED configured successfully[0m
+[0;32mI (454) OLED_UI: OLED initialized successfully[0m
+[0;32mI (464) OLED_UI: UI display task started[0m
+[0;32mI (464) OLED_UI: UI display task created[0m
+[0;32mI (1664) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1764) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1774) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1784) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1794) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1794) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1794) RELAY_INIT: Relay PC_SWITCH initial state: 0[0m
+[0;32mI (1894) RELAY_INIT: ✅ All relays initialized and stable - system ready![0m
+[0;32mI (1894) gpio: GPIO[45]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1894) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1904) ULTRASONIC_INIT: Testing TRIG pin (GPIO45)...[0m
+[0;32mI (1914) ULTRASONIC_INIT: TRIG set LOW, reading: 0[0m
+[0;32mI (1914) ULTRASONIC_INIT: TRIG set HIGH, reading: 0[0m
+[0;32mI (1924) ULTRASONIC_INIT: TRIG set LOW again, reading: 0[0m
+[0;32mI (1924) MAIN: Initializing USB HID device...[0m
+[0;32mI (1934) HID_DEVICE: USB initialization[0m
+[0;33mW (1934) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (1944) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 0           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4004      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (2114) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (2114) HID_DEVICE: USB initialization DONE[0m
+[0;32mI (2124) MAIN: Initializing WiFi...[0m
+[0;32mI (2144) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (2154) pp: pp rom version: e7ae62f[0m
+[0;32mI (2154) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (2164) wifi:wifi driver task: 3fcac4f0, prio:23, stack:6656, core=0[0m
+[0;32mI (2174) wifi:wifi firmware version: 090f94a[0m
+[0;32mI (2174) wifi:wifi certification version: v7.0[0m
+[0;32mI (2174) wifi:config NVS flash: enabled[0m
+[0;32mI (2174) wifi:config nano formatting: disabled[0m
+[0;32mI (2174) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2184) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2184) wifi:Init management short buffer num: 32[0m
+[0;32mI (2194) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2194) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (2204) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2204) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2204) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2214) wifi_init: rx ba win: 6[0m
+[0;32mI (2214) wifi_init: accept mbox: 6[0m
+[0;32mI (2224) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2224) wifi_init: udp mbox: 6[0m
+[0;32mI (2224) wifi_init: tcp mbox: 6[0m
+[0;32mI (2234) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2234) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2244) wifi_init: tcp mss: 1440[0m
+[0;32mI (2244) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2244) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2254) WiFi: Configuring static IP: 192.168.50.100[0m
+[0;32mI (2264) WiFi: Static IP configured successfully[0m
+[0;32mI (2264) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (2264) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (2314) wifi:mode : sta (34:85:18:75:f3:0c)[0m
+[0;32mI (2324) wifi:enable tsf[0m
+[0;32mI (2324) WiFi: Wi-Fi initialization done.[0m
+[0;32mI (2324) WiFi: WiFi started, connecting...[0m
+[0;32mI (2344) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;32mI (2344) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2364) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2374) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2414) wifi:connected with NeverNude_IoT, aid = 31, channel 1, BW20, bssid = 72:d9:f5:9b:25:21[0m
+[0;32mI (2414) wifi:security: WPA2-PSK, phy: bgn, rssi: -58[0m
+[0;32mI (2424) wifi:pm start, type: 0[0m
+
+[0;32mI (2424) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2434) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (2444) esp_netif_handlers: sta ip: 192.168.50.100, mask: 255.255.255.0, gw: 192.168.50.1[0m
+[0;32mI (2444) WiFi: Connected! IP: 192.168.50.100[0m
+[0;32mI (2454) WiFi: Connected to Wi-Fi[0m
+[0;32mI (2454) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2464) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2474) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2484) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2494) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2504) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2514) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2524) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2534) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2544) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2554) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2564) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2564) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2574) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2584) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2594) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2604) KEYSWITCHES: Both rotary encoders configured - ROT1: brightness, ROT2: scenes[0m
+[0;32mI (2614) KEYSWITCHES: Getting current Hue light state...[0m
+[0;32mI (2624) KEYSWITCHES: Fetching current Hue group state...[0m
+[0;32mI (2644) wifi:<ba-add>idx:0 (ifx:0, 72:d9:f5:9b:25:21), tid:0, ssn:1, winSize:64[0m
+[0;32mI (3434) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;33mW (7684) KEYSWITCHES: No response data received, assuming lights OFF[0m
+[0;32mI (7684) KEYSWITCHES: Hue state initialized: lights_on = false[0m
+[0;32mI (7684) MAIN: All systems initialized - starting main loop[0m
+[0;32mI (7684) MAIN: Fan control: ACTIVE[0m
+[0;32mI (7694) MAIN: Single row switches: ACTIVE[0m
+[0;32mI (7694) MAIN: Switch matrix (desk control): ACTIVE[0m
+[0;32mI (7704) MAIN: Relay system: ACTIVE[0m
+[0;32mI (7704) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (8854) POTENTIOMETER: RAW ADC: 3605, Filtered ADC: 3604, Threshold: 3999[0m
+[0;32mI (8854) POTENTIOMETER: Step 5: ADC 3604 -> 27% (duty 70)[0m
+[0;32mI (8854) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (8854) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (10064) POTENTIOMETER: RAW ADC: 3604, Filtered ADC: 3605, Threshold: 3999[0m
+[0;32mI (10064) POTENTIOMETER: Step 5: ADC 3605 -> 27% (duty 70)[0m
+[0;32mI (10064) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (10064) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (10924) OLED_UI: Returning to main screen[0m
+[0;32mI (11274) POTENTIOMETER: RAW ADC: 3611, Filtered ADC: 3609, Threshold: 3999[0m
+[0;32mI (11274) POTENTIOMETER: Step 5: ADC 3609 -> 27% (duty 70)[0m
+[0;32mI (11274) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (11274) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (12484) POTENTIOMETER: RAW ADC: 3609, Filtered ADC: 3608, Threshold: 3999[0m
+[0;32mI (12484) POTENTIOMETER: Step 5: ADC 3608 -> 27% (duty 70)[0m
+[0;32mI (12484) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (12484) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (13694) POTENTIOMETER: RAW ADC: 3597, Filtered ADC: 3598, Threshold: 3999[0m
+[0;32mI (13694) POTENTIOMETER: Step 5: ADC 3598 -> 27% (duty 70)[0m
+[0;32mI (13694) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (13694) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (14904) POTENTIOMETER: RAW ADC: 3591, Filtered ADC: 3595, Threshold: 3999[0m
+[0;32mI (14904) POTENTIOMETER: Step 5: ADC 3595 -> 27% (duty 70)[0m
+[0;32mI (14904) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (14904) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (16114) POTENTIOMETER: RAW ADC: 3603, Filtered ADC: 3604, Threshold: 3999[0m
+[0;32mI (16114) POTENTIOMETER: Step 5: ADC 3604 -> 27% (duty 70)[0m
+[0;32mI (16114) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (16114) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (17324) POTENTIOMETER: RAW ADC: 3601, Filtered ADC: 3603, Threshold: 3999[0m
+[0;32mI (17324) POTENTIOMETER: Step 5: ADC 3603 -> 27% (duty 70)[0m
+[0;32mI (17324) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (17324) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (18534) POTENTIOMETER: RAW ADC: 3608, Filtered ADC: 3607, Threshold: 3999[0m
+[0;32mI (18534) POTENTIOMETER: Step 5: ADC 3607 -> 27% (duty 70)[0m
+[0;32mI (18534) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (18534) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (19744) POTENTIOMETER: RAW ADC: 3597, Filtered ADC: 3598, Threshold: 3999[0m
+[0;32mI (19744) POTENTIOMETER: Step 5: ADC 3598 -> 27% (duty 70)[0m
+[0;32mI (19744) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (19744) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (20954) POTENTIOMETER: RAW ADC: 3611, Filtered ADC: 3609, Threshold: 3999[0m
+[0;32mI (20954) POTENTIOMETER: Step 5: ADC 3609 -> 27% (duty 70)[0m
+[0;32mI (20954) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (20954) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (22164) POTENTIOMETER: RAW ADC: 3623, Filtered ADC: 3620, Threshold: 3999[0m
+[0;32mI (22164) POTENTIOMETER: Step 5: ADC 3620 -> 27% (duty 70)[0m
+[0;32mI (22164) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (22164) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (23374) POTENTIOMETER: RAW ADC: 3605, Filtered ADC: 3608, Threshold: 3999[0m
+[0;32mI (23374) POTENTIOMETER: Step 5: ADC 3608 -> 27% (duty 70)[0m
+[0;32mI (23374) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (23374) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (24584) POTENTIOMETER: RAW ADC: 3611, Filtered ADC: 3609, Threshold: 3999[0m
+[0;32mI (24584) POTENTIOMETER: Step 5: ADC 3609 -> 27% (duty 70)[0m
+[0;32mI (24584) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (24584) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (25794) POTENTIOMETER: RAW ADC: 3603, Filtered ADC: 3599, Threshold: 3999[0m
+[0;32mI (25794) POTENTIOMETER: Step 5: ADC 3599 -> 27% (duty 70)[0m
+[0;32mI (25794) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (25794) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (27004) POTENTIOMETER: RAW ADC: 3684, Filtered ADC: 3662, Threshold: 3999[0m
+[0;32mI (27004) POTENTIOMETER: Step 5: ADC 3662 -> 27% (duty 70)[0m
+[0;32mI (27004) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (27004) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (27314) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (28214) POTENTIOMETER: RAW ADC: 3895, Filtered ADC: 3897, Threshold: 3999[0m
+[0;32mI (28214) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (28214) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (29414) POTENTIOMETER: RAW ADC: 3838, Filtered ADC: 3859, Threshold: 3999[0m
+[0;32mI (29414) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (29414) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (30504) OLED_UI: Returning to main screen[0m
+[0;32mI (30614) POTENTIOMETER: RAW ADC: 3915, Filtered ADC: 3908, Threshold: 3999[0m
+[0;32mI (30614) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (30614) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (31824) POTENTIOMETER: RAW ADC: 3915, Filtered ADC: 3908, Threshold: 3999[0m
+[0;32mI (31824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (31824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (33024) POTENTIOMETER: RAW ADC: 3910, Filtered ADC: 3907, Threshold: 3999[0m
+[0;32mI (33024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (33024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (34224) POTENTIOMETER: RAW ADC: 3929, Filtered ADC: 3921, Threshold: 3999[0m
+[0;32mI (34224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (34224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (35424) POTENTIOMETER: RAW ADC: 3892, Filtered ADC: 3895, Threshold: 3999[0m
+[0;32mI (35424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (35424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (36624) POTENTIOMETER: RAW ADC: 3917, Filtered ADC: 3910, Threshold: 3999[0m
+[0;32mI (36624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (36624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (37824) POTENTIOMETER: RAW ADC: 3913, Filtered ADC: 3911, Threshold: 3999[0m
+[0;32mI (37824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (37824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (39024) POTENTIOMETER: RAW ADC: 3901, Filtered ADC: 3900, Threshold: 3999[0m
+[0;32mI (39024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (39024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (40224) POTENTIOMETER: RAW ADC: 3893, Filtered ADC: 3898, Threshold: 3999[0m
+[0;32mI (40224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (40224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (41424) POTENTIOMETER: RAW ADC: 3901, Filtered ADC: 3901, Threshold: 3999[0m
+[0;32mI (41424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (41424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (42624) POTENTIOMETER: RAW ADC: 3912, Filtered ADC: 3907, Threshold: 3999[0m
+[0;32mI (42624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (42624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (43824) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3899, Threshold: 3999[0m
+[0;32mI (43824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (43824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (45024) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3898, Threshold: 3999[0m
+[0;32mI (45024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (45024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (46224) POTENTIOMETER: RAW ADC: 3923, Filtered ADC: 3918, Threshold: 3999[0m
+[0;32mI (46224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (46224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (47424) POTENTIOMETER: RAW ADC: 3913, Filtered ADC: 3910, Threshold: 3999[0m
+[0;32mI (47424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (47424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (48624) POTENTIOMETER: RAW ADC: 3896, Filtered ADC: 3900, Threshold: 3999[0m
+[0;32mI (48624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (48624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (49824) POTENTIOMETER: RAW ADC: 3899, Filtered ADC: 3899, Threshold: 3999[0m
+[0;32mI (49824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (49824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (51024) POTENTIOMETER: RAW ADC: 3915, Filtered ADC: 3909, Threshold: 3999[0m
+[0;32mI (51024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (51024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (52224) POTENTIOMETER: RAW ADC: 3912, Filtered ADC: 3908, Threshold: 3999[0m
+[0;32mI (52224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (52224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (53424) POTENTIOMETER: RAW ADC: 3897, Filtered ADC: 3898, Threshold: 3999[0m
+[0;32mI (53424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (53424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (54624) POTENTIOMETER: RAW ADC: 3915, Filtered ADC: 3909, Threshold: 3999[0m
+[0;32mI (54624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (54624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (55824) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3904, Threshold: 3999[0m
+[0;32mI (55824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (55824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (57024) POTENTIOMETER: RAW ADC: 3915, Filtered ADC: 3912, Threshold: 3999[0m
+[0;32mI (57024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (57024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (58224) POTENTIOMETER: RAW ADC: 3901, Filtered ADC: 3898, Threshold: 3999[0m
+[0;32mI (58224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (58224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (59424) POTENTIOMETER: RAW ADC: 3913, Filtered ADC: 3913, Threshold: 3999[0m
+[0;32mI (59424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (59424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (60624) POTENTIOMETER: RAW ADC: 3901, Filtered ADC: 3904, Threshold: 3999[0m
+[0;32mI (60624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (60624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (61824) POTENTIOMETER: RAW ADC: 3895, Filtered ADC: 3895, Threshold: 3999[0m
+[0;32mI (61824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (61824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (63024) POTENTIOMETER: RAW ADC: 3892, Filtered ADC: 3892, Threshold: 3999[0m
+[0;32mI (63024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (63024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (64224) POTENTIOMETER: RAW ADC: 3898, Filtered ADC: 3901, Threshold: 3999[0m
+[0;32mI (64224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (64224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (65424) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3902, Threshold: 3999[0m
+[0;32mI (65424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (65424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (66624) POTENTIOMETER: RAW ADC: 3893, Filtered ADC: 3894, Threshold: 3999[0m
+[0;32mI (66624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (66624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (67824) POTENTIOMETER: RAW ADC: 3909, Filtered ADC: 3907, Threshold: 3999[0m
+[0;32mI (67824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (67824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (69024) POTENTIOMETER: RAW ADC: 3893, Filtered ADC: 3897, Threshold: 3999[0m
+[0;32mI (69024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (69024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (70224) POTENTIOMETER: RAW ADC: 3911, Filtered ADC: 3909, Threshold: 3999[0m
+[0;32mI (70224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (70224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (71424) POTENTIOMETER: RAW ADC: 3918, Filtered ADC: 3912, Threshold: 3999[0m
+[0;32mI (71424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (71424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (72624) POTENTIOMETER: RAW ADC: 3898, Filtered ADC: 3896, Threshold: 3999[0m
+[0;32mI (72624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (72624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (73824) POTENTIOMETER: RAW ADC: 3895, Filtered ADC: 3894, Threshold: 3999[0m
+[0;32mI (73824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (73824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (75024) POTENTIOMETER: RAW ADC: 3901, Filtered ADC: 3900, Threshold: 3999[0m
+[0;32mI (75024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (75024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (76224) POTENTIOMETER: RAW ADC: 3912, Filtered ADC: 3912, Threshold: 3999[0m
+[0;32mI (76224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (76224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (77424) POTENTIOMETER: RAW ADC: 3899, Filtered ADC: 3898, Threshold: 3999[0m
+[0;32mI (77424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (77424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (78624) POTENTIOMETER: RAW ADC: 3895, Filtered ADC: 3895, Threshold: 3999[0m
+[0;32mI (78624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (78624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (79824) POTENTIOMETER: RAW ADC: 3895, Filtered ADC: 3898, Threshold: 3999[0m
+[0;32mI (79824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (79824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (81024) POTENTIOMETER: RAW ADC: 3899, Filtered ADC: 3902, Threshold: 3999[0m
+[0;32mI (81024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (81024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (82224) POTENTIOMETER: RAW ADC: 3915, Filtered ADC: 3912, Threshold: 3999[0m
+[0;32mI (82224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (82224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (83424) POTENTIOMETER: RAW ADC: 3912, Filtered ADC: 3907, Threshold: 3999[0m
+[0;32mI (83424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (83424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (84624) POTENTIOMETER: RAW ADC: 3893, Filtered ADC: 3893, Threshold: 3999[0m
+[0;32mI (84624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (84624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (85824) POTENTIOMETER: RAW ADC: 3901, Filtered ADC: 3901, Threshold: 3999[0m
+[0;32mI (85824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (85824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (87024) POTENTIOMETER: RAW ADC: 3895, Filtered ADC: 3897, Threshold: 3999[0m
+[0;32mI (87024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (87024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (88224) POTENTIOMETER: RAW ADC: 3915, Filtered ADC: 3910, Threshold: 3999[0m
+[0;32mI (88224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (88224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (89424) POTENTIOMETER: RAW ADC: 3896, Filtered ADC: 3896, Threshold: 3999[0m
+[0;32mI (89424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (89424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (90624) POTENTIOMETER: RAW ADC: 3896, Filtered ADC: 3896, Threshold: 3999[0m
+[0;32mI (90624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (90624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (91824) POTENTIOMETER: RAW ADC: 3899, Filtered ADC: 3902, Threshold: 3999[0m
+[0;32mI (91824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (91824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (93024) POTENTIOMETER: RAW ADC: 3911, Filtered ADC: 3906, Threshold: 3999[0m
+[0;32mI (93024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (93024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (94224) POTENTIOMETER: RAW ADC: 3901, Filtered ADC: 3904, Threshold: 3999[0m
+[0;32mI (94224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (94224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (95424) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3905, Threshold: 3999[0m
+[0;32mI (95424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (95424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (96624) POTENTIOMETER: RAW ADC: 3911, Filtered ADC: 3911, Threshold: 3999[0m
+[0;32mI (96624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (96624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (97824) POTENTIOMETER: RAW ADC: 3899, Filtered ADC: 3901, Threshold: 3999[0m
+[0;32mI (97824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (97824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (99024) POTENTIOMETER: RAW ADC: 3898, Filtered ADC: 3898, Threshold: 3999[0m
+[0;32mI (99024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (99024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (100224) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3903, Threshold: 3999[0m
+[0;32mI (100224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (100224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (101424) POTENTIOMETER: RAW ADC: 3911, Filtered ADC: 3913, Threshold: 3999[0m
+[0;32mI (101424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (101424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (102624) POTENTIOMETER: RAW ADC: 3897, Filtered ADC: 3898, Threshold: 3999[0m
+[0;32mI (102624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (102624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (103824) POTENTIOMETER: RAW ADC: 3901, Filtered ADC: 3900, Threshold: 3999[0m
+[0;32mI (103824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (103824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (105024) POTENTIOMETER: RAW ADC: 3916, Filtered ADC: 3914, Threshold: 3999[0m
+[0;32mI (105024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (105024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (106224) POTENTIOMETER: RAW ADC: 3918, Filtered ADC: 3913, Threshold: 3999[0m
+[0;32mI (106224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (106224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (107424) POTENTIOMETER: RAW ADC: 3896, Filtered ADC: 3895, Threshold: 3999[0m
+[0;32mI (107424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (107424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (108624) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3905, Threshold: 3999[0m
+[0;32mI (108624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (108624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (109824) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3905, Threshold: 3999[0m
+[0;32mI (109824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (109824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (111024) POTENTIOMETER: RAW ADC: 3901, Filtered ADC: 3903, Threshold: 3999[0m
+[0;32mI (111024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (111024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (112224) POTENTIOMETER: RAW ADC: 3895, Filtered ADC: 3895, Threshold: 3999[0m
+[0;32mI (112224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (112224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (113424) POTENTIOMETER: RAW ADC: 3895, Filtered ADC: 3899, Threshold: 3999[0m
+[0;32mI (113424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (113424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (114624) POTENTIOMETER: RAW ADC: 3904, Filtered ADC: 3902, Threshold: 3999[0m
+[0;32mI (114624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (114624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (115824) POTENTIOMETER: RAW ADC: 3911, Filtered ADC: 3905, Threshold: 3999[0m
+[0;32mI (115824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (115824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (117024) POTENTIOMETER: RAW ADC: 3899, Filtered ADC: 3897, Threshold: 3999[0m
+[0;32mI (117024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (117024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (118224) POTENTIOMETER: RAW ADC: 3922, Filtered ADC: 3915, Threshold: 3999[0m
+[0;32mI (118224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (118224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (119424) POTENTIOMETER: RAW ADC: 3912, Filtered ADC: 3910, Threshold: 3999[0m
+[0;32mI (119424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (119424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (120624) POTENTIOMETER: RAW ADC: 3923, Filtered ADC: 3915, Threshold: 3999[0m
+[0;32mI (120624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (120624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (121824) POTENTIOMETER: RAW ADC: 3898, Filtered ADC: 3901, Threshold: 3999[0m
+[0;32mI (121824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (121824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (123024) POTENTIOMETER: RAW ADC: 3914, Filtered ADC: 3909, Threshold: 3999[0m
+[0;32mI (123024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (123024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (124224) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3903, Threshold: 3999[0m
+[0;32mI (124224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (124224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (125424) POTENTIOMETER: RAW ADC: 3911, Filtered ADC: 3914, Threshold: 3999[0m
+[0;32mI (125424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (125424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (126624) POTENTIOMETER: RAW ADC: 3893, Filtered ADC: 3895, Threshold: 3999[0m
+[0;32mI (126624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (126624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (127824) POTENTIOMETER: RAW ADC: 3897, Filtered ADC: 3898, Threshold: 3999[0m
+[0;32mI (127824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (127824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (129024) POTENTIOMETER: RAW ADC: 3909, Filtered ADC: 3908, Threshold: 3999[0m
+[0;32mI (129024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (129024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (130224) POTENTIOMETER: RAW ADC: 3900, Filtered ADC: 3898, Threshold: 3999[0m
+[0;32mI (130224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (130224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (131424) POTENTIOMETER: RAW ADC: 3911, Filtered ADC: 3910, Threshold: 3999[0m
+[0;32mI (131424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (131424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (132624) POTENTIOMETER: RAW ADC: 3911, Filtered ADC: 3908, Threshold: 3999[0m
+[0;32mI (132624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (132624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (133824) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3900, Threshold: 3999[0m
+[0;32mI (133824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (133824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (135024) POTENTIOMETER: RAW ADC: 3897, Filtered ADC: 3898, Threshold: 3999[0m
+[0;32mI (135024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (135024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (136224) POTENTIOMETER: RAW ADC: 3899, Filtered ADC: 3899, Threshold: 3999[0m
+[0;32mI (136224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (136224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (137424) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3904, Threshold: 3999[0m
+[0;32mI (137424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (137424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (138624) POTENTIOMETER: RAW ADC: 3901, Filtered ADC: 3899, Threshold: 3999[0m
+[0;32mI (138624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (138624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (139824) POTENTIOMETER: RAW ADC: 3911, Filtered ADC: 3910, Threshold: 3999[0m
+[0;32mI (139824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (139824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (141024) POTENTIOMETER: RAW ADC: 3900, Filtered ADC: 3900, Threshold: 3999[0m
+[0;32mI (141024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (141024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (142224) POTENTIOMETER: RAW ADC: 3898, Filtered ADC: 3901, Threshold: 3999[0m
+[0;32mI (142224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (142224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (143424) POTENTIOMETER: RAW ADC: 3900, Filtered ADC: 3901, Threshold: 3999[0m
+[0;32mI (143424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (143424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (144624) POTENTIOMETER: RAW ADC: 3909, Filtered ADC: 3910, Threshold: 3999[0m
+[0;32mI (144624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (144624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (145824) POTENTIOMETER: RAW ADC: 3901, Filtered ADC: 3900, Threshold: 3999[0m
+[0;32mI (145824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (145824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (147024) POTENTIOMETER: RAW ADC: 3910, Filtered ADC: 3906, Threshold: 3999[0m
+[0;32mI (147024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (147024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (148224) POTENTIOMETER: RAW ADC: 3899, Filtered ADC: 3902, Threshold: 3999[0m
+[0;32mI (148224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (148224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (149424) POTENTIOMETER: RAW ADC: 3891, Filtered ADC: 3894, Threshold: 3999[0m
+[0;32mI (149424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (149424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (150624) POTENTIOMETER: RAW ADC: 3895, Filtered ADC: 3897, Threshold: 3999[0m
+[0;32mI (150624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (150624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (151824) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3904, Threshold: 3999[0m
+[0;32mI (151824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (151824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (153024) POTENTIOMETER: RAW ADC: 3895, Filtered ADC: 3898, Threshold: 3999[0m
+[0;32mI (153024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (153024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (154224) POTENTIOMETER: RAW ADC: 3909, Filtered ADC: 3905, Threshold: 3999[0m
+[0;32mI (154224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (154224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (155424) POTENTIOMETER: RAW ADC: 3911, Filtered ADC: 3910, Threshold: 3999[0m
+[0;32mI (155424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (155424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (156624) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3899, Threshold: 3999[0m
+[0;32mI (156624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (156624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (157824) POTENTIOMETER: RAW ADC: 3901, Filtered ADC: 3902, Threshold: 3999[0m
+[0;32mI (157824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (157824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (159024) POTENTIOMETER: RAW ADC: 3910, Filtered ADC: 3909, Threshold: 3999[0m
+[0;32mI (159024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (159024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (160224) POTENTIOMETER: RAW ADC: 3899, Filtered ADC: 3902, Threshold: 3999[0m
+[0;32mI (160224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (160224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (161424) POTENTIOMETER: RAW ADC: 3900, Filtered ADC: 3900, Threshold: 3999[0m
+[0;32mI (161424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (161424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (162624) POTENTIOMETER: RAW ADC: 3897, Filtered ADC: 3897, Threshold: 3999[0m
+[0;32mI (162624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (162624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (163824) POTENTIOMETER: RAW ADC: 3887, Filtered ADC: 3897, Threshold: 3999[0m
+[0;32mI (163824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (163824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (165024) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3901, Threshold: 3999[0m
+[0;32mI (165024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (165024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (166224) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3903, Threshold: 3999[0m
+[0;32mI (166224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (166224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (167424) POTENTIOMETER: RAW ADC: 3899, Filtered ADC: 3899, Threshold: 3999[0m
+[0;32mI (167424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (167424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (168624) POTENTIOMETER: RAW ADC: 3909, Filtered ADC: 3909, Threshold: 3999[0m
+[0;32mI (168624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (168624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (169824) POTENTIOMETER: RAW ADC: 3916, Filtered ADC: 3914, Threshold: 3999[0m
+[0;32mI (169824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (169824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (171024) POTENTIOMETER: RAW ADC: 3899, Filtered ADC: 3897, Threshold: 3999[0m
+[0;32mI (171024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (171024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (172224) POTENTIOMETER: RAW ADC: 3915, Filtered ADC: 3912, Threshold: 3999[0m
+[0;32mI (172224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (172224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (173424) POTENTIOMETER: RAW ADC: 3909, Filtered ADC: 3906, Threshold: 3999[0m
+[0;32mI (173424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (173424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (174624) POTENTIOMETER: RAW ADC: 3925, Filtered ADC: 3919, Threshold: 3999[0m
+[0;32mI (174624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (174624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (175824) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3902, Threshold: 3999[0m
+[0;32mI (175824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (175824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (177024) POTENTIOMETER: RAW ADC: 3923, Filtered ADC: 3915, Threshold: 3999[0m
+[0;32mI (177024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (177024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (178224) POTENTIOMETER: RAW ADC: 3899, Filtered ADC: 3903, Threshold: 3999[0m
+[0;32mI (178224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (178224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (179424) POTENTIOMETER: RAW ADC: 3916, Filtered ADC: 3913, Threshold: 3999[0m
+[0;32mI (179424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (179424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (180624) POTENTIOMETER: RAW ADC: 3912, Filtered ADC: 3907, Threshold: 3999[0m
+[0;32mI (180624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (180624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (181824) POTENTIOMETER: RAW ADC: 3900, Filtered ADC: 3898, Threshold: 3999[0m
+[0;32mI (181824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (181824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (183024) POTENTIOMETER: RAW ADC: 3887, Filtered ADC: 3891, Threshold: 3999[0m
+[0;32mI (183024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (183024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (184224) POTENTIOMETER: RAW ADC: 3921, Filtered ADC: 3913, Threshold: 3999[0m
+[0;32mI (184224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (184224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (185424) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3906, Threshold: 3999[0m
+[0;32mI (185424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (185424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (186624) POTENTIOMETER: RAW ADC: 3893, Filtered ADC: 3894, Threshold: 3999[0m
+[0;32mI (186624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (186624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (187824) POTENTIOMETER: RAW ADC: 3911, Filtered ADC: 3905, Threshold: 3999[0m
+[0;32mI (187824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (187824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (189024) POTENTIOMETER: RAW ADC: 3894, Filtered ADC: 3895, Threshold: 3999[0m
+[0;32mI (189024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (189024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (190224) POTENTIOMETER: RAW ADC: 3901, Filtered ADC: 3901, Threshold: 3999[0m
+[0;32mI (190224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (190224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (191424) POTENTIOMETER: RAW ADC: 3896, Filtered ADC: 3899, Threshold: 3999[0m
+[0;32mI (191424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (191424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (192624) POTENTIOMETER: RAW ADC: 3899, Filtered ADC: 3899, Threshold: 3999[0m
+[0;32mI (192624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (192624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (193824) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3905, Threshold: 3999[0m
+[0;32mI (193824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (193824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (195024) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3905, Threshold: 3999[0m
+[0;32mI (195024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (195024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (196224) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3902, Threshold: 3999[0m
+[0;32mI (196224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (196224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (197424) POTENTIOMETER: RAW ADC: 3916, Filtered ADC: 3910, Threshold: 3999[0m
+[0;32mI (197424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (197424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (198624) POTENTIOMETER: RAW ADC: 3901, Filtered ADC: 3904, Threshold: 3999[0m
+[0;32mI (198624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (198624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (199824) POTENTIOMETER: RAW ADC: 3901, Filtered ADC: 3901, Threshold: 3999[0m
+[0;32mI (199824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (199824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (201024) POTENTIOMETER: RAW ADC: 3916, Filtered ADC: 3913, Threshold: 3999[0m
+[0;32mI (201024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (201024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (202224) POTENTIOMETER: RAW ADC: 3913, Filtered ADC: 3907, Threshold: 3999[0m
+[0;32mI (202224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (202224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (203424) POTENTIOMETER: RAW ADC: 3891, Filtered ADC: 3893, Threshold: 3999[0m
+[0;32mI (203424) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (203424) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (204624) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3900, Threshold: 3999[0m
+[0;32mI (204624) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (204624) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (204684) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (204744) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (205824) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3905, Threshold: 3999[0m
+[0;32mI (205824) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (205824) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (207024) POTENTIOMETER: RAW ADC: 3899, Filtered ADC: 3901, Threshold: 3999[0m
+[0;32mI (207024) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (207024) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (207824) OLED_UI: Returning to main screen[0m
+[0;32mI (208224) POTENTIOMETER: RAW ADC: 3911, Filtered ADC: 3913, Threshold: 3999[0m
+[0;32mI (208224) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (208224) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (209434) POTENTIOMETER: RAW ADC: 3916, Filtered ADC: 3910, Threshold: 3999[0m
+[0;32mI (209434) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (209434) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (210634) POTENTIOMETER: RAW ADC: 3913, Filtered ADC: 3911, Threshold: 3999[0m
+[0;32mI (210634) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (210634) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (211834) POTENTIOMETER: RAW ADC: 3913, Filtered ADC: 3913, Threshold: 3999[0m
+[0;32mI (211834) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (211834) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (213034) POTENTIOMETER: RAW ADC: 3913, Filtered ADC: 3905, Threshold: 3999[0m
+[0;32mI (213034) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (213034) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (214234) POTENTIOMETER: RAW ADC: 3901, Filtered ADC: 3901, Threshold: 3999[0m
+[0;32mI (214234) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (214234) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (215434) POTENTIOMETER: RAW ADC: 3916, Filtered ADC: 3914, Threshold: 3999[0m
+[0;32mI (215434) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (215434) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (216634) POTENTIOMETER: RAW ADC: 3909, Filtered ADC: 3909, Threshold: 3999[0m
+[0;32mI (216634) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (216634) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (217834) POTENTIOMETER: RAW ADC: 3916, Filtered ADC: 3914, Threshold: 3999[0m
+[0;32mI (217834) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (217834) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (219034) POTENTIOMETER: RAW ADC: 3902, Filtered ADC: 3905, Threshold: 3999[0m
+[0;32mI (219034) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (219034) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (220234) POTENTIOMETER: RAW ADC: 3911, Filtered ADC: 3912, Threshold: 3999[0m
+[0;32mI (220234) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (220234) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (221434) POTENTIOMETER: RAW ADC: 3916, Filtered ADC: 3913, Threshold: 3999[0m
+[0;32mI (221434) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (221434) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (222634) POTENTIOMETER: RAW ADC: 3915, Filtered ADC: 3913, Threshold: 3999[0m
+[0;32mI (222634) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (222634) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (223834) POTENTIOMETER: RAW ADC: 3897, Filtered ADC: 3902, Threshold: 3999[0m
+[0;32mI (223834) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (223834) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (225034) POTENTIOMETER: RAW ADC: 3911, Filtered ADC: 3911, Threshold: 3999[0m
+[0;32mI (225034) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (225034) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (226234) POTENTIOMETER: RAW ADC: 3911, Filtered ADC: 3910, Threshold: 3999[0m
+[0;32mI (226234) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (226234) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (227434) POTENTIOMETER: RAW ADC: 3909, Filtered ADC: 3909, Threshold: 3999[0m
+[0;32mI (227434) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (227434) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (228634) POTENTIOMETER: RAW ADC: 3895, Filtered ADC: 3898, Threshold: 3999[0m
+[0;32mI (228634) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (228634) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (229834) POTENTIOMETER: RAW ADC: 3901, Filtered ADC: 3903, Threshold: 3999[0m
+[0;32mI (229834) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (229834) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (231034) POTENTIOMETER: RAW ADC: 3918, Filtered ADC: 3915, Threshold: 3999[0m
+[0;32mI (231034) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (231034) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (232234) POTENTIOMETER: RAW ADC: 3912, Filtered ADC: 3908, Threshold: 3999[0m
+[0;32mI (232234) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (232234) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (233434) POTENTIOMETER: RAW ADC: 3896, Filtered ADC: 3899, Threshold: 3999[0m
+[0;32mI (233434) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (233434) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (234634) POTENTIOMETER: RAW ADC: 3901, Filtered ADC: 3901, Threshold: 3999[0m
+[0;32mI (234634) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (234634) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (235834) POTENTIOMETER: RAW ADC: 3903, Filtered ADC: 3903, Threshold: 3999[0m
+[0;32mI (235834) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (235834) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (237034) POTENTIOMETER: RAW ADC: 3913, Filtered ADC: 3910

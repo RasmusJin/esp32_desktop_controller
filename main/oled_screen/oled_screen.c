@@ -1,61 +1,63 @@
 #include "ssd1306.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "freertos/timers.h"
-#include "freertos/queue.h"
 #include "esp_log.h"
 #include "driver/i2c.h"
 #include "oled_screen.h"
-#include <string.h>
-#include "time.h"
 #include "wifi_connection/wifi_connection.h"
+#include "esp_wifi.h"
+#include "keyswitches/keyswitches.h"
+#include "fan_control/fan_control.h"
+#include "relay_driver/relay_driver.h"
+#include <string.h>
+#include <time.h>
+#include <stdio.h>
 
 // Log tag
-static const char *TAG = "OLED";
-const uint16_t bluetooth[] = {0x0000, 0x0300, 0x0380, 0x02c0, 0x1260, 0x1a60, 0x0ec0, 0x0780, 0x0300, 0x0780, 0x0ec0, 0x1a60, 0x1260, 0x02c0, 0x0380, 0x0300};
-// Define constants for screen layout and buffer
-#define ZONE_4_START_PAGE 2    // Pages 2-5 for the middle section (events and clock)
-#define ZONE_4_END_PAGE 5      
-#define DISPLAY_QUEUE_LENGTH 10
-#define CHAR_WIDTH_3X 24       // Each character is 24 pixels wide when scaled 3x
-#define SCREEN_WIDTH 128       // OLED screen width
+static const char *TAG = "OLED_UI";
 
-// Define the queue for display events
-QueueHandle_t display_queue;
-
-// Timer for event-driven display and reverting to the clock
-TimerHandle_t event_timer;
-bool is_showing_event = false;  // To track if an event is being displayed
-
-// Global UI context for new contextual display system
+// Global UI context for the new display system
 static ui_context_t ui_ctx = {
     .current_state = UI_STATE_MAIN,
     .state_start_time = 0,
     .display_duration_ms = 3000,  // 3 seconds default
     .context = {
-        .desk_height = 0.0,
+        // WiFi/Network defaults
+        .wifi_connected = false,
+        .ip_address = "0.0.0.0",
+
+        // Desk control defaults
+        .desk_height = 67.0,
         .desk_moving = false,
         .desk_moving_up = false,
+
+        // Volume control defaults
         .volume_level = 50,
+
+        // Hue lighting defaults
         .hue_scene = "Unknown",
         .hue_brightness = 50,
+        .hue_lights_on = false,
+
+        // PC switching defaults
         .pc_number = 1,
+
+        // Window control defaults
         .window_opening = false,
         .window_closing = false,
         .http_ack_received = false,
-        .wifi_status = "●●●○",
-        .ip_address = "192.168.x.x",
+
+        // Fan control defaults
         .fan_speed_percent = 0,
         .fan_active = false
     }
 };
 
-// Function declarations
-static void display_task(void *pvParameter);
-void oled_init(SSD1306_t *dev);
-void revert_to_clock(TimerHandle_t xTimer);  // Timer callback for reverting to clock
+// ============================================================================
+// OLED INITIALIZATION (KEEP EXISTING - WORKS)
+// ============================================================================
 
-// Initialize OLED and create display task and queue
+// Initialize OLED display - KEEP THIS WORKING FUNCTION
 void oled_init(SSD1306_t *dev) {
     dev->_address = OLED_I2C_ADDRESS;
     dev->_width = 128;
@@ -68,102 +70,13 @@ void oled_init(SSD1306_t *dev) {
     ssd1306_init(dev, dev->_width, dev->_height);
     ESP_LOGI(TAG, "OLED initialized successfully");
 
-    // Create the display queue
-    display_queue = xQueueCreate(DISPLAY_QUEUE_LENGTH, sizeof(display_event_t));
+    // Create the UI display task
+    xTaskCreate(ui_display_task, "ui_display_task", 4096, (void *)dev, 5, NULL);
 
-    // Create the display task
-    xTaskCreate(display_task, "display_task", 4096, (void *)dev, 5, NULL);
-
-    // Create the event timer to revert to the clock after 5-8 seconds
-    event_timer = xTimerCreate("EventTimer", pdMS_TO_TICKS(5000), pdFALSE, (void *)0, revert_to_clock);
+    ESP_LOGI(TAG, "UI display task created");
 }
 
-// Universal event message display function
-void display_event_message(SSD1306_t *dev, const char *message, int display_time_ms) {
-    // Clear the middle part of the screen (Pages 2-5)
-    for (int i = ZONE_4_START_PAGE; i <= ZONE_4_END_PAGE; i++) {
-        ssd1306_clear_line(dev, i, false);
-    }
-
-    // Display the event message centered on Pages 2-5
-    ssd1306_display_text(dev, ZONE_4_START_PAGE, (char *)message, strlen(message), false);
-    ssd1306_show_buffer(dev);
-
-    // Set flag to indicate an event is being displayed
-    is_showing_event = true;
-
-    // Start or reset the event timer
-    if (xTimerIsTimerActive(event_timer)) {
-        xTimerReset(event_timer, 0);
-    } else {
-        xTimerStart(event_timer, 0);
-    }
-}
-
-// Revert to the clock display after the event timer expires
-void revert_to_clock(TimerHandle_t xTimer) {
-    is_showing_event = false;
-    display_event_t event;
-    event.event_type = DISPLAY_UPDATE_CLOCK;
-    snprintf(event.display_text, sizeof(event.display_text), "%s", get_current_time_str());
-    oled_send_display_event(&event);  // Revert to clock display
-}
-
-// Send an event to the display queue
-bool oled_send_display_event(display_event_t *event) {
-    if (display_queue != NULL) {
-        return xQueueSend(display_queue, event, portMAX_DELAY) == pdTRUE;
-    }
-    return false;
-}
-
-// Task responsible for handling display updates
-static void display_task(void *pvParameter) {
-    SSD1306_t *dev = (SSD1306_t *)pvParameter;
-    display_event_t event;
-
-    while (1) {
-        // Wait for a message in the display queue
-        if (xQueueReceive(display_queue, &event, portMAX_DELAY) == pdTRUE) {
-            // Clear the middle screen (Pages 2-5)
-            for (int i = ZONE_4_START_PAGE; i <= ZONE_4_END_PAGE; i++) {
-                ssd1306_clear_line(dev, i, false);
-            }
-
-            // Handle different display events
-            switch (event.event_type) {
-                case DISPLAY_UPDATE_CLOCK:
-                    display_time_x3(dev, event.display_text);
-                    break;
-
-                case DISPLAY_UPDATE_LIGHT_STATUS:
-                    ssd1306_display_text(dev, 0, event.display_text, strlen(event.display_text), false);
-                    break;
-
-                case DISPLAY_UPDATE_HEIGHT:
-                    ssd1306_display_text(dev, ZONE_4_START_PAGE, event.display_text, strlen(event.display_text), false);
-                    break;
-
-                case DISPLAY_UPDATE_POMODORO:
-                    ssd1306_display_text(dev, ZONE_4_START_PAGE, event.display_text, strlen(event.display_text), false);
-                    break;
-
-                case DISPLAY_UPDATE_SKYLIGHT:
-                    ssd1306_display_text(dev, ZONE_4_START_PAGE, event.display_text, strlen(event.display_text), false);
-                    break;
-
-                default:
-                    ESP_LOGE(TAG, "Unhandled display event type: %d", event.event_type);
-                    break;
-            }
-
-
-            ssd1306_show_buffer(dev);  // Refresh the OLED display
-        }
-    }
-}
-
-// I2C Initialization
+// I2C Initialization - KEEP THIS WORKING FUNCTION
 void i2c_master_init_custom(SSD1306_t *dev, int16_t sda, int16_t scl, int16_t reset) {
     i2c_config_t i2c_config = {
         .mode = I2C_MODE_MASTER,
@@ -186,86 +99,381 @@ void i2c_master_init_custom(SSD1306_t *dev, int16_t sda, int16_t scl, int16_t re
     ESP_LOGI(TAG, "I2C initialized successfully");
 }
 
-// Display clock in large font (Pages 2-5)
-void display_time_x3(SSD1306_t *dev, const char *time) {
-    int len = strlen(time);
-    int total_width = len * CHAR_WIDTH_3X;
-    int seg_offset = (SCREEN_WIDTH - total_width) / 2;  // Center the text
+// ============================================================================
+// NEW UI UTILITY FUNCTIONS
+// ============================================================================
 
-    // Clear the zone first
-    for (int i = ZONE_4_START_PAGE; i <= ZONE_4_END_PAGE; i++) {
-        ssd1306_clear_line(dev, i, false);
-    }
+// Clear the entire screen properly - handle SH1106 (132 bytes) vs SSD1306 (128 bytes)
+void ui_clear_screen(SSD1306_t *dev) {
+    ESP_LOGI("OLED_UI", "Clearing screen for SH1106 display (handling extra 4 bytes per page)");
 
-    // Display large time text on Pages 2-5
-    ssd1306_display_text_x3(dev, ZONE_4_START_PAGE, (char *)time, len, false);
-    ssd1306_show_buffer(dev);  // Refresh the display
-}
-void time_update_task(void *pvParameter) {
-    SSD1306_t *dev = (SSD1306_t *)pvParameter;
-    display_event_t event;
-    event.event_type = DISPLAY_UPDATE_CLOCK;
-
-    while (1) {
-        time_t now;
-        struct tm timeinfo;
-        char time_str[6];  // Buffer for time string (HH:MM)
-
-        // Get the current time
-        time(&now);
-        localtime_r(&now, &timeinfo);
-
-        // Format time as "HH:MM"
-        strftime(time_str, sizeof(time_str), "%H:%M", &timeinfo);
-
-        // Send the clock update event to the queue
-        snprintf(event.display_text, sizeof(event.display_text), "%s", time_str);
-        oled_send_display_event(&event);  // Send clock update to the display queue
-
-        // Wait for 1 minute before updating again
-        vTaskDelay(pdMS_TO_TICKS(60000));  // Delay for 60 seconds
-    }
-}
-// Function to draw a bitmap of specified width and height at a given position
-void ssd1306_draw_bitmap_16x16(SSD1306_t *dev, int x, int y, const uint16_t *bitmap) {
-    // Iterate over each of the 16 columns
-    for (int col = 0; col < 16; col++) {
-        uint16_t column_data = bitmap[col];  // Get the column's data
-
-        // Iterate over each bit in the column
-        for (int bit = 0; bit < 16; bit++) {
-            int ypos = y + bit;  // Calculate the y position
-
-            // Extract the pixel value (1 or 0) for the current bit
-            bool is_on = (column_data >> bit) & 0x01;
-
-            // Draw the pixel at (x + col, ypos)
-            _ssd1306_pixel(dev, x + col, ypos, !is_on);  // Assuming your display logic is inverted
+    // Clear the standard 128 bytes in the buffer
+    for (int page = 0; page < dev->_pages; page++) {
+        for (int seg = 0; seg < 128; seg++) {
+            dev->_page[page]._segs[seg] = 0x00;
         }
     }
 
-    // Refresh the display to show the changes
+    // For SH1106, we need to manually clear the extra 4 bytes per page
+    // These are at columns 128-131 and don't get cleared by the standard library
+    for (int page = 0; page < dev->_pages; page++) {
+        // Set page address
+        uint8_t page_cmd[] = {0x00, 0xB0 | page};
+        i2c_master_write_to_device(dev->_i2c_num, dev->_address, page_cmd, sizeof(page_cmd), 1000 / portTICK_PERIOD_MS);
+
+        // Set column address to 128 (start of extra bytes)
+        uint8_t col_cmd[] = {0x00, 0x10 | ((128 >> 4) & 0x0F), 0x00 | (128 & 0x0F)};
+        i2c_master_write_to_device(dev->_i2c_num, dev->_address, col_cmd, sizeof(col_cmd), 1000 / portTICK_PERIOD_MS);
+
+        // Clear the 4 extra bytes
+        uint8_t clear_data[] = {0x40, 0x00, 0x00, 0x00, 0x00}; // 0x40 = data mode, then 4 zero bytes
+        i2c_master_write_to_device(dev->_i2c_num, dev->_address, clear_data, sizeof(clear_data), 1000 / portTICK_PERIOD_MS);
+    }
+
+    // Force display update to push the cleared buffer
+    ssd1306_show_buffer(dev);
+
+    ESP_LOGI("OLED_UI", "SH1106 screen cleared completely (128 + 4 extra bytes per page)");
+}
+
+// Draw a progress bar
+void ui_draw_progress_bar(SSD1306_t *dev, int x, int y, int width, int height, int percentage) {
+    // Clamp percentage to 0-100
+    if (percentage < 0) percentage = 0;
+    if (percentage > 100) percentage = 100;
+
+    // Calculate filled width (for future use)
+    (void)width; (void)height; // Suppress unused parameter warnings
+
+    // Draw the progress bar outline (simplified - just filled blocks)
+    char bar[32] = {0};
+    int bar_chars = width / 6; // Approximate character width
+    if (bar_chars > 31) bar_chars = 31;
+
+    int filled_chars = (bar_chars * percentage) / 100;
+
+    for (int i = 0; i < filled_chars; i++) {
+        bar[i] = '=';
+    }
+    for (int i = filled_chars; i < bar_chars; i++) {
+        bar[i] = '-';
+    }
+
+    ssd1306_display_text(dev, y / 8, bar, strlen(bar), false);
+}
+
+// Draw text centered on a page
+void ui_draw_text_centered(SSD1306_t *dev, int page, const char* text) {
+    int text_len = strlen(text);
+    // For simplicity, just display the text (SSD1306 library handles positioning)
+    // TODO: Implement proper centering calculation
+    ssd1306_display_text(dev, page, (char*)text, text_len, false);
+}
+
+// Draw text right-aligned on a page
+void ui_draw_text_right_aligned(SSD1306_t *dev, int page, const char* text) {
+    // For simplicity, just display the text with some right padding
+    char padded_text[32];
+    int text_len = strlen(text);
+    int padding = 16 - text_len; // Approximate right alignment
+    if (padding < 0) padding = 0;
+
+    memset(padded_text, ' ', padding);
+    strcpy(padded_text + padding, text);
+
+    ssd1306_display_text(dev, page, padded_text, strlen(padded_text), false);
+}
+
+// Custom function to display x3 text with pixel offset (for clock alignment)
+void ui_display_text_x3_offset(SSD1306_t *dev, int page, char *text, int text_len, int offset_pixels, bool invert) {
+    // Clear the x3 text area (3 pages) completely
+    for (int p = page; p < page + 3 && p < dev->_pages; p++) {
+        for (int seg = 0; seg < 128; seg++) {
+            dev->_page[p]._segs[seg] = 0x00;
+        }
+    }
+
+    // Display normal x3 text first
+    ssd1306_display_text_x3(dev, page, text, text_len, invert);
+
+    // Only do manual shift if offset is not 0 and not 8 (since 8 pixels = 1 character)
+    if (offset_pixels > 0 && offset_pixels != 8) {
+        // Manual shift for pixel-perfect positioning
+        for (int p = page; p < page + 3 && p < dev->_pages; p++) {
+            for (int i = 127; i >= offset_pixels; i--) {
+                dev->_page[p]._segs[i] = dev->_page[p]._segs[i - offset_pixels];
+            }
+            for (int i = 0; i < offset_pixels; i++) {
+                dev->_page[p]._segs[i] = 0x00;
+            }
+        }
+    }
+}
+
+// ============================================================================
+// NEW UI DISPLAY FUNCTIONS
+// ============================================================================
+
+// Main screen: Clock + WiFi status
+void ui_show_main(SSD1306_t *dev) {
+    ui_clear_screen(dev);
+
+    // Check actual WiFi status
+    wifi_ap_record_t ap_info;
+    esp_err_t wifi_status = esp_wifi_sta_get_ap_info(&ap_info);
+    bool wifi_connected = (wifi_status == ESP_OK);
+
+    // Top line: WiFi status (pad to exactly 16 characters to fill 128 pixels)
+    char wifi_line[17];
+    if (wifi_connected) {
+        strcpy(wifi_line, " WiFi: OK       "); // Exactly 16 chars
+    } else {
+        strcpy(wifi_line, " WiFi: --       "); // Exactly 16 chars
+    }
+    ssd1306_display_text(dev, 0, wifi_line, 16, false);
+
+    // Get current time
+    time_t now;
+    struct tm timeinfo;
+    time(&now);
+    localtime_r(&now, &timeinfo);
+
+    // Large time display - positioned 8 pixels right like other text
+    char time_str[8];
+    strftime(time_str, sizeof(time_str), "%H:%M", &timeinfo);
+
+    // Use the working version that you said was perfect
+    ui_display_text_x3_offset(dev, 2, time_str, strlen(time_str), 8, false);
+
+    // Date display (pad to exactly 16 characters to fill 128 pixels)
+    char date_str[17];
+    strftime(date_str, sizeof(date_str), " %d/%m", &timeinfo);
+    // Pad with spaces to exactly 16 characters
+    while (strlen(date_str) < 16) {
+        strcat(date_str, " ");
+    }
+    ssd1306_display_text(dev, 6, date_str, 16, false);
+
+    // Force buffer flush to display everything
     ssd1306_show_buffer(dev);
 }
 
+// Desk control screen
+void ui_show_desk(SSD1306_t *dev) {
+    ui_clear_screen(dev);
 
-void display_bluetooth_icon(SSD1306_t *dev) {
-    int xpos = 72;  // Center the icon horizontally (128 - 16) / 2
-    int page = 16;   // Starting vertical position (page 3)
-    ssd1306_draw_bitmap_16x16(dev, xpos, page, bluetooth);
+    // Get live distance reading
+    uint32_t distance_cm = measure_distance();
+    float live_height = (distance_cm > 0) ? distance_cm + 30.0 : ui_ctx.context.desk_height;
+
+    // Title (1-space padding like main screen)
+    if (ui_ctx.context.desk_moving) {
+        char title[16];
+        snprintf(title, sizeof(title), " DESK %s",
+                ui_ctx.context.desk_moving_up ? "UP" : "DOWN");
+        ssd1306_display_text(dev, 0, title, strlen(title), false);
+    } else {
+        ssd1306_display_text(dev, 0, " DESK STOPPED", 13, false);
+    }
+
+    // Height display (1-space padding for x3 text) - use live reading with fixed width
+    char height_str[8];
+    snprintf(height_str, sizeof(height_str), "%3.0fcm", live_height); // Fixed 3-digit width
+    ui_display_text_x3_offset(dev, 2, height_str, 5, 8, false); // Always 5 chars: "123cm"
+
+    // Status line (1-space padding)
+    if (ui_ctx.context.desk_moving) {
+        ssd1306_display_text(dev, 6, " Moving...", 10, false);
+    } else {
+        ssd1306_display_text(dev, 6, " Ready", 6, false);
+    }
+
+    ssd1306_show_buffer(dev);
+}
+
+// Volume control screen
+void ui_show_volume(SSD1306_t *dev) {
+    ui_clear_screen(dev);
+
+    // Title (1-space padding like main screen)
+    ssd1306_display_text(dev, 0, " VOL", 4, false);
+
+    // Volume percentage (1-space padding for x3 text) - fixed width
+    char vol_str[8];
+    snprintf(vol_str, sizeof(vol_str), "%3d%%", ui_ctx.context.volume_level); // Fixed 3-digit width
+    ui_display_text_x3_offset(dev, 2, vol_str, 4, 8, false); // Always 4 chars: "100%"
+
+    // Simple volume bar using text (1-space padding)
+    char bar[17] = " ";
+    int filled = ui_ctx.context.volume_level / 10; // 0-10 scale
+    for (int i = 0; i < filled && i < 10; i++) {
+        bar[i + 1] = '=';
+    }
+    for (int i = filled; i < 10; i++) {
+        bar[i + 1] = '-';
+    }
+    // Pad to 16 characters
+    while (strlen(bar) < 16) {
+        strcat(bar, " ");
+    }
+    ssd1306_display_text(dev, 6, bar, 16, false);
+
+    ssd1306_show_buffer(dev);
+}
+
+// Hue lighting control screen
+void ui_show_hue(SSD1306_t *dev) {
+    ui_clear_screen(dev);
+
+    // Get live values from keyswitches
+    int live_brightness = get_current_hue_brightness();
+    bool live_lights_on = get_current_hue_lights_on();
+    const char* live_scene = get_current_hue_scene_name();
+
+    // Title (1-space padding like main screen)
+    ssd1306_display_text(dev, 0, " HUE", 4, false);
+
+    // Light status (1-space padding for x3 text) - fixed width
+    char status_str[8];
+    snprintf(status_str, sizeof(status_str), "%-3s",
+            live_lights_on ? "ON" : "OFF"); // Fixed 3-char width, left-aligned
+    ui_display_text_x3_offset(dev, 2, status_str, 3, 8, false); // Always 3 chars
+
+    // Scene and brightness on bottom line (1-space padding)
+    char bright_str[50]; // Larger buffer to handle long scene names
+    snprintf(bright_str, sizeof(bright_str), " %s %d%%", live_scene, live_brightness);
+    // Truncate to 16 characters if needed
+    if (strlen(bright_str) > 16) {
+        bright_str[16] = '\0';
+    }
+    // Pad to 16 characters
+    while (strlen(bright_str) < 16) {
+        strcat(bright_str, " ");
+    }
+    ssd1306_display_text(dev, 6, bright_str, 16, false);
+
+    ssd1306_show_buffer(dev);
+}
+
+// PC switching screen
+void ui_show_pc_switch(SSD1306_t *dev) {
+    ui_clear_screen(dev);
+
+    // Title (1-space padding like main screen)
+    ssd1306_display_text(dev, 0, " USB", 4, false);
+
+    // PC number (1-space padding for x3 text) - fixed width
+    char pc_str[8];
+    snprintf(pc_str, sizeof(pc_str), "PC%d", ui_ctx.context.pc_number);
+    ui_display_text_x3_offset(dev, 2, pc_str, 3, 8, false); // Always 3 chars: "PC1" or "PC2"
+
+    ssd1306_show_buffer(dev);
+}
+
+// Window control screen
+void ui_show_window(SSD1306_t *dev) {
+    ui_clear_screen(dev);
+
+    // Title (1-space padding like main screen)
+    ssd1306_display_text(dev, 0, " WINDOW", 7, false);
+
+    // Action status (1-space padding for x3 text) - fixed width
+    if (ui_ctx.context.window_opening) {
+        ui_display_text_x3_offset(dev, 2, "OPEN ", 5, 8, false); // Padded to 5 chars
+    } else if (ui_ctx.context.window_closing) {
+        ui_display_text_x3_offset(dev, 2, "CLOSE", 5, 8, false); // Already 5 chars
+    } else {
+        ui_display_text_x3_offset(dev, 2, "IDLE ", 5, 8, false); // Padded to 5 chars
+    }
+
+    // HTTP acknowledgment status (1-space padding)
+    if (ui_ctx.context.http_ack_received) {
+        ssd1306_display_text(dev, 6, " OK", 3, false);
+    } else {
+        ssd1306_display_text(dev, 6, " Sending...", 11, false);
+    }
+
+    ssd1306_show_buffer(dev);
+}
+
+// Fan control screen
+void ui_show_fan(SSD1306_t *dev) {
+    ui_clear_screen(dev);
+
+    // Get live fan values
+    int live_fan_percent = get_current_fan_speed_percent();
+    bool live_fan_active = get_current_fan_active();
+
+    // Title (1-space padding like main screen)
+    ssd1306_display_text(dev, 0, " FAN", 4, false);
+
+    if (live_fan_active) {
+        // Fan percentage (1-space padding for x3 text) - fixed width
+        char fan_str[8];
+        snprintf(fan_str, sizeof(fan_str), "%3d%%", live_fan_percent); // Fixed 3-digit width
+        ui_display_text_x3_offset(dev, 2, fan_str, 4, 8, false); // Always 4 chars: "100%"
+
+        // Simple fan speed bar using text (1-space padding)
+        char bar[17] = " ";
+        int filled = live_fan_percent / 10; // 0-10 scale
+        for (int i = 0; i < filled && i < 10; i++) {
+            bar[i + 1] = '=';
+        }
+        for (int i = filled; i < 10; i++) {
+            bar[i + 1] = '-';
+        }
+        // Pad to 16 characters
+        while (strlen(bar) < 16) {
+            strcat(bar, " ");
+        }
+        ssd1306_display_text(dev, 6, bar, 16, false);
+    } else {
+        // Fan off message (1-space padding for x3 text) - fixed width
+        ui_display_text_x3_offset(dev, 2, "OFF ", 4, 8, false); // Padded to 4 chars like percentages
+    }
+
+    ssd1306_show_buffer(dev);
+}
+
+// Suspend/sleep screen
+void ui_show_suspend(SSD1306_t *dev) {
+    ui_clear_screen(dev);
+
+    // Title (1-space padding like main screen)
+    ssd1306_display_text(dev, 0, " SUSPEND", 8, false);
+
+    // PC number and action (1-space padding for x3 text) - fixed width
+    char suspend_str[8];
+    snprintf(suspend_str, sizeof(suspend_str), "PC%d", ui_ctx.context.pc_number);
+    ui_display_text_x3_offset(dev, 2, suspend_str, 3, 8, false); // Always 3 chars: "PC1" or "PC2"
+
+    // Status (1-space padding)
+    ssd1306_display_text(dev, 6, " Sleeping...", 12, false);
+
+    ssd1306_show_buffer(dev);
 }
 
 // ============================================================================
-// NEW CONTEXTUAL UI SYSTEM
+// NEW UI STATE MANAGEMENT
 // ============================================================================
 
-// UI State Management Functions
+// Set the current UI state with duration
 void ui_set_state(ui_state_t state, uint32_t duration_ms) {
     ui_ctx.current_state = state;
     ui_ctx.state_start_time = xTaskGetTickCount() * portTICK_PERIOD_MS;
     ui_ctx.display_duration_ms = duration_ms;
+    ESP_LOGI(TAG, "UI state changed to %d for %d ms", state, duration_ms);
 }
 
+// Force refresh the UI state (always shows even if same state)
+void ui_force_refresh_state(ui_state_t state, uint32_t duration_ms) {
+    ui_ctx.current_state = state;
+    ui_ctx.state_start_time = xTaskGetTickCount() * portTICK_PERIOD_MS;
+    ui_ctx.display_duration_ms = duration_ms;
+    ESP_LOGI(TAG, "UI state force refreshed to %d for %d ms", state, duration_ms);
+}
+
+// Check if we should return to main screen
 bool ui_should_return_to_main(void) {
     if (ui_ctx.current_state == UI_STATE_MAIN) {
         return false;
@@ -275,248 +483,17 @@ bool ui_should_return_to_main(void) {
     return (current_time - ui_ctx.state_start_time) >= ui_ctx.display_duration_ms;
 }
 
-// Context setters
-void ui_set_wifi_status(const char* status, const char* ip) {
-    strncpy(ui_ctx.context.wifi_status, status, sizeof(ui_ctx.context.wifi_status) - 1);
-    strncpy(ui_ctx.context.ip_address, ip, sizeof(ui_ctx.context.ip_address) - 1);
+// Check if we should update desk distance (for live updates)
+bool ui_should_update_desk_distance(void) {
+    return (ui_ctx.current_state == UI_STATE_DESK && !ui_ctx.context.desk_moving);
 }
 
-void ui_set_desk_context(float height, bool moving, bool moving_up) {
-    ui_ctx.context.desk_height = height;
-    ui_ctx.context.desk_moving = moving;
-    ui_ctx.context.desk_moving_up = moving_up;
-}
-
-void ui_set_volume_context(int volume_percent) {
-    ui_ctx.context.volume_level = volume_percent;
-}
-
-void ui_set_hue_context(const char* scene, int brightness) {
-    strncpy(ui_ctx.context.hue_scene, scene, sizeof(ui_ctx.context.hue_scene) - 1);
-    ui_ctx.context.hue_brightness = brightness;
-}
-
-void ui_set_pc_context(int pc_number) {
-    ui_ctx.context.pc_number = pc_number;
-}
-
-void ui_set_window_context(bool opening, bool closing, bool ack) {
-    ui_ctx.context.window_opening = opening;
-    ui_ctx.context.window_closing = closing;
-    ui_ctx.context.http_ack_received = ack;
-}
-
-void ui_set_fan_context(int fan_percent, bool active) {
-    ui_ctx.context.fan_speed_percent = fan_percent;
-    ui_ctx.context.fan_active = active;
-}
-
-// UI Display Functions
-void ui_show_main(SSD1306_t *dev) {
-    // Clear the entire screen first
-    ssd1306_clear_screen(dev, false);
-    ssd1306_clear_line(dev, 0, false);
-    ssd1306_clear_line(dev, 1, false);
-    ssd1306_clear_line(dev, 2, false);
-    ssd1306_clear_line(dev, 3, false);
-    ssd1306_clear_line(dev, 4, false);
-    ssd1306_clear_line(dev, 5, false);
-    ssd1306_clear_line(dev, 6, false);
-    ssd1306_clear_line(dev, 7, false);
-
-    // Top line: WiFi status (moved right)
-    char wifi_line[32];
-    snprintf(wifi_line, sizeof(wifi_line), "WiFi: Connected");
-    ssd1306_display_text(dev, 0, wifi_line, strlen(wifi_line), false);
-
-    // Get current time
-    time_t now;
-    struct tm timeinfo;
-    time(&now);
-    localtime_r(&now, &timeinfo);
-
-    // Large time display (center, moved right)
-    char time_str[16];
-    strftime(time_str, sizeof(time_str), "%H:%M:%S", &timeinfo);
-    ssd1306_display_text_x3(dev, 2, time_str, strlen(time_str), false);
-
-    // Date display (bottom, moved right)
-    char date_str[32];
-    strftime(date_str, sizeof(date_str), "%a %d/%m", &timeinfo);
-    ssd1306_display_text(dev, 6, date_str, strlen(date_str), false);
-
-    ssd1306_show_buffer(dev);
-}
-
-void ui_show_desk(SSD1306_t *dev, float height, bool moving, bool moving_up) {
-    ssd1306_clear_screen(dev, false);
-
-    // Title
-    if (moving) {
-        ssd1306_display_text(dev, 0, moving_up ? "DESK MOVING UP" : "DESK MOVING DOWN",
-                           moving_up ? 13 : 15, false);
-    } else {
-        ssd1306_display_text(dev, 0, "DESK HEIGHT", 11, false);
-    }
-
-    // Height display
-    char height_str[32];
-    snprintf(height_str, sizeof(height_str), "Height: %.1fcm", height);
-    ssd1306_display_text(dev, 2, height_str, strlen(height_str), false);
-
-    // Progress bar (if moving)
-    if (moving) {
-        // Simple progress bar based on height (assuming 60-80cm range)
-        int progress = (int)((height - 60.0) / 20.0 * 10); // 0-10 scale
-        char bar[16] = "          ";
-        for (int i = 0; i < progress && i < 10; i++) {
-            bar[i] = 0xFF; // Full block character
-        }
-        ssd1306_display_text(dev, 5, bar, 10, false);
-    }
-
-    ssd1306_show_buffer(dev);
-}
-
-void ui_show_volume(SSD1306_t *dev, int volume_percent) {
-    // Clear the entire screen properly
-    ssd1306_clear_screen(dev, false);
-    for (int i = 0; i < 8; i++) {
-        ssd1306_clear_line(dev, i, false);
-    }
-
-    // Title (moved right)
-    ssd1306_display_text(dev, 0, "    VOLUME", 10, false);
-
-    // Volume percentage (moved right)
-    char vol_str[16];
-    snprintf(vol_str, sizeof(vol_str), "    %d%%", volume_percent);
-    ssd1306_display_text_x3(dev, 2, vol_str, strlen(vol_str), false);
-
-    // Volume bar (moved right)
-    char bar[20] = "    ";
-    int filled = volume_percent / 10; // 0-10 scale
-    for (int i = 0; i < filled && i < 10; i++) {
-        bar[i + 4] = '='; // Use = instead of 0xFF
-    }
-    for (int i = filled; i < 10; i++) {
-        bar[i + 4] = '-'; // Empty part
-    }
-    bar[14] = '\0'; // Null terminate
-    ssd1306_display_text(dev, 6, bar, strlen(bar), false);
-
-    ssd1306_show_buffer(dev);
-}
-
-void ui_show_hue(SSD1306_t *dev, const char* scene, int brightness) {
-    ssd1306_clear_screen(dev, false);
-
-    // Title
-    ssd1306_display_text(dev, 0, "HUE LIGHTS", 10, false);
-
-    // Scene name
-    char scene_str[32];
-    snprintf(scene_str, sizeof(scene_str), "Scene: %s", scene);
-    ssd1306_display_text(dev, 2, scene_str, strlen(scene_str), false);
-
-    // Brightness bar
-    char bright_str[16];
-    snprintf(bright_str, sizeof(bright_str), "Bright: %d%%", brightness);
-    ssd1306_display_text(dev, 4, bright_str, strlen(bright_str), false);
-
-    // Brightness bar
-    char bar[16] = "          ";
-    int filled = brightness / 10; // 0-10 scale
-    for (int i = 0; i < filled && i < 10; i++) {
-        bar[i] = 0xFF; // Full block
-    }
-    ssd1306_display_text(dev, 5, bar, 10, false);
-
-    ssd1306_show_buffer(dev);
-}
-
-void ui_show_pc_switch(SSD1306_t *dev, int pc_number) {
-    ssd1306_clear_screen(dev, false);
-
-    // Title
-    ssd1306_display_text(dev, 0, "USB SWITCH", 10, false);
-
-    // Switching message
-    ssd1306_display_text(dev, 2, "Switching to", 12, false);
-
-    // PC number (large)
-    char pc_str[16];
-    snprintf(pc_str, sizeof(pc_str), "PC %d", pc_number);
-    ssd1306_display_text_x3(dev, 4, pc_str, strlen(pc_str), false);
-
-    ssd1306_show_buffer(dev);
-}
-
-void ui_show_window(SSD1306_t *dev, bool opening, bool closing, bool ack) {
-    ssd1306_clear_screen(dev, false);
-
-    // Title
-    ssd1306_display_text(dev, 0, "WINDOW CONTROL", 14, false);
-
-    // Action
-    if (opening) {
-        ssd1306_display_text(dev, 2, "OPENING", 7, false);
-    } else if (closing) {
-        ssd1306_display_text(dev, 2, "CLOSING", 7, false);
-    }
-
-    // Acknowledgment
-    if (ack) {
-        ssd1306_display_text(dev, 6, "Command Sent OK", 15, false);
-    } else {
-        ssd1306_display_text(dev, 6, "Sending...", 10, false);
-    }
-
-    ssd1306_show_buffer(dev);
-}
-
-void ui_show_fan(SSD1306_t *dev, int fan_percent, bool active) {
-    // Clear the entire screen properly
-    ssd1306_clear_screen(dev, false);
-    for (int i = 0; i < 8; i++) {
-        ssd1306_clear_line(dev, i, false);
-    }
-
-    // Title (moved right)
-    ssd1306_display_text(dev, 0, "    FAN SPEED", 13, false);
-
-    // Fan status
-    if (active) {
-        // Fan percentage (moved right)
-        char fan_str[16];
-        snprintf(fan_str, sizeof(fan_str), "    %d%%", fan_percent);
-        ssd1306_display_text_x3(dev, 2, fan_str, strlen(fan_str), false);
-
-        // Fan speed bar (moved right)
-        char bar[20] = "    ";
-        int filled = fan_percent / 10; // 0-10 scale
-        for (int i = 0; i < filled && i < 10; i++) {
-            bar[i + 4] = '='; // Use = for filled
-        }
-        for (int i = filled; i < 10; i++) {
-            bar[i + 4] = '-'; // Empty part
-        }
-        bar[14] = '\0'; // Null terminate
-        ssd1306_display_text(dev, 6, bar, strlen(bar), false);
-    } else {
-        // Fan off message
-        ssd1306_display_text_x3(dev, 2, "   OFF", 6, false);
-        ssd1306_display_text(dev, 6, "    Fan Stopped", 15, false);
-    }
-
-    ssd1306_show_buffer(dev);
-}
-
-// Main UI update function - call this regularly to update display
+// Main UI update function - displays current state
 void ui_update_display(SSD1306_t *dev) {
     // Check if we should return to main screen
     if (ui_should_return_to_main()) {
         ui_ctx.current_state = UI_STATE_MAIN;
+        ESP_LOGI(TAG, "Returning to main screen");
     }
 
     // Display based on current state
@@ -526,29 +503,180 @@ void ui_update_display(SSD1306_t *dev) {
             break;
 
         case UI_STATE_DESK:
-            ui_show_desk(dev, ui_ctx.context.desk_height,
-                        ui_ctx.context.desk_moving, ui_ctx.context.desk_moving_up);
+            ui_show_desk(dev);
             break;
 
         case UI_STATE_VOLUME:
-            ui_show_volume(dev, ui_ctx.context.volume_level);
+            ui_show_volume(dev);
             break;
 
         case UI_STATE_HUE:
-            ui_show_hue(dev, ui_ctx.context.hue_scene, ui_ctx.context.hue_brightness);
+            ui_show_hue(dev);
             break;
 
         case UI_STATE_PC_SWITCH:
-            ui_show_pc_switch(dev, ui_ctx.context.pc_number);
+            ui_show_pc_switch(dev);
             break;
 
         case UI_STATE_WINDOW:
-            ui_show_window(dev, ui_ctx.context.window_opening,
-                          ui_ctx.context.window_closing, ui_ctx.context.http_ack_received);
+            ui_show_window(dev);
             break;
 
         case UI_STATE_FAN:
-            ui_show_fan(dev, ui_ctx.context.fan_speed_percent, ui_ctx.context.fan_active);
+            ui_show_fan(dev);
+            break;
+
+        case UI_STATE_SUSPEND:
+            ui_show_suspend(dev);
+            break;
+
+        default:
+            ESP_LOGW(TAG, "Unknown UI state: %d", ui_ctx.current_state);
+            ui_ctx.current_state = UI_STATE_MAIN;
+            ui_show_main(dev);
             break;
     }
 }
+
+// ============================================================================
+// NEW UI CONTEXT SETTERS
+// ============================================================================
+
+// Set WiFi status
+void ui_set_wifi_status(bool connected, const char* ip) {
+    ui_ctx.context.wifi_connected = connected;
+    if (ip) {
+        strncpy(ui_ctx.context.ip_address, ip, sizeof(ui_ctx.context.ip_address) - 1);
+        ui_ctx.context.ip_address[sizeof(ui_ctx.context.ip_address) - 1] = '\0';
+    }
+}
+
+// Set desk context
+void ui_set_desk_context(float height, bool moving, bool moving_up) {
+    ui_ctx.context.desk_height = height;
+    ui_ctx.context.desk_moving = moving;
+    ui_ctx.context.desk_moving_up = moving_up;
+}
+
+// Set volume context
+void ui_set_volume_context(int volume_percent) {
+    if (volume_percent < 0) volume_percent = 0;
+    if (volume_percent > 100) volume_percent = 100;
+    ui_ctx.context.volume_level = volume_percent;
+}
+
+// Set Hue context
+void ui_set_hue_context(const char* scene, int brightness, bool lights_on) {
+    if (scene) {
+        strncpy(ui_ctx.context.hue_scene, scene, sizeof(ui_ctx.context.hue_scene) - 1);
+        ui_ctx.context.hue_scene[sizeof(ui_ctx.context.hue_scene) - 1] = '\0';
+    }
+    if (brightness < 0) brightness = 0;
+    if (brightness > 100) brightness = 100;
+    ui_ctx.context.hue_brightness = brightness;
+    ui_ctx.context.hue_lights_on = lights_on;
+}
+
+// Set PC context
+void ui_set_pc_context(int pc_number) {
+    ui_ctx.context.pc_number = pc_number;
+}
+
+// Set window context
+void ui_set_window_context(bool opening, bool closing, bool ack) {
+    ui_ctx.context.window_opening = opening;
+    ui_ctx.context.window_closing = closing;
+    ui_ctx.context.http_ack_received = ack;
+}
+
+// Set fan context
+void ui_set_fan_context(int fan_percent, bool active) {
+    if (fan_percent < 0) fan_percent = 0;
+    if (fan_percent > 100) fan_percent = 100;
+    ui_ctx.context.fan_speed_percent = fan_percent;
+    ui_ctx.context.fan_active = active;
+}
+
+// ============================================================================
+// NEW UI DISPLAY TASK
+// ============================================================================
+
+// Main UI display task - updates display when needed
+void ui_display_task(void *pvParameter) {
+    SSD1306_t *dev = (SSD1306_t *)pvParameter;
+
+    ESP_LOGI(TAG, "UI display task started");
+
+    // Initial display
+    ui_update_display(dev);
+
+    uint32_t last_update_time = 0;
+    ui_state_t last_state = UI_STATE_MAIN;
+
+    while (1) {
+        uint32_t current_time = xTaskGetTickCount() * portTICK_PERIOD_MS;
+
+        // Only update if state changed or if we're on main screen and 1 minute has passed (for clock)
+        bool should_update = false;
+
+        if (ui_ctx.current_state != last_state) {
+            should_update = true;
+            last_state = ui_ctx.current_state;
+        } else if (ui_ctx.current_state == UI_STATE_MAIN &&
+                   (current_time - last_update_time) >= 60000) { // 60 seconds for clock update
+            should_update = true;
+        } else if (ui_should_return_to_main()) {
+            should_update = true;
+        } else if (ui_ctx.current_state == UI_STATE_HUE &&
+                   (current_time - last_update_time) >= 500) { // Update Hue UI every 500ms for live updates
+            should_update = true;
+        } else if (ui_ctx.current_state == UI_STATE_DESK &&
+                   (current_time - last_update_time) >= 500) { // Update desk UI every 500ms for live distance
+            should_update = true;
+        } else if (ui_ctx.current_state == UI_STATE_FAN &&
+                   (current_time - last_update_time) >= 500) { // Update fan UI every 500ms for live speed
+            should_update = true;
+        }
+
+        if (should_update) {
+            ui_update_display(dev);
+            last_update_time = current_time;
+        }
+
+        // Update every 250ms to reduce blinking but stay responsive
+        vTaskDelay(pdMS_TO_TICKS(250));
+    }
+}
+
+// ============================================================================
+// LEGACY FUNCTIONS - For backward compatibility
+// ============================================================================
+
+// Legacy function for sending display events (now just logs)
+bool oled_send_display_event(display_event_t *event) {
+    if (!event) {
+        return false;
+    }
+
+    ESP_LOGI(TAG, "Legacy display event: type=%d, text='%s'",
+             event->event_type, event->display_text);
+
+    // For now, just log the event. Could be extended to trigger UI updates
+    // based on event type if needed for backward compatibility
+    return true;
+}
+
+// Legacy function for displaying event messages (now just logs)
+void display_event_message(SSD1306_t *dev, const char *message, int display_time_ms) {
+    if (!dev || !message) {
+        return;
+    }
+
+    ESP_LOGI(TAG, "Legacy event message: '%s' for %d ms", message, display_time_ms);
+
+    // For now, just log the message. Could be extended to show temporary
+    // messages on the display if needed for backward compatibility
+}
+
+
+

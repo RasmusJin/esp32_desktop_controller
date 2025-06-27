@@ -1,8 +1,9 @@
 #include "relay_driver.h"
 #include "esp_log.h"
 #include "freertos/FreeRTOS.h"
-#include "esp_rom_sys.h"   
-#include "esp_timer.h" 
+#include "esp_rom_sys.h"
+#include "esp_timer.h"
+#include "oled_screen/oled_screen.h"
 
 static const char *RELAYTAG = "RELAY";
 
@@ -91,10 +92,18 @@ void start_moving_desk(desk_move_t direction) {
         gpio_set_level(RELAY_UP_PIN, 0);    // Activate relay for UP
         gpio_set_level(RELAY_DOWN_PIN, 1);  // Ensure DOWN relay is off
         ESP_LOGI("DESK", "Moving UP - SAFETY TIMEOUT: %d seconds", MAX_MOVEMENT_TIME_MS/1000);
+
+        // Show desk UI
+        ui_set_desk_context(67.0, true, true); // Approximate height, moving up
+        ui_set_state(UI_STATE_DESK, 5000); // Show desk UI for 5 seconds
     } else if (direction == DESK_MOVE_DOWN) {
         gpio_set_level(RELAY_DOWN_PIN, 0);  // Activate relay for DOWN
         gpio_set_level(RELAY_UP_PIN, 1);    // Ensure UP relay is off
         ESP_LOGI("DESK", "Moving DOWN - SAFETY TIMEOUT: %d seconds", MAX_MOVEMENT_TIME_MS/1000);
+
+        // Show desk UI
+        ui_set_desk_context(67.0, true, false); // Approximate height, moving down
+        ui_set_state(UI_STATE_DESK, 5000); // Show desk UI for 5 seconds
     }
 }
 
@@ -103,6 +112,10 @@ void stop_moving_desk(void) {
     gpio_set_level(RELAY_DOWN_PIN, 1);
     movement_active = false;
     ESP_LOGI("DESK", "Stopped moving");
+
+    // Update desk UI to show stopped state
+    ui_set_desk_context(67.0, false, false); // Approximate height, not moving
+    ui_set_state(UI_STATE_DESK, 3000); // Show desk UI for 3 seconds
 }
 
 // Safety function to check for timeout and force stop
@@ -116,11 +129,25 @@ void check_desk_safety_timeout(void) {
     }
 }
 
+// Global variable to track current PC
+static int current_pc = 1;
+
 void switch_pc(void) {
     gpio_set_level(RELAY_PC_SWITCH, 0);
     ESP_LOGI("DESK", "Switching PC");
+
+    // Toggle PC number and show UI
+    current_pc = (current_pc == 1) ? 2 : 1;
+    ui_set_pc_context(current_pc);
+    ui_set_state(UI_STATE_PC_SWITCH, 3000); // Show PC switch UI for 3 seconds
+
     vTaskDelay(1000 / portTICK_PERIOD_MS);
     gpio_set_level(RELAY_PC_SWITCH, 1);
+}
+
+// Get current PC number
+int get_current_pc(void) {
+    return current_pc;
 }
 
 #define TIMEOUT_US 50000  // Set timeout to 50ms (back to normal)

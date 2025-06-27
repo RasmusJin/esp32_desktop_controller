@@ -4,6 +4,7 @@
 #include "esp_adc/adc_cali.h"
 #include "esp_log.h"
 #include "driver/ledc.h"
+#include "oled_screen/oled_screen.h"
 
 #define POTENTIOMETER_ADC_CHANNEL ADC_CHANNEL_3  // GPIO4 (ADC1)
 #define DEFAULT_VREF 1100  // Default ADC reference voltage in mV
@@ -165,7 +166,13 @@ void update_fan_speed(void) {
         ESP_LOGI(TAG, "PWM SET: %d (%d%%)", duty_cycle, fan_speed_percentage);
     }
 
-    // Later, you can display fan_speed_percentage on a display
+    // Update UI when fan speed changes - always show for real-time feedback
+    static uint8_t last_fan_percentage = 255; // Initialize to invalid value
+    if (last_fan_percentage != fan_speed_percentage) {
+        ui_set_fan_context(fan_speed_percentage, duty_cycle > 0);
+        ui_force_refresh_state(UI_STATE_FAN, 3000); // Force show fan UI for 3 seconds
+        last_fan_percentage = fan_speed_percentage;
+    }
 }
 
 
@@ -188,4 +195,30 @@ uint32_t potentiometer_read(void) {
 void potentiometer_print_value(void) {
     uint32_t adc_value = potentiometer_read();
     ESP_LOGI(TAG, "Potentiometer ADC Value: %" PRIu32 " mV", adc_value);
+}
+
+// Live value getters for real-time UI updates
+int get_current_fan_speed_percent(void) {
+    uint32_t adc_value = potentiometer_read();
+
+    // Same logic as update_fan_speed() to calculate percentage
+    uint8_t fan_speed_percentage = 0;
+
+    if (adc_value <= 699) {
+        fan_speed_percentage = 100;
+    } else if (adc_value <= 1500) {
+        fan_speed_percentage = 75;
+    } else if (adc_value <= 2500) {
+        fan_speed_percentage = 50;
+    } else if (adc_value <= 3500) {
+        fan_speed_percentage = 25;
+    } else {
+        fan_speed_percentage = 0;
+    }
+
+    return fan_speed_percentage;
+}
+
+bool get_current_fan_active(void) {
+    return get_current_fan_speed_percent() > 0;
 }

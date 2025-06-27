@@ -32,6 +32,7 @@ typedef enum {
 // Initialize the relay pins
 void relay_driver_init(void);
 void switch_pc(void);
+int get_current_pc(void);
 // Function to move the desk up (activate the "Up" relay)
 void start_moving_desk(desk_move_t direction);
 

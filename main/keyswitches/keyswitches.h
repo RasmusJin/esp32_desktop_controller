@@ -38,4 +38,10 @@ bool debounce(uint32_t current_time, int gpio_pin, uint32_t *last_press_time);
 void setup_rotary_encoders(void);
 void poll_rotary_encoders(SSD1306_t *dev);
 void poll_rotary_encoders_task(void *pvParameter);
+
+// Live value getters for real-time UI updates
+int get_current_hue_brightness(void);
+bool get_current_hue_lights_on(void);
+const char* get_current_hue_scene_name(void);
+
 #endif // KEYSWITCHES_H

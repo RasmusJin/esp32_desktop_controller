@@ -1,0 +1,1995 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+[0;32mI (1040) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1140) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1150) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1160) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1170) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1170) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1170) RELAY_INIT: Relay PC_SWITCH initial state: 0[0m
+[0;32mI (1270) RELAY_INIT: ✅ All relays initialized and stable - system ready![0m
+[0;32mI (1270) gpio: GPIO[45]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1270) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1280) ULTRASONIC_INIT: Testing TRIG pin (GPIO45)...[0m
+[0;32mI (1290) ULTRASONIC_INIT: TRIG set LOW, reading: 0[0m
+[0;32mI (1290) ULTRASONIC_INIT: TRIG set HIGH, reading: 0[0m
+[0;32mI (1300) ULTRASONIC_INIT: TRIG set LOW again, reading: 0[0m
+[0;32mI (1300) MAIN: Initializing USB HID device...[0m
+[0;32mI (1310) HID_DEVICE: USB initialization[0m
+[0;33mW (1310) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (1320) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 0           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4004      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (1490) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (1490) HID_DEVICE: USB initialization DONE[0m
+[0;32mI (1500) MAIN: Initializing WiFi...[0m
+[0;32mI (1520) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (1530) pp: pp rom version: e7ae62f[0m
+[0;32mI (1530) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1540) wifi:wifi driver task: 3fcac4f8, prio:23, stack:6656, core=0[0m
+[0;32mI (1550) wifi:wifi firmware version: 090f94a[0m
+[0;32mI (1550) wifi:wifi certification version: v7.0[0m
+[0;32mI (1550) wifi:config NVS flash: enabled[0m
+[0;32mI (1550) wifi:config nano formatting: disabled[0m
+[0;32mI (1550) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1560) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1560) wifi:Init management short buffer num: 32[0m
+[0;32mI (1570) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1570) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1580) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1580) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1580) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1590) wifi_init: rx ba win: 6[0m
+[0;32mI (1590) wifi_init: accept mbox: 6[0m
+[0;32mI (1600) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1600) wifi_init: udp mbox: 6[0m
+[0;32mI (1600) wifi_init: tcp mbox: 6[0m
+[0;32mI (1610) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1610) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1620) wifi_init: tcp mss: 1440[0m
+[0;32mI (1620) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1620) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1630) WiFi: Configuring static IP: 192.168.50.100[0m
+[0;32mI (1640) WiFi: Static IP configured successfully[0m
+[0;32mI (1640) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (1640) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (1690) wifi:mode : sta (34:85:18:75:f3:0c)[0m
+[0;32mI (1690) wifi:enable tsf[0m
+[0;32mI (1690) WiFi: Wi-Fi initialization done.[0m
+[0;32mI (1690) WiFi: WiFi started, connecting...[0m
+[0;32mI (1720) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;32mI (1720) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1740) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1760) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1790) wifi:connected with NeverNude_IoT, aid = 22, channel 1, BW20, bssid = 72:d9:f5:9b:25:21[0m
+[0;32mI (1790) wifi:security: WPA2-PSK, phy: bgn, rssi: -66[0m
+[0;32mI (1800) wifi:pm start, type: 0[0m
+
+[0;32mI (1800) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1810) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1810) esp_netif_handlers: sta ip: 192.168.50.100, mask: 255.255.255.0, gw: 192.168.50.1[0m
+[0;32mI (1820) WiFi: Connected! IP: 192.168.50.100[0m
+[0;32mI (1830) WiFi: Connected to Wi-Fi[0m
+[0;32mI (1830) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (1840) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1850) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1860) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1860) wifi:<ba-add>idx:0 (ifx:0, 72:d9:f5:9b:25:21), tid:0, ssn:1, winSize:64[0m
+[0;32mI (1870) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1880) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1890) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1900) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1910) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1920) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1930) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1940) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1950) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1960) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1970) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1980) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1980) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1990) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (2000) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (2010) OLED_UI: Legacy display event: type=1, text='Lights: ON'[0m
+[0;32mI (2010) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 255[0m
+[0;32mI (2030) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (2030) KEYSWITCHES: Both rotary encoders configured - ROT1: brightness, ROT2: scenes[0m
+[0;32mI (2040) KEYSWITCHES: Getting current Hue light state...[0m
+[0;32mI (2050) KEYSWITCHES: Fetching current Hue group state...[0m
+[0;32mI (2050) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (2090) HTTP_CLIENT: Brightness for Gaming group set to 255[0m
+[0;32mI (2090) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (2100) OLED_UI: Legacy display event: type=1, text='Brightness: 255'[0m
+[0;32mI (2100) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (2110) KEYSWITCHES: Scene 2: Koncentrer dig (Concentrate)[0m
+[0;32mI (2340) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (2340) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (2340) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (2350) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (2360) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (2640) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (2650) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (2930) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (2940) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (3220) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (3230) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (3510) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (3520) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (3800) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (3810) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (4090) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (4100) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (4380) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (4390) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (4670) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (4680) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (4960) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (4970) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (5250) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (5260) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (5540) OLED_UI: Returning to main screen[0m
+[0;32mI (5540) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (5550) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (5850) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (5860) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;33mW (7150) KEYSWITCHES: No response data received, assuming lights OFF[0m
+[0;32mI (7150) KEYSWITCHES: Hue state initialized: lights_on = false[0m
+[0;32mI (7150) MAIN: All systems initialized - starting main loop[0m
+[0;32mI (7150) MAIN: Fan control: ACTIVE[0m
+[0;32mI (7160) MAIN: Single row switches: ACTIVE[0m
+[0;32mI (7160) MAIN: Switch matrix (desk control): ACTIVE[0m
+[0;32mI (7170) MAIN: Relay system: ACTIVE[0m
+[0;32mI (7170) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (7400) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (7410) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (7690) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (7700) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (7980) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (7990) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (8270) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (8280) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (8320) POTENTIOMETER: RAW ADC: 3095, Filtered ADC: 3094, Threshold: 3999[0m
+[0;32mI (8320) POTENTIOMETER: Step 5: ADC 3094 -> 27% (duty 70)[0m
+[0;32mI (8320) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (8320) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (8560) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (8570) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (8850) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (8860) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (9140) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (9150) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (9430) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (9440) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (9530) POTENTIOMETER: RAW ADC: 3098, Filtered ADC: 3095, Threshold: 3999[0m
+[0;32mI (9530) POTENTIOMETER: Step 5: ADC 3095 -> 27% (duty 70)[0m
+[0;32mI (9530) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (9530) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (9720) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (9730) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (10010) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (10020) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (10300) OLED_UI: Returning to main screen[0m
+[0;32mI (10300) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (10320) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (10610) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (10620) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (10740) POTENTIOMETER: RAW ADC: 3033, Filtered ADC: 3042, Threshold: 3999[0m
+[0;32mI (10740) POTENTIOMETER: Step 5: ADC 3042 -> 27% (duty 70)[0m
+[0;32mI (10740) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (10740) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (11950) POTENTIOMETER: RAW ADC: 3077, Filtered ADC: 3066, Threshold: 3999[0m
+[0;32mI (11950) POTENTIOMETER: Step 5: ADC 3066 -> 27% (duty 70)[0m
+[0;32mI (11950) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (11950) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (13160) POTENTIOMETER: RAW ADC: 3097, Filtered ADC: 3092, Threshold: 3999[0m
+[0;32mI (13160) POTENTIOMETER: Step 5: ADC 3092 -> 27% (duty 70)[0m
+[0;32mI (13160) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (13160) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (14370) POTENTIOMETER: RAW ADC: 3043, Filtered ADC: 3044, Threshold: 3999[0m
+[0;32mI (14370) POTENTIOMETER: Step 5: ADC 3044 -> 27% (duty 70)[0m
+[0;32mI (14370) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (14370) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (15580) POTENTIOMETER: RAW ADC: 3081, Filtered ADC: 3083, Threshold: 3999[0m
+[0;32mI (15580) POTENTIOMETER: Step 5: ADC 3083 -> 27% (duty 70)[0m
+[0;32mI (15580) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (15580) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (16790) POTENTIOMETER: RAW ADC: 3144, Filtered ADC: 3118, Threshold: 3999[0m
+[0;32mI (16790) POTENTIOMETER: Step 5: ADC 3118 -> 27% (duty 70)[0m
+[0;32mI (16790) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (16790) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (17280) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (17400) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (17410) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (17420) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (17700) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (17700) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (17710) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (17880) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (17990) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (18000) POTENTIOMETER: RAW ADC: 4095, Filtered ADC: 4091, Threshold: 3999[0m
+[0;32mI (18000) POTENTIOMETER: Final: Duty Cycle: 0, Fan Speed: 0%[0m
+[0;32mI (18000) POTENTIOMETER: PWM SET: 0 (0%)[0m
+[0;32mI (18000) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (18280) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (18290) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (18570) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (18580) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (18860) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (18870) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (19150) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (19160) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (19210) POTENTIOMETER: RAW ADC: 4095, Filtered ADC: 4094, Threshold: 3999[0m
+[0;32mI (19210) POTENTIOMETER: Final: Duty Cycle: 0, Fan Speed: 0%[0m
+[0;32mI (19210) POTENTIOMETER: PWM SET: 0 (0%)[0m
+[0;32mI (19440) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (19450) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (19690) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (19730) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (19740) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (19810) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (20020) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (20030) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (20310) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (20320) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (20410) POTENTIOMETER: RAW ADC: 2931, Filtered ADC: 2944, Threshold: 3999[0m
+[0;32mI (20410) POTENTIOMETER: Step 5: ADC 2944 -> 27% (duty 70)[0m
+[0;32mI (20410) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (20410) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (20600) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (20600) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (20610) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (20890) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (20900) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (21180) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (21190) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (21470) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (21480) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (21620) POTENTIOMETER: RAW ADC: 1927, Filtered ADC: 1940, Threshold: 3999[0m
+[0;32mI (21620) POTENTIOMETER: Step 4: ADC 1940 -> 39% (duty 100)[0m
+[0;32mI (21620) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (21620) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (21760) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (21770) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (21870) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (22050) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (22060) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (22340) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (22350) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (22630) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (22640) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (22830) POTENTIOMETER: RAW ADC: 1215, Filtered ADC: 1264, Threshold: 3999[0m
+[0;32mI (22830) POTENTIOMETER: Step 3: ADC 1264 -> 59% (duty 150)[0m
+[0;32mI (22830) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (22830) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (22900) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (22920) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (22930) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (23210) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (23220) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (23500) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (23510) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (23790) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (23800) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (23800) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (24040) POTENTIOMETER: RAW ADC: 478, Filtered ADC: 487, Threshold: 3999[0m
+[0;32mI (24040) POTENTIOMETER: Step 1: ADC 487 -> 100% (duty 255)[0m
+[0;32mI (24040) POTENTIOMETER: Final: Duty Cycle: 255, Fan Speed: 100%[0m
+[0;32mI (24040) POTENTIOMETER: PWM SET: 255 (100%)[0m
+[0;32mI (24090) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (24100) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (24390) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (24400) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (24690) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (24700) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (24990) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (25000) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (25250) POTENTIOMETER: RAW ADC: 659, Filtered ADC: 611, Threshold: 3999[0m
+[0;32mI (25250) POTENTIOMETER: Step 2: ADC 611 -> 78% (duty 200)[0m
+[0;32mI (25250) POTENTIOMETER: Final: Duty Cycle: 200, Fan Speed: 78%[0m
+[0;32mI (25250) POTENTIOMETER: PWM SET: 200 (78%)[0m
+[0;32mI (25260) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (25290) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (25300) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (25580) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (25590) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (25750) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (25870) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (25880) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (26160) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (26170) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (26230) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (26450) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (26460) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (26470) POTENTIOMETER: RAW ADC: 1977, Filtered ADC: 1970, Threshold: 3999[0m
+[0;32mI (26470) POTENTIOMETER: Step 4: ADC 1970 -> 39% (duty 100)[0m
+[0;32mI (26470) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (26480) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (26740) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (26750) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (27030) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (27040) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (27320) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (27330) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (27610) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (27620) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (27690) POTENTIOMETER: RAW ADC: 2613, Filtered ADC: 2611, Threshold: 3999[0m
+[0;32mI (27690) POTENTIOMETER: Step 4: ADC 2611 -> 39% (duty 100)[0m
+[0;32mI (27690) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (27690) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (27900) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (27910) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (28120) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (28190) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (28200) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (28480) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (28490) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (28770) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (28780) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (28900) POTENTIOMETER: RAW ADC: 2889, Filtered ADC: 2951, Threshold: 3999[0m
+[0;32mI (28900) POTENTIOMETER: Step 5: ADC 2951 -> 27% (duty 70)[0m
+[0;32mI (28900) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (28900) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (28970) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (29060) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (29070) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (29350) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (29360) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (29390) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (29640) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (29650) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (29930) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (29940) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (30110) POTENTIOMETER: RAW ADC: 1239, Filtered ADC: 1263, Threshold: 3999[0m
+[0;32mI (30110) POTENTIOMETER: Step 3: ADC 1263 -> 59% (duty 150)[0m
+[0;32mI (30110) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (30110) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (30180) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (30220) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (30230) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (30510) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (30520) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (30800) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (30810) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (31090) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (31100) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (31320) POTENTIOMETER: RAW ADC: 891, Filtered ADC: 888, Threshold: 3999[0m
+[0;32mI (31320) POTENTIOMETER: Step 2: ADC 888 -> 78% (duty 200)[0m
+[0;32mI (31320) POTENTIOMETER: Final: Duty Cycle: 200, Fan Speed: 78%[0m
+[0;32mI (31320) POTENTIOMETER: PWM SET: 200 (78%)[0m
+[0;32mI (31380) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (31390) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (31670) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (31680) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (31960) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (31970) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (32250) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (32260) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (32530) POTENTIOMETER: RAW ADC: 965, Filtered ADC: 965, Threshold: 3999[0m
+[0;32mI (32530) POTENTIOMETER: Step 2: ADC 965 -> 78% (duty 200)[0m
+[0;32mI (32530) POTENTIOMETER: Final: Duty Cycle: 200, Fan Speed: 78%[0m
+[0;32mI (32530) POTENTIOMETER: PWM SET: 200 (78%)[0m
+[0;32mI (32540) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (32570) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (32850) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (32860) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (33140) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (33150) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (33270) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (33430) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (33440) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (33720) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (33730) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (33750) POTENTIOMETER: RAW ADC: 1341, Filtered ADC: 1333, Threshold: 3999[0m
+[0;32mI (33750) POTENTIOMETER: Step 3: ADC 1333 -> 59% (duty 150)[0m
+[0;32mI (33750) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (33760) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (34010) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (34020) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (34300) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (34310) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (34590) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (34600) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (34850) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (34850) OLED_UI: UI state changed to 1 for 5000 ms[0m
+[0;32mI (34850) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (34860) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (34860) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (34880) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (34890) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (34920) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (34920) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (34970) POTENTIOMETER: RAW ADC: 1362, Filtered ADC: 1360, Threshold: 3999[0m
+[0;32mI (34970) POTENTIOMETER: Step 3: ADC 1360 -> 59% (duty 150)[0m
+[0;32mI (34970) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (34970) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (34990) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (34990) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (35050) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (35050) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (35110) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (35110) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (35170) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (35170) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (35180) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (35200) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (35230) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (35230) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (35290) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (35290) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (35350) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (35350) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (35410) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (35410) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (35470) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (35470) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (35490) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (35500) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (35530) ULTRASONIC: Moving down - Distance: 61 cm[0m
+[0;32mI (35530) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (35590) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (35590) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (35650) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (35650) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (35710) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (35710) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (35770) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (35770) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (35790) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (35800) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (35830) DESK: Stopped moving[0m
+[0;32mI (35830) OLED_UI: UI state changed to 1 for 3000 ms[0m
+[0;32mI (35830) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (35840) OLED_UI: UI state force refreshed to 1 for 3000 ms[0m
+[0;32mI (36090) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (36100) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (36190) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (36190) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (36190) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (36190) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (36390) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (36400) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (36690) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (36700) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (36990) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (37000) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (37290) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (37300) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (37400) POTENTIOMETER: RAW ADC: 1343, Filtered ADC: 1346, Threshold: 3999[0m
+[0;32mI (37400) POTENTIOMETER: Step 3: ADC 1346 -> 59% (duty 150)[0m
+[0;32mI (37400) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (37400) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (37590) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (37600) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (37890) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (37900) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (38190) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (38200) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (38310) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (38310) OLED_UI: UI state changed to 1 for 5000 ms[0m
+[0;32mI (38310) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (38320) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (38320) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (38380) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (38380) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (38440) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (38440) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (38490) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (38500) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (38500) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (38500) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (38570) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (38570) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (38630) POTENTIOMETER: RAW ADC: 1365, Filtered ADC: 1364, Threshold: 3999[0m
+[0;32mI (38630) POTENTIOMETER: Step 3: ADC 1364 -> 59% (duty 150)[0m
+[0;32mI (38630) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (38630) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (38650) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (38650) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (38710) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (38710) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (38770) ULTRASONIC: Moving up - Distance: 59 cm[0m
+[0;32mI (38770) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (38800) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (38810) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (38830) ULTRASONIC: Moving up - Distance: 46 cm[0m
+[0;32mI (38830) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (38900) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (38900) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (38960) ULTRASONIC: Moving up - Distance: 56 cm[0m
+[0;32mI (38960) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (39020) ULTRASONIC: Moving up - Distance: 57 cm[0m
+[0;32mI (39020) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (39080) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (39080) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (39100) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (39110) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (39140) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (39140) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (39200) ULTRASONIC: Moving up - Distance: 59 cm[0m
+[0;32mI (39200) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (39260) ULTRASONIC: Moving up - Distance: 63 cm[0m
+[0;32mI (39260) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (39320) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (39320) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (39380) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (39380) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (39400) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (39410) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (39440) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (39440) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (39500) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (39500) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (39560) ULTRASONIC: Moving up - Distance: 64 cm[0m
+[0;32mI (39560) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (39620) ULTRASONIC: Moving up - Distance: 63 cm[0m
+[0;32mI (39620) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (39680) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (39680) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (39700) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (39710) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (39740) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (39740) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (39800) ULTRASONIC: Moving up - Distance: 64 cm[0m
+[0;32mI (39800) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (39860) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (39860) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (39860) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (39860) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (39880) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (39880) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (39940) ULTRASONIC: Moving up - Distance: 63 cm[0m
+[0;32mI (39940) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (40000) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (40000) ULTRASONIC: Moving up - Distance: 63 cm[0m
+[0;32mI (40000) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (40010) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (40060) ULTRASONIC: Moving up - Distance: 65 cm[0m
+[0;32mI (40060) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (40120) DESK: Stopped moving[0m
+[0;32mI (40120) OLED_UI: UI state changed to 1 for 3000 ms[0m
+[0;32mI (40120) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (40130) OLED_UI: UI state force refreshed to 1 for 3000 ms[0m
+[0;32mI (40300) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (40310) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (40600) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (40610) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (40900) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (40910) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (40980) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (40980) OLED_UI: UI state changed to 1 for 5000 ms[0m
+[0;32mI (40980) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (40990) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (40990) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (41050) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (41050) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (41100) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1362, Threshold: 3999[0m
+[0;32mI (41100) POTENTIOMETER: Step 3: ADC 1362 -> 59% (duty 150)[0m
+[0;32mI (41100) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (41100) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (41120) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (41120) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (41180) ULTRASONIC: Moving down - Distance: 65 cm[0m
+[0;32mI (41180) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (41200) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (41210) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (41240) ULTRASONIC: Moving down - Distance: 62 cm[0m
+[0;32mI (41240) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (41300) ULTRASONIC: Moving down - Distance: 62 cm[0m
+[0;32mI (41300) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (41360) ULTRASONIC: Moving down - Distance: 63 cm[0m
+[0;32mI (41360) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (41420) ULTRASONIC: Moving down - Distance: 63 cm[0m
+[0;32mI (41420) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (41480) ULTRASONIC: Moving down - Distance: 63 cm[0m
+[0;32mI (41480) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (41500) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (41510) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (41540) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (41540) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (41600) ULTRASONIC: Moving down - Distance: 62 cm[0m
+[0;32mI (41600) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (41660) ULTRASONIC: Moving down - Distance: 65 cm[0m
+[0;32mI (41660) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (41720) ULTRASONIC: Moving down - Distance: 62 cm[0m
+[0;32mI (41720) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (41780) ULTRASONIC: Moving down - Distance: 62 cm[0m
+[0;32mI (41780) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (41800) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (41810) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (41840) ULTRASONIC: Moving down - Distance: 61 cm[0m
+[0;32mI (41840) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (41900) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (41900) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (41960) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (41960) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (42020) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (42020) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (42080) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (42080) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (42100) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (42110) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (42140) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (42140) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (42200) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (42200) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (42260) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (42260) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (42310) POTENTIOMETER: RAW ADC: 1366, Filtered ADC: 1365, Threshold: 3999[0m
+[0;32mI (42310) POTENTIOMETER: Step 3: ADC 1365 -> 59% (duty 150)[0m
+[0;32mI (42310) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (42310) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (42330) ULTRASONIC: Moving down - Distance: 42 cm[0m
+[0;32mI (42330) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (42390) ULTRASONIC: Moving down - Distance: 43 cm[0m
+[0;32mI (42390) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (42400) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (42420) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (42450) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (42450) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (42510) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (42510) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (42570) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (42570) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (42630) DESK: Stopped moving[0m
+[0;32mI (42630) OLED_UI: UI state changed to 1 for 3000 ms[0m
+[0;32mI (42630) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (42630) OLED_UI: UI state force refreshed to 1 for 3000 ms[0m
+[0;32mI (42710) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (42720) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (43010) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (43020) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (43310) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (43320) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (43530) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1363, Threshold: 3999[0m
+[0;32mI (43530) POTENTIOMETER: Step 3: ADC 1363 -> 59% (duty 150)[0m
+[0;32mI (43530) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (43530) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (43610) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (43620) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (43910) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (43920) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (44210) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (44220) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (44510) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (44520) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (44740) POTENTIOMETER: RAW ADC: 1365, Filtered ADC: 1363, Threshold: 3999[0m
+[0;32mI (44740) POTENTIOMETER: Step 3: ADC 1363 -> 59% (duty 150)[0m
+[0;32mI (44740) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (44740) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (44810) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (44820) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (45110) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (45120) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (45410) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (45420) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (45710) OLED_UI: Returning to main screen[0m
+[0;32mI (45710) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (45730) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (45950) POTENTIOMETER: RAW ADC: 1361, Filtered ADC: 1360, Threshold: 3999[0m
+[0;32mI (45950) POTENTIOMETER: Step 3: ADC 1360 -> 59% (duty 150)[0m
+[0;32mI (45950) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (45950) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (46020) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (46030) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (47160) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (47160) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (47160) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (47160) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (48370) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1363, Threshold: 3999[0m
+[0;32mI (48370) POTENTIOMETER: Step 3: ADC 1363 -> 59% (duty 150)[0m
+[0;32mI (48370) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (48370) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (49210) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (49210) KEYSWITCHES: Scene 3: Læs (Read)[0m
+[0;32mI (49420) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (49420) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (49570) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (49580) POTENTIOMETER: RAW ADC: 1367, Filtered ADC: 1364, Threshold: 3999[0m
+[0;32mI (49580) POTENTIOMETER: Step 3: ADC 1364 -> 59% (duty 150)[0m
+[0;32mI (49580) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (49580) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (49590) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (49870) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (49880) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (50160) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (50170) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (50450) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (50460) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (50740) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (50750) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (50800) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1364, Threshold: 3999[0m
+[0;32mI (50800) POTENTIOMETER: Step 3: ADC 1364 -> 59% (duty 150)[0m
+[0;32mI (50800) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (50800) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (51030) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (51040) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (51320) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (51330) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (51610) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (51620) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (51900) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (51910) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (52010) POTENTIOMETER: RAW ADC: 1369, Filtered ADC: 1366, Threshold: 3999[0m
+[0;32mI (52010) POTENTIOMETER: Step 3: ADC 1366 -> 59% (duty 150)[0m
+[0;32mI (52010) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (52010) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (52190) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (52200) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (52480) OLED_UI: Returning to main screen[0m
+[0;32mI (52480) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (52500) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (52790) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (52800) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (53220) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1359, Threshold: 3999[0m
+[0;32mI (53220) POTENTIOMETER: Step 3: ADC 1359 -> 59% (duty 150)[0m
+[0;32mI (53220) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (53220) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (54430) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (54430) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (54430) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (54430) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (55640) POTENTIOMETER: RAW ADC: 1358, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (55640) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (55640) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (55640) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (56850) POTENTIOMETER: RAW ADC: 1365, Filtered ADC: 1362, Threshold: 3999[0m
+[0;32mI (56850) POTENTIOMETER: Step 3: ADC 1362 -> 59% (duty 150)[0m
+[0;32mI (56850) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (56850) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (57300) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (57300) KEYSWITCHES: Scene 4: Slap af (Relax)[0m
+[0;32mI (57530) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (57540) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (57590) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (57600) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (57880) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (57890) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (58060) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (58060) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (58060) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (58060) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (58170) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (58180) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (58460) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (58470) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (58480) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (58480) KEYSWITCHES: Scene 5: Slap af v2 (Relax Alt)[0m
+[0;32mI (58730) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (58730) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (58760) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (58770) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (59050) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (59060) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (59270) POTENTIOMETER: RAW ADC: 1373, Filtered ADC: 1369, Threshold: 3999[0m
+[0;32mI (59270) POTENTIOMETER: Step 3: ADC 1369 -> 59% (duty 150)[0m
+[0;32mI (59270) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (59270) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (59340) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (59350) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (59630) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (59640) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (59670) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise - Previous scene[0m
+[0;32mI (59670) KEYSWITCHES: Scene 4: Slap af (Relax)[0m
+[0;32mI (59930) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (59940) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (59940) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (59950) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (60230) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (60240) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (60480) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (60480) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (60480) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (60480) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (60520) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (60530) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (60810) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (60820) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (61100) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (61110) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (61180) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise - Previous scene[0m
+[0;32mI (61180) KEYSWITCHES: Scene 3: Læs (Read)[0m
+[0;32mI (61390) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (61400) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (61410) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (61420) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (61690) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (61690) POTENTIOMETER: RAW ADC: 1354, Filtered ADC: 1349, Threshold: 3999[0m
+[0;32mI (61690) POTENTIOMETER: Step 3: ADC 1349 -> 59% (duty 150)[0m
+[0;32mI (61700) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (61700) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (61710) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (61990) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (62000) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (62280) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (62290) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (62570) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (62580) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (62860) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (62870) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (62920) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (62920) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (62920) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (62920) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (63150) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (63160) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (63380) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (63380) KEYSWITCHES: Scene 4: Slap af (Relax)[0m
+[0;32mI (63440) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (63450) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (63730) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (63740) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (63770) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (63770) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (64030) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (64040) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (64130) POTENTIOMETER: RAW ADC: 1365, Filtered ADC: 1361, Threshold: 3999[0m
+[0;32mI (64130) POTENTIOMETER: Step 3: ADC 1361 -> 59% (duty 150)[0m
+[0;32mI (64130) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (64130) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (64320) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (64330) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (64610) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (64620) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (64900) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (64910) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (65090) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 255[0m
+[0;32mI (65190) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (65200) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (65230) HTTP_CLIENT: Brightness for Gaming group set to 255[0m
+[0;32mI (65240) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (65240) OLED_UI: Legacy display event: type=1, text='Brightness: 255'[0m
+[0;32mI (65340) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (65340) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (65340) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (65350) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (65490) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (65500) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (65620) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 255[0m
+[0;32mI (65710) HTTP_CLIENT: Brightness for Gaming group set to 255[0m
+[0;32mI (65710) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (65710) OLED_UI: Legacy display event: type=1, text='Brightness: 255'[0m
+[0;32mI (65780) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (65790) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (66070) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (66080) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (66360) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (66370) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (66550) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (66550) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (66550) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (66560) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (66650) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (66660) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (66940) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (66950) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (67230) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (67240) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (67440) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 255[0m
+[0;32mI (67500) HTTP_CLIENT: Brightness for Gaming group set to 255[0m
+[0;32mI (67500) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (67500) OLED_UI: Legacy display event: type=1, text='Brightness: 255'[0m
+[0;32mI (67520) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (67530) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (67760) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (67760) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (67760) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (67760) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (67810) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (67820) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (68100) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (68110) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (68390) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (68400) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (68680) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (68690) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (68970) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (68970) POTENTIOMETER: RAW ADC: 1361, Filtered ADC: 1359, Threshold: 3999[0m
+[0;32mI (68970) POTENTIOMETER: Step 3: ADC 1359 -> 59% (duty 150)[0m
+[0;32mI (68980) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (68980) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (68990) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (69270) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (69280) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (69560) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (69570) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (69850) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (69860) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (70140) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (70150) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (70200) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (70200) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (70200) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (70200) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (70210) KEYSWITCHES: Rotary Encoder 2 Button Pressed! - Toggling lights[0m
+[0;32mI (70310) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (70310) KEYSWITCHES: Hue lights turned ON[0m
+[0;32mI (70310) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (70430) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (70440) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (70720) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (70730) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (71010) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (71020) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (71300) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (71310) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (71420) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (71420) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (71420) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (71420) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (71590) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (71600) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (71880) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (71890) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (72170) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (72180) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (72460) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (72470) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (72630) POTENTIOMETER: RAW ADC: 1358, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (72630) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (72630) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (72630) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (72750) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (72760) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (73040) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (73050) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (73330) OLED_UI: Returning to main screen[0m
+[0;32mI (73330) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (73350) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (73640) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (73650) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (73840) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (73840) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (73840) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (73840) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (75050) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (75050) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (75050) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (75050) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (76260) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (76260) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (76260) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (76260) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (77470) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (77470) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (77470) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (77470) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (78680) POTENTIOMETER: RAW ADC: 1354, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (78680) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (78680) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (78680) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (79890) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (79890) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (79890) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (79890) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (81100) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (81100) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (81100) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (81100) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (82310) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (82310) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (82310) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (82310) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (83520) POTENTIOMETER: RAW ADC: 1361, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (83520) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (83520) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (83530) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (84730) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (84730) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (84730) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (84730) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (85940) POTENTIOMETER: RAW ADC: 1361, Filtered ADC: 1359, Threshold: 3999[0m
+[0;32mI (85940) POTENTIOMETER: Step 3: ADC 1359 -> 59% (duty 150)[0m
+[0;32mI (85940) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (85940) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (87150) POTENTIOMETER: RAW ADC: 1362, Filtered ADC: 1360, Threshold: 3999[0m
+[0;32mI (87150) POTENTIOMETER: Step 3: ADC 1360 -> 59% (duty 150)[0m
+[0;32mI (87150) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (87150) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (88360) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (88360) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (88360) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (88360) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (89570) POTENTIOMETER: RAW ADC: 1358, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (89570) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (89570) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (89570) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (90780) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (90780) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (90780) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (90780) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (91990) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (91990) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (91990) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (91990) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (93200) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (93200) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (93200) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (93200) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (94410) POTENTIOMETER: RAW ADC: 1362, Filtered ADC: 1360, Threshold: 3999[0m
+[0;32mI (94410) POTENTIOMETER: Step 3: ADC 1360 -> 59% (duty 150)[0m
+[0;32mI (94410) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (94410) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (95620) POTENTIOMETER: RAW ADC: 1352, Filtered ADC: 1349, Threshold: 3999[0m
+[0;32mI (95620) POTENTIOMETER: Step 3: ADC 1349 -> 59% (duty 150)[0m
+[0;32mI (95620) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (95620) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (96830) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (96830) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (96830) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (96830) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (98040) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (98040) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (98040) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (98040) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (99250) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (99250) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (99250) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (99250) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (100460) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (100460) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (100460) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (100470) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (101670) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1360, Threshold: 3999[0m
+[0;32mI (101670) POTENTIOMETER: Step 3: ADC 1360 -> 59% (duty 150)[0m
+[0;32mI (101670) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (101680) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (102880) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (102880) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (102880) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (102890) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (104090) POTENTIOMETER: RAW ADC: 1358, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (104090) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (104090) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (104100) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (105300) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (105300) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (105300) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (105310) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (106510) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (106510) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (106510) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (106520) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (107720) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (107720) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (107720) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (107730) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (108930) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (108930) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (108930) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (108940) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (110140) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (110140) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (110140) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (110150) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (111350) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (111350) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (111350) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (111360) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (112560) POTENTIOMETER: RAW ADC: 1358, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (112560) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (112560) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (112570) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (113770) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1362, Threshold: 3999[0m
+[0;32mI (113770) POTENTIOMETER: Step 3: ADC 1362 -> 59% (duty 150)[0m
+[0;32mI (113770) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (113780) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (114980) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (114980) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (114980) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (114990) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (116190) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (116190) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (116190) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (116200) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (117400) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (117400) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (117400) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (117410) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (118610) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (118610) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (118610) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (118620) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (119820) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1360, Threshold: 3999[0m
+[0;32mI (119820) POTENTIOMETER: Step 3: ADC 1360 -> 59% (duty 150)[0m
+[0;32mI (119820) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (119830) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (121030) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (121030) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (121030) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (121040) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (122240) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (122240) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (122240) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (122250) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (123450) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (123450) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (123450) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (123460) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (124660) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (124660) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (124660) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (124670) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (125870) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (125870) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (125870) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (125880) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (127080) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (127080) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (127080) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (127090) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (128290) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (128290) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (128290) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (128300) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (129500) POTENTIOMETER: RAW ADC: 1358, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (129500) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (129500) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (129510) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (130710) POTENTIOMETER: RAW ADC: 1371, Filtered ADC: 1366, Threshold: 3999[0m
+[0;32mI (130710) POTENTIOMETER: Step 3: ADC 1366 -> 59% (duty 150)[0m
+[0;32mI (130710) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (130720) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (131920) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (131920) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (131920) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (131930) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (133130) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (133130) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (133130) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (133140) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (133690) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (133700) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (134340) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (134340) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (134340) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (134350) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (135550) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1359, Threshold: 3999[0m
+[0;32mI (135550) POTENTIOMETER: Step 3: ADC 1359 -> 59% (duty 150)[0m
+[0;32mI (135550) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (135560) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (136760) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (136760) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (136760) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (136770) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (137970) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (137970) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (137970) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (137980) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (139180) POTENTIOMETER: RAW ADC: 1358, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (139180) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (139180) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (139190) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (140390) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (140390) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (140390) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (140400) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (141600) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1361, Threshold: 3999[0m
+[0;32mI (141600) POTENTIOMETER: Step 3: ADC 1361 -> 59% (duty 150)[0m
+[0;32mI (141600) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (141610) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (142810) POTENTIOMETER: RAW ADC: 1358, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (142810) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (142810) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (142820) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (144020) POTENTIOMETER: RAW ADC: 1358, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (144020) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (144020) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (144030) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (145230) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (145230) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (145230) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (145240) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (146440) POTENTIOMETER: RAW ADC: 1364, Filtered ADC: 1360, Threshold: 3999[0m
+[0;32mI (146440) POTENTIOMETER: Step 3: ADC 1360 -> 59% (duty 150)[0m
+[0;32mI (146440) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (146450) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (147650) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (147650) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (147650) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (147660) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (148860) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1361, Threshold: 3999[0m
+[0;32mI (148860) POTENTIOMETER: Step 3: ADC 1361 -> 59% (duty 150)[0m
+[0;32mI (148860) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (148870) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (150070) POTENTIOMETER: RAW ADC: 1352, Filtered ADC: 1352, Threshold: 3999[0m
+[0;32mI (150070) POTENTIOMETER: Step 3: ADC 1352 -> 59% (duty 150)[0m
+[0;32mI (150070) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (150080) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (151280) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (151280) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (151280) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (151290) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (152490) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (152490) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (152490) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (152500) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (153700) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (153700) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (153700) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (153710) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (154910) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (154910) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (154910) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (154920) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (156120) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (156120) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (156120) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (156130) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (157330) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (157330) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (157330) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (157340) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (158540) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (158540) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (158540) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (158550) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (159750) POTENTIOMETER: RAW ADC: 1358, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (159750) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (159750) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (159760) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (160960) POTENTIOMETER: RAW ADC: 1341, Filtered ADC: 1345, Threshold: 3999[0m
+[0;32mI (160960) POTENTIOMETER: Step 3: ADC 1345 -> 59% (duty 150)[0m
+[0;32mI (160960) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (160970) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (162170) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (162170) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (162170) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (162180) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (163380) POTENTIOMETER: RAW ADC: 1368, Filtered ADC: 1363, Threshold: 3999[0m
+[0;32mI (163380) POTENTIOMETER: Step 3: ADC 1363 -> 59% (duty 150)[0m
+[0;32mI (163380) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (163390) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (164590) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (164590) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (164590) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (164600) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (165800) POTENTIOMETER: RAW ADC: 1354, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (165800) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (165800) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (165810) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (167010) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (167010) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (167010) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (167020) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (168220) POTENTIOMETER: RAW ADC: 1351, Filtered ADC: 1352, Threshold: 3999[0m
+[0;32mI (168220) POTENTIOMETER: Step 3: ADC 1352 -> 59% (duty 150)[0m
+[0;32mI (168220) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (168230) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (169430) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (169430) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (169430) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (169440) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (170640) POTENTIOMETER: RAW ADC: 1354, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (170640) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (170640) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (170650) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (171850) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (171850) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (171850) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (171860) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (173060) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (173060) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (173060) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (173070) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (174270) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (174270) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (174270) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (174280) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (175480) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (175480) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (175480) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (175490) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (176690) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (176690) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (176690) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (176700) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (177900) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (177900) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (177900) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (177910) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (179110) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (179110) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (179110) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (179120) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (180320) POTENTIOMETER: RAW ADC: 1351, Filtered ADC: 1351, Threshold: 3999[0m
+[0;32mI (180320) POTENTIOMETER: Step 3: ADC 1351 -> 59% (duty 150)[0m
+[0;32mI (180320) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (180330) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (181530) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1360, Threshold: 3999[0m
+[0;32mI (181530) POTENTIOMETER: Step 3: ADC 1360 -> 59% (duty 150)[0m
+[0;32mI (181530) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (181540) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (182740) POTENTIOMETER: RAW ADC: 1362, Filtered ADC: 1359, Threshold: 3999[0m
+[0;32mI (182740) POTENTIOMETER: Step 3: ADC 1359 -> 59% (duty 150)[0m
+[0;32mI (182740) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (182750) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (183950) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (183950) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (183950) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (183960) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (185160) POTENTIOMETER: RAW ADC: 1354, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (185160) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (185160) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (185170) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (186370) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (186370) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (186370) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (186380) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (187580) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (187580) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (187580) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (187590) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (188790) POTENTIOMETER: RAW ADC: 1354, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (188790) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (188790) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (188800) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (190000) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (190000) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (190000) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (190010) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (191210) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1360, Threshold: 3999[0m
+[0;32mI (191210) POTENTIOMETER: Step 3: ADC 1360 -> 59% (duty 150)[0m
+[0;32mI (191210) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (191220) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (192420) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (192420) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (192420) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (192430) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (193630) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (193630) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (193630) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (193640) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (193740) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (193750) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (194840) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (194840) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (194840) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (194850) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (196050) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1360, Threshold: 3999[0m
+[0;32mI (196050) POTENTIOMETER: Step 3: ADC 1360 -> 59% (duty 150)[0m
+[0;32mI (196050) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (196060) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (197260) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (197260) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (197260) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (197270) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (198470) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (198470) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (198470) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (198480) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (199680) POTENTIOMETER: RAW ADC: 1352, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (199680) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (199680) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (199690) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (200890) POTENTIOMETER: RAW ADC: 1374, Filtered ADC: 1368, Threshold: 3999[0m
+[0;32mI (200890) POTENTIOMETER: Step 3: ADC 1368 -> 59% (duty 150)[0m
+[0;32mI (200890) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (200900) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (202100) POTENTIOMETER: RAW ADC: 1365, Filtered ADC: 1361, Threshold: 3999[0m
+[0;32mI (202100) POTENTIOMETER: Step 3: ADC 1361 -> 59% (duty 150)[0m
+[0;32mI (202100) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (202110) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (203310) POTENTIOMETER: RAW ADC: 1339, Filtered ADC: 1344, Threshold: 3999[0m
+[0;32mI (203310) POTENTIOMETER: Step 3: ADC 1344 -> 59% (duty 150)[0m
+[0;32mI (203310) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (203320) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (204520) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (204520) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (204520) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (204530) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (205730) POTENTIOMETER: RAW ADC: 1354, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (205730) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (205730) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (205740) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (206940) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (206940) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (206940) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (206950) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (208150) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (208150) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (208150) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (208160) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (209360) POTENTIOMETER: RAW ADC: 1365, Filtered ADC: 1362, Threshold: 3999[0m
+[0;32mI (209360) POTENTIOMETER: Step 3: ADC 1362 -> 59% (duty 150)[0m
+[0;32mI (209360) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (209370) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (210570) POTENTIOMETER: RAW ADC: 1361, Filtered ADC: 1359, Threshold: 3999[0m
+[0;32mI (210570) POTENTIOMETER: Step 3: ADC 1359 -> 59% (duty 150)[0m
+[0;32mI (210570) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (210580) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (211780) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1352, Threshold: 3999[0m
+[0;32mI (211780) POTENTIOMETER: Step 3: ADC 1352 -> 59% (duty 150)[0m
+[0;32mI (211780) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (211790) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (212990) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (212990) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (212990) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (213000) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (214200) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (214200) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (214200) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (214210) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (215410) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (215410) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (215410) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (215420) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (216620) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (216620) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (216620) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (216630) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (217830) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (217830) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (217830) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (217840) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (219040) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (219040) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (219040) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (219050) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (220250) POTENTIOMETER: RAW ADC: 1358, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (220250) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (220250) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (220260) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (221460) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1352, Threshold: 3999[0m
+[0;32mI (221460) POTENTIOMETER: Step 3: ADC 1352 -> 59% (duty 150)[0m
+[0;32mI (221460) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (221470) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (222670) POTENTIOMETER: RAW ADC: 1361, Filtered ADC: 1360, Threshold: 3999[0m
+[0;32mI (222670) POTENTIOMETER: Step 3: ADC 1360 -> 59% (duty 150)[0m
+[0;32mI (222670) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (222680) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (223880) POTENTIOMETER: RAW ADC: 1352, Filtered ADC: 1352, Threshold: 3999[0m
+[0;32mI (223880) POTENTIOMETER: Step 3: ADC 1352 -> 59% (duty 150)[0m
+[0;32mI (223880) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (223890) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (225090) POTENTIOMETER: RAW ADC: 1352, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (225090) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (225090) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (225100) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (226300) POTENTIOMETER: RAW ADC: 1352, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (226300) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (226300) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (226310) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (227510) POTENTIOMETER: RAW ADC: 1358, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (227510) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (227510) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (227520) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (228720) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (228720) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (228720) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (228730) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (229930) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (229930) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (229930) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (229940) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (231140) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (231140) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (231140) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (231150) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (232350) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (232350) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (232350) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (232360) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (233560) POTENTIOMETER: RAW ADC: 1364, Filtered ADC: 1363, Threshold: 3999[0m
+[0;32mI (233560) POTENTIOMETER: Step 3: ADC 1363 -> 59% (duty 150)[0m
+[0;32mI (233560) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (233570) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (234770) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (234770) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (234770) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (234780) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (235980) POTENTIOMETER: RAW ADC: 1361, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (235980) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (235980) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (235990) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (237190) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (237190) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (237190) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (237200) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (238400) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (238400) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (238400) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (238410) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (239610) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (239610) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (239610) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (239620) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (240820) POTENTIOMETER: RAW ADC: 1354, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (240820) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (240820) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (240830) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (242030) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (242030) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (242030) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (242040) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (243240) POTENTIOMETER: RAW ADC: 1343, Filtered ADC: 1343, Threshold: 3999[0m
+[0;32mI (243240) POTENTIOMETER: Step 3: ADC 1343 -> 59% (duty 150)[0m
+[0;32mI (243240) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (243250) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (244450) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (244450) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (244450) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (244460) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (245660) POTENTIOMETER: RAW ADC: 1354, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (245660) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (245660) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (245670) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (246870) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (246870) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (246870) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (246880) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (248080) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (248080) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (248080) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (248090) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (249290) POTENTIOMETER: RAW ADC: 1354, Filtered ADC: 1352, Threshold: 3999[0m
+[0;32mI (249290) POTENTIOMETER: Step 3: ADC 1352 -> 59% (duty 150)[0m
+[0;32mI (249290) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (249300) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (250500) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (250500) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (250500) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (250510) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (251710) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (251710) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (251710) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (251720) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (252920) POTENTIOMETER: RAW ADC: 1349, Filtered ADC: 1351, Threshold: 3999[0m
+[0;32mI (252920) POTENTIOMETER: Step 3: ADC 1351 -> 59% (duty 150)[0m
+[0;32mI (252920) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (252930) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (253790) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (253800) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (254130) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (254130) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (254130) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (254140) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (255340) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1349, Threshold: 3999[0m
+[0;32mI (255340) POTENTIOMETER: Step 3: ADC 1349 -> 59% (duty 150)[0m
+[0;32mI (255340) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (255350) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (256550) POTENTIOMETER: RAW ADC: 1361, Filtered ADC: 1359, Threshold: 3999[0m
+[0;32mI (256550) POTENTIOMETER: Step 3: ADC 1359 -> 59% (duty 150)[0m
+[0;32mI (256550) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (256560) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (257760) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (257760) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (257760) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (257770) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (258970) POTENTIOMETER: RAW ADC: 1350, Filtered ADC: 1351, Threshold: 3999[0m
+[0;32mI (258970) POTENTIOMETER: Step 3: ADC 1351 -> 59% (duty 150)[0m
+[0;32mI (258970) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (258980) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (260180) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (260180) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (260180) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (260190) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (261390) POTENTIOMETER: RAW ADC: 1339, Filtered ADC: 1342, Threshold: 3999[0m
+[0;32mI (261390) POTENTIOMETER: Step 3: ADC 1342 -> 59% (duty 150)[0m
+[0;32mI (261390) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (261400) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (262600) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1360, Threshold: 3999[0m
+[0;32mI (262600) POTENTIOMETER: Step 3: ADC 1360 -> 59% (duty 150)[0m
+[0;32mI (262600) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (262610) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (263810) POTENTIOMETER: RAW ADC: 1358, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (263810) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (263810) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (263820) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (265020) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (265020) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (265020) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (265030) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (266230) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (266230) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (266230) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (266240) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (267440) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (267440) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (267440) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (267450) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (268650) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (268650) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (268650) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (268660) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (269860) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (269860) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (269860) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (269870) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (271070) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (271070) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (271070) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (271080) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (272280) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (272280) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (272280) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (272290) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (273490) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (273490) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (273490) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (273500) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (274700) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (274700) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (274700) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (274710) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (275910) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (275910) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (275910) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (275920) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (277120) POTENTIOMETER: RAW ADC: 1351, Filtered ADC: 1351, Threshold: 3999[0m
+[0;32mI (277120) POTENTIOMETER: Step 3: ADC 1351 -> 59% (duty 150)[0m
+[0;32mI (277120) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (277130) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (278330) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (278330) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (278330) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (278340) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (279540) POTENTIOMETER: RAW ADC: 1362, Filtered ADC: 1359, Threshold: 3999[0m
+[0;32mI (279540) POTENTIOMETER: Step 3: ADC 1359 -> 59% (duty 150)[0m
+[0;32mI (279540) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (279550) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (280750) POTENTIOMETER: RAW ADC: 1358, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (280750) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (280750) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (280760) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (281960) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (281960) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (281960) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (281970) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (283170) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (283170) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (283170) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (283180) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (284380) POTENTIOMETER: RAW ADC: 1354, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (284380) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (284380) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (284390) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (285590) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (285590) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (285590) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (285600) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (286800) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1360, Threshold: 3999[0m
+[0;32mI (286800) POTENTIOMETER: Step 3: ADC 1360 -> 59% (duty 150)[0m
+[0;32mI (286800) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (286810) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (288010) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (288010) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (288010) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (288020) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (289220) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (289220) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (289220) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (289230) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (290430) POTENTIOMETER: RAW ADC: 1361, Filtered ADC: 1359, Threshold: 3999[0m
+[0;32mI (290430) POTENTIOMETER: Step 3: ADC 1359 -> 59% (duty 150)[0m
+[0;32mI (290430) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (290440) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (291640) POTENTIOMETER: RAW ADC: 1358, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (291640) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (291640) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (291650) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (292850) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (292850) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (292850) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (292860) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (294060) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (294060) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (294060) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (294070) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (295270) POTENTIOMETER: RAW ADC: 1351, Filtered ADC: 1352, Threshold: 3999[0m
+[0;32mI (295270) POTENTIOMETER: Step 3: ADC 1352 -> 59% (duty 150)[0m
+[0;32mI (295270) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (295280) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (296480) POTENTIOMETER: RAW ADC: 1351, Filtered ADC: 1351, Threshold: 3999[0m
+[0;32mI (296480) POTENTIOMETER: Step 3: ADC 1351 -> 59% (duty 150)[0m
+[0;32mI (296480) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (296490) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (297690) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (297690) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (297690) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (297700) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (298900) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (298900) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (298900) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (298910) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (300110) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (300110) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (300110) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (300120) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (301320) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (301320) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (301320) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (301330) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (302530) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1359, Threshold: 3999[0m
+[0;32mI (302530) POTENTIOMETER: Step 3: ADC 1359 -> 59% (duty 150)[0m
+[0;32mI (302530) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (302540) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (303740) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (303740) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (303740) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (303750) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (304950) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (304950) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (304950) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (304960) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (306160) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (306160) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (306160) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (306170) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (307370) POTENTIOMETER: RAW ADC: 1354, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (307370) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (307370) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (307380) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (308580) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1362, Threshold: 3999[0m
+[0;32mI (308580) POTENTIOMETER: Step 3: ADC 1362 -> 59% (duty 150)[0m
+[0;32mI (308580) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (308590) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (309790) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (309790) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (309790) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (309800) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (311000) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1361, Threshold: 3999[0m
+[0;32mI (311000) POTENTIOMETER: Step 3: ADC 1361 -> 59% (duty 150)[0m
+[0;32mI (311000) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (311010) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (312210) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (312210) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (312210) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (312220) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (313420) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (313420) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (313420) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (313430) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (313840) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (313850) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (314630) POTENTIOMETER: RAW ADC: 1367, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (314630) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (314630) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (314640) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (315840) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (315840) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (315840) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (315850) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (317050) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (317050) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (317050) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (317060) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (318260) POTENTIOMETER: RAW ADC: 1358, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (318260) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (318260) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (318270) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (319470) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (319470) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (319470) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (319480) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (320680) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (320680) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (320680) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (320690) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (321890) POTENTIOMETER: RAW ADC: 1351, Filtered ADC: 1351, Threshold: 3999[0m
+[0;32mI (321890) POTENTIOMETER: Step 3: ADC 1351 -> 59% (duty 150)[0m
+[0;32mI (321890) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (321900) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (323100) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (323100) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (323100) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (323110) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (324310) POTENTIOMETER: RAW ADC: 1365, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (324310) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (324310) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (324320) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (325520) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (325520) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (325520) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (325530) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (326730) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (326730) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (326730) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (326740) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (327940) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (327940) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (327940) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (327950) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (329150) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1361, Threshold: 3999[0m
+[0;32mI (329150) POTENTIOMETER: Step 3: ADC 1361 -> 59% (duty 150)[0m
+[0;32mI (329150) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (329160) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (330360) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (330360) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (330360) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (330370) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (331570) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (331570) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (331570) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (331580) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (332780) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (332780) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (332780) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (332790) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (333990) POTENTIOMETER: RAW ADC: 1350, Filtered ADC: 1350, Threshold: 3999[0m
+[0;32mI (333990) POTENTIOMETER: Step 3: ADC 1350 -> 59% (duty 150)[0m
+[0;32mI (333990) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (334000) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (335200) POTENTIOMETER: RAW ADC: 1352, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (335200) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (335200) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (335210) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (336410) POTENTIOMETER: RAW ADC: 1351, Filtered ADC: 1351, Threshold: 3999[0m
+[0;32mI (336410) POTENTIOMETER: Step 3: ADC 1351 -> 59% (duty 150)[0m
+[0;32mI (336410) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (336420) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (337620) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (337620) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (337620) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (337630) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (338830) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (338830) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (338830) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (338840) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (340040) POTENTIOMETER: RAW ADC: 1351, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (340040) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (340040) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (340050) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (341250) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (341250) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (341250) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (341260) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (342460) POTENTIOMETER: RAW ADC: 1358, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (342460) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (342460) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (342470) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (343670) POTENTIOMETER: RAW ADC: 1364, Filtered ADC: 1360, Threshold: 3999[0m
+[0;32mI (343670) POTENTIOMETER: Step 3: ADC 1360 -> 59% (duty 150)[0m
+[0;32mI (343670) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (343680) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (344880) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (344880) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (344880) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (344890) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (346090) POTENTIOMETER: RAW ADC: 1351, Filtered ADC: 1352, Threshold: 3999[0m
+[0;32mI (346090) POTENTIOMETER: Step 3: ADC 1352 -> 59% (duty 150)[0m
+[0;32mI (346090) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (346100) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (347300) POTENTIOMETER: RAW ADC: 1354, Filtered ADC: 1352, Threshold: 3999[0m
+[0;32mI (347300) POTENTIOMETER: Step 3: ADC 1352 -> 59% (duty 150)[0m
+[0;32mI (347300) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (347310) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (348510) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (348510) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (348510) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (348520) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (349720) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1357, Threshold: 3999[0m
+[0;32mI (349720) POTENTIOMETER: Step 3: ADC 1357 -> 59% (duty 150)[0m
+[0;32mI (349720) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (349730) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (350930) POTENTIOMETER: RAW ADC: 1354, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (350930) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (350930) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (350940) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (352140) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (352140) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (352140) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (352150) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (353350) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (353350) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (353350) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (353360) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (354560) POTENTIOMETER: RAW ADC: 1319, Filtered ADC: 1329, Threshold: 3999[0m
+[0;32mI (354560) POTENTIOMETER: Step 3: ADC 1329 -> 59% (duty 150)[0m
+[0;32mI (354560) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (354570) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (355770) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (355770) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (355770) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (355780) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (356980) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (356980) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (356980) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (356990) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (358190) POTENTIOMETER: RAW ADC: 1343, Filtered ADC: 1346, Threshold: 3999[0m
+[0;32mI (358190) POTENTIOMETER: Step 3: ADC 1346 -> 59% (duty 150)[0m
+[0;32mI (358190) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (358200) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (359400) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (359400) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (359400) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (359410) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (360610) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1352, Threshold: 3999[0m
+[0;32mI (360610) POTENTIOMETER: Step 3: ADC 1352 -> 59% (duty 150)[0m
+[0;32mI (360610) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (360620) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (361820) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (361820) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (361820) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (361830) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (363030) POTENTIOMETER: RAW ADC: 1359, Filtered ADC: 1358, Threshold: 3999[0m
+[0;32mI (363030) POTENTIOMETER: Step 3: ADC 1358 -> 59% (duty 150)[0m
+[0;32mI (363030) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (363040) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (364240) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (364240) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (364240) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (364250) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (365450) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (365450) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (365450) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (365460) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (366660) POTENTIOMETER: RAW ADC: 1351, Filtered ADC: 1352, Threshold: 3999[0m
+[0;32mI (366660) POTENTIOMETER: Step 3: ADC 1352 -> 59% (duty 150)[0m
+[0;32mI (366660) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (366670) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (367870) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (367870) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (367870) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (367880) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (369080) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1345, Threshold: 3999[0m
+[0;32mI (369080) POTENTIOMETER: Step 3: ADC 1345 -> 59% (duty 150)[0m
+[0;32mI (369080) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (369090) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (370290) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (370290) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (370290) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (370300) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (371500) POTENTIOMETER: RAW ADC: 1355, Filtered ADC: 1355, Threshold: 3999[0m
+[0;32mI (371500) POTENTIOMETER: Step 3: ADC 1355 -> 59% (duty 150)[0m
+[0;32mI (371500) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (371510) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (372710) POTENTIOMETER: RAW ADC: 1342, Filtered ADC: 1346, Threshold: 3999[0m
+[0;32mI (372710) POTENTIOMETER: Step 3: ADC 1346 -> 59% (duty 150)[0m
+[0;32mI (372710) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (372720) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (373890) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (373900) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (373920) POTENTIOMETER: RAW ADC: 1356, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (373920) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (373920) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (373930) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (375130) POTENTIOMETER: RAW ADC: 1343, Filtered ADC: 1345, Threshold: 3999[0m
+[0;32mI (375130) POTENTIOMETER: Step 3: ADC 1345 -> 59% (duty 150)[0m
+[0;32mI (375130) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (375140) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (376340) POTENTIOMETER: RAW ADC: 1357, Filtered ADC: 1356, Threshold: 3999[0m
+[0;32mI (376340) POTENTIOMETER: Step 3: ADC 1356 -> 59% (duty 150)[0m
+[0;32mI (376340) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (376350) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (377550) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1352, Threshold: 3999[0m
+[0;32mI (377550) POTENTIOMETER: Step 3: ADC 1352 -> 59% (duty 150)[0m
+[0;32mI (377550) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (377560) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (378760) POTENTIOMETER: RAW ADC: 1352, Filtered ADC: 1353, Threshold: 3999[0m
+[0;32mI (378760) POTENTIOMETER: Step 3: ADC 1353 -> 59% (duty 150)[0m
+[0;32mI (378760) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (378770) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (379970) POTENTIOMETER: RAW ADC: 1363, Filtered ADC: 1359, Threshold: 3999[0m
+[0;32mI (379970) POTENTIOMETER: Step 3: ADC 1359 -> 59% (duty 150)[0m
+[0;32mI (379970) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (379980) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (381180) POTENTIOMETER: RAW ADC: 1341, Filtered ADC: 1342, Threshold: 3999[0m
+[0;32mI (381180) POTENTIOMETER: Step 3: ADC 1342 -> 59% (duty 150)[0m
+[0;32mI (381180) POTENTIOMETER: Final: Duty Cycle: 150, Fan Speed: 59%[0m
+[0;32mI (381190) POTENTIOMETER: PWM SET: 150 (59%)[0m
+[0;32mI (382390) POTENTIOMETER: RAW ADC: 1353, Filtered ADC: 1354, Threshold: 3999[0m
+[0;32mI (382390) POTENTIOMETER: Step 3: ADC 1354 -> 59% (duty 150)[0m
+[0;32mI (382390) POTENTIOMETER

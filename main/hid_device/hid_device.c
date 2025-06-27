@@ -5,8 +5,11 @@
 #include <string.h>
 #include "tinyusb.h"
 #include "class/hid/hid_device.h"
+#include "oled_screen/oled_screen.h"
+#include "esp_log.h"
 
 static bool hid_device_ready = false;
+static int current_volume_level = 50; // Track current volume level (0-100)
 
 // TinyUSB descriptors (following official ESP-IDF example)
 #define TUSB_DESC_TOTAL_LEN (TUD_CONFIG_DESC_LEN + CFG_TUD_HID * TUD_HID_DESC_LEN)
@@ -117,15 +120,23 @@ static esp_err_t send_consumer_report(uint16_t usage_code) {
         return ESP_FAIL;
     }
 
-    // Small delay
-    vTaskDelay(pdMS_TO_TICKS(10));
+    // Longer delay to ensure key press is registered properly
+    vTaskDelay(pdMS_TO_TICKS(50));
 
-    // Send key release (empty report)
+    // Send key release (empty report) with retry
     consumer_report = 0;
-    sent = tud_hid_report(1, &consumer_report, sizeof(consumer_report));
+    for (int retry = 0; retry < 3; retry++) {
+        sent = tud_hid_report(1, &consumer_report, sizeof(consumer_report));
+        if (sent) {
+            break;
+        }
+        ESP_LOGW(HID_DEVICE_TAG, "Failed to send consumer release report, retry %d", retry + 1);
+        vTaskDelay(pdMS_TO_TICKS(10));
+    }
+
     if (!sent) {
-        ESP_LOGE(HID_DEVICE_TAG, "Failed to send consumer release report");
-        return ESP_FAIL;
+        ESP_LOGE(HID_DEVICE_TAG, "Failed to send consumer release report after 3 retries");
+        // Don't return error - the key press was sent successfully
     }
 
     return ESP_OK;
@@ -133,11 +144,27 @@ static esp_err_t send_consumer_report(uint16_t usage_code) {
 
 esp_err_t hid_volume_up(void) {
     ESP_LOGI(HID_DEVICE_TAG, "Sending Volume Up");
+
+    // Update volume level and show UI
+    current_volume_level += 5;
+    if (current_volume_level > 100) current_volume_level = 100;
+
+    ui_set_volume_context(current_volume_level);
+    ui_force_refresh_state(UI_STATE_VOLUME, 3000); // Force show volume UI for 3 seconds
+
     return send_consumer_report(VOLUME_UP_USAGE);
 }
 
 esp_err_t hid_volume_down(void) {
     ESP_LOGI(HID_DEVICE_TAG, "Sending Volume Down");
+
+    // Update volume level and show UI
+    current_volume_level -= 5;
+    if (current_volume_level < 0) current_volume_level = 0;
+
+    ui_set_volume_context(current_volume_level);
+    ui_force_refresh_state(UI_STATE_VOLUME, 3000); // Force show volume UI for 3 seconds
+
     return send_consumer_report(VOLUME_DOWN_USAGE);
 }
 

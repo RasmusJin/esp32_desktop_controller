@@ -61,11 +61,11 @@ void send_http_request(const char *url) {
 }
 
 void skylight_command_up() {
-    send_http_request("http://192.168.50.228/control_remote?command=up");
+    send_http_request("http://192.168.50.248/control_remote?command=up");
 }
 
 void skylight_command_down() {
-    send_http_request("http://192.168.50.228/control_remote?command=down");
+    send_http_request("http://192.168.50.248/control_remote?command=down");
 }
 
 

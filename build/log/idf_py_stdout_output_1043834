@@ -1,0 +1,1653 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+[0;32mI (1050) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1150) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1160) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1170) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1180) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1180) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1180) RELAY_INIT: Relay PC_SWITCH initial state: 0[0m
+[0;32mI (1280) RELAY_INIT: ✅ All relays initialized and stable - system ready![0m
+[0;32mI (1280) gpio: GPIO[45]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1280) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1290) ULTRASONIC_INIT: Testing TRIG pin (GPIO45)...[0m
+[0;32mI (1300) ULTRASONIC_INIT: TRIG set LOW, reading: 0[0m
+[0;32mI (1300) ULTRASONIC_INIT: TRIG set HIGH, reading: 0[0m
+[0;32mI (1310) ULTRASONIC_INIT: TRIG set LOW again, reading: 0[0m
+[0;32mI (1310) MAIN: Initializing USB HID device...[0m
+[0;32mI (1320) HID_DEVICE: USB initialization[0m
+[0;33mW (1320) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (1330) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 0           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4004      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (1500) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (1500) HID_DEVICE: USB initialization DONE[0m
+[0;32mI (1510) MAIN: Initializing WiFi...[0m
+[0;32mI (1530) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (1540) pp: pp rom version: e7ae62f[0m
+[0;32mI (1540) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1550) wifi:wifi driver task: 3fcac4f8, prio:23, stack:6656, core=0[0m
+[0;32mI (1560) wifi:wifi firmware version: 090f94a[0m
+[0;32mI (1560) wifi:wifi certification version: v7.0[0m
+[0;32mI (1560) wifi:config NVS flash: enabled[0m
+[0;32mI (1560) wifi:config nano formatting: disabled[0m
+[0;32mI (1560) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1570) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1570) wifi:Init management short buffer num: 32[0m
+[0;32mI (1580) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1580) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1590) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1590) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1590) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1600) wifi_init: rx ba win: 6[0m
+[0;32mI (1600) wifi_init: accept mbox: 6[0m
+[0;32mI (1610) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1610) wifi_init: udp mbox: 6[0m
+[0;32mI (1610) wifi_init: tcp mbox: 6[0m
+[0;32mI (1620) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1620) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1630) wifi_init: tcp mss: 1440[0m
+[0;32mI (1630) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1630) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1640) WiFi: Configuring static IP: 192.168.50.100[0m
+[0;32mI (1650) WiFi: Static IP configured successfully[0m
+[0;32mI (1650) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (1650) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (1700) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1720) wifi:mode : sta (34:85:18:75:f3:0c)[0m
+[0;32mI (1720) wifi:enable tsf[0m
+[0;32mI (1720) WiFi: Wi-Fi initialization done.[0m
+[0;32mI (1720) WiFi: WiFi started, connecting...[0m
+[0;32mI (1740) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;32mI (1740) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1760) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1760) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1860) wifi:connected with NeverNude_IoT, aid = 31, channel 1, BW20, bssid = 72:d9:f5:9b:25:21[0m
+[0;32mI (1860) wifi:security: WPA2-PSK, phy: bgn, rssi: -49[0m
+[0;32mI (1860) wifi:pm start, type: 0[0m
+
+[0;32mI (1860) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1870) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1880) esp_netif_handlers: sta ip: 192.168.50.100, mask: 255.255.255.0, gw: 192.168.50.1[0m
+[0;32mI (1890) WiFi: Connected! IP: 192.168.50.100[0m
+[0;32mI (1880) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (1900) WiFi: Connected to Wi-Fi[0m
+[0;32mI (1900) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (1910) wifi:<ba-add>idx:0 (ifx:0, 72:d9:f5:9b:25:21), tid:0, ssn:1, winSize:64[0m
+[0;32mI (1920) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1920) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1930) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1940) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1950) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1960) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1970) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1980) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1990) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2000) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2010) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2020) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2020) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (2030) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (2040) OLED_UI: Legacy display event: type=1, text='Lights: ON'[0m
+[0;32mI (2050) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 255[0m
+[0;32mI (2060) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2060) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2070) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2080) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2090) KEYSWITCHES: Both rotary encoders configured - ROT1: brightness, ROT2: scenes[0m
+[0;32mI (2100) KEYSWITCHES: Getting current Hue light state...[0m
+[0;32mI (2110) KEYSWITCHES: Fetching current Hue group state...[0m
+[0;32mI (2130) HTTP_CLIENT: Brightness for Gaming group set to 255[0m
+[0;32mI (2140) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (2140) OLED_UI: Legacy display event: type=1, text='Brightness: 255'[0m
+[0;32mI (2280) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (2290) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (5320) OLED_UI: Returning to main screen[0m
+[0;32mI (5320) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (5330) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (5630) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (5640) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;33mW (7180) KEYSWITCHES: No response data received, assuming lights OFF[0m
+[0;32mI (7180) KEYSWITCHES: Hue state initialized: lights_on = false[0m
+[0;32mI (7180) MAIN: All systems initialized - starting main loop[0m
+[0;32mI (7180) MAIN: Fan control: ACTIVE[0m
+[0;32mI (7190) MAIN: Single row switches: ACTIVE[0m
+[0;32mI (7190) MAIN: Switch matrix (desk control): ACTIVE[0m
+[0;32mI (7200) MAIN: Relay system: ACTIVE[0m
+[0;32mI (7200) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (7430) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (7440) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (8350) POTENTIOMETER: RAW ADC: 3119, Filtered ADC: 3116, Threshold: 3999[0m
+[0;32mI (8350) POTENTIOMETER: Step 5: ADC 3116 -> 27% (duty 70)[0m
+[0;32mI (8350) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (8350) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (9560) POTENTIOMETER: RAW ADC: 3119, Filtered ADC: 3119, Threshold: 3999[0m
+[0;32mI (9560) POTENTIOMETER: Step 5: ADC 3119 -> 27% (duty 70)[0m
+[0;32mI (9560) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (9560) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (10230) OLED_UI: Returning to main screen[0m
+[0;32mI (10230) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (10250) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (10540) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (10550) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (10770) POTENTIOMETER: RAW ADC: 3119, Filtered ADC: 3117, Threshold: 3999[0m
+[0;32mI (10770) POTENTIOMETER: Step 5: ADC 3117 -> 27% (duty 70)[0m
+[0;32mI (10770) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (10770) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (11200) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (11200) KEYSWITCHES: Scene 2: Koncentrer dig (Concentrate)[0m
+[0;32mI (11460) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (11460) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (11590) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (11600) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (11980) POTENTIOMETER: RAW ADC: 3107, Filtered ADC: 3107, Threshold: 3999[0m
+[0;32mI (11980) POTENTIOMETER: Step 5: ADC 3107 -> 27% (duty 70)[0m
+[0;32mI (11980) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (11980) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (12800) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (12800) KEYSWITCHES: Scene 3: Læs (Read)[0m
+[0;32mI (13060) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (13070) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (13190) POTENTIOMETER: RAW ADC: 3117, Filtered ADC: 3116, Threshold: 3999[0m
+[0;32mI (13190) POTENTIOMETER: Step 5: ADC 3116 -> 27% (duty 70)[0m
+[0;32mI (13190) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (13190) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (14150) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise - Previous scene[0m
+[0;32mI (14150) KEYSWITCHES: Scene 2: Koncentrer dig (Concentrate)[0m
+[0;32mI (14360) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (14360) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (14400) POTENTIOMETER: RAW ADC: 3125, Filtered ADC: 3122, Threshold: 3999[0m
+[0;32mI (14400) POTENTIOMETER: Step 5: ADC 3122 -> 27% (duty 70)[0m
+[0;32mI (14400) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (14400) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (15610) POTENTIOMETER: RAW ADC: 3111, Filtered ADC: 3113, Threshold: 3999[0m
+[0;32mI (15610) POTENTIOMETER: Step 5: ADC 3113 -> 27% (duty 70)[0m
+[0;32mI (15610) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (15610) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (16440) KEYSWITCHES: Rotary Encoder 2 Button Pressed! - Toggling lights[0m
+[0;32mI (16540) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (16540) KEYSWITCHES: Hue lights turned ON[0m
+[0;32mI (16540) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (16820) POTENTIOMETER: RAW ADC: 3110, Filtered ADC: 3109, Threshold: 3999[0m
+[0;32mI (16820) POTENTIOMETER: Step 5: ADC 3109 -> 27% (duty 70)[0m
+[0;32mI (16820) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (16820) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (18030) POTENTIOMETER: RAW ADC: 3117, Filtered ADC: 3118, Threshold: 3999[0m
+[0;32mI (18030) POTENTIOMETER: Step 5: ADC 3118 -> 27% (duty 70)[0m
+[0;32mI (18030) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (18030) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (18120) KEYSWITCHES: Rotary Encoder 2 Button Pressed! - Toggling lights[0m
+[0;32mI (18230) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (18240) KEYSWITCHES: Hue lights turned OFF[0m
+[0;32mI (18240) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (19240) POTENTIOMETER: RAW ADC: 3111, Filtered ADC: 3111, Threshold: 3999[0m
+[0;32mI (19240) POTENTIOMETER: Step 5: ADC 3111 -> 27% (duty 70)[0m
+[0;32mI (19240) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (19240) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (19660) KEYSWITCHES: Rotary Encoder 2 Button Pressed! - Toggling lights[0m
+[0;32mI (19810) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (19810) KEYSWITCHES: Hue lights turned ON[0m
+[0;32mI (19810) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (20450) POTENTIOMETER: RAW ADC: 3103, Filtered ADC: 3108, Threshold: 3999[0m
+[0;32mI (20450) POTENTIOMETER: Step 5: ADC 3108 -> 27% (duty 70)[0m
+[0;32mI (20450) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (20450) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (21660) POTENTIOMETER: RAW ADC: 3113, Filtered ADC: 3114, Threshold: 3999[0m
+[0;32mI (21660) POTENTIOMETER: Step 5: ADC 3114 -> 27% (duty 70)[0m
+[0;32mI (21660) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (21660) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (21800) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (21800) KEYSWITCHES: Scene 3: Læs (Read)[0m
+[0;32mI (21980) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (21980) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (22070) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (22070) KEYSWITCHES: Scene 4: Slap af (Relax)[0m
+[0;32mI (22320) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (22320) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (22870) POTENTIOMETER: RAW ADC: 3117, Filtered ADC: 3116, Threshold: 3999[0m
+[0;32mI (22870) POTENTIOMETER: Step 5: ADC 3116 -> 27% (duty 70)[0m
+[0;32mI (22870) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (22870) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (22910) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise - Previous scene[0m
+[0;32mI (22910) KEYSWITCHES: Scene 3: Læs (Read)[0m
+[0;32mI (23150) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (23150) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (23350) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise - Previous scene[0m
+[0;32mI (23350) KEYSWITCHES: Scene 2: Koncentrer dig (Concentrate)[0m
+[0;32mI (23580) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (23580) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (24080) POTENTIOMETER: RAW ADC: 3117, Filtered ADC: 3117, Threshold: 3999[0m
+[0;32mI (24080) POTENTIOMETER: Step 5: ADC 3117 -> 27% (duty 70)[0m
+[0;32mI (24080) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (24080) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (24580) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (24580) KEYSWITCHES: Scene 3: Læs (Read)[0m
+[0;32mI (24810) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (24810) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (25290) POTENTIOMETER: RAW ADC: 3117, Filtered ADC: 3117, Threshold: 3999[0m
+[0;32mI (25290) POTENTIOMETER: Step 5: ADC 3117 -> 27% (duty 70)[0m
+[0;32mI (25290) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (25290) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (25810) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (25810) KEYSWITCHES: Scene 4: Slap af (Relax)[0m
+[0;32mI (26180) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (26180) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (26500) POTENTIOMETER: RAW ADC: 3117, Filtered ADC: 3115, Threshold: 3999[0m
+[0;32mI (26500) POTENTIOMETER: Step 5: ADC 3115 -> 27% (duty 70)[0m
+[0;32mI (26500) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (26500) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (26960) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise - Previous scene[0m
+[0;32mI (26960) KEYSWITCHES: Scene 3: Læs (Read)[0m
+[0;32mI (27200) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (27200) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (27710) POTENTIOMETER: RAW ADC: 3132, Filtered ADC: 3126, Threshold: 3999[0m
+[0;32mI (27710) POTENTIOMETER: Step 5: ADC 3126 -> 27% (duty 70)[0m
+[0;32mI (27710) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (27710) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (28920) POTENTIOMETER: RAW ADC: 3113, Filtered ADC: 3113, Threshold: 3999[0m
+[0;32mI (28920) POTENTIOMETER: Step 5: ADC 3113 -> 27% (duty 70)[0m
+[0;32mI (28920) POTENTIOMETER: Final: Duty Cycle: 70, Fan Speed: 27%[0m
+[0;32mI (28920) POTENTIOMETER: PWM SET: 70 (27%)[0m
+[0;32mI (29770) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (29880) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (29890) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (29890) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (30130) POTENTIOMETER: RAW ADC: 4095, Filtered ADC: 4094, Threshold: 3999[0m
+[0;32mI (30130) POTENTIOMETER: Final: Duty Cycle: 0, Fan Speed: 0%[0m
+[0;32mI (30130) POTENTIOMETER: PWM SET: 0 (0%)[0m
+[0;32mI (31330) POTENTIOMETER: RAW ADC: 3835, Filtered ADC: 3899, Threshold: 3999[0m
+[0;32mI (31330) POTENTIOMETER: Final: Duty Cycle: 40, Fan Speed: 16%[0m
+[0;32mI (31330) POTENTIOMETER: PWM SET: 40 (16%)[0m
+[0;32mI (31330) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (31400) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (31940) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (32540) POTENTIOMETER: RAW ADC: 2332, Filtered ADC: 2335, Threshold: 3999[0m
+[0;32mI (32540) POTENTIOMETER: Step 4: ADC 2335 -> 39% (duty 100)[0m
+[0;32mI (32540) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (32540) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (33750) POTENTIOMETER: RAW ADC: 2065, Filtered ADC: 2071, Threshold: 3999[0m
+[0;32mI (33750) POTENTIOMETER: Step 4: ADC 2071 -> 39% (duty 100)[0m
+[0;32mI (33750) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (33750) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (34960) POTENTIOMETER: RAW ADC: 1823, Filtered ADC: 1824, Threshold: 3999[0m
+[0;32mI (34960) POTENTIOMETER: Step 4: ADC 1824 -> 39% (duty 100)[0m
+[0;32mI (34960) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (34960) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (35170) OLED_UI: Returning to main screen[0m
+[0;32mI (35170) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (35180) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (35480) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (35490) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (36170) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1901, Threshold: 3999[0m
+[0;32mI (36170) POTENTIOMETER: Step 4: ADC 1901 -> 39% (duty 100)[0m
+[0;32mI (36170) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (36170) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (37380) POTENTIOMETER: RAW ADC: 1904, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (37380) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (37380) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (37380) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (38590) POTENTIOMETER: RAW ADC: 1913, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (38590) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (38590) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (38590) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (39800) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (39800) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (39800) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (39800) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (41010) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (41010) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (41010) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (41010) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (42220) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (42220) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (42220) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (42220) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (43430) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1910, Threshold: 3999[0m
+[0;32mI (43430) POTENTIOMETER: Step 4: ADC 1910 -> 39% (duty 100)[0m
+[0;32mI (43430) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (43430) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (44640) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (44640) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (44640) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (44640) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (45850) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (45850) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (45850) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (45850) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (47060) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (47060) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (47060) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (47060) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (48270) POTENTIOMETER: RAW ADC: 1912, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (48270) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (48270) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (48270) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (49480) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (49480) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (49480) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (49480) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (50690) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (50690) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (50690) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (50690) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (51900) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (51900) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (51900) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (51900) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (53110) POTENTIOMETER: RAW ADC: 1893, Filtered ADC: 1897, Threshold: 3999[0m
+[0;32mI (53110) POTENTIOMETER: Step 4: ADC 1897 -> 39% (duty 100)[0m
+[0;32mI (53110) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (53120) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (54320) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (54320) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (54320) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (54320) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (55530) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (55530) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (55530) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (55540) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (56740) POTENTIOMETER: RAW ADC: 1902, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (56740) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (56740) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (56740) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (57950) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (57950) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (57950) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (57950) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (59160) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (59160) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (59160) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (59160) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (60370) POTENTIOMETER: RAW ADC: 1900, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (60370) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (60370) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (60370) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (61580) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (61580) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (61580) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (61580) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (62790) POTENTIOMETER: RAW ADC: 1904, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (62790) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (62790) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (62790) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (64000) POTENTIOMETER: RAW ADC: 1900, Filtered ADC: 1901, Threshold: 3999[0m
+[0;32mI (64000) POTENTIOMETER: Step 4: ADC 1901 -> 39% (duty 100)[0m
+[0;32mI (64000) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (64010) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (65210) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (65210) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (65210) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (65210) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (66420) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1902, Threshold: 3999[0m
+[0;32mI (66420) POTENTIOMETER: Step 4: ADC 1902 -> 39% (duty 100)[0m
+[0;32mI (66420) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (66420) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (67630) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (67630) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (67630) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (67630) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (68840) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1910, Threshold: 3999[0m
+[0;32mI (68840) POTENTIOMETER: Step 4: ADC 1910 -> 39% (duty 100)[0m
+[0;32mI (68840) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (68840) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (70050) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1910, Threshold: 3999[0m
+[0;32mI (70050) POTENTIOMETER: Step 4: ADC 1910 -> 39% (duty 100)[0m
+[0;32mI (70050) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (70050) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (71260) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1901, Threshold: 3999[0m
+[0;32mI (71260) POTENTIOMETER: Step 4: ADC 1901 -> 39% (duty 100)[0m
+[0;32mI (71260) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (71260) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (72470) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (72470) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (72470) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (72470) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (73680) POTENTIOMETER: RAW ADC: 1915, Filtered ADC: 1911, Threshold: 3999[0m
+[0;32mI (73680) POTENTIOMETER: Step 4: ADC 1911 -> 39% (duty 100)[0m
+[0;32mI (73680) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (73680) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (74890) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (74890) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (74890) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (74890) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (76100) POTENTIOMETER: RAW ADC: 1895, Filtered ADC: 1898, Threshold: 3999[0m
+[0;32mI (76100) POTENTIOMETER: Step 4: ADC 1898 -> 39% (duty 100)[0m
+[0;32mI (76100) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (76100) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (77310) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1910, Threshold: 3999[0m
+[0;32mI (77310) POTENTIOMETER: Step 4: ADC 1910 -> 39% (duty 100)[0m
+[0;32mI (77310) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (77320) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (78520) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (78520) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (78520) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (78520) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (79730) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (79730) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (79730) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (79730) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (80940) POTENTIOMETER: RAW ADC: 1904, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (80940) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (80940) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (80950) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (82150) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (82150) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (82150) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (82150) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (83360) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (83360) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (83360) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (83360) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (84570) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (84570) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (84570) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (84570) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (85780) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (85780) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (85780) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (85780) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (86990) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (86990) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (86990) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (86990) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (88200) POTENTIOMETER: RAW ADC: 1910, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (88200) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (88200) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (88200) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (89410) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (89410) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (89410) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (89410) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (90620) POTENTIOMETER: RAW ADC: 1900, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (90620) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (90620) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (90620) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (91830) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (91830) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (91830) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (91830) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (93040) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (93040) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (93040) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (93050) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (94250) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (94250) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (94250) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (94250) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (95460) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (95460) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (95460) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (95460) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (95530) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (95540) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (96670) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (96670) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (96670) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (96670) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (97880) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (97880) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (97880) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (97880) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (99090) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (99090) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (99090) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (99090) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (100300) POTENTIOMETER: RAW ADC: 1904, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (100300) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (100300) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (100310) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (101510) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (101510) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (101510) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (101520) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (102720) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (102720) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (102720) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (102730) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (103930) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (103930) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (103930) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (103940) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (105140) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (105140) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (105140) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (105150) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (106350) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (106350) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (106350) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (106360) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (107560) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1902, Threshold: 3999[0m
+[0;32mI (107560) POTENTIOMETER: Step 4: ADC 1902 -> 39% (duty 100)[0m
+[0;32mI (107560) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (107570) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (108770) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (108770) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (108770) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (108780) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (109980) POTENTIOMETER: RAW ADC: 1917, Filtered ADC: 1913, Threshold: 3999[0m
+[0;32mI (109980) POTENTIOMETER: Step 4: ADC 1913 -> 39% (duty 100)[0m
+[0;32mI (109980) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (109990) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (111190) POTENTIOMETER: RAW ADC: 1900, Filtered ADC: 1902, Threshold: 3999[0m
+[0;32mI (111190) POTENTIOMETER: Step 4: ADC 1902 -> 39% (duty 100)[0m
+[0;32mI (111190) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (111200) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (112400) POTENTIOMETER: RAW ADC: 1910, Filtered ADC: 1910, Threshold: 3999[0m
+[0;32mI (112400) POTENTIOMETER: Step 4: ADC 1910 -> 39% (duty 100)[0m
+[0;32mI (112400) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (112410) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (113610) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1910, Threshold: 3999[0m
+[0;32mI (113610) POTENTIOMETER: Step 4: ADC 1910 -> 39% (duty 100)[0m
+[0;32mI (113610) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (113620) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (114820) POTENTIOMETER: RAW ADC: 1902, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (114820) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (114820) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (114830) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (116030) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (116030) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (116030) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (116040) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (117240) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (117240) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (117240) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (117250) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (118450) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1910, Threshold: 3999[0m
+[0;32mI (118450) POTENTIOMETER: Step 4: ADC 1910 -> 39% (duty 100)[0m
+[0;32mI (118450) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (118460) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (119660) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (119660) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (119660) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (119670) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (120870) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (120870) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (120870) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (120880) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (122080) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (122080) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (122080) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (122090) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (123290) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1902, Threshold: 3999[0m
+[0;32mI (123290) POTENTIOMETER: Step 4: ADC 1902 -> 39% (duty 100)[0m
+[0;32mI (123290) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (123300) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (124500) POTENTIOMETER: RAW ADC: 1910, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (124500) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (124500) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (124510) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (125710) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1902, Threshold: 3999[0m
+[0;32mI (125710) POTENTIOMETER: Step 4: ADC 1902 -> 39% (duty 100)[0m
+[0;32mI (125710) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (125720) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (126920) POTENTIOMETER: RAW ADC: 1899, Filtered ADC: 1901, Threshold: 3999[0m
+[0;32mI (126920) POTENTIOMETER: Step 4: ADC 1901 -> 39% (duty 100)[0m
+[0;32mI (126920) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (126930) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (128130) POTENTIOMETER: RAW ADC: 1902, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (128130) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (128130) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (128140) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (129340) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (129340) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (129340) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (129350) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (130550) POTENTIOMETER: RAW ADC: 1913, Filtered ADC: 1911, Threshold: 3999[0m
+[0;32mI (130550) POTENTIOMETER: Step 4: ADC 1911 -> 39% (duty 100)[0m
+[0;32mI (130550) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (130560) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (131760) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1910, Threshold: 3999[0m
+[0;32mI (131760) POTENTIOMETER: Step 4: ADC 1910 -> 39% (duty 100)[0m
+[0;32mI (131760) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (131770) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (132970) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1901, Threshold: 3999[0m
+[0;32mI (132970) POTENTIOMETER: Step 4: ADC 1901 -> 39% (duty 100)[0m
+[0;32mI (132970) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (132980) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (134180) POTENTIOMETER: RAW ADC: 1899, Filtered ADC: 1901, Threshold: 3999[0m
+[0;32mI (134180) POTENTIOMETER: Step 4: ADC 1901 -> 39% (duty 100)[0m
+[0;32mI (134180) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (134190) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (135390) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (135390) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (135390) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (135400) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (136600) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (136600) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (136600) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (136610) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (137810) POTENTIOMETER: RAW ADC: 1905, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (137810) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (137810) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (137820) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (139020) POTENTIOMETER: RAW ADC: 1899, Filtered ADC: 1900, Threshold: 3999[0m
+[0;32mI (139020) POTENTIOMETER: Step 4: ADC 1900 -> 39% (duty 100)[0m
+[0;32mI (139020) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (139030) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (140230) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (140230) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (140230) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (140240) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (141440) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (141440) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (141440) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (141450) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (142650) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (142650) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (142650) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (142660) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (143860) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (143860) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (143860) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (143870) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (145070) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (145070) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (145070) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (145080) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (146280) POTENTIOMETER: RAW ADC: 1932, Filtered ADC: 1925, Threshold: 3999[0m
+[0;32mI (146280) POTENTIOMETER: Step 4: ADC 1925 -> 39% (duty 100)[0m
+[0;32mI (146280) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (146290) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (147490) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (147490) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (147490) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (147500) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (148700) POTENTIOMETER: RAW ADC: 1896, Filtered ADC: 1899, Threshold: 3999[0m
+[0;32mI (148700) POTENTIOMETER: Step 4: ADC 1899 -> 39% (duty 100)[0m
+[0;32mI (148700) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (148710) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (149910) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (149910) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (149910) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (149920) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (151120) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (151120) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (151120) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (151130) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (152330) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (152330) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (152330) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (152340) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (153540) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (153540) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (153540) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (153550) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (154750) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (154750) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (154750) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (154760) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (155580) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (155590) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (155960) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (155960) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (155960) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (155970) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (157170) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (157170) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (157170) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (157180) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (158380) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (158380) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (158380) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (158390) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (159590) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (159590) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (159590) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (159600) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (160800) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (160800) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (160800) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (160810) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (162010) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (162010) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (162010) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (162020) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (163220) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (163220) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (163220) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (163230) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (164430) POTENTIOMETER: RAW ADC: 1913, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (164430) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (164430) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (164440) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (165640) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (165640) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (165640) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (165650) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (166850) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (166850) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (166850) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (166860) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (168060) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (168060) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (168060) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (168070) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (169270) POTENTIOMETER: RAW ADC: 1899, Filtered ADC: 1900, Threshold: 3999[0m
+[0;32mI (169270) POTENTIOMETER: Step 4: ADC 1900 -> 39% (duty 100)[0m
+[0;32mI (169270) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (169280) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (170480) POTENTIOMETER: RAW ADC: 1910, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (170480) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (170480) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (170490) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (171690) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (171690) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (171690) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (171700) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (172900) POTENTIOMETER: RAW ADC: 1897, Filtered ADC: 1901, Threshold: 3999[0m
+[0;32mI (172900) POTENTIOMETER: Step 4: ADC 1901 -> 39% (duty 100)[0m
+[0;32mI (172900) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (172910) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (174110) POTENTIOMETER: RAW ADC: 1913, Filtered ADC: 1911, Threshold: 3999[0m
+[0;32mI (174110) POTENTIOMETER: Step 4: ADC 1911 -> 39% (duty 100)[0m
+[0;32mI (174110) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (174120) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (175320) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (175320) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (175320) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (175330) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (176530) POTENTIOMETER: RAW ADC: 1902, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (176530) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (176530) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (176540) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (177740) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (177740) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (177740) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (177750) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (178950) POTENTIOMETER: RAW ADC: 1915, Filtered ADC: 1911, Threshold: 3999[0m
+[0;32mI (178950) POTENTIOMETER: Step 4: ADC 1911 -> 39% (duty 100)[0m
+[0;32mI (178950) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (178960) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (180160) POTENTIOMETER: RAW ADC: 1870, Filtered ADC: 1881, Threshold: 3999[0m
+[0;32mI (180160) POTENTIOMETER: Step 4: ADC 1881 -> 39% (duty 100)[0m
+[0;32mI (180160) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (180170) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (181370) POTENTIOMETER: RAW ADC: 1912, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (181370) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (181370) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (181380) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (182580) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (182580) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (182580) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (182590) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (183790) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (183790) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (183790) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (183800) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (185000) POTENTIOMETER: RAW ADC: 1917, Filtered ADC: 1912, Threshold: 3999[0m
+[0;32mI (185000) POTENTIOMETER: Step 4: ADC 1912 -> 39% (duty 100)[0m
+[0;32mI (185000) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (185010) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (186210) POTENTIOMETER: RAW ADC: 1906, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (186210) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (186210) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (186220) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (187420) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (187420) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (187420) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (187430) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (188630) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (188630) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (188630) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (188640) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (189840) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (189840) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (189840) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (189850) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (191050) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (191050) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (191050) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (191060) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (192260) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (192260) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (192260) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (192270) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (193470) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (193470) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (193470) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (193480) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (194680) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (194680) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (194680) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (194690) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (195890) POTENTIOMETER: RAW ADC: 1913, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (195890) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (195890) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (195900) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (197100) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (197100) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (197100) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (197110) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (198310) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (198310) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (198310) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (198320) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (199520) POTENTIOMETER: RAW ADC: 1910, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (199520) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (199520) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (199530) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (200730) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (200730) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (200730) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (200740) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (201940) POTENTIOMETER: RAW ADC: 1895, Filtered ADC: 1899, Threshold: 3999[0m
+[0;32mI (201940) POTENTIOMETER: Step 4: ADC 1899 -> 39% (duty 100)[0m
+[0;32mI (201940) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (201950) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (203150) POTENTIOMETER: RAW ADC: 1910, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (203150) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (203150) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (203160) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (204360) POTENTIOMETER: RAW ADC: 1902, Filtered ADC: 1902, Threshold: 3999[0m
+[0;32mI (204360) POTENTIOMETER: Step 4: ADC 1902 -> 39% (duty 100)[0m
+[0;32mI (204360) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (204370) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (205570) POTENTIOMETER: RAW ADC: 1912, Filtered ADC: 1911, Threshold: 3999[0m
+[0;32mI (205570) POTENTIOMETER: Step 4: ADC 1911 -> 39% (duty 100)[0m
+[0;32mI (205570) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (205580) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (206780) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (206780) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (206780) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (206790) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (207990) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (207990) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (207990) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (208000) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (209200) POTENTIOMETER: RAW ADC: 1913, Filtered ADC: 1911, Threshold: 3999[0m
+[0;32mI (209200) POTENTIOMETER: Step 4: ADC 1911 -> 39% (duty 100)[0m
+[0;32mI (209200) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (209210) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (210410) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (210410) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (210410) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (210420) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (211620) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (211620) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (211620) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (211630) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (212830) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (212830) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (212830) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (212840) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (214040) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (214040) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (214040) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (214050) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (215250) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (215250) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (215250) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (215260) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (215630) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (215640) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (216460) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (216460) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (216460) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (216470) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (217670) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (217670) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (217670) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (217680) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (218880) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1901, Threshold: 3999[0m
+[0;32mI (218880) POTENTIOMETER: Step 4: ADC 1901 -> 39% (duty 100)[0m
+[0;32mI (218880) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (218890) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (220090) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (220090) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (220090) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (220100) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (221300) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (221300) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (221300) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (221310) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (222510) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (222510) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (222510) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (222520) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (223720) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (223720) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (223720) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (223730) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (224930) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (224930) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (224930) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (224940) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (226140) POTENTIOMETER: RAW ADC: 1898, Filtered ADC: 1901, Threshold: 3999[0m
+[0;32mI (226140) POTENTIOMETER: Step 4: ADC 1901 -> 39% (duty 100)[0m
+[0;32mI (226140) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (226150) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (227350) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (227350) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (227350) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (227360) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (228560) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (228560) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (228560) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (228570) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (229770) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (229770) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (229770) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (229780) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (230980) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (230980) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (230980) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (230990) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (232190) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (232190) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (232190) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (232200) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (233400) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (233400) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (233400) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (233410) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (234610) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (234610) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (234610) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (234620) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (235820) POTENTIOMETER: RAW ADC: 1910, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (235820) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (235820) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (235830) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (237030) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (237030) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (237030) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (237040) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (238240) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (238240) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (238240) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (238250) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (239450) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (239450) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (239450) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (239460) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (240660) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (240660) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (240660) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (240670) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (241870) POTENTIOMETER: RAW ADC: 1913, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (241870) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (241870) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (241880) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (243080) POTENTIOMETER: RAW ADC: 1912, Filtered ADC: 1910, Threshold: 3999[0m
+[0;32mI (243080) POTENTIOMETER: Step 4: ADC 1910 -> 39% (duty 100)[0m
+[0;32mI (243080) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (243090) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (244290) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (244290) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (244290) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (244300) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (245500) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (245500) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (245500) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (245510) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (246710) POTENTIOMETER: RAW ADC: 1910, Filtered ADC: 1910, Threshold: 3999[0m
+[0;32mI (246710) POTENTIOMETER: Step 4: ADC 1910 -> 39% (duty 100)[0m
+[0;32mI (246710) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (246720) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (247920) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (247920) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (247920) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (247930) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (249130) POTENTIOMETER: RAW ADC: 1899, Filtered ADC: 1901, Threshold: 3999[0m
+[0;32mI (249130) POTENTIOMETER: Step 4: ADC 1901 -> 39% (duty 100)[0m
+[0;32mI (249130) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (249140) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (250340) POTENTIOMETER: RAW ADC: 1904, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (250340) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (250340) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (250350) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (251550) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (251550) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (251550) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (251560) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (252760) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (252760) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (252760) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (252770) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (253970) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (253970) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (253970) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (253980) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (255180) POTENTIOMETER: RAW ADC: 1902, Filtered ADC: 1902, Threshold: 3999[0m
+[0;32mI (255180) POTENTIOMETER: Step 4: ADC 1902 -> 39% (duty 100)[0m
+[0;32mI (255180) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (255190) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (256390) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1910, Threshold: 3999[0m
+[0;32mI (256390) POTENTIOMETER: Step 4: ADC 1910 -> 39% (duty 100)[0m
+[0;32mI (256390) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (256400) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (257600) POTENTIOMETER: RAW ADC: 1902, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (257600) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (257600) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (257610) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (258810) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (258810) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (258810) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (258820) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (260020) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (260020) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (260020) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (260030) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (261230) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (261230) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (261230) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (261240) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (262440) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (262440) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (262440) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (262450) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (263650) POTENTIOMETER: RAW ADC: 1913, Filtered ADC: 1910, Threshold: 3999[0m
+[0;32mI (263650) POTENTIOMETER: Step 4: ADC 1910 -> 39% (duty 100)[0m
+[0;32mI (263650) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (263660) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (264860) POTENTIOMETER: RAW ADC: 1902, Filtered ADC: 1902, Threshold: 3999[0m
+[0;32mI (264860) POTENTIOMETER: Step 4: ADC 1902 -> 39% (duty 100)[0m
+[0;32mI (264860) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (264870) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (266070) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (266070) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (266070) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (266080) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (267280) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (267280) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (267280) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (267290) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (268490) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (268490) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (268490) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (268500) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (269700) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (269700) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (269700) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (269710) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (270910) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (270910) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (270910) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (270920) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (272120) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (272120) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (272120) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (272130) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (273330) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (273330) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (273330) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (273340) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (274540) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (274540) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (274540) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (274550) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (275680) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (275690) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (275750) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (275750) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (275750) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (275760) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (276960) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1902, Threshold: 3999[0m
+[0;32mI (276960) POTENTIOMETER: Step 4: ADC 1902 -> 39% (duty 100)[0m
+[0;32mI (276960) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (276970) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (278170) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1901, Threshold: 3999[0m
+[0;32mI (278170) POTENTIOMETER: Step 4: ADC 1901 -> 39% (duty 100)[0m
+[0;32mI (278170) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (278180) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (279380) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (279380) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (279380) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (279390) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (280590) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (280590) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (280590) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (280600) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (281800) POTENTIOMETER: RAW ADC: 1900, Filtered ADC: 1902, Threshold: 3999[0m
+[0;32mI (281800) POTENTIOMETER: Step 4: ADC 1902 -> 39% (duty 100)[0m
+[0;32mI (281800) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (281810) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (283010) POTENTIOMETER: RAW ADC: 1904, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (283010) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (283010) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (283020) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (284220) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (284220) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (284220) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (284230) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (285430) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (285430) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (285430) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (285440) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (286640) POTENTIOMETER: RAW ADC: 1910, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (286640) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (286640) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (286650) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (287850) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (287850) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (287850) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (287860) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (289060) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (289060) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (289060) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (289070) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (290270) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (290270) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (290270) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (290280) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (291480) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (291480) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (291480) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (291490) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (292690) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (292690) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (292690) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (292700) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (293900) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (293900) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (293900) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (293910) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (295110) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (295110) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (295110) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (295120) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (296320) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (296320) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (296320) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (296330) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (297530) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (297530) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (297530) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (297540) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (298740) POTENTIOMETER: RAW ADC: 1902, Filtered ADC: 1902, Threshold: 3999[0m
+[0;32mI (298740) POTENTIOMETER: Step 4: ADC 1902 -> 39% (duty 100)[0m
+[0;32mI (298740) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (298750) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (299950) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (299950) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (299950) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (299960) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (301160) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (301160) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (301160) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (301170) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (302370) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (302370) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (302370) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (302380) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (303580) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (303580) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (303580) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (303590) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (304790) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (304790) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (304790) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (304800) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (306000) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (306000) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (306000) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (306010) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (307210) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (307210) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (307210) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (307220) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (308420) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (308420) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (308420) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (308430) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (309630) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (309630) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (309630) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (309640) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (310840) POTENTIOMETER: RAW ADC: 1914, Filtered ADC: 1912, Threshold: 3999[0m
+[0;32mI (310840) POTENTIOMETER: Step 4: ADC 1912 -> 39% (duty 100)[0m
+[0;32mI (310840) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (310850) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (312050) POTENTIOMETER: RAW ADC: 1900, Filtered ADC: 1901, Threshold: 3999[0m
+[0;32mI (312050) POTENTIOMETER: Step 4: ADC 1901 -> 39% (duty 100)[0m
+[0;32mI (312050) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (312060) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (313260) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (313260) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (313260) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (313270) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (314470) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (314470) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (314470) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (314480) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (315680) POTENTIOMETER: RAW ADC: 1899, Filtered ADC: 1900, Threshold: 3999[0m
+[0;32mI (315680) POTENTIOMETER: Step 4: ADC 1900 -> 39% (duty 100)[0m
+[0;32mI (315680) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (315690) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (316890) POTENTIOMETER: RAW ADC: 1910, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (316890) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (316890) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (316900) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (318100) POTENTIOMETER: RAW ADC: 1891, Filtered ADC: 1895, Threshold: 3999[0m
+[0;32mI (318100) POTENTIOMETER: Step 4: ADC 1895 -> 39% (duty 100)[0m
+[0;32mI (318100) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (318110) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (319310) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (319310) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (319310) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (319320) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (320520) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (320520) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (320520) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (320530) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (321730) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (321730) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (321730) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (321740) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (322940) POTENTIOMETER: RAW ADC: 1913, Filtered ADC: 1912, Threshold: 3999[0m
+[0;32mI (322940) POTENTIOMETER: Step 4: ADC 1912 -> 39% (duty 100)[0m
+[0;32mI (322940) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (322950) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (324150) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (324150) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (324150) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (324160) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (325360) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (325360) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (325360) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (325370) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (326570) POTENTIOMETER: RAW ADC: 1904, Filtered ADC: 1901, Threshold: 3999[0m
+[0;32mI (326570) POTENTIOMETER: Step 4: ADC 1901 -> 39% (duty 100)[0m
+[0;32mI (326570) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (326580) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (327780) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (327780) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (327780) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (327790) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (328990) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (328990) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (328990) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (329000) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (330200) POTENTIOMETER: RAW ADC: 1912, Filtered ADC: 1912, Threshold: 3999[0m
+[0;32mI (330200) POTENTIOMETER: Step 4: ADC 1912 -> 39% (duty 100)[0m
+[0;32mI (330200) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (330210) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (331410) POTENTIOMETER: RAW ADC: 1895, Filtered ADC: 1897, Threshold: 3999[0m
+[0;32mI (331410) POTENTIOMETER: Step 4: ADC 1897 -> 39% (duty 100)[0m
+[0;32mI (331410) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (331420) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (332620) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (332620) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (332620) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (332630) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (333830) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (333830) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (333830) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (333840) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (335040) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1901, Threshold: 3999[0m
+[0;32mI (335040) POTENTIOMETER: Step 4: ADC 1901 -> 39% (duty 100)[0m
+[0;32mI (335040) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (335050) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (335730) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (335740) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (336250) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (336250) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (336250) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (336260) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (337460) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (337460) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (337460) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (337470) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (338670) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (338670) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (338670) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (338680) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (339880) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (339880) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (339880) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (339890) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (341090) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (341090) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (341090) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (341100) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (342300) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (342300) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (342300) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (342310) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (343510) POTENTIOMETER: RAW ADC: 1910, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (343510) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (343510) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (343520) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (344720) POTENTIOMETER: RAW ADC: 1897, Filtered ADC: 1899, Threshold: 3999[0m
+[0;32mI (344720) POTENTIOMETER: Step 4: ADC 1899 -> 39% (duty 100)[0m
+[0;32mI (344720) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (344730) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (345930) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1910, Threshold: 3999[0m
+[0;32mI (345930) POTENTIOMETER: Step 4: ADC 1910 -> 39% (duty 100)[0m
+[0;32mI (345930) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (345940) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (347140) POTENTIOMETER: RAW ADC: 1913, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (347140) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (347140) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (347150) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (348350) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (348350) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (348350) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (348360) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (349560) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (349560) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (349560) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (349570) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (350770) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (350770) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (350770) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (350780) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (351980) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (351980) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (351980) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (351990) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (353190) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (353190) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (353190) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (353200) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (354400) POTENTIOMETER: RAW ADC: 1900, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (354400) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (354400) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (354410) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (355610) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (355610) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (355610) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (355620) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (356820) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (356820) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (356820) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (356830) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (358030) POTENTIOMETER: RAW ADC: 1899, Filtered ADC: 1901, Threshold: 3999[0m
+[0;32mI (358030) POTENTIOMETER: Step 4: ADC 1901 -> 39% (duty 100)[0m
+[0;32mI (358030) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (358040) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (359240) POTENTIOMETER: RAW ADC: 1910, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (359240) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (359240) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (359250) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (360450) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (360450) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (360450) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (360460) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (361660) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (361660) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (361660) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (361670) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (362870) POTENTIOMETER: RAW ADC: 1915, Filtered ADC: 1911, Threshold: 3999[0m
+[0;32mI (362870) POTENTIOMETER: Step 4: ADC 1911 -> 39% (duty 100)[0m
+[0;32mI (362870) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (362880) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (364080) POTENTIOMETER: RAW ADC: 1900, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (364080) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (364080) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (364090) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (365290) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (365290) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (365290) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (365300) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (366500) POTENTIOMETER: RAW ADC: 1910, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (366500) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (366500) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (366510) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (367710) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (367710) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (367710) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (367720) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (368920) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (368920) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (368920) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (368930) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (370130) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (370130) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (370130) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (370140) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (371340) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (371340) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (371340) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (371350) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (372550) POTENTIOMETER: RAW ADC: 1913, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (372550) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (372550) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (372560) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (373760) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (373760) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (373760) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (373770) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (374970) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (374970) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (374970) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (374980) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (376180) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1900, Threshold: 3999[0m
+[0;32mI (376180) POTENTIOMETER: Step 4: ADC 1900 -> 39% (duty 100)[0m
+[0;32mI (376180) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (376190) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (377390) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (377390) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (377390) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (377400) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (378600) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (378600) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (378600) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (378610) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (379810) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (379810) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (379810) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (379820) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (381020) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (381020) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (381020) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (381030) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (382230) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (382230) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (382230) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (382240) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (383440) POTENTIOMETER: RAW ADC: 1902, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (383440) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (383440) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (383450) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (384650) POTENTIOMETER: RAW ADC: 1912, Filtered ADC: 1910, Threshold: 3999[0m
+[0;32mI (384650) POTENTIOMETER: Step 4: ADC 1910 -> 39% (duty 100)[0m
+[0;32mI (384650) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (384660) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (385860) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1902, Threshold: 3999[0m
+[0;32mI (385860) POTENTIOMETER: Step 4: ADC 1902 -> 39% (duty 100)[0m
+[0;32mI (385860) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (385870) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (387070) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1910, Threshold: 3999[0m
+[0;32mI (387070) POTENTIOMETER: Step 4: ADC 1910 -> 39% (duty 100)[0m
+[0;32mI (387070) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (387080) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (388280) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1902, Threshold: 3999[0m
+[0;32mI (388280) POTENTIOMETER: Step 4: ADC 1902 -> 39% (duty 100)[0m
+[0;32mI (388280) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (388290) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (389490) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (389490) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (389490) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (389500) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (390700) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (390700) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (390700) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (390710) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (391910) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (391910) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (391910) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (391920) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (393120) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (393120) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (393120) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (393130) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (394330) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (394330) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (394330) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (394340) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (395540) POTENTIOMETER: RAW ADC: 1899, Filtered ADC: 1900, Threshold: 3999[0m
+[0;32mI (395540) POTENTIOMETER: Step 4: ADC 1900 -> 39% (duty 100)[0m
+[0;32mI (395540) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (395550) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (395780) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (395790) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (396750) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1911, Threshold: 3999[0m
+[0;32mI (396750) POTENTIOMETER: Step 4: ADC 1911 -> 39% (duty 100)[0m
+[0;32mI (396750) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (396760) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (397960) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (397960) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (397960) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (397970) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (399170) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (399170) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (399170) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (399180) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (400380) POTENTIOMETER: RAW ADC: 1910, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (400380) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (400380) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (400390) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (401590) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (401590) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (401590) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (401600) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (402800) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (402800) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (402800) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (402810) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (404010) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (404010) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (404010) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (404020) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (405220) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1902, Threshold: 3999[0m
+[0;32mI (405220) POTENTIOMETER: Step 4: ADC 1902 -> 39% (duty 100)[0m
+[0;32mI (405220) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (405230) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (406430) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (406430) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (406430) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (406440) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (407640) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (407640) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (407640) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (407650) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (408850) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1909, Threshold: 3999[0m
+[0;32mI (408850) POTENTIOMETER: Step 4: ADC 1909 -> 39% (duty 100)[0m
+[0;32mI (408850) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (408860) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (410060) POTENTIOMETER: RAW ADC: 1912, Filtered ADC: 1910, Threshold: 3999[0m
+[0;32mI (410060) POTENTIOMETER: Step 4: ADC 1910 -> 39% (duty 100)[0m
+[0;32mI (410060) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (410070) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (411270) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (411270) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (411270) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (411280) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (412480) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (412480) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (412480) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (412490) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (413690) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1902, Threshold: 3999[0m
+[0;32mI (413690) POTENTIOMETER: Step 4: ADC 1902 -> 39% (duty 100)[0m
+[0;32mI (413690) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (413700) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (414900) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (414900) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (414900) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (414910) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (416110) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (416110) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (416110) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (416120) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (417320) POTENTIOMETER: RAW ADC: 1899, Filtered ADC: 1900, Threshold: 3999[0m
+[0;32mI (417320) POTENTIOMETER: Step 4: ADC 1900 -> 39% (duty 100)[0m
+[0;32mI (417320) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (417330) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (418530) POTENTIOMETER: RAW ADC: 1908, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (418530) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (418530) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (418540) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (419740) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (419740) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (419740) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (419750) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (420950) POTENTIOMETER: RAW ADC: 1900, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (420950) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (420950) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (420960) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (422160) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (422160) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (422160) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (422170) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (423370) POTENTIOMETER: RAW ADC: 1902, Filtered ADC: 1901, Threshold: 3999[0m
+[0;32mI (423370) POTENTIOMETER: Step 4: ADC 1901 -> 39% (duty 100)[0m
+[0;32mI (423370) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (423380) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (424580) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (424580) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (424580) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (424590) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (425790) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (425790) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (425790) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (425800) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (427000) POTENTIOMETER: RAW ADC: 1904, Filtered ADC: 1905, Threshold: 3999[0m
+[0;32mI (427000) POTENTIOMETER: Step 4: ADC 1905 -> 39% (duty 100)[0m
+[0;32mI (427000) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (427010) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (428210) POTENTIOMETER: RAW ADC: 1907, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (428210) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (428210) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (428220) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (429420) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (429420) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (429420) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (429430) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (430630) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1907, Threshold: 3999[0m
+[0;32mI (430630) POTENTIOMETER: Step 4: ADC 1907 -> 39% (duty 100)[0m
+[0;32mI (430630) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (430640) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (431840) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (431840) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (431840) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (431850) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (433050) POTENTIOMETER: RAW ADC: 1896, Filtered ADC: 1898, Threshold: 3999[0m
+[0;32mI (433050) POTENTIOMETER: Step 4: ADC 1898 -> 39% (duty 100)[0m
+[0;32mI (433050) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (433060) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (434260) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+[0;32mI (434260) POTENTIOMETER: Step 4: ADC 1908 -> 39% (duty 100)[0m
+[0;32mI (434260) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (434270) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (435470) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1906, Threshold: 3999[0m
+[0;32mI (435470) POTENTIOMETER: Step 4: ADC 1906 -> 39% (duty 100)[0m
+[0;32mI (435470) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (435480) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (436680) POTENTIOMETER: RAW ADC: 1901, Filtered ADC: 1904, Threshold: 3999[0m
+[0;32mI (436680) POTENTIOMETER: Step 4: ADC 1904 -> 39% (duty 100)[0m
+[0;32mI (436680) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (436690) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (437890) POTENTIOMETER: RAW ADC: 1911, Filtered ADC: 1910, Threshold: 3999[0m
+[0;32mI (437890) POTENTIOMETER: Step 4: ADC 1910 -> 39% (duty 100)[0m
+[0;32mI (437890) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (437900) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (439100) POTENTIOMETER: RAW ADC: 1903, Filtered ADC: 1903, Threshold: 3999[0m
+[0;32mI (439100) POTENTIOMETER: Step 4: ADC 1903 -> 39% (duty 100)[0m
+[0;32mI (439100) POTENTIOMETER: Final: Duty Cycle: 100, Fan Speed: 39%[0m
+[0;32mI (439110) POTENTIOMETER: PWM SET: 100 (39%)[0m
+[0;32mI (440310) POTENTIOMETER: RAW ADC: 1909, Filtered ADC: 1908, Threshold: 3999[0m
+

@@ -171,8 +171,26 @@ void setup_rotary_encoders(void) {
 
 void poll_rotary_encoders_task(void *pvParameter) {
     SSD1306_t *dev = (SSD1306_t *)pvParameter;
+    static uint32_t last_distance_update = 0;
+
     while (1) {
         poll_rotary_encoders(dev);  // Call the rotary encoder polling function
+
+        // Update desk distance every 500ms when desk UI is showing but not moving
+        uint32_t current_time = xTaskGetTickCount() * portTICK_PERIOD_MS;
+        if (current_time - last_distance_update > 500) {
+            // Check if we're showing desk UI and not moving
+            if (ui_should_update_desk_distance()) {
+                uint32_t distance_cm = measure_distance();
+                if (distance_cm > 0) {
+                    float desk_height = distance_cm + 30.0;
+                    ui_set_desk_context(desk_height, false, false);
+                    // Don't force refresh here, just update the context
+                }
+            }
+            last_distance_update = current_time;
+        }
+
         vTaskDelay(10 / portTICK_PERIOD_MS);  // Small delay to prevent CPU overload
     }
 }
@@ -197,9 +215,19 @@ void poll_rotary_encoders(SSD1306_t *dev) {
             hue_send_command("http://192.168.50.170/api/AicZqASmH6YLHxDyBxD-pci3vEmn0jLU0XvQ9g9N/groups/1/action", "{\"on\": true}");
             lights_on = true;
         }
+
+        // Update UI with new light state - always show UI even if state doesn't change
+        int brightness_percent = (brightness_value * 100) / 255;
+        // Show current scene name instead of "Current"
+        const char* scene_names[] = {"", "Energi", "Focus", "Read", "Relax", "RelaxAlt", "Study", "Night"};
+        const char* scene_name = (current_scene >= 1 && current_scene <= 7) ? scene_names[current_scene] : "Unknown";
+        ui_set_hue_context(scene_name, brightness_percent, lights_on);
+        ui_force_refresh_state(UI_STATE_HUE, 3000); // Force show Hue UI for 3 seconds
+
+        // Legacy display event (for backward compatibility)
         snprintf(event.display_text, sizeof(event.display_text), "Lights: %s", lights_on ? "ON" : "OFF");
         event.event_type = DISPLAY_UPDATE_LIGHT_STATUS;
-        oled_send_display_event(&event); 
+        oled_send_display_event(&event);
         last_press_time_rot1_sw = current_time;
     }
     previous_rot1_sw = rot1_sw;
@@ -224,6 +252,16 @@ void poll_rotary_encoders(SSD1306_t *dev) {
             }
             // Send brightness command to the Hue lights
             hue_set_group_brightness(brightness_value);
+
+            // Update UI with new brightness (convert 0-255 to 0-100 percentage)
+            int brightness_percent = (brightness_value * 100) / 255;
+            // Show current scene name instead of "Current"
+            const char* scene_names[] = {"", "Energi", "Focus", "Read", "Relax", "RelaxAlt", "Study", "Night"};
+            const char* scene_name = (current_scene >= 1 && current_scene <= 7) ? scene_names[current_scene] : "Unknown";
+            ui_set_hue_context(scene_name, brightness_percent, lights_on);
+            ui_force_refresh_state(UI_STATE_HUE, 3000); // Force show Hue UI for 3 seconds
+
+            // Legacy display event (for backward compatibility)
             snprintf(event.display_text, sizeof(event.display_text), "Brightness: %d", brightness_value);
             event.event_type = DISPLAY_UPDATE_LIGHT_STATUS;  // Reuse event type for brightness
             oled_send_display_event(&event);
@@ -250,6 +288,14 @@ void poll_rotary_encoders(SSD1306_t *dev) {
             lights_on = true;
             ESP_LOGI(KEYTAG, "Hue lights turned ON");
         }
+
+        // Update UI with new light state - always show UI even if state doesn't change
+        int brightness_percent = (brightness_value * 100) / 255;
+        // Show current scene name instead of "Current"
+        const char* scene_names[] = {"", "Energi", "Focus", "Read", "Relax", "RelaxAlt", "Study", "Night"};
+        const char* scene_name = (current_scene >= 1 && current_scene <= 7) ? scene_names[current_scene] : "Unknown";
+        ui_set_hue_context(scene_name, brightness_percent, lights_on);
+        ui_force_refresh_state(UI_STATE_HUE, 3000); // Force show Hue UI for 3 seconds
         last_press_time_rot2_sw = current_time;  // Update last press time
     }
     previous_rot2_sw = rot2_sw;
@@ -314,12 +360,42 @@ void poll_rotary_encoders(SSD1306_t *dev) {
             }
 
             hue_send_command("http://192.168.50.170/api/AicZqASmH6YLHxDyBxD-pci3vEmn0jLU0XvQ9g9N/groups/1/action", scene_command);
+
+            // Update UI with scene name
+            const char* scene_names[] = {"", "Energi", "Focus", "Read", "Relax", "RelaxAlt", "Study", "Night"};
+            const char* scene_name = (current_scene >= 1 && current_scene <= 7) ? scene_names[current_scene] : "Unknown";
+            int brightness_percent = (brightness_value * 100) / 255;
+            ui_set_hue_context(scene_name, brightness_percent, lights_on);
+            ui_force_refresh_state(UI_STATE_HUE, 3000); // Show Hue UI for 3 seconds
         }
     }
     previous_rot2_clk = rot2_clk;
 
     // Small delay to prevent excessive CPU usage
     vTaskDelay(10 / portTICK_PERIOD_MS);
+}
+
+// Live value getters for real-time UI updates
+int get_current_hue_brightness(void) {
+    // Safety check to prevent division by zero or invalid values
+    if (brightness_value < 0) return 0;
+    if (brightness_value > 255) return 100;
+    return (brightness_value * 100) / 255; // Convert to percentage
+}
+
+bool get_current_hue_lights_on(void) {
+    return lights_on;
+}
+
+const char* get_current_hue_scene_name(void) {
+    // Static array to prevent stack issues
+    static const char* scene_names[] = {"", "Energi", "Focus", "Read", "Relax", "RelaxAlt", "Study", "Night"};
+
+    // Safety check for scene bounds
+    if (current_scene < 1 || current_scene > 7) {
+        return "Unknown";
+    }
+    return scene_names[current_scene];
 }
 
 void poll_single_row(void) {
@@ -343,6 +419,12 @@ void poll_single_row(void) {
     }
     if (debounce(current_time, KEY_GPIO5, &last_press_time_single_row[4])) {
         ESP_LOGI(KEYTAG, "Switch 5 pressed! - System Sleep/Suspend");
+
+        // Show suspend UI with current PC number
+        int current_pc = get_current_pc();
+        ui_set_pc_context(current_pc);
+        ui_force_refresh_state(UI_STATE_SUSPEND, 3000); // Show suspend UI for 3 seconds
+
         hid_system_sleep();
     }
 }
@@ -371,16 +453,25 @@ void poll_switch_matrix(void) {
             start_moving_desk(DESK_MOVE_UP);
             ESP_LOGI("DESK_CONTROL", "UP button pressed - starting movement");
         }
-        // Monitor distance while moving
+        // Monitor distance while moving and update UI in real-time
         uint32_t distance_cm = measure_distance();
         if (distance_cm > 0) {  // Valid reading
             ESP_LOGI("ULTRASONIC", "Moving up - Distance: %lu cm", distance_cm);
+            // Update UI with real-time distance (convert to approximate desk height)
+            float desk_height = distance_cm + 30.0; // Approximate conversion
+            ui_set_desk_context(desk_height, true, true);
+            ui_force_refresh_state(UI_STATE_DESK, 5000); // Keep showing desk UI
         }
     } else {  // Button released
         if (up_button_pressed) {       // Button was pressed, now released
             stop_moving_desk();
             up_button_pressed = false;
             ESP_LOGI("DESK_CONTROL", "UP button released - STOPPED");
+            // Immediately show stopped state
+            uint32_t distance_cm = measure_distance();
+            float desk_height = (distance_cm > 0) ? distance_cm + 30.0 : 67.0;
+            ui_set_desk_context(desk_height, false, false);
+            ui_force_refresh_state(UI_STATE_DESK, 3000); // Show stopped state
         }
     }
     
@@ -422,16 +513,25 @@ void poll_switch_matrix(void) {
             start_moving_desk(DESK_MOVE_DOWN);
             ESP_LOGI("DESK_CONTROL", "DOWN button pressed - starting movement");
         }
-        // Monitor distance while moving
+        // Monitor distance while moving and update UI in real-time
         uint32_t distance_cm = measure_distance();
         if (distance_cm > 0) {  // Valid reading
             ESP_LOGI("ULTRASONIC", "Moving down - Distance: %lu cm", distance_cm);
+            // Update UI with real-time distance (convert to approximate desk height)
+            float desk_height = distance_cm + 30.0; // Approximate conversion
+            ui_set_desk_context(desk_height, true, false);
+            ui_force_refresh_state(UI_STATE_DESK, 5000); // Keep showing desk UI
         }
     } else {  // Button released
         if (down_button_pressed) {     // Button was pressed, now released
             stop_moving_desk();
             down_button_pressed = false;
             ESP_LOGI("DESK_CONTROL", "DOWN button released - STOPPED");
+            // Immediately show stopped state
+            uint32_t distance_cm = measure_distance();
+            float desk_height = (distance_cm > 0) ? distance_cm + 30.0 : 67.0;
+            ui_set_desk_context(desk_height, false, false);
+            ui_force_refresh_state(UI_STATE_DESK, 3000); // Show stopped state
         }
     }
 

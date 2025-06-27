@@ -9,6 +9,9 @@
 #include "ssd1306.h"
 #include "relay_driver/relay_driver.h"
 #include "hid_device/hid_device.h"
+
+
+
 void app_main(void)
 {
     SSD1306_t dev;
@@ -17,11 +20,13 @@ void app_main(void)
     ESP_LOGI("MAIN", "Initializing OLED display...");
     oled_init(&dev);
 
-    // Clear screen and show startup message
-    ssd1306_clear_screen(&dev, false);
-    ssd1306_display_text(&dev, 0, "ESP32 Ready!", 12, false);
-    ssd1306_show_buffer(&dev);
-    vTaskDelay(pdMS_TO_TICKS(1000)); // Wait for 1 second
+    // Initialize display with complete clearing - no startup messages
+    // Clear the display completely and flush multiple times to ensure clean state
+    for (int i = 0; i < 3; i++) {
+        ssd1306_clear_screen(&dev, false);
+        ssd1306_show_buffer(&dev);
+        vTaskDelay(pdMS_TO_TICKS(100));
+    }
     //oled_display_text(&dev, 0, "Hello, OLED!", false);
     //display_time_x3(&dev, "11:11");    // Display "Hello, OLED!" on page 0
     //display_wifi_icon(&dev);           // Display the WiFi icon on page 1
