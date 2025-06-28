@@ -116,10 +116,10 @@ void update_fan_speed(void) {
     log_counter++;
     bool should_log = (log_counter % 20 == 0);  // Log every 1 second (20Hz / 20 = 1Hz)
 
-    // Debug logging ENABLED to fix fan issues
-    if (should_log) {
-        ESP_LOGI(TAG, "RAW ADC: %d, Filtered ADC: %d, Threshold: %d", raw_adc, adc_value, off_threshold);
-    }
+    // Debug logging DISABLED
+    // if (should_log) {
+    //     ESP_LOGI(TAG, "RAW ADC: %d, Filtered ADC: %d, Threshold: %d", raw_adc, adc_value, off_threshold);
+    // }
 
     // Clamp ADC value to expected range
     if (adc_value > max_adc_value) adc_value = max_adc_value;
@@ -138,9 +138,9 @@ void update_fan_speed(void) {
                 duty_cycle = fan_steps[i].duty_cycle;
                 fan_speed_percentage = fan_steps[i].speed_percent;
                 step_found = true;
-                if (should_log) {
-                    ESP_LOGI(TAG, "Step %d: ADC %d -> %d%% (duty %d)", i+1, adc_value, fan_speed_percentage, duty_cycle);
-                }
+                // if (should_log) {
+                //     ESP_LOGI(TAG, "Step %d: ADC %d -> %d%% (duty %d)", i+1, adc_value, fan_speed_percentage, duty_cycle);
+                // }
                 break;
             }
         }
@@ -152,19 +152,19 @@ void update_fan_speed(void) {
         }
     }
 
-    // Fan calculation logging - ENABLED for debugging fan issues
-    if (should_log) {
-        ESP_LOGI(TAG, "Final: Duty Cycle: %" PRIu32 ", Fan Speed: %" PRIu8 "%%", duty_cycle, fan_speed_percentage);
-    }
+    // Fan calculation logging - DISABLED
+    // if (should_log) {
+    //     ESP_LOGI(TAG, "Final: Duty Cycle: %" PRIu32 ", Fan Speed: %" PRIu8 "%%", duty_cycle, fan_speed_percentage);
+    // }
 
     // Update the PWM duty cycle
     ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL, duty_cycle);
     ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL);
 
-    // PWM logging ENABLED for debugging
-    if (should_log) {
-        ESP_LOGI(TAG, "PWM SET: %d (%d%%)", duty_cycle, fan_speed_percentage);
-    }
+    // PWM logging DISABLED
+    // if (should_log) {
+    //     ESP_LOGI(TAG, "PWM SET: %d (%d%%)", duty_cycle, fan_speed_percentage);
+    // }
 
     // Update UI when fan speed changes - always show for real-time feedback
     static uint8_t last_fan_percentage = 255; // Initialize to invalid value
@@ -191,10 +191,10 @@ uint32_t potentiometer_read(void) {
     return raw_value;
 }
 
-// Function to print the potentiometer value (for testing)
+// Function to print the potentiometer value (for testing) - DISABLED
 void potentiometer_print_value(void) {
     uint32_t adc_value = potentiometer_read();
-    ESP_LOGI(TAG, "Potentiometer ADC Value: %" PRIu32 " mV", adc_value);
+    // ESP_LOGI(TAG, "Potentiometer ADC Value: %" PRIu32 " mV", adc_value);
 }
 
 // Live value getters for real-time UI updates

@@ -36,11 +36,15 @@ esp_err_t hid_device_init(void);
 esp_err_t hid_volume_up(void);
 esp_err_t hid_volume_down(void);
 esp_err_t hid_volume_mute(void);
+int get_current_volume_level(void);
 esp_err_t hid_media_play_pause(void);
 esp_err_t hid_media_next_track(void);
 esp_err_t hid_media_prev_track(void);
 esp_err_t hid_system_sleep(void);
 esp_err_t hid_send_key(uint8_t modifier, uint8_t keycode);
+
+// Live value getters for real-time UI updates
+int get_current_volume_level(void);
 
 // HID descriptor
 extern const uint8_t hid_report_descriptor[];

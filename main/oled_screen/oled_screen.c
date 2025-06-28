@@ -9,6 +9,8 @@
 #include "keyswitches/keyswitches.h"
 #include "fan_control/fan_control.h"
 #include "relay_driver/relay_driver.h"
+#include "hid_device/hid_device.h"
+#include "time_manager/time_manager.h"
 #include <string.h>
 #include <time.h>
 #include <stdio.h>
@@ -232,22 +234,17 @@ void ui_show_main(SSD1306_t *dev) {
     }
     ssd1306_display_text(dev, 0, wifi_line, 16, false);
 
-    // Get current time
-    time_t now;
-    struct tm timeinfo;
-    time(&now);
-    localtime_r(&now, &timeinfo);
+    // Get current time from time manager
+    char time_str[8];
+    get_current_time_string(time_str, sizeof(time_str));
 
     // Large time display - positioned 8 pixels right like other text
-    char time_str[8];
-    strftime(time_str, sizeof(time_str), "%H:%M", &timeinfo);
-
-    // Use the working version that you said was perfect
     ui_display_text_x3_offset(dev, 2, time_str, strlen(time_str), 8, false);
 
     // Date display (pad to exactly 16 characters to fill 128 pixels)
     char date_str[17];
-    strftime(date_str, sizeof(date_str), " %d/%m", &timeinfo);
+    get_current_date_string(date_str + 1, sizeof(date_str) - 1); // +1 for space padding
+    date_str[0] = ' '; // Add leading space
     // Pad with spaces to exactly 16 characters
     while (strlen(date_str) < 16) {
         strcat(date_str, " ");
@@ -295,17 +292,20 @@ void ui_show_desk(SSD1306_t *dev) {
 void ui_show_volume(SSD1306_t *dev) {
     ui_clear_screen(dev);
 
+    // Get live volume level
+    int live_volume = get_current_volume_level();
+
     // Title (1-space padding like main screen)
     ssd1306_display_text(dev, 0, " VOL", 4, false);
 
     // Volume percentage (1-space padding for x3 text) - fixed width
     char vol_str[8];
-    snprintf(vol_str, sizeof(vol_str), "%3d%%", ui_ctx.context.volume_level); // Fixed 3-digit width
+    snprintf(vol_str, sizeof(vol_str), "%3d%%", live_volume); // Fixed 3-digit width
     ui_display_text_x3_offset(dev, 2, vol_str, 4, 8, false); // Always 4 chars: "100%"
 
     // Simple volume bar using text (1-space padding)
     char bar[17] = " ";
-    int filled = ui_ctx.context.volume_level / 10; // 0-10 scale
+    int filled = live_volume / 10; // 0-10 scale
     for (int i = 0; i < filled && i < 10; i++) {
         bar[i + 1] = '=';
     }
@@ -635,6 +635,9 @@ void ui_display_task(void *pvParameter) {
             should_update = true;
         } else if (ui_ctx.current_state == UI_STATE_FAN &&
                    (current_time - last_update_time) >= 500) { // Update fan UI every 500ms for live speed
+            should_update = true;
+        } else if (ui_ctx.current_state == UI_STATE_VOLUME &&
+                   (current_time - last_update_time) >= 500) { // Update volume UI every 500ms for live updates
             should_update = true;
         }
 

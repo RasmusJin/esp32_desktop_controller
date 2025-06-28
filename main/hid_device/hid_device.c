@@ -260,3 +260,8 @@ esp_err_t hid_send_key(uint8_t modifier, uint8_t keycode) {
     
     return ESP_OK;
 }
+
+// Getter function for current volume level
+int get_current_volume_level(void) {
+    return current_volume_level;
+}

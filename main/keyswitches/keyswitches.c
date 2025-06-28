@@ -163,6 +163,9 @@ void setup_rotary_encoders(void) {
 
     ESP_LOGI(KEYTAG, "Both rotary encoders configured - ROT1: brightness, ROT2: scenes");
 
+    // Wait for GPIO to stabilize after configuration
+    vTaskDelay(pdMS_TO_TICKS(100));
+
     // Get current Hue state on boot so buttons work immediately
     ESP_LOGI(KEYTAG, "Getting current Hue light state...");
     get_current_hue_state();
@@ -172,6 +175,24 @@ void setup_rotary_encoders(void) {
 void poll_rotary_encoders_task(void *pvParameter) {
     SSD1306_t *dev = (SSD1306_t *)pvParameter;
     static uint32_t last_distance_update = 0;
+    static bool first_run = true;
+
+    // On first run, initialize previous states to current GPIO states to prevent false triggers
+    if (first_run) {
+        ESP_LOGI(KEYTAG, "Initializing rotary encoder states...");
+        vTaskDelay(pdMS_TO_TICKS(500)); // Wait 500ms for system to stabilize
+
+        // Initialize previous states to current GPIO readings
+        previous_rot1_clk = gpio_get_level(ROT1_CLK);
+        previous_rot2_clk = gpio_get_level(ROT2_CLK);
+        previous_rot1_sw = gpio_get_level(ROT1_SW);
+        previous_rot2_sw = gpio_get_level(ROT2_SW);
+
+        ESP_LOGI(KEYTAG, "Initial states - ROT1_CLK: %d, ROT1_SW: %d, ROT2_CLK: %d, ROT2_SW: %d",
+                previous_rot1_clk, previous_rot1_sw, previous_rot2_clk, previous_rot2_sw);
+
+        first_run = false;
+    }
 
     while (1) {
         poll_rotary_encoders(dev);  // Call the rotary encoder polling function

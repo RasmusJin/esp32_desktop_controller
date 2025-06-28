@@ -9,6 +9,7 @@
 #include "ssd1306.h"
 #include "relay_driver/relay_driver.h"
 #include "hid_device/hid_device.h"
+#include "time_manager/time_manager.h"
 
 
 
@@ -45,9 +46,10 @@ void app_main(void)
     ESP_LOGI("MAIN", "Initializing WiFi...");
     wifi_init_sta();
 
-    // DISABLED: Time display task (requires OLED)
-    // initialize_ntp_and_time();
-    // xTaskCreate(time_update_task, "time_update_task", 4096, (void *)&dev, 5, NULL);
+    // Initialize NTP time manager for Copenhagen, Denmark
+    ESP_LOGI("MAIN", "Initializing NTP time manager...");
+    time_manager_init();
+    time_manager_start_sync_task();
     xTaskCreate(poll_rotary_encoders_task, "rotary_encoder_task", 4096, (void *)&dev, 5, NULL);  // Re-enabled - 3.3V fixed!
 
     potentiometer_init();

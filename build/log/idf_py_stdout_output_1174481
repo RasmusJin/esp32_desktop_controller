@@ -1,0 +1,11 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python -DESP_PLATFORM=1 -DCCACHE_ENABLE=0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller
+-- Component directory /home/jin/workspaces/espWorkspace/esp32_desktop_controller/components/esp-idf-ssd1306 does not contain a CMakeLists.txt file. No component will be added
+-- Minimal build - OFF
+-- Building ESP-IDF components for target esp32s3
+NOTICE: Processing 3 dependencies:
+NOTICE: [1/3] espressif/esp_tinyusb (1.7.6)
+NOTICE: [2/3] espressif/tinyusb (0.18.0~2)
+NOTICE: [3/3] idf (5.5.0)
+-- Project sdkconfig file /home/jin/workspaces/espWorkspace/esp32_desktop_controller/sdkconfig
+-- Compiler supported targets: x86_64-linux-gnu
+-- Configuring incomplete, errors occurred!
