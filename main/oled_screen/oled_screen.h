@@ -27,7 +27,9 @@ typedef enum {
     UI_STATE_PC_SWITCH,     // PC switching
     UI_STATE_WINDOW,        // Window control
     UI_STATE_FAN,           // Fan speed control
-    UI_STATE_SUSPEND        // PC suspend/sleep
+    UI_STATE_SUSPEND,       // PC suspend/sleep
+    UI_STATE_BOOT_INFO,     // Boot information display
+    UI_STATE_DEBUG_REBOOT   // Debug info before reboot
 } ui_state_t;
 
 // Legacy event types for backward compatibility
@@ -82,6 +84,12 @@ typedef struct {
         // Fan control
         int fan_speed_percent;
         bool fan_active;
+
+        // Boot/Debug information
+        char boot_message[64];
+        int wifi_retry_count;
+        bool http_connected;
+        char error_message[32];
     } context;
 } ui_context_t;
 
@@ -101,6 +109,8 @@ void ui_show_pc_switch(SSD1306_t *dev);
 void ui_show_window(SSD1306_t *dev);
 void ui_show_fan(SSD1306_t *dev);
 void ui_show_suspend(SSD1306_t *dev);
+void ui_show_boot_info(SSD1306_t *dev);
+void ui_show_debug_reboot(SSD1306_t *dev);
 
 // NEW UI SYSTEM - State management
 void ui_set_state(ui_state_t state, uint32_t duration_ms);
@@ -117,6 +127,8 @@ void ui_set_hue_context(const char* scene, int brightness, bool lights_on);
 void ui_set_pc_context(int pc_number);
 void ui_set_window_context(bool opening, bool closing, bool ack);
 void ui_set_fan_context(int fan_percent, bool active);
+void ui_set_boot_context(const char* message, int wifi_retries, bool http_ok, const char* error);
+void ui_set_wifi_context(bool connected, const char* ip_address);
 
 // NEW UI SYSTEM - Utility functions
 void ui_clear_screen(SSD1306_t *dev);

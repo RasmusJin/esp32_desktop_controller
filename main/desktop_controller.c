@@ -40,15 +40,29 @@ void app_main(void)
 
     // Initialize USB HID device
     ESP_LOGI("MAIN", "Initializing USB HID device...");
+    ui_set_boot_context("USB HID init...", 0, true, "");
+    vTaskDelay(pdMS_TO_TICKS(2000)); // Show message for 2 seconds
     hid_device_init();
+    ui_set_boot_context("HID ready", 0, true, "");
+    vTaskDelay(pdMS_TO_TICKS(2000)); // Show message for 2 seconds
 
-    // Initialize WiFi with static IP
+    // Initialize WiFi with static IP (this blocks until connected)
     ESP_LOGI("MAIN", "Initializing WiFi...");
     wifi_init_sta();
 
+    // NOW show boot info after WiFi is connected
+    ESP_LOGI("MAIN", "WiFi connected - showing boot info...");
+    ui_set_boot_context("WiFi connected", 0, true, "");
+    ui_force_refresh_state(UI_STATE_BOOT_INFO, 15000); // Show for 15 seconds total
+    vTaskDelay(pdMS_TO_TICKS(2000)); // Show WiFi success for 2 seconds
+
     // Initialize NTP time manager for Copenhagen, Denmark
     ESP_LOGI("MAIN", "Initializing NTP time manager...");
+    ui_set_boot_context("NTP sync...", 0, true, "");
+    vTaskDelay(pdMS_TO_TICKS(2000)); // Show message for 2 seconds
     time_manager_init();
+    ui_set_boot_context("Time synced", 0, true, "");
+    vTaskDelay(pdMS_TO_TICKS(2000)); // Show message for 2 seconds
     time_manager_start_sync_task();
     xTaskCreate(poll_rotary_encoders_task, "rotary_encoder_task", 4096, (void *)&dev, 5, NULL);  // Re-enabled - 3.3V fixed!
 
@@ -64,6 +78,14 @@ void app_main(void)
 
     // Uncomment next line to run sensor test (comment out after testing)
     // test_sensor_readings();
+
+    // Show final boot completion message
+    ESP_LOGI("MAIN", "Desktop controller initialization complete!");
+    ui_set_boot_context("Boot complete!", 0, true, "");
+    vTaskDelay(pdMS_TO_TICKS(3000)); // Show for 3 seconds
+
+    // Switch to main UI
+    ui_force_refresh_state(UI_STATE_MAIN, 0);
 
     // WiFi monitoring counter
     static uint32_t wifi_check_counter = 0;

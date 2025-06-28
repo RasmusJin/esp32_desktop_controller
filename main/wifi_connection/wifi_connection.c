@@ -6,6 +6,7 @@
 #include <string.h>
 #include "time.h"
 #include "esp_sntp.h"
+#include "oled_screen/oled_screen.h"
 
 // Define a tag for logging
 static const char *TAG = "WiFi";
@@ -25,6 +26,9 @@ static void wifi_event_handler(void* arg, esp_event_base_t event_base, int32_t e
         wifi_event_sta_disconnected_t* disconnected = (wifi_event_sta_disconnected_t*) event_data;
         ESP_LOGW(TAG, "WiFi disconnected (reason: %d), retry %d/%d", disconnected->reason, s_retry_num + 1, MAXIMUM_RETRY);
 
+        // Update UI with retry count
+        ui_set_boot_context("WiFi retry...", s_retry_num + 1, false, "");
+
         // Always try to reconnect (no retry limit for continuous operation)
         esp_wifi_connect();
         s_retry_num++;
@@ -41,6 +45,9 @@ static void wifi_event_handler(void* arg, esp_event_base_t event_base, int32_t e
         esp_ip4addr_ntoa(&event->ip_info.ip, ip_str, sizeof(ip_str));
 
         ESP_LOGI(TAG, "Connected! IP: %s", ip_str);
+
+        // Update UI context with WiFi status
+        ui_set_wifi_context(true, ip_str);
 
         s_retry_num = 0;  // Reset retry counter on successful connection
         xEventGroupSetBits(s_wifi_event_group, WIFI_CONNECTED_BIT);

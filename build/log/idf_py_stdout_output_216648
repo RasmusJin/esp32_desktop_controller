@@ -1,0 +1,461 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM1 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM1'
+[0;32mI (2482) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (2582) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2592) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2602) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2612) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (2612) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (2612) RELAY_INIT: Relay PC_SWITCH initial state: 0[0m
+[0;32mI (2712) RELAY_INIT: ✅ All relays initialized and stable - system ready![0m
+[0;32mI (2712) gpio: GPIO[45]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2712) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2722) ULTRASONIC_INIT: Testing TRIG pin (GPIO45)...[0m
+[0;32mI (2732) ULTRASONIC_INIT: TRIG set LOW, reading: 0[0m
+[0;32mI (2732) ULTRASONIC_INIT: TRIG set HIGH, reading: 0[0m
+[0;32mI (2742) ULTRASONIC_INIT: TRIG set LOW again, reading: 0[0m
+[0;32mI (2742) MAIN: Initializing USB HID device...[0m
+[0;32mI (3752) HID_DEVICE: USB initialization[0m
+[0;33mW (3752) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (3752) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 0           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4004      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (3912) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (3922) HID_DEVICE: USB initialization DONE[0m
+[0;32mI (4922) MAIN: Initializing WiFi...[0m
+[0;32mI (5942) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (5942) pp: pp rom version: e7ae62f[0m
+[0;32mI (5942) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (5952) wifi:wifi driver task: 3fcad7f4, prio:23, stack:6656, core=0[0m
+[0;32mI (5962) wifi:wifi firmware version: 090f94a[0m
+[0;32mI (5962) wifi:wifi certification version: v7.0[0m
+[0;32mI (5962) wifi:config NVS flash: enabled[0m
+[0;32mI (5962) wifi:config nano formatting: disabled[0m
+[0;32mI (5972) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (5972) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (5982) wifi:Init management short buffer num: 32[0m
+[0;32mI (5982) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (5982) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (5992) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (5992) wifi:Init static rx buffer num: 10[0m
+[0;32mI (6002) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (6002) wifi_init: rx ba win: 6[0m
+[0;32mI (6002) wifi_init: accept mbox: 6[0m
+[0;32mI (6012) wifi_init: tcpip mbox: 32[0m
+[0;32mI (6012) wifi_init: udp mbox: 6[0m
+[0;32mI (6022) wifi_init: tcp mbox: 6[0m
+[0;32mI (6022) wifi_init: tcp tx win: 5760[0m
+[0;32mI (6022) wifi_init: tcp rx win: 5760[0m
+[0;32mI (6032) wifi_init: tcp mss: 1440[0m
+[0;32mI (6032) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (6042) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (6042) WiFi: Configuring static IP: 192.168.50.100[0m
+[0;32mI (6052) WiFi: Static IP configured successfully[0m
+[0;32mI (6052) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (6062) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (6102) wifi:mode : sta (34:85:18:75:f3:0c)[0m
+[0;32mI (6112) wifi:enable tsf[0m
+[0;32mI (6112) WiFi: Wi-Fi initialization done.[0m
+[0;32mI (6112) WiFi: WiFi started, connecting...[0m
+[0;32mI (6122) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;32mI (6122) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (6132) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (6142) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (6182) wifi:connected with NeverNude_IoT, aid = 19, channel 1, BW20, bssid = 72:d9:f5:9b:25:21[0m
+[0;32mI (6182) wifi:security: WPA2-PSK, phy: bgn, rssi: -56[0m
+[0;32mI (6192) wifi:pm start, type: 0[0m
+
+[0;32mI (6192) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (6202) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (6212) esp_netif_handlers: sta ip: 192.168.50.100, mask: 255.255.255.0, gw: 192.168.50.1[0m
+[0;32mI (6212) WiFi: Connected! IP: 192.168.50.100[0m
+[0;32mI (6222) WiFi: Connected to Wi-Fi[0m
+[0;32mI (6282) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (7222) MAIN: Initializing NTP time manager...[0m
+[0;32mI (8222) TIME_MANAGER: Time manager ready – SNTP will start once Wi-Fi is up[0m
+[0;32mI (9222) TIME_MANAGER: Time sync task waiting for Wi-Fi…[0m
+[0;32mI (9222) TIME_MANAGER: Wi-Fi associated[0m
+[0;32mI (9222) TIME_MANAGER: Starting one-shot NTP sync…[0m
+[0;32mI (9222) TIME_MANAGER: STA IP: 192.168.50.100, GW: 192.168.50.1[0m
+[0;32mI (9232) TIME_MANAGER: SNTP started (poll mode)[0m
+[0;32mI (9232) KEYSWITCHES: Initializing rotary encoder states...[0m
+[0;32mI (9242) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9252) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9262) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9272) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9282) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9292) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (9292) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (9302) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9312) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9322) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9332) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9342) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9352) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9362) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9372) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9382) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9392) KEYSWITCHES: Both rotary encoders configured - ROT1: brightness, ROT2: scenes[0m
+[0;32mI (9502) KEYSWITCHES: Getting current Hue light state...[0m
+[0;32mI (9502) KEYSWITCHES: Fetching current Hue group state...[0m
+[0;32mI (9512) wifi:<ba-add>idx:0 (ifx:0, 72:d9:f5:9b:25:21), tid:0, ssn:1, winSize:64[0m
+[0;31mE (9522) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[0;31mE (9522) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[0;31mE (9532) esp-tls: create_ssl_handle failed[0m
+[0;31mE (9542) esp-tls: Failed to open new connection[0m
+[0;31mE (9542) transport_base: Failed to open a new connection[0m
+[0;31mE (9552) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (9552) KEYSWITCHES: HTTP GET request failed: ESP_ERR_HTTP_CONNECT, assuming lights OFF[0m
+[0;32mI (9562) KEYSWITCHES: Hue state initialized: lights_on = false, brightness = 255, scene = 4[0m
+[0;32mI (9572) MAIN: All systems initialized - starting main loop[0m
+[0;32mI (9582) MAIN: Fan control: ACTIVE[0m
+[0;32mI (9582) MAIN: Single row switches: ACTIVE[0m
+[0;32mI (9592) MAIN: Switch matrix (desk control): ACTIVE[0m
+[0;32mI (9592) MAIN: Relay system: ACTIVE[0m
+[0;32mI (9602) MAIN: Desktop controller initialization complete![0m
+[0;32mI (9742) KEYSWITCHES: Initial states - ROT1_CLK: 1, ROT1_SW: 1, ROT2_CLK: 1, ROT2_SW: 1[0m
+[0;32mI (10572) OLED_UI: Returning to main screen[0m
+[0;32mI (12602) OLED_UI: UI state force refreshed to 0 for 0 ms[0m
+[0;32mI (12602) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (13322) TIME_MANAGER: SNTP: first time sync[0m
+[0;33mW (13732) TIME_MANAGER: SNTP: timeout after 60 s[0m
+[0;32mI (13732) TIME_MANAGER: Local time: 2025-06-28 13:37:58[0m
+[0;32mI (15812) OLED_UI: Returning to main screen[0m
+[0;32mI (31822) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 230[0m
+[0;32mI (31962) HTTP_CLIENT: Brightness for Gaming group set to 230[0m
+[0;32mI (31962) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (31972) OLED_UI: Legacy display event: type=1, text='Brightness: 230'[0m
+[0;32mI (33012) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 205[0m
+[0;32mI (33142) HTTP_CLIENT: Brightness for Gaming group set to 205[0m
+[0;32mI (33142) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (33142) OLED_UI: Legacy display event: type=1, text='Brightness: 205'[0m
+[0;32mI (34052) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 230[0m
+[0;32mI (34152) HTTP_CLIENT: Brightness for Gaming group set to 230[0m
+[0;32mI (34162) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (34162) OLED_UI: Legacy display event: type=1, text='Brightness: 230'[0m
+[0;32mI (34862) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 255[0m
+[0;32mI (34992) HTTP_CLIENT: Brightness for Gaming group set to 255[0m
+[0;32mI (35002) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (35002) OLED_UI: Legacy display event: type=1, text='Brightness: 255'[0m
+[0;32mI (37362) KEYSWITCHES: Rotary Encoder 1 Button Pressed![0m
+[0;32mI (37432) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (37442) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (37442) OLED_UI: Legacy display event: type=1, text='Lights: ON'[0m
+[0;32mI (40652) OLED_UI: Returning to main screen[0m
+[0;32mI (42522) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise - Previous scene[0m
+[0;32mI (42522) KEYSWITCHES: Scene 3: Læs (Read)[0m
+[0;32mI (42712) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (42712) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (44812) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 230[0m
+[0;32mI (44932) HTTP_CLIENT: Brightness for Gaming group set to 230[0m
+[0;32mI (44932) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (44932) OLED_UI: Legacy display event: type=1, text='Brightness: 230'[0m
+[0;32mI (45632) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 205[0m
+[0;32mI (45762) HTTP_CLIENT: Brightness for Gaming group set to 205[0m
+[0;32mI (45762) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (45762) OLED_UI: Legacy display event: type=1, text='Brightness: 205'[0m
+[0;32mI (46152) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 180[0m
+[0;32mI (46262) HTTP_CLIENT: Brightness for Gaming group set to 180[0m
+[0;32mI (46262) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (46262) OLED_UI: Legacy display event: type=1, text='Brightness: 180'[0m
+[0;32mI (46332) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 155[0m
+[0;32mI (46442) HTTP_CLIENT: Brightness for Gaming group set to 155[0m
+[0;32mI (46442) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (46442) OLED_UI: Legacy display event: type=1, text='Brightness: 155'[0m
+[0;32mI (46772) KEYSWITCHES: Rotary Encoder 1 turned Counterclockwise, decreasing brightness to 130[0m
+[0;32mI (46892) HTTP_CLIENT: Brightness for Gaming group set to 130[0m
+[0;32mI (46892) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (46892) OLED_UI: Legacy display event: type=1, text='Brightness: 130'[0m
+[0;32mI (47372) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 155[0m
+[0;32mI (47492) HTTP_CLIENT: Brightness for Gaming group set to 155[0m
+[0;32mI (47492) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (47492) OLED_UI: Legacy display event: type=1, text='Brightness: 155'[0m
+[0;32mI (47822) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 180[0m
+[0;32mI (47922) HTTP_CLIENT: Brightness for Gaming group set to 180[0m
+[0;32mI (47922) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (47932) OLED_UI: Legacy display event: type=1, text='Brightness: 180'[0m
+[0;32mI (48332) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 205[0m
+[0;32mI (48442) HTTP_CLIENT: Brightness for Gaming group set to 205[0m
+[0;32mI (48442) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (48442) OLED_UI: Legacy display event: type=1, text='Brightness: 205'[0m
+[0;32mI (48792) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 230[0m
+[0;32mI (48892) HTTP_CLIENT: Brightness for Gaming group set to 230[0m
+[0;32mI (48892) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (48902) OLED_UI: Legacy display event: type=1, text='Brightness: 230'[0m
+[0;32mI (49342) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 255[0m
+[0;32mI (49442) HTTP_CLIENT: Brightness for Gaming group set to 255[0m
+[0;32mI (49442) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (49452) OLED_UI: Legacy display event: type=1, text='Brightness: 255'[0m
+[0;32mI (52582) OLED_UI: Returning to main screen[0m
+[0;32mI (58092) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (58092) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (58092) KEYSWITCHES: DEBUG COMBO DETECTED - Hold for 3 seconds to reboot[0m
+[0;32mI (58092) OLED_UI: UI state force refreshed to 9 for 5000 ms[0m
+[0;32mI (58282) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (58282) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (58462) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (58462) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (58642) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (58642) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (58822) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (58822) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (59002) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (59002) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (59182) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (59182) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (59362) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (59362) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (59542) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (59542) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (59722) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (59722) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (59902) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (59902) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (60082) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (60082) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (60262) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (60262) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (60442) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (60442) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (60622) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (60622) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (60802) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (60802) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (60982) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (60982) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (61092) KEYSWITCHES: REBOOT COMBO HELD - RESTARTING ESP32![0m
+[0;32mI (61092) OLED_UI: UI state force refreshed to 8 for 2000 ms[0m
+[0;32mI (61162) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (61162) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (61342) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (61342) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (61522) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (61522) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (61702) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (61702) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (63092) wifi:state: run -> init (0x0)[0m
+[0;32mI (63102) wifi:pm stop, total sleep time: 0 us / 56908324 us[0m
+
+[0;32mI (63102) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (63102) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;33mW (63102) WiFi: WiFi disconnected (reason: 8), retry 1/10[0m
+[0;32mI (63182) wifi:flush txq[0m
+[0;32mI (63182) wifi:stop sw txq[0m
+[0;32mI (63182) wifi:lmac stop hw txq[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x2f (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375bb4
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (29) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jun 28 2025 11:19:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v0.1[0m
+[0;32mI (34) boot: efuse block revision: v1.2[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (46) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (49) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (63) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (69) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (76) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (86) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=2d408h (185352) map[0m
+[0;32mI (126) esp_image: segment 1: paddr=0003d430 vaddr=3fc9b900 size=02be8h ( 11240) load[0m
+[0;32mI (128) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=b00c0h (721088) map[0m
+[0;32mI (257) esp_image: segment 3: paddr=000f00e8 vaddr=3fc9e4e8 size=02674h (  9844) load[0m
+[0;32mI (259) esp_image: segment 4: paddr=000f2764 vaddr=40374000 size=17828h ( 96296) load[0m
+[0;32mI (281) esp_image: segment 5: paddr=00109f94 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (291) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (291) boot: Disabling RNG early entropy source...[0m
+[0;32mI (301) cpu_start: Multicore app[0m
+[0;32mI (310) cpu_start: Pro cpu start user code[0m
+[0;32mI (310) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (310) app_init: Application information:[0m
+[0;32mI (313) app_init: Project name:     desktop_controller[0m
+[0;32mI (319) app_init: App version:      3cf3943-dirty[0m
+[0;32mI (324) app_init: Compile time:     Jun 28 2025 13:25:51[0m
+[0;32mI (330) app_init: ELF file SHA256:  9ab0fc194...[0m
+[0;32mI (336) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (343) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (347) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (352) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (357) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (365) heap_init: At 3FCA52F8 len 00044418 (273 KiB): RAM[0m
+[0;32mI (371) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (377) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (383) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (390) spi_flash: detected chip: gd[0m
+[0;32mI (393) spi_flash: flash io: dio[0m
+[0;33mW (397) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (411) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (421) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (428) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (436) main_task: Started on CPU0[0m
+[0;32mI (446) main_task: Calling app_main()[0m
+[0;32mI (446) MAIN: Initializing OLED display...[0m
+[0;32mI (446) OLED_UI: I2C initialized successfully[0m
+[0;32mI (456) SSD1306: OLED configured successfully[0m
+[0;32mI (456) OLED_UI: OLED initialized successfully[0m
+[0;32mI (466) OLED_UI: UI display task started[0m
+[0;32mI (466) OLED_UI: UI display task created[0m
+[0;32mI (476) OLED_UI: UI state force refreshed to 8 for 10000 ms[0m
+[0;32mI (2486) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (2586) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2596) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2606) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2616) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (2616) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (2616) RELAY_INIT: Relay PC_SWITCH initial state: 0[0m
+[0;32mI (2716) RELAY_INIT: ✅ All relays initialized and stable - system ready![0m
+[0;32mI (2716) gpio: GPIO[45]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2716) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2726) ULTRASONIC_INIT: Testing TRIG pin (GPIO45)...[0m
+[0;32mI (2736) ULTRASONIC_INIT: TRIG set LOW, reading: 0[0m
+[0;32mI (2736) ULTRASONIC_INIT: TRIG set HIGH, reading: 0[0m
+[0;32mI (2746) ULTRASONIC_INIT: TRIG set LOW again, reading: 0[0m
+[0;32mI (2746) MAIN: Initializing USB HID device...[0m
+[0;32mI (3756) HID_DEVICE: USB initialization[0m
+[0;33mW (3756) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (3756) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 0           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4004      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (3916) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (3926) HID_DEVICE: USB initialization DONE[0m
+[0;32mI (4926) MAIN: Initializing WiFi...[0m
+[0;32mI (5946) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (5946) pp: pp rom version: e7ae62f[0m
+[0;32mI (5946) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (5956) wifi:wifi driver task: 3fcad7f4, prio:23, stack:6656, core=0[0m
+[0;32mI (5966) wifi:wifi firmware version: 090f94a[0m
+[0;32mI (5966) wifi:wifi certification version: v7.0[0m
+[0;32mI (5966) wifi:config NVS flash: enabled[0m
+[0;32mI (5966) wifi:config nano formatting: disabled[0m
+[0;32mI (5976) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (5976) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (5986) wifi:Init management short buffer num: 32[0m
+[0;32mI (5986) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (5986) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (5996) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (5996) wifi:Init static rx buffer num: 10[0m
+[0;32mI (6006) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (6006) wifi_init: rx ba win: 6[0m
+[0;32mI (6006) wifi_init: accept mbox: 6[0m
+[0;32mI (6016) wifi_init: tcpip mbox: 32[0m
+[0;32mI (6016) wifi_init: udp mbox: 6[0m
+[0;32mI (6026) wifi_init: tcp mbox: 6[0m
+[0;32mI (6026) wifi_init: tcp tx win: 5760[0m
+[0;32mI (6026) wifi_init: tcp rx win: 5760[0m
+[0;32mI (6036) wifi_init: tcp mss: 1440[0m
+[0;32mI (6036) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (6046) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (6046) WiFi: Configuring static IP: 192.168.50.100[0m
+[0;32mI (6056) WiFi: Static IP configured successfully[0m
+[0;32mI (6056) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (6066) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (6106) wifi:mode : sta (34:85:18:75:f3:0c)[0m
+[0;32mI (6106) wifi:enable tsf[0m
+[0;32mI (6106) WiFi: Wi-Fi initialization done.[0m
+[0;32mI (6106) WiFi: WiFi started, connecting...[0m
+[0;32mI (6116) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;32mI (6116) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (6126) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (6126) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (6146) wifi:connected with NeverNude_IoT, aid = 16, channel 1, BW20, bssid = 72:d9:f5:9b:25:21[0m
+[0;32mI (6146) wifi:security: WPA2-PSK, phy: bgn, rssi: -66[0m
+[0;32mI (6146) wifi:pm start, type: 0[0m
+
+[0;32mI (6146) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (6156) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (6166) esp_netif_handlers: sta ip: 192.168.50.100, mask: 255.255.255.0, gw: 192.168.50.1[0m
+[0;32mI (6176) WiFi: Connected! IP: 192.168.50.100[0m
+[0;32mI (6176) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (6186) WiFi: Connected to Wi-Fi[0m
+[0;32mI (7186) MAIN: Initializing NTP time manager...[0m
+[0;32mI (8186) TIME_MANAGER: Time manager ready – SNTP will start once Wi-Fi is up[0m
+[0;32mI (9186) TIME_MANAGER: Time sync task waiting for Wi-Fi…[0m
+[0;32mI (9186) TIME_MANAGER: Wi-Fi associated[0m
+[0;32mI (9186) TIME_MANAGER: Starting one-shot NTP sync…[0m
+[0;32mI (9186) TIME_MANAGER: STA IP: 192.168.50.100, GW: 192.168.50.1[0m
+[0;32mI (9196) TIME_MANAGER: SNTP started (poll mode)[0m
+[0;32mI (9196) KEYSWITCHES: Initializing rotary encoder states...[0m
+[0;32mI (9206) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9216) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9226) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9236) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9246) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9256) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (9256) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (9266) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9276) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9286) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9296) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9306) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9316) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9326) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9336) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9346) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9356) KEYSWITCHES: Both rotary encoders configured - ROT1: brightness, ROT2: scenes[0m
+[0;32mI (9466) KEYSWITCHES: Getting current Hue light state...[0m
+[0;32mI (9466) KEYSWITCHES: Fetching current Hue group state...[0m
+[0;32mI (9466) wifi:<ba-add>idx:0 (ifx:0, 72:d9:f5:9b:25:21), tid:0, ssn:1, winSize:64[0m
+[0;31mE (9476) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[0;31mE (9476) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[0;31mE (9496) esp-tls: create_ssl_handle failed[0m
+[0;31mE (9496) esp-tls: Failed to open new connection[0m
+[0;31mE (9506) transport_base: Failed to open a new connection[0m
+[0;31

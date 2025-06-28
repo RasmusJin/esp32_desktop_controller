@@ -57,7 +57,13 @@ ui_context_t ui_ctx = {
 
         // Fan control defaults
         .fan_speed_percent = 0,
-        .fan_active = false
+        .fan_active = false,
+
+        // Boot/Debug defaults
+        .boot_message = "Starting...",
+        .wifi_retry_count = 0,
+        .http_connected = false,
+        .error_message = ""
     }
 };
 
@@ -240,8 +246,8 @@ void ui_show_main(SSD1306_t *dev) {
     char time_str[8];
     get_current_time_string(time_str, sizeof(time_str));
 
-    // Large time display - positioned 6 pixels right to align with small text (1 space = ~6px)
-    ui_display_text_x3_offset(dev, 2, time_str, strlen(time_str), 6, false);
+    // Large time display - NO OFFSET for clock, it should stay in original position
+    ssd1306_display_text_x3(dev, 2, time_str, strlen(time_str), false);
 
     // Date display (pad to exactly 16 characters to fill 128 pixels)
     char date_str[17];
@@ -479,6 +485,81 @@ void ui_show_suspend(SSD1306_t *dev) {
     ssd1306_show_buffer(dev);
 }
 
+// Boot information screen
+void ui_show_boot_info(SSD1306_t *dev) {
+    // Only clear screen if we're switching to this state, not on every update
+    if (last_displayed_state != UI_STATE_BOOT_INFO) {
+        ui_clear_screen(dev);
+        last_displayed_state = UI_STATE_BOOT_INFO;
+    }
+
+    // Title
+    ssd1306_display_text(dev, 0, " BOOT INFO", 10, false);
+
+    // Boot message (truncate if too long)
+    char boot_line[17];
+    snprintf(boot_line, sizeof(boot_line), " %.14s", ui_ctx.context.boot_message); // Limit to 14 chars + space
+    while (strlen(boot_line) < 16) strcat(boot_line, " ");
+    ssd1306_display_text(dev, 2, boot_line, 16, false);
+
+    // WiFi info
+    char wifi_line[17];
+    if (ui_ctx.context.wifi_retry_count > 0 && ui_ctx.context.wifi_retry_count < 100) {
+        snprintf(wifi_line, sizeof(wifi_line), " WiFi:%s(%d)",
+                 ui_ctx.context.wifi_connected ? "OK" : "FAIL", ui_ctx.context.wifi_retry_count);
+    } else {
+        snprintf(wifi_line, sizeof(wifi_line), " WiFi: %s",
+                 ui_ctx.context.wifi_connected ? "OK" : "FAIL");
+    }
+    while (strlen(wifi_line) < 16) strcat(wifi_line, " ");
+    ssd1306_display_text(dev, 3, wifi_line, 16, false);
+
+    // IP Address
+    char ip_line[17];
+    snprintf(ip_line, sizeof(ip_line), " %s", ui_ctx.context.ip_address);
+    while (strlen(ip_line) < 16) strcat(ip_line, " ");
+    ssd1306_display_text(dev, 4, ip_line, 16, false);
+
+    // HTTP status
+    char http_line[17];
+    snprintf(http_line, sizeof(http_line), " HTTP: %s",
+             ui_ctx.context.http_connected ? "OK" : "FAIL");
+    while (strlen(http_line) < 16) strcat(http_line, " ");
+    ssd1306_display_text(dev, 5, http_line, 16, false);
+
+    // Error message (if any)
+    if (strlen(ui_ctx.context.error_message) > 0) {
+        char error_line[17];
+        snprintf(error_line, sizeof(error_line), " ERR:%.10s", ui_ctx.context.error_message); // Limit to 10 chars
+        while (strlen(error_line) < 16) strcat(error_line, " ");
+        ssd1306_display_text(dev, 6, error_line, 16, false);
+    }
+
+    ssd1306_show_buffer(dev);
+}
+
+// Debug/Reboot screen
+void ui_show_debug_reboot(SSD1306_t *dev) {
+    // Only clear screen if we're switching to this state, not on every update
+    if (last_displayed_state != UI_STATE_DEBUG_REBOOT) {
+        ui_clear_screen(dev);
+        last_displayed_state = UI_STATE_DEBUG_REBOOT;
+    }
+
+    // Title
+    ssd1306_display_text(dev, 0, " DEBUG REBOOT", 13, false);
+
+    // Reboot message - use small font since "REBOOTING" is too long for large font
+    ssd1306_display_text(dev, 2, " REBOOTING...", 13, false);
+    ssd1306_display_text(dev, 3, " Please wait", 12, false);
+
+    // Instructions
+    ssd1306_display_text(dev, 5, " Hold SW2+SW3", 13, false);
+    ssd1306_display_text(dev, 6, " to restart", 11, false);
+
+    ssd1306_show_buffer(dev);
+}
+
 // ============================================================================
 // NEW UI STATE MANAGEMENT
 // ============================================================================
@@ -554,6 +635,14 @@ void ui_update_display(SSD1306_t *dev) {
 
         case UI_STATE_SUSPEND:
             ui_show_suspend(dev);
+            break;
+
+        case UI_STATE_BOOT_INFO:
+            ui_show_boot_info(dev);
+            break;
+
+        case UI_STATE_DEBUG_REBOOT:
+            ui_show_debug_reboot(dev);
             break;
 
         default:
@@ -635,6 +724,29 @@ void set_ui_volume_level(int volume) {
 // Set volume direction for display
 void set_ui_volume_direction(bool direction_up) {
     ui_ctx.context.volume_direction_up = direction_up;
+}
+
+// Set boot/debug context
+void ui_set_boot_context(const char* message, int wifi_retries, bool http_ok, const char* error) {
+    if (message) {
+        strncpy(ui_ctx.context.boot_message, message, sizeof(ui_ctx.context.boot_message) - 1);
+        ui_ctx.context.boot_message[sizeof(ui_ctx.context.boot_message) - 1] = '\0';
+    }
+    ui_ctx.context.wifi_retry_count = wifi_retries;
+    ui_ctx.context.http_connected = http_ok;
+    if (error) {
+        strncpy(ui_ctx.context.error_message, error, sizeof(ui_ctx.context.error_message) - 1);
+        ui_ctx.context.error_message[sizeof(ui_ctx.context.error_message) - 1] = '\0';
+    }
+}
+
+// Set WiFi context
+void ui_set_wifi_context(bool connected, const char* ip_address) {
+    ui_ctx.context.wifi_connected = connected;
+    if (ip_address) {
+        strncpy(ui_ctx.context.ip_address, ip_address, sizeof(ui_ctx.context.ip_address) - 1);
+        ui_ctx.context.ip_address[sizeof(ui_ctx.context.ip_address) - 1] = '\0';
+    }
 }
 
 // ============================================================================

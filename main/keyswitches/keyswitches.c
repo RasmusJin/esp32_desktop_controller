@@ -42,7 +42,13 @@ int32_t encoder2_value = 0;
 int previous_rot2_clk = 1;
 int previous_rot2_dt = 1;
 int previous_rot2_sw = 1;
-uint32_t last_press_time_rot2_sw = 0;  
+uint32_t last_press_time_rot2_sw = 0;
+
+// Debug/reboot combo detection
+static bool switch2_pressed = false;
+static bool switch3_pressed = false;
+static uint32_t combo_start_time = 0;
+#define REBOOT_COMBO_HOLD_TIME_MS 3000  // Hold for 3 seconds to reboot
 
 // Function to handle debouncing for any GPIO pin
 bool debounce(uint32_t current_time, int gpio_pin, uint32_t *last_press_time) {
@@ -83,6 +89,10 @@ void get_current_hue_state(void) {
         .timeout_ms = 5000,
         .skip_cert_common_name_check = true, // Skip certificate validation for local bridge
         .use_global_ca_store = false,
+        .cert_pem = NULL, // No certificate for local bridge
+        .client_cert_pem = NULL,
+        .client_key_pem = NULL,
+        .transport_type = HTTP_TRANSPORT_OVER_SSL,
     };
 
     esp_http_client_handle_t client = esp_http_client_init(&config);
@@ -434,6 +444,33 @@ void poll_rotary_encoders(SSD1306_t *dev) {
     }
     previous_rot2_clk = rot2_clk;
 
+    // Check switch release states for combo detection
+    if (gpio_get_level(KEY_GPIO2) == 1) {  // Switch 2 released
+        switch2_pressed = false;
+    }
+    if (gpio_get_level(KEY_GPIO3) == 1) {  // Switch 3 released
+        switch3_pressed = false;
+    }
+
+    // Reset combo if either switch is released
+    if (!switch2_pressed || !switch3_pressed) {
+        if (combo_start_time > 0) {
+            ESP_LOGI(KEYTAG, "Debug combo cancelled - switch released");
+            combo_start_time = 0;
+        }
+    }
+
+    // Check if combo has been held long enough for reboot
+    if (combo_start_time > 0 && switch2_pressed && switch3_pressed) {
+        if ((current_time - combo_start_time) >= REBOOT_COMBO_HOLD_TIME_MS) {
+            ESP_LOGI(KEYTAG, "REBOOT COMBO HELD - RESTARTING ESP32!");
+            ui_set_boot_context("REBOOTING...", 0, false, "USER REBOOT");
+            ui_force_refresh_state(UI_STATE_BOOT_INFO, 2000);
+            vTaskDelay(pdMS_TO_TICKS(2000)); // Show message for 2 seconds
+            esp_restart();
+        }
+    }
+
     // Small delay to prevent excessive CPU usage
     vTaskDelay(10 / portTICK_PERIOD_MS);
 }
@@ -472,10 +509,25 @@ void poll_single_row(void) {
     }
     if (debounce(current_time, KEY_GPIO2, &last_press_time_single_row[1])) {
         ESP_LOGI(KEYTAG, "Switch 2 pressed!");
+        switch2_pressed = true;
 
+        // Check if both switches are pressed for combo
+        if (switch3_pressed && !combo_start_time) {
+            combo_start_time = current_time;
+            ESP_LOGI(KEYTAG, "DEBUG COMBO DETECTED - Hold for %d seconds to reboot", REBOOT_COMBO_HOLD_TIME_MS/1000);
+            ui_force_refresh_state(UI_STATE_DEBUG_REBOOT, 5000);
+        }
     }
     if (debounce(current_time, KEY_GPIO3, &last_press_time_single_row[2])) {
         ESP_LOGI(KEYTAG, "Switch 3 pressed!");
+        switch3_pressed = true;
+
+        // Check if both switches are pressed for combo
+        if (switch2_pressed && !combo_start_time) {
+            combo_start_time = current_time;
+            ESP_LOGI(KEYTAG, "DEBUG COMBO DETECTED - Hold for %d seconds to reboot", REBOOT_COMBO_HOLD_TIME_MS/1000);
+            ui_force_refresh_state(UI_STATE_DEBUG_REBOOT, 5000);
+        }
     }
     if (debounce(current_time, KEY_GPIO4, &last_press_time_single_row[3])) {
         ESP_LOGI(KEYTAG, "Switch 4 pressed!");

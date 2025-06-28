@@ -1,0 +1,365 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM1 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM1'
+[0;32mI (1012) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1112) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1122) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1132) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1142) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1142) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1142) RELAY_INIT: Relay PC_SWITCH initial state: 0[0m
+[0;32mI (1242) RELAY_INIT: ✅ All relays initialized and stable - system ready![0m
+[0;32mI (1242) gpio: GPIO[45]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1242) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1252) ULTRASONIC_INIT: Testing TRIG pin (GPIO45)...[0m
+[0;32mI (1262) ULTRASONIC_INIT: TRIG set LOW, reading: 0[0m
+[0;32mI (1262) ULTRASONIC_INIT: TRIG set HIGH, reading: 0[0m
+[0;32mI (1272) ULTRASONIC_INIT: TRIG set LOW again, reading: 0[0m
+[0;32mI (1272) MAIN: Initializing USB HID device...[0m
+[0;32mI (3282) HID_DEVICE: USB initialization[0m
+[0;33mW (3282) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (3282) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 0           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4004      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (3442) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (3452) HID_DEVICE: USB initialization DONE[0m
+[0;32mI (5452) MAIN: Initializing WiFi...[0m
+[0;32mI (5472) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (5472) pp: pp rom version: e7ae62f[0m
+[0;32mI (5472) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (5482) wifi:wifi driver task: 3fcad7f4, prio:23, stack:6656, core=0[0m
+[0;32mI (5492) wifi:wifi firmware version: 090f94a[0m
+[0;32mI (5492) wifi:wifi certification version: v7.0[0m
+[0;32mI (5492) wifi:config NVS flash: enabled[0m
+[0;32mI (5492) wifi:config nano formatting: disabled[0m
+[0;32mI (5502) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (5502) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (5512) wifi:Init management short buffer num: 32[0m
+[0;32mI (5512) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (5512) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (5522) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (5522) wifi:Init static rx buffer num: 10[0m
+[0;32mI (5532) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (5532) wifi_init: rx ba win: 6[0m
+[0;32mI (5532) wifi_init: accept mbox: 6[0m
+[0;32mI (5542) wifi_init: tcpip mbox: 32[0m
+[0;32mI (5542) wifi_init: udp mbox: 6[0m
+[0;32mI (5552) wifi_init: tcp mbox: 6[0m
+[0;32mI (5552) wifi_init: tcp tx win: 5760[0m
+[0;32mI (5552) wifi_init: tcp rx win: 5760[0m
+[0;32mI (5562) wifi_init: tcp mss: 1440[0m
+[0;32mI (5562) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (5572) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (5572) WiFi: Configuring static IP: 192.168.50.100[0m
+[0;32mI (5582) WiFi: Static IP configured successfully[0m
+[0;32mI (5582) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (5592) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (5632) wifi:mode : sta (34:85:18:75:f3:0c)[0m
+[0;32mI (5632) wifi:enable tsf[0m
+[0;32mI (5632) WiFi: Wi-Fi initialization done.[0m
+[0;32mI (5632) WiFi: WiFi started, connecting...[0m
+[0;32mI (5642) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;32mI (5642) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (5652) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (5652) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (5662) wifi:connected with NeverNude_IoT, aid = 31, channel 1, BW20, bssid = 72:d9:f5:9b:25:21[0m
+[0;32mI (5662) wifi:security: WPA2-PSK, phy: bgn, rssi: -54[0m
+[0;32mI (5672) wifi:pm start, type: 0[0m
+
+[0;32mI (5672) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (5682) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (5692) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (5692) esp_netif_handlers: sta ip: 192.168.50.100, mask: 255.255.255.0, gw: 192.168.50.1[0m
+[0;32mI (5702) WiFi: Connected! IP: 192.168.50.100[0m
+[0;32mI (5702) WiFi: Connected to Wi-Fi[0m
+[0;32mI (5712) MAIN: WiFi connected - showing boot info...[0m
+[0;32mI (5712) OLED_UI: UI state force refreshed to 8 for 15000 ms[0m
+[0;32mI (7722) MAIN: Initializing NTP time manager...[0m
+[0;32mI (9722) TIME_MANAGER: Time manager ready – SNTP will start once Wi-Fi is up[0m
+[0;32mI (11722) TIME_MANAGER: Time sync task waiting for Wi-Fi…[0m
+[0;32mI (11722) TIME_MANAGER: Wi-Fi associated[0m
+[0;32mI (11722) TIME_MANAGER: Starting one-shot NTP sync…[0m
+[0;32mI (11722) TIME_MANAGER: STA IP: 192.168.50.100, GW: 192.168.50.1[0m
+[0;32mI (11732) TIME_MANAGER: SNTP started (poll mode)[0m
+[0;32mI (11732) KEYSWITCHES: Initializing rotary encoder states...[0m
+[0;32mI (11742) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (11752) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (11762) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (11772) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (11782) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (11792) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (11802) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (11812) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (11812) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (11822) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (11832) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (11842) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (11852) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (11862) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (11872) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (11882) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (11892) KEYSWITCHES: Both rotary encoders configured - ROT1: brightness, ROT2: scenes[0m
+[0;32mI (12002) KEYSWITCHES: Getting current Hue light state...[0m
+[0;32mI (12002) KEYSWITCHES: Fetching current Hue group state...[0m
+[0;32mI (12002) wifi:<ba-add>idx:0 (ifx:0, 72:d9:f5:9b:25:21), tid:0, ssn:1, winSize:64[0m
+[0;31mE (12012) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[0;31mE (12012) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[0;31mE (12032) esp-tls: create_ssl_handle failed[0m
+[0;31mE (12032) esp-tls: Failed to open new connection[0m
+[0;31mE (12042) transport_base: Failed to open a new connection[0m
+[0;31mE (12042) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (12052) KEYSWITCHES: HTTP GET request failed: ESP_ERR_HTTP_CONNECT, assuming lights OFF[0m
+[0;32mI (12062) KEYSWITCHES: Hue state initialized: lights_on = false, brightness = 255, scene = 4[0m
+[0;32mI (12072) MAIN: All systems initialized - starting main loop[0m
+[0;32mI (12072) MAIN: Fan control: ACTIVE[0m
+[0;32mI (12082) MAIN: Single row switches: ACTIVE[0m
+[0;32mI (12082) MAIN: Switch matrix (desk control): ACTIVE[0m
+[0;32mI (12092) MAIN: Relay system: ACTIVE[0m
+[0;32mI (12092) MAIN: Desktop controller initialization complete![0m
+[0;32mI (12242) KEYSWITCHES: Initial states - ROT1_CLK: 0, ROT1_SW: 1, ROT2_CLK: 0, ROT2_SW: 1[0m
+[0;32mI (14832) TIME_MANAGER: SNTP: first time sync[0m
+[0;32mI (15102) OLED_UI: UI state force refreshed to 0 for 0 ms[0m
+[0;32mI (15102) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;33mW (15232) TIME_MANAGER: SNTP: timeout after 60 s[0m
+[0;32mI (15232) TIME_MANAGER: Local time: 2025-06-28 14:47:35[0m
+[0;32mI (18202) OLED_UI: Returning to main screen[0m
+[0;32mI (26862) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (26922) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (26922) KEYSWITCHES: DEBUG COMBO DETECTED - Hold for 3 seconds to reboot[0m
+[0;32mI (26922) OLED_UI: UI state force refreshed to 9 for 5000 ms[0m
+[0;32mI (27042) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (27102) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (27222) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (27282) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (27402) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (27462) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (27582) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (27642) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (27762) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (27822) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (27942) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (28002) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (28122) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (28182) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (28302) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (28362) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (28482) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (28542) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (28662) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (28722) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (28842) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (28902) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (29022) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (29082) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (29202) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (29262) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (29382) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (29442) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (29562) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (29622) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (29742) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (29802) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (29922) KEYSWITCHES: REBOOT COMBO HELD - RESTARTING ESP32![0m
+[0;32mI (29922) OLED_UI: UI state force refreshed to 8 for 2000 ms[0m
+[0;32mI (29922) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (29982) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (30102) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (30162) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (30282) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (30342) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (30462) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (30522) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (30642) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (30702) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (30822) KEYSWITCHES: Switch 3 pressed![0m
+[0;32mI (30882) KEYSWITCHES: Switch 2 pressed![0m
+[0;32mI (31922) wifi:state: run -> init (0x0)[0m
+[0;32mI (31922) OLED_UI: Returning to main screen[0m
+[0;32mI (31932) wifi:pm stop, total sleep time: 0 us / 26257779 us[0m
+
+[0;32mI (31932) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (31932) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;33mW (31932) WiFi: WiFi disconnected (reason: 8), retry 1/10[0m
+[0;32mI (31972) wifi:flush txq[0m
+[0;32mI (31972) wifi:stop sw txq[0m
+[0;32mI (31972) wifi:lmac stop hw txq[0m
+x��ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403844d4
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (29) boot: ESP-IDF v5.5-dev-1655-gc5865270b5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jun 28 2025 11:19:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v0.1[0m
+[0;32mI (34) boot: efuse block revision: v1.2[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (49) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (63) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (69) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (76) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (86) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=2d458h (185432) map[0m
+[0;32mI (126) esp_image: segment 1: paddr=0003d480 vaddr=3fc9b900 size=02b98h ( 11160) load[0m
+[0;32mI (128) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=b0108h (721160) map[0m
+[0;32mI (257) esp_image: segment 3: paddr=000f0130 vaddr=3fc9e498 size=026c4h (  9924) load[0m
+[0;32mI (260) esp_image: segment 4: paddr=000f27fc vaddr=40374000 size=17828h ( 96296) load[0m
+[0;32mI (282) esp_image: segment 5: paddr=0010a02c vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (292) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (292) boot: Disabling RNG early entropy source...[0m
+[0;32mI (302) cpu_start: Multicore app[0m
+[0;32mI (311) cpu_start: Pro cpu start user code[0m
+[0;32mI (311) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (311) app_init: Application information:[0m
+[0;32mI (314) app_init: Project name:     desktop_controller[0m
+[0;32mI (320) app_init: App version:      3cf3943-dirty[0m
+[0;32mI (325) app_init: Compile time:     Jun 28 2025 13:25:51[0m
+[0;32mI (331) app_init: ELF file SHA256:  1da37970b...[0m
+[0;32mI (337) app_init: ESP-IDF:          v5.5-dev-1655-gc5865270b5-dirty[0m
+[0;32mI (343) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (348) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (353) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (358) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (365) heap_init: At 3FCA52F8 len 00044418 (273 KiB): RAM[0m
+[0;32mI (371) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (377) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (384) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (391) spi_flash: detected chip: gd[0m
+[0;32mI (394) spi_flash: flash io: dio[0m
+[0;33mW (398) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (412) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (422) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (429) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (437) main_task: Started on CPU0[0m
+[0;32mI (447) main_task: Calling app_main()[0m
+[0;32mI (447) MAIN: Initializing OLED display...[0m
+[0;32mI (447) OLED_UI: I2C initialized successfully[0m
+[0;32mI (457) SSD1306: OLED configured successfully[0m
+[0;32mI (457) OLED_UI: OLED initialized successfully[0m
+[0;32mI (467) OLED_UI: UI display task started[0m
+[0;32mI (467) OLED_UI: UI display task created[0m
+[0;32mI (1017) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1117) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1127) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1137) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1147) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1147) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1147) RELAY_INIT: Relay PC_SWITCH initial state: 0[0m
+[0;32mI (1247) RELAY_INIT: ✅ All relays initialized and stable - system ready![0m
+[0;32mI (1247) gpio: GPIO[45]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1247) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1257) ULTRASONIC_INIT: Testing TRIG pin (GPIO45)...[0m
+[0;32mI (1267) ULTRASONIC_INIT: TRIG set LOW, reading: 0[0m
+[0;32mI (1267) ULTRASONIC_INIT: TRIG set HIGH, reading: 0[0m
+[0;32mI (1277) ULTRASONIC_INIT: TRIG set LOW again, reading: 0[0m
+[0;32mI (1277) MAIN: Initializing USB HID device...[0m
+[0;32mI (3287) HID_DEVICE: USB initialization[0m
+[0;33mW (3287) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (3287) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 0           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4004      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (3447) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (3457) HID_DEVICE: USB initialization DONE[0m
+[0;32mI (5457) MAIN: Initializing WiFi...[0m
+[0;32mI (5477) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (5477) pp: pp rom version: e7ae62f[0m
+[0;32mI (5477) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (5487) wifi:wifi driver task: 3fcad7f4, prio:23, stack:6656, core=0[0m
+[0;32mI (5497) wifi:wifi firmware version: 090f94a[0m
+[0;32mI (5497) wifi:wifi certification version: v7.0[0m
+[0;32mI (5497) wifi:config NVS flash: enabled[0m
+[0;32mI (5497) wifi:config nano formatting: disabled[0m
+[0;32mI (5507) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (5507) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (5517) wifi:Init management short buffer num: 32[0m
+[0;32mI (5517) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (5517) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (5527) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (5527) wifi:Init static rx buffer num: 10[0m
+[0;32mI (5537) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (5537) wifi_init: rx ba win: 6[0m
+[0;32mI (5537) wifi_init: accept mbox: 6[0m
+[0;32mI (5547) wifi_init: tcpip mbox: 32[0m
+[0;32mI (5547) wifi_init: udp mbox: 6[0m
+[0;32mI (5557) wifi_init: tcp mbox: 6[0m
+[0;32mI (5557) wifi_init: tcp tx win: 5760[0m
+[0;32mI (5557) wifi_init: tcp rx win: 5760[0m
+[0;32mI (5567) wifi_init: tcp mss: 1440[0m
+[0;32mI (5567) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (5577) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (5577) WiFi: Configuring static IP: 192.168.50.100[0m
+[0;32mI (5587) WiFi: Static IP configured successfully[0m
+[0;32mI (5587) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (5597) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (5637) wifi:mode : sta (34:85:18:75:f3:0c)[0m
+[0;32mI (5637) wifi:enable tsf[0m
+[0;32mI (5637) WiFi: Wi-Fi initialization done.[0m
+[0;32mI (5637) WiFi: WiFi started, connecting...[0m
+[0;32mI (5647) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;32mI (5647) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (5657) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (5657) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (5677) wifi:connected with NeverNude_IoT, aid = 22, channel 1, BW20, bssid = 72:d9:f5:9b:25:21[0m
+[0;32mI (5677) wifi:security: WPA2-PSK, phy: bgn, rssi: -57[0m
+[0;32mI (5677) wifi:pm start, type: 0[0m
+
+[0;32mI (5677) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (5687) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (5697) esp_netif_handlers: sta ip: 192.168.50.100, mask: 255.255.255.0, gw: 192.168.50.1[0m
+[0;32mI (5707) WiFi: Connected! IP: 192.168.50.100[0m
+[0;32mI (5707) WiFi: Connect
