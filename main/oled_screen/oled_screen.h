@@ -64,6 +64,7 @@ typedef struct {
 
         // Volume control
         int volume_level;
+        bool volume_direction_up; // true = last change was UP, false = DOWN
 
         // Hue lighting
         char hue_scene[32];
@@ -83,6 +84,9 @@ typedef struct {
         bool fan_active;
     } context;
 } ui_context_t;
+
+// External declaration of global UI context
+extern ui_context_t ui_ctx;
 
 // OLED initialization and configuration (KEEP EXISTING - WORKS)
 void oled_init(SSD1306_t *dev);
@@ -123,6 +127,11 @@ void ui_display_text_x3_offset(SSD1306_t *dev, int page, char *text, int text_le
 
 // NEW UI SYSTEM - Main update task
 void ui_display_task(void *pvParameter);
+
+// Safe volume access functions for HID device
+int get_current_ui_volume_level(void);
+void set_ui_volume_level(int volume);
+void set_ui_volume_direction(bool direction_up);
 
 // LEGACY FUNCTIONS - For backward compatibility with existing code
 bool oled_send_display_event(display_event_t *event);

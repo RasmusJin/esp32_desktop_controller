@@ -1,0 +1,565 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM1 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM1'
+[0;32mI (1030) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1130) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1140) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1150) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1160) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1160) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1160) RELAY_INIT: Relay PC_SWITCH initial state: 0[0m
+[0;32mI (1260) RELAY_INIT: ✅ All relays initialized and stable - system ready![0m
+[0;32mI (1260) gpio: GPIO[45]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1260) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1270) ULTRASONIC_INIT: Testing TRIG pin (GPIO45)...[0m
+[0;32mI (1280) ULTRASONIC_INIT: TRIG set LOW, reading: 0[0m
+[0;32mI (1280) ULTRASONIC_INIT: TRIG set HIGH, reading: 0[0m
+[0;32mI (1290) ULTRASONIC_INIT: TRIG set LOW again, reading: 0[0m
+[0;32mI (1290) MAIN: Initializing USB HID device...[0m
+[0;32mI (1300) HID_DEVICE: USB initialization[0m
+[0;33mW (1300) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (1310) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 0           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4004      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (1480) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (1480) HID_DEVICE: USB initialization DONE[0m
+[0;32mI (1490) MAIN: Initializing WiFi...[0m
+[0;32mI (1510) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (1520) pp: pp rom version: e7ae62f[0m
+[0;32mI (1520) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1530) wifi:wifi driver task: 3fcac494, prio:23, stack:6656, core=0[0m
+[0;32mI (1540) wifi:wifi firmware version: 090f94a[0m
+[0;32mI (1540) wifi:wifi certification version: v7.0[0m
+[0;32mI (1540) wifi:config NVS flash: enabled[0m
+[0;32mI (1540) wifi:config nano formatting: disabled[0m
+[0;32mI (1540) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1550) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1550) wifi:Init management short buffer num: 32[0m
+[0;32mI (1560) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1560) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1570) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1570) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1570) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1580) wifi_init: rx ba win: 6[0m
+[0;32mI (1580) wifi_init: accept mbox: 6[0m
+[0;32mI (1590) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1590) wifi_init: udp mbox: 6[0m
+[0;32mI (1590) wifi_init: tcp mbox: 6[0m
+[0;32mI (1600) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1600) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1610) wifi_init: tcp mss: 1440[0m
+[0;32mI (1610) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1610) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1620) WiFi: Configuring static IP: 192.168.50.100[0m
+[0;32mI (1630) WiFi: Static IP configured successfully[0m
+[0;32mI (1630) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (1630) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (1680) wifi:mode : sta (34:85:18:75:f3:0c)[0m
+[0;32mI (1680) wifi:enable tsf[0m
+[0;32mI (1680) WiFi: Wi-Fi initialization done.[0m
+[0;32mI (1680) WiFi: WiFi started, connecting...[0m
+[0;32mI (1700) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;32mI (1710) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1730) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1740) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1760) wifi:connected with NeverNude_IoT, aid = 33, channel 1, BW20, bssid = 72:d9:f5:9b:25:21[0m
+[0;32mI (1760) wifi:security: WPA2-PSK, phy: bgn, rssi: -55[0m
+[0;32mI (1760) wifi:pm start, type: 0[0m
+
+[0;32mI (1760) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1770) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1780) esp_netif_handlers: sta ip: 192.168.50.100, mask: 255.255.255.0, gw: 192.168.50.1[0m
+[0;32mI (1790) WiFi: Connected! IP: 192.168.50.100[0m
+[0;32mI (1790) WiFi: Connected to Wi-Fi[0m
+[0;32mI (1800) MAIN: Initializing NTP time manager...[0m
+[0;32mI (1800) TIME_MANAGER: Time manager ready – SNTP will start once Wi-Fi is up[0m
+[0;32mI (1810) TIME_MANAGER: Time sync task waiting for Wi-Fi…[0m
+[0;32mI (1820) TIME_MANAGER: Wi-Fi associated[0m
+[0;32mI (1820) TIME_MANAGER: Starting one-shot NTP sync…[0m
+[0;32mI (1830) TIME_MANAGER: STA IP: 192.168.50.100, GW: 192.168.50.1[0m
+[0;32mI (1830) TIME_MANAGER: SNTP started (poll mode)[0m
+[0;32mI (1840) KEYSWITCHES: Initializing rotary encoder states...[0m
+[0;32mI (1850) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1850) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1860) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1870) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1880) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1890) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1900) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1910) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1920) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1930) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1940) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (1940) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1950) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1960) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1970) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1980) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1990) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2000) KEYSWITCHES: Both rotary encoders configured - ROT1: brightness, ROT2: scenes[0m
+[0;32mI (2110) KEYSWITCHES: Getting current Hue light state...[0m
+[0;32mI (2110) KEYSWITCHES: Fetching current Hue group state...[0m
+[0;32mI (2120) wifi:<ba-add>idx:0 (ifx:0, 72:d9:f5:9b:25:21), tid:0, ssn:1, winSize:64[0m
+[0;32mI (2340) KEYSWITCHES: Initial states - ROT1_CLK: 0, ROT1_SW: 1, ROT2_CLK: 0, ROT2_SW: 1[0m
+[0;32mI (5770) TIME_MANAGER: SNTP: first time sync[0m
+[0;33mW (5840) TIME_MANAGER: SNTP: timeout after 60 s[0m
+[0;32mI (5840) TIME_MANAGER: Local time: 2025-06-28 11:00:14[0m
+[0;33mW (7170) KEYSWITCHES: No response data received, assuming lights OFF[0m
+[0;32mI (7170) KEYSWITCHES: Hue state initialized: lights_on = false[0m
+[0;32mI (7170) MAIN: All systems initialized - starting main loop[0m
+[0;32mI (7170) MAIN: Fan control: ACTIVE[0m
+[0;32mI (7180) MAIN: Single row switches: ACTIVE[0m
+[0;32mI (7180) MAIN: Switch matrix (desk control): ACTIVE[0m
+[0;32mI (7190) MAIN: Relay system: ACTIVE[0m
+[0;32mI (7190) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (10410) OLED_UI: Returning to main screen[0m
+[0;32mI (22540) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (22540) KEYSWITCHES: Scene 2: Koncentrer dig (Concentrate)[0m
+[0;32mI (22840) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (22840) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (24060) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (24060) KEYSWITCHES: Scene 3: Læs (Read)[0m
+[0;32mI (24290) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (24290) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (27010) KEYSWITCHES: Rotary Encoder 2 Button Pressed! - Toggling lights[0m
+[0;32mI (27120) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (27120) KEYSWITCHES: Hue lights turned ON[0m
+[0;32mI (27120) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (28850) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (28850) KEYSWITCHES: Scene 4: Slap af (Relax)[0m
+[0;32mI (29100) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (29100) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (31370) KEYSWITCHES: Rotary Encoder 1 turned Clockwise, increasing brightness to 255[0m
+[0;32mI (31520) HTTP_CLIENT: Brightness for Gaming group set to 255[0m
+[0;32mI (31520) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (31520) OLED_UI: Legacy display event: type=1, text='Brightness: 255'[0m
+[0;32mI (34660) OLED_UI: Returning to main screen[0m
+[0;32mI (38510) HID_DEVICE: USB HID device mounted[0m
+[0;32mI (41530) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (41530) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (41580) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (42500) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (42500) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (42550) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (42810) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (42810) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (42860) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (44860) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (44860) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (44910) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (45170) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (45170) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (45220) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (45420) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (45420) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (45470) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (45610) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (45610) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (45660) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (45800) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (45800) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (45850) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (46050) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (46050) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (46100) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (46240) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (46240) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (46290) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (46490) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (46490) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (46540) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (46680) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (46680) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (46730) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (49820) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (49820) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (49870) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (50050) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (50050) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (50100) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (50340) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (50340) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (50390) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (50690) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (50690) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (50740) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (51040) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (51040) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (51090) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (52050) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (52050) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (52100) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (52280) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (52280) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (52330) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (52510) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (52510) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (52560) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (52680) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (52680) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (52730) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (52850) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (52850) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (52900) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (53020) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (53020) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (53070) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (53190) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (53190) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (53240) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (53420) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (53420) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (53470) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (53710) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (53710) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (53760) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (53940) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (53940) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (53990) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (54110) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (54110) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (54160) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (54280) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (54280) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (54330) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (54510) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (54510) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (54560) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (56290) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (56290) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (56340) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (56600) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (56600) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (56650) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (56790) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (56790) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (56840) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (56980) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (56980) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (57030) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (57170) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (57170) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (57220) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (57480) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (57480) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (57530) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (57670) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (57670) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (57720) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (57860) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (57860) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (57910) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (58050) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (58050) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (58100) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (58240) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (58240) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (58290) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (58550) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (58550) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (58600) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (58860) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (58860) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (58910) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (59050) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (59050) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (59100) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (59480) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (59480) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (59530) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (59670) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (59670) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (59720) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (60280) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (60280) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (60330) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (63490) OLED_UI: Returning to main screen[0m
+[0;32mI (63590) BUTTON: Up command triggered[0m
+[0;32mI (63610) wifi:<ba-add>idx:1 (ifx:0, 72:d9:f5:9b:25:21), tid:7, ssn:1, winSize:64[0m
+[0;32mI (63640) HTTP_EVENT: HTTP_EVENT_ON_CONNECTED[0m
+[0;32mI (63640) HTTP_EVENT: HTTP_EVENT_HEADER_SENT[0m
+[0;32mI (64200) HTTP_EVENT: HTTP_EVENT_ON_HEADER, key=Content-Type, value=text/html[0m
+[0;32mI (64380) HTTP_EVENT: HTTP_EVENT_ON_HEADER, key=Content-Length, value=2[0m
+[0;32mI (64380) HTTP_EVENT: HTTP_EVENT_ON_DATA, len=2[0m
+[0;32mI (64380) HTTP_EVENT: HTTP_EVENT_ON_FINISH[0m
+[0;32mI (64390) HTTP_CLIENT: HTTP GET Status = 200, content_length = 2[0m
+[0;32mI (64390) HTTP_EVENT: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (67410) KEYSWITCHES: Row 2, Column 2 pressed![0m
+[0;32mI (67410) BUTTON: Down command triggered[0m
+[0;32mI (67440) HTTP_EVENT: HTTP_EVENT_ON_CONNECTED[0m
+[0;32mI (67440) HTTP_EVENT: HTTP_EVENT_HEADER_SENT[0m
+[0;32mI (68010) HTTP_EVENT: HTTP_EVENT_ON_HEADER, key=Content-Type, value=text/html[0m
+[0;32mI (68110) HTTP_EVENT: HTTP_EVENT_ON_HEADER, key=Content-Length, value=2[0m
+[0;32mI (68110) HTTP_EVENT: HTTP_EVENT_ON_DATA, len=2[0m
+[0;32mI (68110) HTTP_EVENT: HTTP_EVENT_ON_FINISH[0m
+[0;32mI (68120) HTTP_CLIENT: HTTP GET Status = 200, content_length = 2[0m
+[0;32mI (68120) HTTP_EVENT: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (72800) BUTTON: Up command triggered[0m
+[0;32mI (72830) HTTP_EVENT: HTTP_EVENT_ON_CONNECTED[0m
+[0;32mI (72830) HTTP_EVENT: HTTP_EVENT_HEADER_SENT[0m
+[0;32mI (73380) HTTP_EVENT: HTTP_EVENT_ON_HEADER, key=Content-Type, value=text/html[0m
+[0;32mI (73600) HTTP_EVENT: HTTP_EVENT_ON_HEADER, key=Content-Length, value=2[0m
+[0;32mI (73600) HTTP_EVENT: HTTP_EVENT_ON_DATA, len=2[0m
+[0;32mI (73600) HTTP_EVENT: HTTP_EVENT_ON_FINISH[0m
+[0;32mI (73610) HTTP_CLIENT: HTTP GET Status = 200, content_length = 2[0m
+[0;32mI (73610) HTTP_EVENT: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (74340) DESK: Moving UP - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (74340) OLED_UI: UI state changed to 1 for 5000 ms[0m
+[0;32mI (74340) DESK_CONTROL: UP button pressed - starting movement[0m
+[0;32mI (74350) ULTRASONIC: Moving up - Distance: 59 cm[0m
+[0;32mI (74350) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (74410) ULTRASONIC: Moving up - Distance: 59 cm[0m
+[0;32mI (74410) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (74470) ULTRASONIC: Moving up - Distance: 59 cm[0m
+[0;32mI (74470) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (74530) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (74530) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (74600) ULTRASONIC: Moving up - Distance: 35 cm[0m
+[0;32mI (74600) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (74660) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (74660) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (74720) ULTRASONIC: Moving up - Distance: 43 cm[0m
+[0;32mI (74720) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (74780) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (74780) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (74840) ULTRASONIC: Moving up - Distance: 41 cm[0m
+[0;32mI (74840) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (74900) ULTRASONIC: Moving up - Distance: 59 cm[0m
+[0;32mI (74900) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (74960) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (74960) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (75020) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (75020) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (75080) ULTRASONIC: Moving up - Distance: 42 cm[0m
+[0;32mI (75080) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (75140) ULTRASONIC: Moving up - Distance: 55 cm[0m
+[0;32mI (75140) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (75200) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (75200) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (75260) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (75260) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (75320) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (75320) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (75380) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (75380) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (75440) ULTRASONIC: Moving up - Distance: 59 cm[0m
+[0;32mI (75440) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (75500) ULTRASONIC: Moving up - Distance: 59 cm[0m
+[0;32mI (75500) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (75560) ULTRASONIC: Moving up - Distance: 64 cm[0m
+[0;32mI (75560) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (75620) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (75620) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (75680) ULTRASONIC: Moving up - Distance: 64 cm[0m
+[0;32mI (75680) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (75740) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (75740) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (75800) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (75800) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (75860) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (75860) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (75920) ULTRASONIC: Moving up - Distance: 63 cm[0m
+[0;32mI (75920) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (75980) ULTRASONIC: Moving up - Distance: 63 cm[0m
+[0;32mI (75980) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (76040) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (76040) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (76100) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (76100) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (76160) ULTRASONIC: Moving up - Distance: 64 cm[0m
+[0;32mI (76160) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (76220) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (76220) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (76280) ULTRASONIC: Moving up - Distance: 57 cm[0m
+[0;32mI (76280) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (76340) ULTRASONIC: Moving up - Distance: 58 cm[0m
+[0;32mI (76340) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (76400) ULTRASONIC: Moving up - Distance: 62 cm[0m
+[0;32mI (76400) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (76460) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (76460) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (76520) ULTRASONIC: Moving up - Distance: 57 cm[0m
+[0;32mI (76520) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (76580) ULTRASONIC: Moving up - Distance: 53 cm[0m
+[0;32mI (76580) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (76640) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (76640) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (76700) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (76700) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (76760) ULTRASONIC: Moving up - Distance: 65 cm[0m
+[0;32mI (76760) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (76820) ULTRASONIC: Moving up - Distance: 66 cm[0m
+[0;32mI (76820) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (76880) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (76880) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (76940) ULTRASONIC: Moving up - Distance: 61 cm[0m
+[0;32mI (76940) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (77000) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (77000) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (77060) ULTRASONIC: Moving up - Distance: 60 cm[0m
+[0;32mI (77060) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (77120) DESK: Stopped moving[0m
+[0;32mI (77120) OLED_UI: UI state changed to 1 for 3000 ms[0m
+[0;32mI (77120) DESK_CONTROL: UP button released - STOPPED[0m
+[0;32mI (77130) OLED_UI: UI state force refreshed to 1 for 3000 ms[0m
+[0;32mI (77560) DESK: Moving DOWN - SAFETY TIMEOUT: 10 seconds[0m
+[0;32mI (77560) OLED_UI: UI state changed to 1 for 5000 ms[0m
+[0;32mI (77560) DESK_CONTROL: DOWN button pressed - starting movement[0m
+[0;32mI (77570) ULTRASONIC: Moving down - Distance: 66 cm[0m
+[0;32mI (77570) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (77630) ULTRASONIC: Moving down - Distance: 66 cm[0m
+[0;32mI (77630) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (77690) ULTRASONIC: Moving down - Distance: 66 cm[0m
+[0;32mI (77690) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (77750) ULTRASONIC: Moving down - Distance: 62 cm[0m
+[0;32mI (77750) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (77820) ULTRASONIC: Moving down - Distance: 36 cm[0m
+[0;32mI (77820) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (77880) ULTRASONIC: Moving down - Distance: 64 cm[0m
+[0;32mI (77880) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (77940) ULTRASONIC: Moving down - Distance: 61 cm[0m
+[0;32mI (77940) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (78000) ULTRASONIC: Moving down - Distance: 61 cm[0m
+[0;32mI (78000) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (78060) ULTRASONIC: Moving down - Distance: 62 cm[0m
+[0;32mI (78060) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (78120) ULTRASONIC: Moving down - Distance: 65 cm[0m
+[0;32mI (78120) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (78180) ULTRASONIC: Moving down - Distance: 64 cm[0m
+[0;32mI (78180) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (78240) ULTRASONIC: Moving down - Distance: 61 cm[0m
+[0;32mI (78240) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (78300) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (78300) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (78360) ULTRASONIC: Moving down - Distance: 43 cm[0m
+[0;32mI (78360) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (78420) ULTRASONIC: Moving down - Distance: 59 cm[0m
+[0;32mI (78420) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (78480) ULTRASONIC: Moving down - Distance: 61 cm[0m
+[0;32mI (78480) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (78540) ULTRASONIC: Moving down - Distance: 55 cm[0m
+[0;32mI (78540) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (78600) ULTRASONIC: Moving down - Distance: 61 cm[0m
+[0;32mI (78600) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (78660) ULTRASONIC: Moving down - Distance: 63 cm[0m
+[0;32mI (78660) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (78720) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (78720) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (78780) ULTRASONIC: Moving down - Distance: 61 cm[0m
+[0;32mI (78780) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (78840) ULTRASONIC: Moving down - Distance: 62 cm[0m
+[0;32mI (78840) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (78900) ULTRASONIC: Moving down - Distance: 35 cm[0m
+[0;32mI (78900) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (78960) ULTRASONIC: Moving down - Distance: 63 cm[0m
+[0;32mI (78960) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (79020) ULTRASONIC: Moving down - Distance: 61 cm[0m
+[0;32mI (79020) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (79080) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (79080) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (79140) ULTRASONIC: Moving down - Distance: 56 cm[0m
+[0;32mI (79140) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (79200) ULTRASONIC: Moving down - Distance: 57 cm[0m
+[0;32mI (79200) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (79260) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (79260) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (79320) ULTRASONIC: Moving down - Distance: 61 cm[0m
+[0;32mI (79320) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (79380) ULTRASONIC: Moving down - Distance: 58 cm[0m
+[0;32mI (79380) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (79440) ULTRASONIC: Moving down - Distance: 36 cm[0m
+[0;32mI (79440) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (79500) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (79500) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (79560) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (79560) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (79620) ULTRASONIC: Moving down - Distance: 60 cm[0m
+[0;32mI (79620) OLED_UI: UI state force refreshed to 1 for 5000 ms[0m
+[0;32mI (79680) DESK: Stopped moving[0m
+[0;32mI (79680) OLED_UI: UI state changed to 1 for 3000 ms[0m
+[0;32mI (79680) DESK_CONTROL: DOWN button released - STOPPED[0m
+[0;32mI (79690) OLED_UI: UI state force refreshed to 1 for 3000 ms[0m
+[0;32mI (82960) OLED_UI: Returning to main screen[0m
+[0;32mI (154380) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (154380) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (154430) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (155770) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (155770) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (155820) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (157290) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (157290) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (157340) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (157580) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (157580) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (157630) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (157750) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (157750) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (157800) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (157980) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (157980) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (158030) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (159160) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (159160) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (159210) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (159410) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (159410) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (159460) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (160620) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (160620) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (160670) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (160810) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (160810) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (160860) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (161730) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (161730) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (161780) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (161960) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (161960) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (162010) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (164230) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (164230) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (164280) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (164700) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (164700) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (164750) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (164870) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (164870) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (164920) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (165940) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (165940) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (165990) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (166110) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (166110) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (166160) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (166280) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (166280) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (166330) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (166930) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (166930) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (166980) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (167100) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (167100) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (167150) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (167270) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volu

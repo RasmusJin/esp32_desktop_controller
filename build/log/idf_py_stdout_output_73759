@@ -1,0 +1,222 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM1 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM1'
+[0;32mI (1010) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1110) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1120) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1130) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1140) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1140) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1140) RELAY_INIT: Relay PC_SWITCH initial state: 0[0m
+[0;32mI (1240) RELAY_INIT: ✅ All relays initialized and stable - system ready![0m
+[0;32mI (1240) gpio: GPIO[45]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1240) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1250) ULTRASONIC_INIT: Testing TRIG pin (GPIO45)...[0m
+[0;32mI (1260) ULTRASONIC_INIT: TRIG set LOW, reading: 0[0m
+[0;32mI (1260) ULTRASONIC_INIT: TRIG set HIGH, reading: 0[0m
+[0;32mI (1270) ULTRASONIC_INIT: TRIG set LOW again, reading: 0[0m
+[0;32mI (1270) MAIN: Initializing USB HID device...[0m
+[0;32mI (1280) HID_DEVICE: USB initialization[0m
+[0;33mW (1280) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (1290) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 0           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4004      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (1460) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (1460) HID_DEVICE: USB initialization DONE[0m
+[0;32mI (1470) MAIN: Initializing WiFi...[0m
+[0;32mI (1490) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (1500) pp: pp rom version: e7ae62f[0m
+[0;32mI (1500) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1510) wifi:wifi driver task: 3fcad6fc, prio:23, stack:6656, core=0[0m
+[0;32mI (1520) wifi:wifi firmware version: 090f94a[0m
+[0;32mI (1520) wifi:wifi certification version: v7.0[0m
+[0;32mI (1520) wifi:config NVS flash: enabled[0m
+[0;32mI (1520) wifi:config nano formatting: disabled[0m
+[0;32mI (1520) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1530) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1530) wifi:Init management short buffer num: 32[0m
+[0;32mI (1540) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1540) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1550) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1550) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1550) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1560) wifi_init: rx ba win: 6[0m
+[0;32mI (1560) wifi_init: accept mbox: 6[0m
+[0;32mI (1570) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1570) wifi_init: udp mbox: 6[0m
+[0;32mI (1570) wifi_init: tcp mbox: 6[0m
+[0;32mI (1580) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1580) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1590) wifi_init: tcp mss: 1440[0m
+[0;32mI (1590) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1590) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1600) WiFi: Configuring static IP: 192.168.50.100[0m
+[0;32mI (1610) WiFi: Static IP configured successfully[0m
+[0;32mI (1610) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (1610) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (1660) wifi:mode : sta (34:85:18:75:f3:0c)[0m
+[0;32mI (1660) wifi:enable tsf[0m
+[0;32mI (1660) WiFi: Wi-Fi initialization done.[0m
+[0;32mI (1670) WiFi: WiFi started, connecting...[0m
+[0;32mI (1690) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;32mI (1690) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1710) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1710) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1740) wifi:connected with NeverNude_IoT, aid = 35, channel 1, BW20, bssid = 72:d9:f5:9b:25:21[0m
+[0;32mI (1740) wifi:security: WPA2-PSK, phy: bgn, rssi: -50[0m
+[0;32mI (1740) wifi:pm start, type: 0[0m
+
+[0;32mI (1750) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1750) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1760) esp_netif_handlers: sta ip: 192.168.50.100, mask: 255.255.255.0, gw: 192.168.50.1[0m
+[0;32mI (1770) WiFi: Connected! IP: 192.168.50.100[0m
+[0;32mI (1780) WiFi: Connected to Wi-Fi[0m
+[0;32mI (1780) MAIN: Initializing NTP time manager...[0m
+[0;32mI (1780) TIME_MANAGER: Time manager ready – SNTP will start once Wi-Fi is up[0m
+[0;32mI (1790) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (1800) TIME_MANAGER: Time sync task waiting for Wi-Fi…[0m
+[0;32mI (1800) TIME_MANAGER: Wi-Fi associated[0m
+[0;32mI (1810) TIME_MANAGER: Starting one-shot NTP sync…[0m
+[0;32mI (1810) TIME_MANAGER: STA IP: 192.168.50.100, GW: 192.168.50.1[0m
+[0;32mI (1820) TIME_MANAGER: SNTP started (poll mode)[0m
+[0;32mI (1830) KEYSWITCHES: Initializing rotary encoder states...[0m
+[0;32mI (1830) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1840) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1850) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1860) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1870) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1880) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1890) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1900) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1910) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1920) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1930) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1940) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1940) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1950) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1960) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1970) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1980) KEYSWITCHES: Both rotary encoders configured - ROT1: brightness, ROT2: scenes[0m
+[0;32mI (2090) KEYSWITCHES: Getting current Hue light state...[0m
+[0;32mI (2090) KEYSWITCHES: Fetching current Hue group state...[0m
+[0;32mI (2110) wifi:<ba-add>idx:0 (ifx:0, 72:d9:f5:9b:25:21), tid:0, ssn:1, winSize:64[0m
+[0;32mI (2330) KEYSWITCHES: Initial states - ROT1_CLK: 1, ROT1_SW: 1, ROT2_CLK: 1, ROT2_SW: 1[0m
+[0;32mI (2450) TIME_MANAGER: SNTP: first time sync[0m
+[0;33mW (2830) TIME_MANAGER: SNTP: timeout after 60 s[0m
+[0;32mI (2830) TIME_MANAGER: Local time: 2025-06-28 11:20:44[0m
+[0;33mW (7160) KEYSWITCHES: No response data received, assuming lights OFF[0m
+[0;32mI (7160) KEYSWITCHES: Hue state initialized: lights_on = false, brightness = 255, scene = 4[0m
+[0;32mI (7160) MAIN: All systems initialized - starting main loop[0m
+[0;32mI (7170) MAIN: Fan control: ACTIVE[0m
+[0;32mI (7170) MAIN: Single row switches: ACTIVE[0m
+[0;32mI (7180) MAIN: Switch matrix (desk control): ACTIVE[0m
+[0;32mI (7180) MAIN: Relay system: ACTIVE[0m
+[0;32mI (7190) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (10200) OLED_UI: Returning to main screen[0m
+[0;32mI (18810) HID_DEVICE: USB HID device mounted[0m
+[0;32mI (21050) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (21050) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (21100) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (24240) OLED_UI: Returning to main screen[0m
+[0;32mI (25260) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (25260) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (25310) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (26170) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (26170) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (26220) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (28460) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (28460) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (28510) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (28650) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (28650) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (28700) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (28900) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (28900) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (28950) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (29090) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (29090) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (29140) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (29340) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (29340) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (29390) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (29590) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (29590) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (29640) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (29900) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (29900) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (29950) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (30210) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (30210) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (30260) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (30520) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (30520) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (30570) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (30770) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (30770) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (30820) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (31080) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (31080) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (31130) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (31330) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (31330) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (31380) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (31580) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (31580) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (31630) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (32550) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (32550) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (32600) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (35700) OLED_UI: Returning to main screen[0m
+[0;32mI (37010) KEYSWITCHES: Row 2, Column 2 pressed![0m
+[0;32mI (37010) BUTTON: Down command triggered[0m
+[0;32mI (37010) OLED_UI: UI state force refreshed to 5 for 5000 ms[0m
+[0;32mI (37330) wifi:<ba-add>idx:1 (ifx:0, 72:d9:f5:9b:25:21), tid:7, ssn:1, winSize:64[0m
+[0;32mI (37360) HTTP_EVENT: HTTP_EVENT_ON_CONNECTED[0m
+[0;32mI (37360) HTTP_EVENT: HTTP_EVENT_HEADER_SENT[0m
+[0;32mI (38260) HTTP_EVENT: HTTP_EVENT_ON_HEADER, key=Content-Type, value=text/html[0m
+[0;32mI (38650) HTTP_EVENT: HTTP_EVENT_ON_HEADER, key=Content-Length, value=2[0m
+[0;32mI (38650) HTTP_EVENT: HTTP_EVENT_ON_DATA, len=2[0m
+[0;32mI (38650) HTTP_EVENT: HTTP_EVENT_ON_FINISH[0m
+[0;32mI (38650) HTTP_CLIENT: HTTP GET Status = 200, content_length = 2[0m
+[0;32mI (38660) HTTP_EVENT: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (42080) OLED_UI: Returning to main screen[0m
+[0;32mI (47120) BUTTON: Up command triggered[0m
+[0;32mI (47120) OLED_UI: UI state force refreshed to 5 for 5000 ms[0m
+[0;32mI (47180) HTTP_EVENT: HTTP_EVENT_ON_CONNECTED[0m
+[0;32mI (47180) HTTP_EVENT: HTTP_EVENT_HEADER_SENT[0m
+[0;32mI (47720) HTTP_EVENT: HTTP_EVENT_ON_HEADER, key=Content-Type, value=text/html[0m
+[0;32mI (48220) HTTP_EVENT: HTTP_EVENT_ON_HEADER, key=Content-Length, value=2[0m
+[0;32mI (48220) HTTP_EVENT: HTTP_EVENT_ON_DATA, len=2[0m
+[0;32mI (48220) HTTP_EVENT: HTTP_EVENT_ON_FINISH[0m
+[0;32mI (48220) HTTP_CLIENT: HTTP GET Status = 200, content_length = 2[0m
+[0;32mI (48230) HTTP_EVENT: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (52210) OLED_UI: Returning to main screen[0m
+[0;32mI (160990) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (160990) KEYSWITCHES: Scene 5: Slap af v2 (Relax Alt)[0m
+[0;32mI (161290) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (161290) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (163570) KEYSWITCHES: Rotary Encoder 2 turned Counterclockwise - Previous scene[0m
+[0;32mI (163570) KEYSWITCHES: Scene 4: Slap af (Relax)[0m
+[0;32mI (163860) HTTP_CLIENT: HTTP PUT Status = 200,

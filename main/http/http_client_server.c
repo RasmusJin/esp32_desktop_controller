@@ -2,6 +2,21 @@
 #include "esp_log.h"
 #include "http_client_server.h"
 
+// Forward declarations for UI functions to avoid circular includes
+typedef enum {
+    UI_STATE_MAIN,
+    UI_STATE_DESK,
+    UI_STATE_VOLUME,
+    UI_STATE_HUE,
+    UI_STATE_PC_SWITCH,
+    UI_STATE_WINDOW,
+    UI_STATE_FAN,
+    UI_STATE_SUSPEND
+} ui_state_t;
+
+void ui_set_window_context(bool opening, bool closing, bool ack);
+void ui_force_refresh_state(ui_state_t state, uint32_t duration_ms);
+
 // Global variable to store the current brightness
 int current_brightness = 100; 
 
@@ -40,7 +55,7 @@ esp_err_t http_event_handler(esp_http_client_event_t *evt) {
 }
 
 
-void send_http_request(const char *url) {
+int send_http_request(const char *url) {
     esp_http_client_config_t config = {
         .url = url,
         .event_handler = http_event_handler,
@@ -48,24 +63,43 @@ void send_http_request(const char *url) {
     esp_http_client_handle_t client = esp_http_client_init(&config);
 
     esp_err_t err = esp_http_client_perform(client);
-    if (err == ESP_OK) {
-        ESP_LOGI(TAG, "HTTP GET Status = %d, content_length = %lld",
-                esp_http_client_get_status_code(client),
-                (long long int)esp_http_client_get_content_length(client));
+    int status_code = 0;
 
+    if (err == ESP_OK) {
+        status_code = esp_http_client_get_status_code(client);
+        ESP_LOGI(TAG, "HTTP GET Status = %d, content_length = %lld",
+                status_code,
+                (long long int)esp_http_client_get_content_length(client));
     } else {
         ESP_LOGE(TAG, "HTTP GET request failed: %s", esp_err_to_name(err));
     }
 
     esp_http_client_cleanup(client);
+    return status_code;
 }
 
 void skylight_command_up() {
-    send_http_request("http://192.168.50.248/control_remote?command=up");
+    // Set window UI context and show for 5 seconds
+    ui_set_window_context(true, false, false); // opening=true, closing=false, ack=false
+    ui_force_refresh_state(UI_STATE_WINDOW, 5000); // Show window UI for 5 seconds
+
+    int status_code = send_http_request("http://192.168.50.248/control_remote?command=up");
+
+    // Update UI to show acknowledgment based on HTTP response
+    bool success = (status_code >= 200 && status_code < 300);
+    ui_set_window_context(true, false, success); // opening=true, closing=false, ack=success
 }
 
 void skylight_command_down() {
-    send_http_request("http://192.168.50.248/control_remote?command=down");
+    // Set window UI context and show for 5 seconds
+    ui_set_window_context(false, true, false); // opening=false, closing=true, ack=false
+    ui_force_refresh_state(UI_STATE_WINDOW, 5000); // Show window UI for 5 seconds
+
+    int status_code = send_http_request("http://192.168.50.248/control_remote?command=down");
+
+    // Update UI to show acknowledgment based on HTTP response
+    bool success = (status_code >= 200 && status_code < 300);
+    ui_set_window_context(false, true, success); // opening=false, closing=true, ack=success
 }
 
 

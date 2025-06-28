@@ -15,11 +15,16 @@
 #include <time.h>
 #include <stdio.h>
 
+// Removed unused typedef - using simpler approach for font positioning
+
 // Log tag
 static const char *TAG = "OLED_UI";
 
-// Global UI context for the new display system
-static ui_context_t ui_ctx = {
+// Global variable to track last displayed state for proper screen clearing
+static ui_state_t last_displayed_state = UI_STATE_MAIN;
+
+// Global UI context for the new display system (non-static for external access)
+ui_context_t ui_ctx = {
     .current_state = UI_STATE_MAIN,
     .state_start_time = 0,
     .display_duration_ms = 3000,  // 3 seconds default
@@ -35,6 +40,7 @@ static ui_context_t ui_ctx = {
 
         // Volume control defaults
         .volume_level = 50,
+        .volume_direction_up = true, // Default to UP
 
         // Hue lighting defaults
         .hue_scene = "Unknown",
@@ -107,7 +113,7 @@ void i2c_master_init_custom(SSD1306_t *dev, int16_t sda, int16_t scl, int16_t re
 
 // Clear the entire screen properly - handle SH1106 (132 bytes) vs SSD1306 (128 bytes)
 void ui_clear_screen(SSD1306_t *dev) {
-    ESP_LOGI("OLED_UI", "Clearing screen for SH1106 display (handling extra 4 bytes per page)");
+    // Removed excessive logging to reduce performance impact
 
     // Clear the standard 128 bytes in the buffer
     for (int page = 0; page < dev->_pages; page++) {
@@ -134,8 +140,6 @@ void ui_clear_screen(SSD1306_t *dev) {
 
     // Force display update to push the cleared buffer
     ssd1306_show_buffer(dev);
-
-    ESP_LOGI("OLED_UI", "SH1106 screen cleared completely (128 + 4 extra bytes per page)");
 }
 
 // Draw a progress bar
@@ -188,28 +192,22 @@ void ui_draw_text_right_aligned(SSD1306_t *dev, int page, const char* text) {
 
 // Custom function to display x3 text with pixel offset (for clock alignment)
 void ui_display_text_x3_offset(SSD1306_t *dev, int page, char *text, int text_len, int offset_pixels, bool invert) {
-    // Clear the x3 text area (3 pages) completely
+    // Just use regular text with space padding instead of pixel shifting
+    // This eliminates all the jumping and shifting artifacts
+
+    // Clear the area
     for (int p = page; p < page + 3 && p < dev->_pages; p++) {
         for (int seg = 0; seg < 128; seg++) {
             dev->_page[p]._segs[seg] = 0x00;
         }
     }
 
-    // Display normal x3 text first
-    ssd1306_display_text_x3(dev, page, text, text_len, invert);
+    // Add a space at the beginning to simulate the 6-pixel offset
+    char padded_text[8];
+    snprintf(padded_text, sizeof(padded_text), " %s", text);
 
-    // Only do manual shift if offset is not 0 and not 8 (since 8 pixels = 1 character)
-    if (offset_pixels > 0 && offset_pixels != 8) {
-        // Manual shift for pixel-perfect positioning
-        for (int p = page; p < page + 3 && p < dev->_pages; p++) {
-            for (int i = 127; i >= offset_pixels; i--) {
-                dev->_page[p]._segs[i] = dev->_page[p]._segs[i - offset_pixels];
-            }
-            for (int i = 0; i < offset_pixels; i++) {
-                dev->_page[p]._segs[i] = 0x00;
-            }
-        }
-    }
+    // Use standard x3 text rendering - no shifting, no artifacts
+    ssd1306_display_text_x3(dev, page, padded_text, strlen(padded_text), invert);
 }
 
 // ============================================================================
@@ -218,7 +216,11 @@ void ui_display_text_x3_offset(SSD1306_t *dev, int page, char *text, int text_le
 
 // Main screen: Clock + WiFi status
 void ui_show_main(SSD1306_t *dev) {
-    ui_clear_screen(dev);
+    // Only clear screen if we're switching to this state, not on every update
+    if (last_displayed_state != UI_STATE_MAIN) {
+        ui_clear_screen(dev);
+        last_displayed_state = UI_STATE_MAIN;
+    }
 
     // Check actual WiFi status
     wifi_ap_record_t ap_info;
@@ -238,8 +240,8 @@ void ui_show_main(SSD1306_t *dev) {
     char time_str[8];
     get_current_time_string(time_str, sizeof(time_str));
 
-    // Large time display - positioned 8 pixels right like other text
-    ui_display_text_x3_offset(dev, 2, time_str, strlen(time_str), 8, false);
+    // Large time display - positioned 6 pixels right to align with small text (1 space = ~6px)
+    ui_display_text_x3_offset(dev, 2, time_str, strlen(time_str), 6, false);
 
     // Date display (pad to exactly 16 characters to fill 128 pixels)
     char date_str[17];
@@ -257,7 +259,11 @@ void ui_show_main(SSD1306_t *dev) {
 
 // Desk control screen
 void ui_show_desk(SSD1306_t *dev) {
-    ui_clear_screen(dev);
+    // Only clear screen if we're switching to this state, not on every update
+    if (last_displayed_state != UI_STATE_DESK) {
+        ui_clear_screen(dev);
+        last_displayed_state = UI_STATE_DESK;
+    }
 
     // Get live distance reading
     uint32_t distance_cm = measure_distance();
@@ -276,7 +282,7 @@ void ui_show_desk(SSD1306_t *dev) {
     // Height display (1-space padding for x3 text) - use live reading with fixed width
     char height_str[8];
     snprintf(height_str, sizeof(height_str), "%3.0fcm", live_height); // Fixed 3-digit width
-    ui_display_text_x3_offset(dev, 2, height_str, 5, 8, false); // Always 5 chars: "123cm"
+    ui_display_text_x3_offset(dev, 2, height_str, 5, 6, false); // Always 5 chars: "123cm"
 
     // Status line (1-space padding)
     if (ui_ctx.context.desk_moving) {
@@ -290,40 +296,41 @@ void ui_show_desk(SSD1306_t *dev) {
 
 // Volume control screen
 void ui_show_volume(SSD1306_t *dev) {
-    ui_clear_screen(dev);
-
-    // Get live volume level
-    int live_volume = get_current_volume_level();
+    // Only clear screen if we're switching to this state, not on every update
+    if (last_displayed_state != UI_STATE_VOLUME) {
+        ui_clear_screen(dev);
+        last_displayed_state = UI_STATE_VOLUME;
+    }
 
     // Title (1-space padding like main screen)
     ssd1306_display_text(dev, 0, " VOL", 4, false);
 
-    // Volume percentage (1-space padding for x3 text) - fixed width
-    char vol_str[8];
-    snprintf(vol_str, sizeof(vol_str), "%3d%%", live_volume); // Fixed 3-digit width
-    ui_display_text_x3_offset(dev, 2, vol_str, 4, 8, false); // Always 4 chars: "100%"
+    // Show volume direction instead of level (since HID can't read actual volume)
+    char vol_text[5];
 
-    // Simple volume bar using text (1-space padding)
-    char bar[17] = " ";
-    int filled = live_volume / 10; // 0-10 scale
-    for (int i = 0; i < filled && i < 10; i++) {
-        bar[i + 1] = '=';
+    // Show the direction of the last volume change
+    if (ui_ctx.context.volume_direction_up) {
+        strcpy(vol_text, "UP  ");
+    } else {
+        strcpy(vol_text, "DOWN");
     }
-    for (int i = filled; i < 10; i++) {
-        bar[i + 1] = '-';
-    }
-    // Pad to 16 characters
-    while (strlen(bar) < 16) {
-        strcat(bar, " ");
-    }
-    ssd1306_display_text(dev, 6, bar, 16, false);
+
+    ui_display_text_x3_offset(dev, 2, vol_text, 4, 6, false); // Always 4 chars: UP or DOWN
+
+    // Control instructions (1-space padding)
+    ssd1306_display_text(dev, 5, " Press buttons", 14, false);
+    ssd1306_display_text(dev, 6, " to adjust", 10, false);
 
     ssd1306_show_buffer(dev);
 }
 
 // Hue lighting control screen
 void ui_show_hue(SSD1306_t *dev) {
-    ui_clear_screen(dev);
+    // Only clear screen if we're switching to this state, not on every update
+    if (last_displayed_state != UI_STATE_HUE) {
+        ui_clear_screen(dev);
+        last_displayed_state = UI_STATE_HUE;
+    }
 
     // Get live values from keyswitches
     int live_brightness = get_current_hue_brightness();
@@ -337,7 +344,7 @@ void ui_show_hue(SSD1306_t *dev) {
     char status_str[8];
     snprintf(status_str, sizeof(status_str), "%-3s",
             live_lights_on ? "ON" : "OFF"); // Fixed 3-char width, left-aligned
-    ui_display_text_x3_offset(dev, 2, status_str, 3, 8, false); // Always 3 chars
+    ui_display_text_x3_offset(dev, 2, status_str, 3, 6, false); // Always 3 chars
 
     // Scene and brightness on bottom line (1-space padding)
     char bright_str[50]; // Larger buffer to handle long scene names
@@ -357,7 +364,11 @@ void ui_show_hue(SSD1306_t *dev) {
 
 // PC switching screen
 void ui_show_pc_switch(SSD1306_t *dev) {
-    ui_clear_screen(dev);
+    // Only clear screen if we're switching to this state, not on every update
+    if (last_displayed_state != UI_STATE_PC_SWITCH) {
+        ui_clear_screen(dev);
+        last_displayed_state = UI_STATE_PC_SWITCH;
+    }
 
     // Title (1-space padding like main screen)
     ssd1306_display_text(dev, 0, " USB", 4, false);
@@ -365,30 +376,37 @@ void ui_show_pc_switch(SSD1306_t *dev) {
     // PC number (1-space padding for x3 text) - fixed width
     char pc_str[8];
     snprintf(pc_str, sizeof(pc_str), "PC%d", ui_ctx.context.pc_number);
-    ui_display_text_x3_offset(dev, 2, pc_str, 3, 8, false); // Always 3 chars: "PC1" or "PC2"
+    ui_display_text_x3_offset(dev, 2, pc_str, 3, 6, false); // Always 3 chars: "PC1" or "PC2"
 
     ssd1306_show_buffer(dev);
 }
 
 // Window control screen
 void ui_show_window(SSD1306_t *dev) {
-    ui_clear_screen(dev);
+    // Only clear screen if we're switching to this state, not on every update
+    if (last_displayed_state != UI_STATE_WINDOW) {
+        ui_clear_screen(dev);
+        last_displayed_state = UI_STATE_WINDOW;
+    }
 
     // Title (1-space padding like main screen)
     ssd1306_display_text(dev, 0, " WINDOW", 7, false);
 
-    // Action status (1-space padding for x3 text) - fixed width
+    // Action status with descriptive text
     if (ui_ctx.context.window_opening) {
-        ui_display_text_x3_offset(dev, 2, "OPEN ", 5, 8, false); // Padded to 5 chars
+        ssd1306_display_text(dev, 2, " Window:", 8, false);
+        ssd1306_display_text(dev, 3, " opening", 8, false);
     } else if (ui_ctx.context.window_closing) {
-        ui_display_text_x3_offset(dev, 2, "CLOSE", 5, 8, false); // Already 5 chars
+        ssd1306_display_text(dev, 2, " Window:", 8, false);
+        ssd1306_display_text(dev, 3, " closing", 8, false);
     } else {
-        ui_display_text_x3_offset(dev, 2, "IDLE ", 5, 8, false); // Padded to 5 chars
+        ssd1306_display_text(dev, 2, " Window:", 8, false);
+        ssd1306_display_text(dev, 3, " idle", 5, false);
     }
 
     // HTTP acknowledgment status (1-space padding)
     if (ui_ctx.context.http_ack_received) {
-        ssd1306_display_text(dev, 6, " OK", 3, false);
+        ssd1306_display_text(dev, 6, " Success!", 9, false);
     } else {
         ssd1306_display_text(dev, 6, " Sending...", 11, false);
     }
@@ -398,7 +416,11 @@ void ui_show_window(SSD1306_t *dev) {
 
 // Fan control screen
 void ui_show_fan(SSD1306_t *dev) {
-    ui_clear_screen(dev);
+    // Only clear screen if we're switching to this state, not on every update
+    if (last_displayed_state != UI_STATE_FAN) {
+        ui_clear_screen(dev);
+        last_displayed_state = UI_STATE_FAN;
+    }
 
     // Get live fan values
     int live_fan_percent = get_current_fan_speed_percent();
@@ -411,7 +433,7 @@ void ui_show_fan(SSD1306_t *dev) {
         // Fan percentage (1-space padding for x3 text) - fixed width
         char fan_str[8];
         snprintf(fan_str, sizeof(fan_str), "%3d%%", live_fan_percent); // Fixed 3-digit width
-        ui_display_text_x3_offset(dev, 2, fan_str, 4, 8, false); // Always 4 chars: "100%"
+        ui_display_text_x3_offset(dev, 2, fan_str, 4, 6, false); // Always 4 chars: "100%"
 
         // Simple fan speed bar using text (1-space padding)
         char bar[17] = " ";
@@ -429,7 +451,7 @@ void ui_show_fan(SSD1306_t *dev) {
         ssd1306_display_text(dev, 6, bar, 16, false);
     } else {
         // Fan off message (1-space padding for x3 text) - fixed width
-        ui_display_text_x3_offset(dev, 2, "OFF ", 4, 8, false); // Padded to 4 chars like percentages
+        ui_display_text_x3_offset(dev, 2, "OFF ", 4, 6, false); // Padded to 4 chars like percentages
     }
 
     ssd1306_show_buffer(dev);
@@ -437,7 +459,11 @@ void ui_show_fan(SSD1306_t *dev) {
 
 // Suspend/sleep screen
 void ui_show_suspend(SSD1306_t *dev) {
-    ui_clear_screen(dev);
+    // Only clear screen if we're switching to this state, not on every update
+    if (last_displayed_state != UI_STATE_SUSPEND) {
+        ui_clear_screen(dev);
+        last_displayed_state = UI_STATE_SUSPEND;
+    }
 
     // Title (1-space padding like main screen)
     ssd1306_display_text(dev, 0, " SUSPEND", 8, false);
@@ -445,7 +471,7 @@ void ui_show_suspend(SSD1306_t *dev) {
     // PC number and action (1-space padding for x3 text) - fixed width
     char suspend_str[8];
     snprintf(suspend_str, sizeof(suspend_str), "PC%d", ui_ctx.context.pc_number);
-    ui_display_text_x3_offset(dev, 2, suspend_str, 3, 8, false); // Always 3 chars: "PC1" or "PC2"
+    ui_display_text_x3_offset(dev, 2, suspend_str, 3, 6, false); // Always 3 chars: "PC1" or "PC2"
 
     // Status (1-space padding)
     ssd1306_display_text(dev, 6, " Sleeping...", 12, false);
@@ -595,6 +621,20 @@ void ui_set_fan_context(int fan_percent, bool active) {
     if (fan_percent > 100) fan_percent = 100;
     ui_ctx.context.fan_speed_percent = fan_percent;
     ui_ctx.context.fan_active = active;
+}
+
+// Safe volume access functions for HID device
+int get_current_ui_volume_level(void) {
+    return ui_ctx.context.volume_level;
+}
+
+void set_ui_volume_level(int volume) {
+    ui_set_volume_context(volume);
+}
+
+// Set volume direction for display
+void set_ui_volume_direction(bool direction_up) {
+    ui_ctx.context.volume_direction_up = direction_up;
 }
 
 // ============================================================================

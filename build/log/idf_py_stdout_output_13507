@@ -1,0 +1,597 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM1 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM1'
+[0;32mI (1040) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1140) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1150) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1160) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1170) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1170) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1170) RELAY_INIT: Relay PC_SWITCH initial state: 0[0m
+[0;32mI (1270) RELAY_INIT: ✅ All relays initialized and stable - system ready![0m
+[0;32mI (1270) gpio: GPIO[45]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1270) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1280) ULTRASONIC_INIT: Testing TRIG pin (GPIO45)...[0m
+[0;32mI (1290) ULTRASONIC_INIT: TRIG set LOW, reading: 0[0m
+[0;32mI (1290) ULTRASONIC_INIT: TRIG set HIGH, reading: 0[0m
+[0;32mI (1300) ULTRASONIC_INIT: TRIG set LOW again, reading: 0[0m
+[0;32mI (1300) MAIN: Initializing USB HID device...[0m
+[0;32mI (1310) HID_DEVICE: USB initialization[0m
+[0;33mW (1310) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (1320) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 0           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4004      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (1490) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (1490) HID_DEVICE: USB initialization DONE[0m
+[0;32mI (1500) MAIN: Initializing WiFi...[0m
+[0;32mI (1520) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (1530) pp: pp rom version: e7ae62f[0m
+[0;32mI (1530) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1540) wifi:wifi driver task: 3fcac474, prio:23, stack:6656, core=0[0m
+[0;32mI (1550) wifi:wifi firmware version: 090f94a[0m
+[0;32mI (1550) wifi:wifi certification version: v7.0[0m
+[0;32mI (1550) wifi:config NVS flash: enabled[0m
+[0;32mI (1550) wifi:config nano formatting: disabled[0m
+[0;32mI (1550) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1560) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1560) wifi:Init management short buffer num: 32[0m
+[0;32mI (1570) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1570) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1580) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1580) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1580) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1590) wifi_init: rx ba win: 6[0m
+[0;32mI (1590) wifi_init: accept mbox: 6[0m
+[0;32mI (1600) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1600) wifi_init: udp mbox: 6[0m
+[0;32mI (1600) wifi_init: tcp mbox: 6[0m
+[0;32mI (1610) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1610) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1620) wifi_init: tcp mss: 1440[0m
+[0;32mI (1620) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1620) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1630) WiFi: Configuring static IP: 192.168.50.100[0m
+[0;32mI (1640) WiFi: Static IP configured successfully[0m
+[0;32mI (1640) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (1640) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (1690) wifi:mode : sta (34:85:18:75:f3:0c)[0m
+[0;32mI (1690) wifi:enable tsf[0m
+[0;32mI (1690) WiFi: Wi-Fi initialization done.[0m
+[0;32mI (1690) WiFi: WiFi started, connecting...[0m
+[0;32mI (1720) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;32mI (1720) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1740) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1750) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1770) wifi:connected with NeverNude_IoT, aid = 26, channel 1, BW20, bssid = 72:d9:f5:9b:25:21[0m
+[0;32mI (1770) wifi:security: WPA2-PSK, phy: bgn, rssi: -51[0m
+[0;32mI (1780) wifi:pm start, type: 0[0m
+
+[0;32mI (1780) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1780) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1790) esp_netif_handlers: sta ip: 192.168.50.100, mask: 255.255.255.0, gw: 192.168.50.1[0m
+[0;32mI (1800) WiFi: Connected! IP: 192.168.50.100[0m
+[0;32mI (1810) WiFi: Connected to Wi-Fi[0m
+[0;32mI (1810) MAIN: Initializing NTP time manager...[0m
+[0;32mI (1820) TIME_MANAGER: Time manager ready – SNTP will start once Wi-Fi is up[0m
+[0;32mI (1820) TIME_MANAGER: Time sync task waiting for Wi-Fi…[0m
+[0;32mI (1830) TIME_MANAGER: Wi-Fi associated[0m
+[0;32mI (1830) TIME_MANAGER: Starting one-shot NTP sync…[0m
+[0;32mI (1840) TIME_MANAGER: STA IP: 192.168.50.100, GW: 192.168.50.1[0m
+[0;32mI (1850) TIME_MANAGER: SNTP started (poll mode)[0m
+[0;32mI (1850) KEYSWITCHES: Initializing rotary encoder states...[0m
+[0;32mI (1860) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1860) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (1870) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1880) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1890) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1900) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1910) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1920) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1930) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1940) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1950) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1960) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1970) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1980) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1980) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1990) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2000) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2010) KEYSWITCHES: Both rotary encoders configured - ROT1: brightness, ROT2: scenes[0m
+[0;32mI (2120) KEYSWITCHES: Getting current Hue light state...[0m
+[0;32mI (2120) KEYSWITCHES: Fetching current Hue group state...[0m
+[0;32mI (2140) wifi:<ba-add>idx:0 (ifx:0, 72:d9:f5:9b:25:21), tid:0, ssn:1, winSize:64[0m
+[0;32mI (2360) KEYSWITCHES: Initial states - ROT1_CLK: 0, ROT1_SW: 1, ROT2_CLK: 0, ROT2_SW: 1[0m
+[0;32mI (2930) TIME_MANAGER: SNTP: first time sync[0m
+[0;33mW (3350) TIME_MANAGER: SNTP: timeout after 60 s[0m
+[0;32mI (3350) TIME_MANAGER: Local time: 2025-06-28 10:42:58[0m
+[0;33mW (7210) KEYSWITCHES: No response data received, assuming lights OFF[0m
+[0;32mI (7210) KEYSWITCHES: Hue state initialized: lights_on = false[0m
+[0;32mI (7210) MAIN: All systems initialized - starting main loop[0m
+[0;32mI (7210) MAIN: Fan control: ACTIVE[0m
+[0;32mI (7220) MAIN: Single row switches: ACTIVE[0m
+[0;32mI (7220) MAIN: Switch matrix (desk control): ACTIVE[0m
+[0;32mI (7230) MAIN: Relay system: ACTIVE[0m
+[0;32mI (7230) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (7280) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (7290) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (7820) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (7830) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (8360) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (8370) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (8900) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (8910) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (9440) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (9450) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (9980) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (9990) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (10270) OLED_UI: Returning to main screen[0m
+[0;32mI (10270) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (10290) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (10580) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (10590) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (12520) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (12580) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (12630) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (12640) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (13170) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (13180) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (13710) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (13720) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (14250) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (14260) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (14790) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (14800) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (15330) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (15340) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (15620) OLED_UI: Returning to main screen[0m
+[0;32mI (15620) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (15640) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (15930) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (15940) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (24290) KEYSWITCHES: Row 2, Column 2 pressed![0m
+[0;32mI (24290) BUTTON: Down command triggered[0m
+[0;31mE (29300) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (29300) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (29300) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;32mI (29300) HTTP_EVENT: HTTP_EVENT_ERROR[0m
+[0;31mE (29310) HTTP_CLIENT: HTTP GET request failed: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (29310) HTTP_EVENT: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (75980) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (75990) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (101670) HID_DEVICE: USB HID device mounted[0m
+[0;32mI (105630) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (105630) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (105680) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (105780) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (105790) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (105820) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (105820) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (105870) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (106330) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (106340) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (106880) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (106890) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (107430) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (107440) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (107980) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (107990) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (108530) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (108540) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (109080) OLED_UI: Returning to main screen[0m
+[0;32mI (109080) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (109100) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (109390) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (109400) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (109730) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (109730) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (109780) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (109920) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (109920) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (109940) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (109950) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (109970) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (110230) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (110230) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (110280) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (110490) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (110500) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (111040) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (111050) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (111140) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (111140) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (111190) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (111510) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (111510) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (111560) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (111590) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (111600) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (111820) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (111820) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (111870) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (112140) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (112150) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (112190) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (112190) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (112240) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (112500) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (112500) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (112550) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (112690) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (112700) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (112870) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (112870) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (112920) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (113240) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (113250) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (113790) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (113800) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (113840) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (113840) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (113890) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (114340) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (114350) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (114460) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (114460) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (114510) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (114810) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (114810) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (114860) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (114890) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (114900) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (115160) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (115160) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (115210) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (115440) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (115450) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (115510) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (115510) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (115560) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (115860) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (115860) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (115910) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (115990) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (116000) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (116330) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (116330) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (116380) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (116500) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (116500) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (116540) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (116550) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (116550) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (116850) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (116850) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (116900) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (117020) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (117020) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (117070) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (117090) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (117100) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (117250) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (117250) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (117300) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (117640) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (117650) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (117660) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (117660) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (117720) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (117840) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (117840) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (117890) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (118130) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (118130) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (118180) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (118190) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (118200) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (118740) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (118750) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (118960) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (118960) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (119010) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (119290) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (119300) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (119370) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (119370) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (119420) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (119780) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (119780) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (119830) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (119840) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (119850) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (120190) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (120190) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (120240) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (120390) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (120400) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (120650) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (120650) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (120700) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (120900) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (120900) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (120940) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (120950) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (120950) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (121090) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (121090) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (121140) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (121280) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (121280) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (121330) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (121470) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (121470) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (121490) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (121500) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (121520) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (121660) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (121660) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (121710) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (122040) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (122050) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (122090) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (122090) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (122140) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (122520) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (122520) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (122570) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (122590) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (122600) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (122830) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (122830) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (122880) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (123140) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (123150) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (123200) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (123200) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (123250) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (123450) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (123450) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (123500) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (123690) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (123700) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (123820) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (123820) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (123870) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (124240) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (124250) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (124790) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (124800) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (125340) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (125350) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (125400) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (125400) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (125450) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (125800) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (125800) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (125850) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (125890) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (125900) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (126050) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (126050) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (126100) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (126240) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (126240) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (126290) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (126430) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (126430) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (126440) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (126450) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (126480) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (126800) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (126800) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (126850) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (126990) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (127000) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (127540) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (127550) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (127600) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (127600) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (127650) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (127770) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (127770) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (127820) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (127940) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (127940) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (127990) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (128090) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (128100) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (128170) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (128170) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (128220) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (128340) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (128340) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (128390) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (128620) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (128620) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (128640) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (128650) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (128670) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (128870) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (128870) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (128920) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (129120) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (129120) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (129170) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (129190) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (129200) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (129430) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (129430) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (129480) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (129620) KEYSWITCHES: Row 1, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume UP[0m
+[0;32mI (129620) HID_DEVICE: Sending Volume Up[0m
+[0;32mI (129670) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (129740) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (129750) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (130290) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (130300) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (130840) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (130850) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (131390) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (131400) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (131940) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (131950) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (132490) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (132500) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (132790) OLED_UI: Returning to main screen[0m
+[0;32mI (132790) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (132810) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (133100) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (133110) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (190840) KEYSWITCHES: Row 2, Column 2 pressed![0m
+[0;32mI (190840) BUTTON: Down command triggered[0m
+[0;32mI (191110) wifi:<ba-add>idx:1 (ifx:0, 72:d9:f5:9b:25:21), tid:7, ssn:1, winSize:64[0m
+[0;32mI (191140) HTTP_EVENT: HTTP_EVENT_ON_CONNECTED[0m
+[0;32mI (191140) HTTP_EVENT: HTTP_EVENT_HEADER_SENT[0m
+[0;32mI (191660) HTTP_EVENT: HTTP_EVENT_ON_HEADER, key=Content-Type, value=text/html[0m
+[0;32mI (192040) HTTP_EVENT: HTTP_EVENT_ON_HEADER, key=Content-Length, value=2[0m
+[0;32mI (192040) HTTP_EVENT: HTTP_EVENT_ON_DATA, len=2[0m
+[0;32mI (192040) HTTP_EVENT: HTTP_EVENT_ON_FINISH[0m
+[0;32mI (192040) HTTP_CLIENT: HTTP GET Status = 200, content_length = 2[0m
+[0;32mI (192050) HTTP_EVENT: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (193150) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (193160) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (197510) BUTTON: Up command triggered[0m
+[0;32mI (197580) HTTP_EVENT: HTTP_EVENT_ON_CONNECTED[0m
+[0;32mI (197580) HTTP_EVENT: HTTP_EVENT_HEADER_SENT[0m
+[0;32mI (198090) HTTP_EVENT: HTTP_EVENT_ON_HEADER, key=Content-Type, value=text/html[0m
+[0;32mI (198490) HTTP_EVENT: HTTP_EVENT_ON_HEADER, key=Content-Length, value=2[0m
+[0;32mI (198490) HTTP_EVENT: HTTP_EVENT_ON_DATA, len=2[0m
+[0;32mI (198490) HTTP_EVENT: HTTP_EVENT_ON_FINISH[0m
+[0;32mI (198500) HTTP_CLIENT: HTTP GET Status = 200, content_length = 2[0m
+[0;32mI (198510) HTTP_EVENT: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (212800) KEYSWITCHES: Row 2, Column 2 pressed![0m
+[0;32mI (212800) BUTTON: Down command triggered[0m
+[0;32mI (212930) HTTP_EVENT: HTTP_EVENT_ON_CONNECTED[0m
+[0;32mI (212930) HTTP_EVENT: HTTP_EVENT_HEADER_SENT[0m
+[0;32mI (213470) HTTP_EVENT: HTTP_EVENT_ON_HEADER, key=Content-Type, value=text/html[0m
+[0;32mI (213850) HTTP_EVENT: HTTP_EVENT_ON_HEADER, key=Content-Length, value=2[0m
+[0;32mI (213850) HTTP_EVENT: HTTP_EVENT_ON_DATA, len=2[0m
+[0;32mI (213850) HTTP_EVENT: HTTP_EVENT_ON_FINISH[0m
+[0;32mI (213850) HTTP_CLIENT: HTTP GET Status = 200, content_length = 2[0m
+[0;32mI (213860) HTTP_EVENT: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (219560) BUTTON: Up command triggered[0m
+[0;32mI (219690) HTTP_EVENT: HTTP_EVENT_ON_CONNECTED[0m
+[0;32mI (219690) HTTP_EVENT: HTTP_EVENT_HEADER_SENT[0m
+[0;32mI (220230) HTTP_EVENT: HTTP_EVENT_ON_HEADER, key=Content-Type, value=text/html[0m
+[0;32mI (220730) HTTP_EVENT: HTTP_EVENT_ON_HEADER, key=Content-Length, value=2[0m
+[0;32mI (220730) HTTP_EVENT: HTTP_EVENT_ON_DATA, len=2[0m
+[0;32mI (220730) HTTP_EVENT: HTTP_EVENT_ON_FINISH[0m
+[0;32mI (220730) HTTP_CLIENT: HTTP GET Status = 200, content_length = 2[0m
+[0;32mI (220740) HTTP_EVENT: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (253200) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (253210) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (312320) KEYSWITCHES: Row 2, Column 3 pressed! (COL3: 0, ROW1: 0, ROW2: 0) - Volume DOWN[0m
+[0;32mI (312320) HID_DEVICE: Sending Volume Down[0m
+[0;32mI (312370) OLED_UI: UI state force refreshed to 2 for 3000 ms[0m
+[0;32mI (312500) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (312510) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (313050) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (313060) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (313600) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (313610) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (314150) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (314160) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (314700) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (314710) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (315250) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (315260) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (315550) OLED_UI: Returning to main screen[0m
+[0;32mI (315550) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (315570) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (315860) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (315870) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (375910) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (375920) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (435960) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (435970) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (496010) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (496020) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (504000) TIME_MANAGER: Daily NTP re-sync…[0m
+[0;32mI (504000) TIME_MANAGER: Starting one-shot NTP sync…[0m
+[0;32mI (504000) TIME_MANAGER: STA IP: 192.168.50.100, GW: 192.168.50.1[0m
+[0;32mI (504000) TIME_MANAGER: SNTP started (poll mode)[0m
+[0;32mI (508990) TIME_MANAGER: SNTP: first time sync[0m
+[0;33mW (509010) TIME_MANAGER: SNTP: timeout after 60 s[0m
+[0;32mI (509010) TIME_MANAGER: Local time: 2025-06-28 10:51:23[0m
+[0;32mI (556060) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (556070) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (564300) KEYSWITCHES: Rotary Encoder 2 Button Pressed! - Toggling lights[0m
+[0;32mI (564490) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (564490) KEYSWITCHES: Hue lights turned ON[0m
+[0;32mI (564490) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (564620) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (564630) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (565160) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (565170) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (565700) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (565710) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (566240) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (566250) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (566780) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (566790) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (567320) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (567330) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (567610) OLED_UI: Returning to main screen[0m
+[0;32mI (567610) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (567630) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (567920) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (567930) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (569620) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (569620) KEYSWITCHES: Scene 2: Koncentrer dig (Concentrate)[0m
+[0;32mI (569880) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (569880) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (569970) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (569980) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (570510) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (570520) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (571050) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (571060) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (571160) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (571160) KEYSWITCHES: Scene 3: Læs (Read)[0m
+[0;32mI (571390) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (571390) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (571590) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (571600) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (572130) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (572140) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (572670) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (572680) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (572830) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - Next scene[0m
+[0;32mI (572830) KEYSWITCHES: Scene 4: Slap af (Relax)[0m
+[0;32mI (573110) HTTP_CLIENT: HTTP PUT Status = 200, content_length = -1[0m
+[0;32mI (573110) OLED_UI: UI state force refreshed to 3 for 3000 ms[0m
+[0;32mI (573210) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (573220) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (573750) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (573760) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (574290) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (574300) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (574830) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (574840) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (575370) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (575380) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (575910) OLED_UI: Clearing screen for SH1106 display (handling extra 4 bytes per page)[0m
+[0;32mI (575920) OLED_UI: SH1106 screen cleared completely (128 + 4 extra bytes per page)[0m
+[0;32mI (576200) OLED_UI: Returning to main screen[0m
+[0;32mI (576200)

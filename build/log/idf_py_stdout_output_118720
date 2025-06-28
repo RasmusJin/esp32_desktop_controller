@@ -1,0 +1,108 @@
+Command: /home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jin/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM1 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/desktop_controller.elf /home/jin/workspaces/espWorkspace/esp32_desktop_controller/build/bootloader/bootloader.elf -m '/home/jin/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/jin/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM1'
+[0;32mI (1007) RELAY_INIT: Starting relay driver setup...[0m
+[0;32mI (1107) gpio: GPIO[47]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1117) gpio: GPIO[37]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1127) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1137) RELAY_INIT: Relay UP initial state: 0[0m
+[0;32mI (1137) RELAY_INIT: Relay DOWN initial state: 0[0m
+[0;32mI (1137) RELAY_INIT: Relay PC_SWITCH initial state: 0[0m
+[0;32mI (1237) RELAY_INIT: ✅ All relays initialized and stable - system ready![0m
+[0;32mI (1237) gpio: GPIO[45]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1237) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1247) ULTRASONIC_INIT: Testing TRIG pin (GPIO45)...[0m
+[0;32mI (1257) ULTRASONIC_INIT: TRIG set LOW, reading: 0[0m
+[0;32mI (1257) ULTRASONIC_INIT: TRIG set HIGH, reading: 0[0m
+[0;32mI (1267) ULTRASONIC_INIT: TRIG set LOW again, reading: 0[0m
+[0;32mI (1267) MAIN: USB HID device initialization DISABLED for flashing[0m
+[0;32mI (1277) MAIN: Initializing WiFi...[0m
+[0;32mI (1307) WiFi: Initializing Wi-Fi in station mode[0m
+[0;32mI (1307) pp: pp rom version: e7ae62f[0m
+[0;32mI (1307) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1317) wifi:wifi driver task: 3fcee7b0, prio:23, stack:6656, core=0[0m
+[0;32mI (1327) wifi:wifi firmware version: 090f94a[0m
+[0;32mI (1327) wifi:wifi certification version: v7.0[0m
+[0;32mI (1327) wifi:config NVS flash: enabled[0m
+[0;32mI (1327) wifi:config nano formatting: disabled[0m
+[0;32mI (1337) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1337) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1337) wifi:Init management short buffer num: 32[0m
+[0;32mI (1347) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1347) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1357) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1357) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1367) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1367) wifi_init: rx ba win: 6[0m
+[0;32mI (1367) wifi_init: accept mbox: 6[0m
+[0;32mI (1377) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1377) wifi_init: udp mbox: 6[0m
+[0;32mI (1377) wifi_init: tcp mbox: 6[0m
+[0;32mI (1387) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1387) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1397) wifi_init: tcp mss: 1440[0m
+[0;32mI (1397) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1407) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1407) WiFi: Configuring static IP: 192.168.50.100[0m
+[0;32mI (1417) WiFi: Static IP configured successfully[0m
+[0;32mI (1417) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (1427) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (1467) wifi:mode : sta (34:85:18:75:f3:0c)[0m
+[0;32mI (1467) wifi:enable tsf[0m
+[0;32mI (1467) WiFi: Wi-Fi initialization done.[0m
+[0;32mI (1467) WiFi: WiFi started, connecting...[0m
+[0;32mI (1487) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:11, snd_ch_cfg:0x0[0m
+[0;32mI (1487) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1507) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1517) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1537) wifi:connected with NeverNude_IoT, aid = 27, channel 1, BW20, bssid = 72:d9:f5:9b:25:21[0m
+[0;32mI (1537) wifi:security: WPA2-PSK, phy: bgn, rssi: -49[0m
+[0;32mI (1547) wifi:pm start, type: 0[0m
+
+[0;32mI (1547) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1557) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1567) esp_netif_handlers: sta ip: 192.168.50.100, mask: 255.255.255.0, gw: 192.168.50.1[0m
+[0;32mI (1577) WiFi: Connected! IP: 192.168.50.100[0m
+[0;32mI (1577) WiFi: Connected to Wi-Fi[0m
+[0;32mI (1577) MAIN: Initializing NTP time manager...[0m
+[0;32mI (1587) TIME_MANAGER: Time manager ready – SNTP will start once Wi-Fi is up[0m
+[0;32mI (1597) TIME_MANAGER: Time sync task waiting for Wi-Fi…[0m
+[0;32mI (1597) TIME_MANAGER: Wi-Fi associated[0m
+[0;32mI (1597) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (1607) TIME_MANAGER: Starting one-shot NTP sync…[0m
+[0;32mI (1617) TIME_MANAGER: STA IP: 192.168.50.100, GW: 192.168.50.1[0m
+[0;32mI (1627) TIME_MANAGER: SNTP started (poll mode)[0m
+[0;32mI (1627) KEYSWITCHES: Initializing rotary encoder states...[0m
+[0;32mI (1637) gpio: GPIO[1]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1647) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1657) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1667) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1667) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1677) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1687) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1697) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1707) gpio: GPIO[41]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1717) gpio: GPIO[42]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1727) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1737) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1747) gpio: GPIO[46]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1757) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1767) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1777) gpio: GPIO[11]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1787) KEYSWITCHES: Both rotary encoders configured - ROT1: brightness, ROT2: scenes[0m
+[0;32mI (1897) KEYSWITCHES: Getting current Hue light state...[0m
+[0;32mI (1897) KEYSWITCHES: Fetching current Hue group state...[0m
+[0;32mI (1937) wifi:<ba-add>idx:0 (ifx:0, 72:d9:f5:9b:25:21), tid:0, ssn:1, winSize:64[0m
+[0;32mI (2137) KEYSWITCHES: Initial states - ROT1_CLK: 1, ROT1_SW: 1, ROT2_CLK: 0, ROT2_SW: 1[0m
+[0;32mI (2877) TIME_MANAGER: SNTP: first time sync[0m
+[0;33mW (3127) TIME_MANAGER: SNTP: timeout after 60 s[0m
+[0;32mI (3127) TIME_MANAGER: Local time: 2025-06-28 12:09:56[0m
+[0;33mW (7017) KEYSWITCHES: No response data received, assuming lights OFF[0m
+[0;32mI (7017) KEYSWITCHES: Hue state initialized: lights_on = false, brightness = 255, scene = 4[0m
+[0;32mI (7017) MAIN: All systems initialized - starting main loop[0m
+[0;32mI (7027) MAIN: Fan control: ACTIVE[0m
+[0;32mI (7027) MAIN: Single row switches: ACTIVE[0m
+[0;32mI (7037) MAIN: Switch matrix (desk control): ACTIVE[0m
+[0;32mI (7037) MAIN: Relay system: ACTIVE[0m
+[0;32mI (7047) OLED_UI: UI state force refreshed to 6 for 3000 ms[0m
+[0;32mI (10137) OLED_UI: Returning to main screen[0m
+[0;32mI (15997) KEYSWITCHES: Rotary Encoder 2 turned Clockwise - N

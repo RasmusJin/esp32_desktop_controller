@@ -8,8 +8,15 @@
 #include "oled_screen/oled_screen.h"
 #include "esp_log.h"
 
+// Forward declaration for UI context access function
+int get_current_ui_volume_level(void);
+void set_ui_volume_level(int volume);
+void set_ui_volume_direction(bool direction_up);
+
+// Forward declaration for internal functions
+static esp_err_t send_consumer_report(uint16_t usage_code);
+
 static bool hid_device_ready = false;
-static int current_volume_level = 50; // Track current volume level (0-100)
 
 // TinyUSB descriptors (following official ESP-IDF example)
 #define TUSB_DESC_TOTAL_LEN (TUD_CONFIG_DESC_LEN + CFG_TUD_HID * TUD_HID_DESC_LEN)
@@ -70,8 +77,23 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
 }
 
 void tud_mount_cb(void) {
-    ESP_LOGI(HID_DEVICE_TAG, "USB HID device mounted");
+    ESP_LOGI(HID_DEVICE_TAG, "USB HID device mounted - attempting to sync volume");
     hid_device_ready = true;
+
+    // Try to estimate system volume by sending a mute/unmute sequence
+    // This is a workaround since HID consumer controls are one-way only
+    ESP_LOGI(HID_DEVICE_TAG, "Attempting volume detection via mute sequence...");
+
+    // Send mute command twice to ensure we end up unmuted
+    vTaskDelay(pdMS_TO_TICKS(100));
+    send_consumer_report(VOLUME_MUTE_USAGE);
+    vTaskDelay(pdMS_TO_TICKS(100));
+    send_consumer_report(VOLUME_MUTE_USAGE);
+
+    // Start with a reasonable default volume (70% - typical system default)
+    set_ui_volume_level(70);
+    set_ui_volume_direction(true); // Default to UP direction
+    ESP_LOGI(HID_DEVICE_TAG, "Volume initialized to 70% (estimated default - HID is one-way only)");
 }
 
 void tud_umount_cb(void) {
@@ -145,27 +167,41 @@ static esp_err_t send_consumer_report(uint16_t usage_code) {
 esp_err_t hid_volume_up(void) {
     ESP_LOGI(HID_DEVICE_TAG, "Sending Volume Up");
 
-    // Update volume level and show UI
-    current_volume_level += 5;
-    if (current_volume_level > 100) current_volume_level = 100;
+    // Send HID command first
+    esp_err_t result = send_consumer_report(VOLUME_UP_USAGE);
 
-    ui_set_volume_context(current_volume_level);
+    // Update volume context - use adaptive steps (3% for more accurate tracking)
+    int current_volume = get_current_ui_volume_level();
+    int step_size = 3; // 3% steps provide good balance between accuracy and responsiveness
+    int new_volume = current_volume + step_size;
+    if (new_volume > 100) new_volume = 100;
+    set_ui_volume_level(new_volume);
+    set_ui_volume_direction(true); // Volume UP
+
+    // Show volume UI with updated level
     ui_force_refresh_state(UI_STATE_VOLUME, 3000); // Force show volume UI for 3 seconds
 
-    return send_consumer_report(VOLUME_UP_USAGE);
+    return result;
 }
 
 esp_err_t hid_volume_down(void) {
     ESP_LOGI(HID_DEVICE_TAG, "Sending Volume Down");
 
-    // Update volume level and show UI
-    current_volume_level -= 5;
-    if (current_volume_level < 0) current_volume_level = 0;
+    // Send HID command first
+    esp_err_t result = send_consumer_report(VOLUME_DOWN_USAGE);
 
-    ui_set_volume_context(current_volume_level);
+    // Update volume context - use adaptive steps (3% for more accurate tracking)
+    int current_volume = get_current_ui_volume_level();
+    int step_size = 3; // 3% steps provide good balance between accuracy and responsiveness
+    int new_volume = current_volume - step_size;
+    if (new_volume < 0) new_volume = 0;
+    set_ui_volume_level(new_volume);
+    set_ui_volume_direction(false); // Volume DOWN
+
+    // Show volume UI with updated level
     ui_force_refresh_state(UI_STATE_VOLUME, 3000); // Force show volume UI for 3 seconds
 
-    return send_consumer_report(VOLUME_DOWN_USAGE);
+    return result;
 }
 
 esp_err_t hid_volume_mute(void) {
@@ -261,7 +297,7 @@ esp_err_t hid_send_key(uint8_t modifier, uint8_t keycode) {
     return ESP_OK;
 }
 
-// Getter function for current volume level
+// Getter function for current volume level - returns tracked volume from UI context
 int get_current_volume_level(void) {
-    return current_volume_level;
+    return get_current_ui_volume_level();
 }

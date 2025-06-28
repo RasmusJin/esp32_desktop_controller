@@ -15,7 +15,7 @@ static const char *KEYTAG = "KEYSWITCHES";
 bool lights_on = false;
 int brightness_value = 255;  // Start at max brightness
 int brightness_step = 25;
-int current_scene = 1;  // Track current Hue scene (1-4)
+int current_scene = 4;  // Track current Hue scene - start with Relax (scene 4)
 
 #define DEBOUNCE_DELAY_MS 150  // Debounce delay of 150 ms
 #define TAP_THRESHOLD_MS 500
@@ -76,14 +76,20 @@ void setup_switch_single_row(void) {
 void get_current_hue_state(void) {
     ESP_LOGI(KEYTAG, "Fetching current Hue group state...");
 
-    // Make HTTP GET request to get current group state
+    // Make HTTPS GET request to get current group state using Hue API v2
     esp_http_client_config_t config = {
-        .url = "http://192.168.50.170/api/AicZqASmH6YLHxDyBxD-pci3vEmn0jLU0XvQ9g9N/groups/1",
+        .url = "https://192.168.50.170/clip/v2/resource/grouped_light/1", // v2 API endpoint
         .method = HTTP_METHOD_GET,
         .timeout_ms = 5000,
+        .skip_cert_common_name_check = true, // Skip certificate validation for local bridge
+        .use_global_ca_store = false,
     };
 
     esp_http_client_handle_t client = esp_http_client_init(&config);
+
+    // Set the required authentication header for Hue API v2
+    esp_http_client_set_header(client, "hue-application-key", "AicZqASmH6YLHxDyBxD-pci3vEmn0jLU0XvQ9g9N");
+
     esp_err_t err = esp_http_client_perform(client);
 
     if (err == ESP_OK) {
@@ -91,18 +97,47 @@ void get_current_hue_state(void) {
         int content_length = esp_http_client_get_content_length(client);
 
         if (status_code == 200) {
-            // Read response data
-            char response_buffer[512];
+            // Read response data - use static buffer to avoid stack overflow
+            static char response_buffer[256];
             int data_read = esp_http_client_read_response(client, response_buffer, sizeof(response_buffer) - 1);
             if (data_read > 0) {
                 response_buffer[data_read] = '\0';
                 ESP_LOGI(KEYTAG, "Hue group response: %s", response_buffer);
 
-                // Parse JSON to check if lights are on
-                // Look for "all_on":true or "any_on":true in the response
-                if (strstr(response_buffer, "\"any_on\":true") != NULL) {
+                // Parse JSON for Hue API v2 format exactly as you specified
+                // Response format: {"data":[{"on":{"on":true},"dimming":{"brightness":75.0}}]}
+                // Look for .data[0].dimming.brightness as 0.0 – 100.0 (percent)
+
+                // Check if lights are on - look for "on":true in the response
+                if (strstr(response_buffer, "\"on\":true") != NULL) {
                     lights_on = true;
                     ESP_LOGI(KEYTAG, "Detected lights are currently ON");
+
+                    // Parse brightness from .data[0].dimming.brightness field
+                    char *dimming_start = strstr(response_buffer, "\"dimming\":");
+                    if (dimming_start != NULL) {
+                        char *brightness_start = strstr(dimming_start, "\"brightness\":");
+                        if (brightness_start != NULL) {
+                            brightness_start += 13; // Move past "brightness":
+                            float brightness_percent = atof(brightness_start);
+
+                            // Value is already a percentage (0.0-100.0) as you specified
+                            if (brightness_percent >= 0.0 && brightness_percent <= 100.0) {
+                                // Convert to v1 range (1-254) for internal use
+                                brightness_value = (int)((brightness_percent * 254.0) / 100.0);
+                                if (brightness_value < 1) brightness_value = 1;
+                                ESP_LOGI(KEYTAG, "Hue v2 API brightness: %.1f%% -> internal: %d",
+                                        brightness_percent, brightness_value);
+                            } else {
+                                ESP_LOGW(KEYTAG, "Invalid brightness: %.1f, keeping: %d",
+                                        brightness_percent, brightness_value);
+                            }
+                        } else {
+                            ESP_LOGW(KEYTAG, "No brightness field in dimming object");
+                        }
+                    } else {
+                        ESP_LOGW(KEYTAG, "No dimming object found in response");
+                    }
                 } else {
                     lights_on = false;
                     ESP_LOGI(KEYTAG, "Detected lights are currently OFF");
@@ -169,7 +204,14 @@ void setup_rotary_encoders(void) {
     // Get current Hue state on boot so buttons work immediately
     ESP_LOGI(KEYTAG, "Getting current Hue light state...");
     get_current_hue_state();
-    ESP_LOGI(KEYTAG, "Hue state initialized: lights_on = %s", lights_on ? "true" : "false");
+    ESP_LOGI(KEYTAG, "Hue state initialized: lights_on = %s, brightness = %d, scene = %d",
+             lights_on ? "true" : "false", brightness_value, current_scene);
+
+    // Initialize UI context with current Hue state
+    int brightness_percent = (brightness_value * 100) / 255;
+    const char* scene_names[] = {"", "Energi", "Focus", "Read", "Relax", "RelaxAlt", "Study", "Night"};
+    const char* scene_name = (current_scene >= 1 && current_scene <= 7) ? scene_names[current_scene] : "Unknown";
+    ui_set_hue_context(scene_name, brightness_percent, lights_on);
 }
 
 void poll_rotary_encoders_task(void *pvParameter) {
